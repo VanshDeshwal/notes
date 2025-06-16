@@ -691,17 +691,13 @@ df[(df['median_income'] > 9.60) | (df['median_income'] < -1.84)]
     Now we can do either trimming or capping.
 </p>
 
-<h3 style="color: #f1f1f1; font-family: Arial, sans-serif; text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.2);">
-    › Trimming
-</h3>
+### Trimming
 
 ```python
 new_df = df[(df['median_income'] < 9.60) & (df['median_income'] > -1.84)]
 ```
 
-<h3 style="color: #f1f1f1; font-family: Arial, sans-serif; text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.2);">
-    › Capping
-</h3>
+### Capping
 
 ```python
 upper_limit = df['median_income'].mean() + 3*df['median_income'].std()
