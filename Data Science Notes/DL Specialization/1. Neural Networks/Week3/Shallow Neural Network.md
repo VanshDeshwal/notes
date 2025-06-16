@@ -8,8 +8,17 @@ Lets assume we only have one training sample having 3 features $x_1,x_2,x_3$ .
 %%{init: {"theme":"default", "flowchart": {"curve": "linear"}}}%%
 graph LR
 
-x1 --- ((a1))
-x1 --- ((a2))
+x1[$$x_1$$]
+x2[$$x_2$$]
+x3[$$x_3$$]
+
+a1(($$a_1^{[1]}$$))
+a2(($$a_2^{[1]}$$))
+a3(($$a_3^{[1]}$$))
+a4(($$a_4^{[1]}$$))
+
+x1 --- a1
+x1 --- a2
 x1 --- a3
 x1 --- a4
 x2 --- a1
