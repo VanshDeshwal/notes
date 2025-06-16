@@ -644,18 +644,13 @@ Video 38 skipped
 
 ## Technique for Outlier Detection and Removal
 
-**Z-Score**
-**IQR-Based Filtering**
-**Percentile**
+1. **Z-Score**
+2. **IQR-Based Filtering**
+3. **Percentile**
 
+## 1. Z-Score
 
-
-<h2 style="color: #f1f1f1; font-family: Arial, sans-serif; text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.2);">
-    ⋗ Z-Score
-</h2>
-<p style="color: #dcdcdc; font-size: 16px; font-family: Arial, sans-serif; line-height: 1.6;">
-    (Only on normal distribution)
-</p>
+- Only on normal distribution
 
 ```python
 df.sample(5)
