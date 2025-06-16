@@ -907,9 +907,9 @@ initial b value is 0, we will do one manually then show next iterations using a 
 # Bias Variance Tradeoff (54-)
 
 **Bias:** If our model follows some training points very closely than others, its called high biased
-**Variance:** If the distance of test points is more from the model line then the varience is more
+**Variance:** If the distance of test points is more from the model line then the variance is more
 
-    to reduce overfitting there are three methods
+To reduce overfitting there are three methods
     1. Regularization
     2. Bagging
     3. Boosting
@@ -940,8 +940,7 @@ whenever training random forests, we use random samples to input in forest. ther
 Feature Importance
 some features are more important than the others , we can find that using random forests
 
-<h1 style="color: #f1f1f1; font-weight: bold; font-family: Arial, sans-serif; text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.3); text-align: center;">
-    ⟢ <strong>K-Means Clustering (103)</strong> ⟣
+# K-Means Clustering (103)</strong> ⟣
 </h1>
 
 This algo clusters similar data points together
