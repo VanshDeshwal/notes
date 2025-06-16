@@ -11,14 +11,12 @@
             "id": "4a34ccef804858fd",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Installation & Setup Instructions for Grade Management System.md",
-                "mode": "source",
-                "source": false
+                "file": "Data Science Notes/ML_interview.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Installation & Setup Instructions for Grade Management System"
+              "icon": "lucide-file-text",
+              "title": "ML_interview"
             }
           }
         ]
@@ -181,6 +179,7 @@
   },
   "active": "4a34ccef804858fd",
   "lastOpenFiles": [
+    "Installation & Setup Instructions for Grade Management System.md",
     "Grade Management System - Project Report.md",
     "Data Science Notes/DL Specialization/5. Sequence Models/Images/Pasted image 20250609114154.png",
     "Data Science Notes/DL Specialization/5. Sequence Models/Images",
@@ -196,7 +195,6 @@
     "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Neural Network Basics.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week1/Introduction To Deep Learning.md",
     "Data Science Notes/DL Specialization/5. Sequence Models/Images/Pasted image 20250609113250.png",
-    "Installation & Setup Instructions for Grade Management System.md",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Untitled.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Multi-class Classification.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Hyperparameter Tuning.md",
