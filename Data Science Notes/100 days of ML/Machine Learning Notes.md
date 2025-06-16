@@ -930,7 +930,8 @@ Bagging generally gives better results than Pasting
 Good results come around the 25% to 50% row sampling mark
 Random patches and subspaces should be used while dealing with high dimensional data
 To find the correct hyperparameter values we can do GridSearchCV/RandomSearchCV
-Random forest (65)
+# Random forest (65)
+
 sampling is done randomly and given to multiple decision tree
 Hyper Parameter Tuning
 we can find best combination of hyper parameters, see video
@@ -940,8 +941,7 @@ whenever training random forests, we use random samples to input in forest. ther
 Feature Importance
 some features are more important than the others , we can find that using random forests
 
-# K-Means Clustering (103)</strong> ⟣
-</h1>
+# K-Means Clustering (103)
 
 This algo clusters similar data points together
 We need to provide the number of clusters that should be formed
@@ -963,5 +963,6 @@ We use a method called (Elbow Method)
   At the elbow whatever is the no of clusters in graph, we uise that number
 [demo code](https://colab.research.google.com/drive/1BpB9SNu9SUx-BDqa1PR6xKxq6mSGwMzk#scrollTo=f9407509)
 (104)
-Implementation from Scratch (105)
-Support Vector Machines (113)
+
+# Implementation from Scratch (105)
+# Support Vector Machines (113)
