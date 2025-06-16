@@ -571,27 +571,16 @@ $$
 
 
 ```mermaid
-%%{init: {'theme':'dark', 'flowchart': {'nodeSpacing': 50, 'rankSpacing': 50}}}%%
+%%{init: {'theme':'dark'}}%%
 graph TB
-    MV[Missing Values]
-    R[Remove Them]
-    I[Impute]
-    U[Univariate]
-    M[Multivariate]
-    N[Numerical]
-    C[Categorical]
-    K[KNN Imputer]
-    P[Iterative Imputer]
-
-    MV --> R
-    MV --> I
-    I  --> U
-    I  --> M
-    U  --> N
-    U  --> C
-    M  --> K
-    M  --> P
-
+boxm(Missing Values) --- boxr(Remove Them)
+boxm(Missing Values) --- boxi(Impute)
+boxi(Impute) --- boxu(Univariate)
+boxi(Impute) --- boxe(Multivariate)
+boxu(Univariate) --- boxn(Numerical)
+boxu(Univariate) --- boxc(Categorical)
+boxe(Multivariate) --- boxk(KNN Imputer)
+boxe(Multivariate) --- boxp(Iterative Imputer)
 ```
 
 
