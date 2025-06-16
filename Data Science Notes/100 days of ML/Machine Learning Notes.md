@@ -571,25 +571,26 @@ $$
 
 
 ```mermaid
-%%{init: {'theme': 'dark'}}%%
+%%{init: {'theme':'dark', 'flowchart': {'nodeSpacing': 50, 'rankSpacing': 50}}}%%
 graph TB
+    MV[Missing Values]
+    R[Remove Them]
+    I[Impute]
+    U[Univariate]
+    M[Multivariate]
+    N[Numerical]
+    C[Categorical]
+    K[KNN Imputer]
+    P[Iterative Imputer]
 
-%% Main Topic
-A[Missing Values] --> B[Remove]
-A --> C[Impute]
-
-%% Imputation Types
-subgraph Univariate Imputation
-  direction TB
-  C --> D1[Numerical]
-  C --> D2[Categorical]
-end
-
-subgraph Multivariate Imputation
-  direction TB
-  C --> E1[KNN Imputer]
-  C --> E2[Iterative Imputer]
-end
+    MV --> R
+    MV --> I
+    I  --> U
+    I  --> M
+    U  --> N
+    U  --> C
+    M  --> K
+    M  --> P
 
 ```
 
