@@ -903,9 +903,11 @@ In Short we repeat the below process...
  
  ....untill  $b_{old} - b_{new} < 0.001$
 initial b value is 0, we will do one manually then show next iterations using a loop
-Bias Variance Tradeoff (54)
-Bias : If our model follows some training points very closely than others, its called high biased
-Variance : If the distance of test points is more from the model line then the varience is more
+
+# Bias Variance Tradeoff (54-)
+
+**Bias:** If our model follows some training points very closely than others, its called high biased
+**Variance:** If the distance of test points is more from the model line then the varience is more
 
     to reduce overfitting there are three methods
     1. Regularization
