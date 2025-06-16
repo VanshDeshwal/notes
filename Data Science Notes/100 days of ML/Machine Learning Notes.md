@@ -886,8 +886,8 @@ For simplicity, we assume that we know the best value of $m$, and we just need t
 
 ## Steps of Gradient Descent:
 
-1. Step 1:</strong> Choose a random <strong>b</strong>, say <strong>b = 10</strong>.
-2. Step 2:</strong> We now have a line. Next, we look at its <strong>loss function</strong> and find the value of <strong>b</strong> that minimizes the loss function. This is where Gradient Descent is used.
+1. **Step 1:** Choose a random $b$, say $b$ = $10$.
+2. **Step 2:** We now have a line. Next, we look at its **loss function** and find the value of b</strong> that minimizes the loss function. This is where Gradient Descent is used.
 3. Step 3:</strong> Compute the derivative of the loss function.
 4. Step 4:</strong> <code>dL/db</code> gives the slope of the loss function at <code>b = b</code>.
 5. Step 5:</strong> Update <strong>b</strong> using the formula: 
