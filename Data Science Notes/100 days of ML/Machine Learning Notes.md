@@ -581,14 +581,12 @@ boxu(Univariate) --- boxn(Numerical)
 boxu(Univariate) --- boxc(Categorical)
 boxe(Multivariate) --- boxk(KNN Imputer)
 boxe(Multivariate) --- boxp(Iterative Imputer)
+    %% multiline label under Numerical, using HTML <br/>
+    boxn --> lv["Mean Value<br/>Random Value<br/>End Dist."]
 
-    boxn --> mv((Mean Value))
-    mv --> rv((Random Value))
-    rv --> ed((End Dist.))
-    %% make those three text‑only and hide their inter‑links
-    class mv,rv,ed noBox
+    %% strip the box so only text shows
+    class lv noBox
     classDef noBox fill:none,stroke:none,color:#f8f8f2;
-    linkStyle 1,2 stroke-width:0,fill:none;
 
 ```
 
