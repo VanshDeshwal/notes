@@ -881,10 +881,8 @@ $k \rightarrow$ total no. of independent columns
 - **Where will we use it?**  
 	- We will use it to find the best-fit line.
 
-<p style="color: #dcdcdc; font-size: 16px; font-family: Arial, sans-serif; line-height: 1.6;">
-    We take a random line: <code>y = mx + b</code>.  
-    For simplicity, we assume that we know the best value of <strong>m</strong>, and we just need to find the best value of <strong>b</strong>.
-</p>
+We take a random line:  $y = mx + b$.  
+For simplicity, we assume that we know the best value of $m$, and we just need to find the best value of $b$.
 
 <h3 style="color: #f1f1f1; font-family: Arial, sans-serif; text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.2);">
     ⋗ Steps of Gradient Descent:
