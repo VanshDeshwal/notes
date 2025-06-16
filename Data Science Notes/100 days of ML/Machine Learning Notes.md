@@ -642,14 +642,12 @@ Video 38 skipped
 - **Skewed Data:** Use the <code style="color: #ff6666;">boxplot</code> definition of outliers (1.5 × IQR rule).
 - **General Approach (Percentile-Based):** Values beyond the <code style="color: #66ff99;">97.5th percentile</code> or below the <code style="color: #66ff99;">2.5th percentile</code> are considered outliers.
 
-<h2 style="color: #f1f1f1; font-family: Arial, sans-serif; text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.2);">
-    ⟩ Technique for Outlier Detection and Removal
-</h2>
-<ul style="color: #dcdcdc; font-size: 16px; font-family: Arial, sans-serif; line-height: 1.6;">
-    <li><strong>Z-Score</strong></li>
-    <li><strong>IQR-Based Filtering</strong></li>
-    <li><strong>Percentile</strong></li>
-</ul>
+## Technique for Outlier Detection and Removal
+
+**Z-Score**
+**IQR-Based Filtering**
+**Percentile**
+
 
 
 <h2 style="color: #f1f1f1; font-family: Arial, sans-serif; text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.2);">
