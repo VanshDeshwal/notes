@@ -760,30 +760,32 @@ new_df_cap['total_bedrooms'] = np.where(new_df_cap['total_bedrooms']>upper_limit
 ```
 
 ## 3. Percentile
-<p style="color: #dcdcdc; font-size: 16px; font-family: Arial, sans-serif; line-height: 1.6;">
-    kitne percent log mere se peeche hai
-</p>
-# Feature Construction (45)</strong> ⟣----------------
-</h1>
+
+kitne percent log mere se peeche hai
+
+# Feature Construction (45)
 
 combining multiple columns to create a new column
 we have defined X and y.
 in X there are two columns SibSp and Par
+
 ```python
 df.sample(5)
 ```
+
 we combine total_rooms and total_bedrooms to make a new column
+
 ```python
 df['rooms'] = df['total_rooms'] + df['total_bedrooms']
 ```
+
 Feature splitting
 not applicable in this example
-<hr style="border: 1px solid #6ab0f3; opacity: 0.6;">
-<h1 style="color: #f1f1f1; font-weight: bold; font-family: Arial, sans-serif; text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.2);">
-    ----------------------------⟢ <strong>CURSE of dimentionality(46)</strong> ⟣----------------
-</h1>
-there is a sweet spot for the no. of features that we should include for training our model. more no of features could cause the ferformance to remain same or decrease, similarly less features will reduce the performance
-<hr style="border: 1px solid #6ab0f3; opacity: 0.6;">
+
+# CURSE of dimensionality(46)
+
+there is a sweet spot for the no. of features that we should include for training our model. more no of features could cause the performance to remain same or decrease, similarly less features will reduce the performance
+
 <h1 style="color: #f1f1f1; font-weight: bold; font-family: Arial, sans-serif; text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.2);">
     ----------------------------⟢ <strong>Feature Extraction (47)</strong> ⟣----------------
 </h1>
