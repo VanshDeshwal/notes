@@ -571,7 +571,7 @@ $$
 
 
 ```mermaid
-graph TB
+Flowchart TB
 A --- B
 A --- C
 ```
