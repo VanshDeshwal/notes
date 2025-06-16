@@ -5,7 +5,7 @@
 Lets assume we only have one training sample having 3 features $x_1,x_2,x_3$ .
 
 ```mermaid
-%%{init: {"theme":"neutral"}}%%
+%%{init: {"theme":"neutral", "flowchart": {"curve": "linear"}}}%%
 graph LR
 
 x1[$$x_1$$]
