@@ -884,17 +884,14 @@ $k \rightarrow$ total no. of independent columns
 We take a random line:  $y = mx + b$.  
 For simplicity, we assume that we know the best value of $m$, and we just need to find the best value of $b$.
 
-<h3 style="color: #f1f1f1; font-family: Arial, sans-serif; text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.2);">
-    ⋗ Steps of Gradient Descent:
-</h3>
+## Steps of Gradient Descent:
 
-<ol style="color: #dcdcdc; font-size: 16px; font-family: Arial, sans-serif; line-height: 1.6;">
-    <li><strong>Step 1:</strong> Choose a random <strong>b</strong>, say <strong>b = 10</strong>.</li>
-    <li><strong>Step 2:</strong> We now have a line. Next, we look at its <strong>loss function</strong> and find the value of <strong>b</strong> that minimizes the loss function. This is where Gradient Descent is used.</li>
-    <li><strong>Step 3:</strong> Compute the derivative of the loss function.</li>
-    <li><strong>Step 4:</strong> <code>dL/db</code> gives the slope of the loss function at <code>b = b</code>.</li>
-    <li><strong>Step 5:</strong> Update <strong>b</strong> using the formula:  
-        <pre style="background-color: #222; color: #f1f1f1; padding: 8px; border-radius: 5px;">b_new = b_old - η * slope</pre>  
+Step 1:</strong> Choose a random <strong>b</strong>, say <strong>b = 10</strong>.
+Step 2:</strong> We now have a line. Next, we look at its <strong>loss function</strong> and find the value of <strong>b</strong> that minimizes the loss function. This is where Gradient Descent is used.
+Step 3:</strong> Compute the derivative of the loss function.
+Step 4:</strong> <code>dL/db</code> gives the slope of the loss function at <code>b = b</code>.
+Step 5:</strong> Update <strong>b</strong> using the formula:  
+b_new = b_old - η * slope</pre
         <strong>Note:</strong>  
         <ul>
             <li><strong>η (eta)</strong> is the learning rate (usually taken as <strong>0.01</strong>).</li>
