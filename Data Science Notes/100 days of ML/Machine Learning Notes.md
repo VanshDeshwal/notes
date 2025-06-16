@@ -877,9 +877,9 @@ $k \rightarrow$ total no. of independent columns
 
 # Gradient Descent(51)
 
-    Gradient Descent finds the minima of any differentiable function.  
-    <strong>Where will we use it?</strong>  
-    We will use it to find the best-fit line.
+- Gradient Descent finds the minima of any differentiable function.  
+- **Where will we use it?**  
+	- We will use it to find the best-fit line.
 
 <p style="color: #dcdcdc; font-size: 16px; font-family: Arial, sans-serif; line-height: 1.6;">
     We take a random line: <code>y = mx + b</code>.  
