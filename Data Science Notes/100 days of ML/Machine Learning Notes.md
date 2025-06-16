@@ -581,6 +581,7 @@ boxu(Univariate) --- boxn(Numerical)
 boxu(Univariate) --- boxc(Categorical)
 boxe(Multivariate) --- boxk(KNN Imputer)
 boxe(Multivariate) --- boxp(Iterative Imputer)
+
 ```
 
 
