@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Data Science Notes/100 days of ML/Untitled.md",
+                "file": "Data Science Notes/100 days of ML/Machine Learning Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "Machine Learning Notes"
             }
           }
         ]
@@ -183,7 +183,7 @@
   "active": "4a34ccef804858fd",
   "lastOpenFiles": [
     "Coding Notes/Python Basics.md",
-    "Data Science Notes/100 days of ML/Untitled.md",
+    "Data Science Notes/100 days of ML/Machine Learning Notes.md",
     "Data Science Notes/100 days of ML",
     "Data Science Notes/MLOps",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1/Normalizing training sets.md",
