@@ -193,11 +193,7 @@ The goal of <strong>Normalization</strong> is to change the values of numerical 
 #### 2.3 Max Absolute Scaling (Not Used Much)
 
 Used when we have <strong>sparse data</strong>, meaning there are a lot of zeroes in the dataset.
-
-
-<h3 style="color: #f1f1f1; font-family: Arial, sans-serif; text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.2);">
-    ⋗ Formula:
-</h3>
+##### Formula:
 
 <pre style="background-color: #222; color: #f1f1f1; padding: 10px; border-radius: 5px; font-size: 16px;">
     Xᵢ' = Xᵢ / |Xₘₐₓ|
@@ -211,9 +207,7 @@ Used when we have <strong>sparse data</strong>, meaning there are a lot of zeroe
     If there are a lot of <strong>outliers</strong> in the data, this might perform well.
 </p>
 
-<h3 style="color: #f1f1f1; font-family: Arial, sans-serif; text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.2);">
-    ⋗ Formula:
-</h3>
+##### Formula:
 
 <pre style="background-color: #222; color: #f1f1f1; padding: 10px; border-radius: 5px; font-size: 16px;">
     Xᵢ' = (Xᵢ - Xₘₑ𝒹ᵢₐₙ) / IQR
