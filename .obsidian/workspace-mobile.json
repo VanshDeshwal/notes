@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Untitled.md",
+                "file": "Coding Notes/Python Basics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "Python Basics"
             }
           }
         ]
@@ -163,8 +163,14 @@
   },
   "active": "4dbdfbe7a9a0eac2",
   "lastOpenFiles": [
-    "Coding Notes/Python Basics.md",
+    "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Recurrent Neural Networks.md",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Untitled.md",
+    "/Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Recurrent Neural Networks.md",
+    "/Data Science Notes/DL Specialization/5. Sequence Models/Week 1",
+    "/Data Science Notes/DL Specialization/5. Sequence Models",
+    "/Data Science Notes/DL Specialization",
+    "/Data Science Notes",
+    "Coding Notes/Python Basics.md",
     "Data Science Notes/DL Specialization/5. Sequence Models/Images/Pasted image 20250609114154.png",
     "Data Science Notes/DL Specialization/5. Sequence Models/Images/Pasted image 20250609113931.png",
     "Data Science Notes/DL Specialization/5. Sequence Models/Images/Pasted image 20250609113907.png",
@@ -177,9 +183,6 @@
     "Data Science Notes/DL Specialization/5. Sequence Models/Images/Pasted image 20250609104653.png",
     "/Data Science Notes/DL Specialization/5. Sequence Models/Images",
     "Data Science Notes/DL Specialization/5. Sequence Models/Images",
-    "/Data Science Notes/DL Specialization/5. Sequence Models",
-    "/Data Science Notes/DL Specialization",
-    "/Data Science Notes",
     "Data Science Notes/ML_interview.pdf",
     "README.md",
     "Installation & Setup Instructions for Grade Management System.md",
@@ -205,8 +208,6 @@
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Untitled.md",
     "Data Science Notes/DL Specialization/3. Structuring Machine Learning Projects/Untitled.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Multi-class Classification.md",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Intro to programing frameworks.md",
-    "/Data Science Notes/DL Specialization/1. Neural Networks/Planar_data_classification_with_one_hidden_layer.ipynb",
-    "Data Science Notes/DL Specialization/5. Sequence Models/Week 1"
+    "/Data Science Notes/DL Specialization/1. Neural Networks/Planar_data_classification_with_one_hidden_layer.ipynb"
   ]
 }
