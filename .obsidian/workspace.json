@@ -11,12 +11,14 @@
             "id": "4a34ccef804858fd",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Data Science Notes/ML_interview.pdf"
+                "file": "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Recurrent Neural Networks.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "ML_interview"
+              "icon": "lucide-file",
+              "title": "Recurrent Neural Networks"
             }
           }
         ]
@@ -179,6 +181,9 @@
   },
   "active": "4a34ccef804858fd",
   "lastOpenFiles": [
+    "Data Science Notes/DL Specialization/4. Convolutional Networks/Untitled.md",
+    "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Recurrent Neural Networks.md",
+    "Data Science Notes/ML_interview.pdf",
     "Installation & Setup Instructions for Grade Management System.md",
     "Grade Management System - Project Report.md",
     "Data Science Notes/DL Specialization/5. Sequence Models/Images/Pasted image 20250609114154.png",
@@ -195,7 +200,6 @@
     "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Neural Network Basics.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week1/Introduction To Deep Learning.md",
     "Data Science Notes/DL Specialization/5. Sequence Models/Images/Pasted image 20250609113250.png",
-    "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Untitled.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Multi-class Classification.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Hyperparameter Tuning.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Intro to programing frameworks.md",
@@ -207,7 +211,6 @@
     "Data Science Notes/DL Specialization/1. Neural Networks/Week4/Deep Neural Network.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week3/Shallow Neural Network.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Python and Vectorization.md",
-    "Data Science Notes/DL Specialization/4. Convolutional Networks/Untitled.md",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 1",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 2",
@@ -217,7 +220,6 @@
     "Data Science Notes/DL Specialization/1. Neural Networks/Week4",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week3",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week2",
-    "Data Science Notes/DL Specialization/1. Neural Networks/Week1",
     "Coding Notes/Python Basics.md",
     "Coding Notes/Cheat Sheet C++.md",
     "Coding Notes/Array.md"
