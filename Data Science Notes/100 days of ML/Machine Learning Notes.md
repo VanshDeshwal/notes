@@ -630,12 +630,12 @@ Video 38 skipped
 # Outliers in Machine Learning (41-44)
 
 ## 🛠️ How to Treat Outliers?
-<ul style="color: #dcdcdc; font-size: 16px; font-family: Arial, sans-serif; line-height: 1.6;">
-    <li><strong>Trimming:</strong> Delete the outliers.</li>
-    <li><strong>Capping:</strong> Put limits on values, e.g., anything above <code style="color: #ffcc00;">90</code> is set to <code style="color: #ffcc00;">90</code> and anything below <code style="color: #ffcc00;">1</code> is set to <code style="color: #ffcc00;">1</code>.</li>
-    <li><strong>Treat as Missing Value:</strong> Handle outliers as missing data.</li>
-    <li><strong>Binning:</strong> Make bins of data, grouping high outliers into one bin and low outliers into another.</li>
-</ul>
+
+- **Trimming: Delete the outliers.
+- Capping:</strong> Put limits on values, e.g., anything above <code style="color: #ffcc00;">90</code> is set to <code style="color: #ffcc00;">90</code> and anything below <code style="color: #ffcc00;">1</code> is set to <code style="color: #ffcc00;">1</code>.
+- Treat as Missing Value:</strong> Handle outliers as missing data.
+- Binning:</strong> Make bins of data, grouping high outliers into one bin and low outliers into another.
+
 
 
 <h2 style="color: #f1f1f1; font-family: Arial, sans-serif; text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.2);">
