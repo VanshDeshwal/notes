@@ -4,6 +4,19 @@
 ## Neural Network Representation
 Lets assume we only have one training sample having 3 features $x_1,x_2,x_3$ .
 
+```mermaid
+graph LR
+
+x1 --- a1
+x1 --- a1
+x1 --- a1
+x1 --- a4
+
+x2 ---
+x3 --- 
+```
+
+
 ![[Pasted image 20250521091945.png]]
 
 $z_1^{[1]} = w_1^{[1]T}x + b_1^{[1]}$ , $a_1^{[1]} = \sigma(z_1^{[1]})$  
