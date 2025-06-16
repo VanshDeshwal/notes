@@ -235,40 +235,27 @@ $$
 
 ## 2. Nominal Categorical Data
 
-We use <strong>One-Hot Encoding</strong> to handle this.
-Each category gets its own column.
-Dummy Variable Trap:</strong>
-If we have <code>n</code> categories, we should create <code>n</code> columns.
-However, we can manage with <code>n-1</code> columns because when all <code>n-1</code> columns are <code>0</code>, we can derive that the last column will be <code>1</code>.
+- We use **One-Hot Encoding** to handle this.
+- Each category gets its own column.
+- **Dummy Variable Trap:**
+	- If we have <code>n</code> categories, we should create <code>n</code> columns.
+	- However, we can manage with <code>n-1</code> columns because when all <code>n-1</code> columns are <code>0</code>, we can derive that the last column will be <code>1</code>.
+- If our columns are dependent on each other, it creates a problem called **Multi-Collinearity** in many models.
+- To handle this, we remove that one column.
+- If we have <code>40</code> categories:
+	- Instead of making <code>40</code> new columns, we assign separate columns to categories with higher frequencies.
+	- Categories that occur less frequently are grouped into a single column.
 
-
-<ul style="color: #dcdcdc; font-size: 16px; font-family: Arial, sans-serif; line-height: 1.6;">
-    <li>If our columns are dependent on each other, it creates a problem called <strong>Multi-Collinearity</strong> in many models.</li>
-    <li>To handle this, we remove that one column.</li>
-    <li>If we have <code>40</code> categories:
-        <ul>
-            <li>Instead of making <code>40</code> new columns, we assign separate columns to categories with higher frequencies.</li>
-            <li>Categories that occur less frequently are grouped into a single column.</li>
-        </ul>
-    </li>
-</ul>
 [code demo](https://colab.research.google.com/drive/1V0zQ9tE2TgqB45q9XU1SPkP7ygcdiRWz#scrollTo=EOCf-jxKQZDk)  need to watch again
-<h1 style="color: #f1f1f1; text-align: center; font-family: Arial, sans-serif; text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);">
-    ⟢ <strong>Column Transformer (28)</strong> ⟣
-</h1>
 
+# Column Transformer (28)
 
-<ul style="color: #dcdcdc; font-size: 16px; font-family: Arial, sans-serif; line-height: 1.6;">
-    <li>Each column has different problems:
-        <ul>
-            <li>Some have missing data.</li>
-            <li>Some have nominal data.</li>
-            <li>Some have categorical data.</li>
-        </ul>
-    </li>
-    <li>Applying suitable operations to each column individually and then combining them takes a lot of effort.</li>
-    <li>To simplify this process, we use <strong>Column Transformer</strong>.</li>
-</ul>
+- Each column has different problems:
+	- Some have missing data.
+	- Some have nominal data.
+	- Some have categorical data.
+- Applying suitable operations to each column individually and then combining them takes a lot of effort.
+- To simplify this process, we use **Column Transformer**.
 
 [code demo](https://colab.research.google.com/drive/1cs7H9ioppThhCUOvDx0onPlSFgOQ8Q-W#scrollTo=_dpXCEjXziVq)
 
