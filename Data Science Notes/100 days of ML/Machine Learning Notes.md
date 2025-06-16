@@ -758,15 +758,12 @@ sns.displot(df['total_bedrooms'])
 new_df_cap = df.copy()
 new_df_cap['total_bedrooms'] = np.where(new_df_cap['total_bedrooms']>upper_limit,upper_limit,new_df_cap['total_bedrooms'])
 ```
-<h2 style="color: #f1f1f1; font-family: Arial, sans-serif; text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.2);">
-    ⋗ Percentile
-</h2>
+
+## 3. Percentile
 <p style="color: #dcdcdc; font-size: 16px; font-family: Arial, sans-serif; line-height: 1.6;">
     kitne percent log mere se peeche hai
 </p>
-<hr style="border: 1px solid #6ab0f3; opacity: 0.6;">
-<h1 style="color: #f1f1f1; font-weight: bold; font-family: Arial, sans-serif; text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.2);">
-    ----------------------------⟢ <strong>Feature Construction (45)</strong> ⟣----------------
+# Feature Construction (45)</strong> ⟣----------------
 </h1>
 
 combining multiple columns to create a new column
