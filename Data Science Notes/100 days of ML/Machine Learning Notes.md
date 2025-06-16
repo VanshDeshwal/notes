@@ -571,16 +571,26 @@ $$
 
 
 ```mermaid
-%%{init: {'theme':'dark'}}%%
+%%{init: {'theme': 'dark'}}%%
 graph TB
-boxm(Missing Values) --- boxr(Remove Them)
-boxm(Missing Values) --- boxi(Impute)
-boxi(Impute) --- boxu(Univariate)
-boxi(Impute) --- boxe(Multivariate)
-boxu(Univariate) --- boxn(Numerical)
-boxu(Univariate) --- boxc(Categorical)
-boxe(Multivariate) --- boxk(KNN Imputer)
-boxe(Multivariate) --- boxp(Iterative Imputer)
+
+%% Main Topic
+A[Missing Values] --> B[Remove]
+A --> C[Impute]
+
+%% Imputation Types
+subgraph Univariate Imputation
+  direction TB
+  C --> D1[Numerical]
+  C --> D2[Categorical]
+end
+
+subgraph Multivariate Imputation
+  direction TB
+  C --> E1[KNN Imputer]
+  C --> E2[Iterative Imputer]
+end
+
 ```
 
 
