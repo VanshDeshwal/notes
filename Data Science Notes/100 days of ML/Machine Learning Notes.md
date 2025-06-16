@@ -799,15 +799,11 @@ there is a sweet spot for the no. of features that we should include for trainin
 
 # Linear Regression(48)
 
-
 We try to find a straight line that best fits our distribution. The equation of the line is $y = mx + b$.
 $m$ is the slope; it represents how much $y$ depends on $x$.  
-<strong>b is the offset.  To find <strong>m</strong> and <strong>b</strong>, we have two methods:
-
-<ol style="color: #dcdcdc; font-size: 16px; font-family: Arial, sans-serif; line-height: 1.6;">
-    <li><strong>Closed-form (OLS)</strong> – Better for fewer dimensions.</li>
-    <li><strong>Non closed-form (Gradient Descent)</strong> – Better for higher dimensions.</li>
-</ol>
+$b$ is the offset.  To find $m$ and $b$, we have two methods:
+Closed-form (OLS)</strong> – Better for fewer dimensions.
+Non closed-form (Gradient Descent)</strong> – Better for higher dimensions.
 
 <h2 style="color: #f1f1f1; font-family: Arial, sans-serif; text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.2);">
     ⟩ Closed Form
