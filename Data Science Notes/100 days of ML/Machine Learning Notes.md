@@ -573,14 +573,14 @@ $$
 ```mermaid
 %%{init: {'theme':'dark'}}%%
 graph TB
-A --- R
-A --- I
-I --- U
-I --- M
-U --- N
-U --- C
-M --- K
-M --- T
+boxm(Missing Values) --- boxr(Remove Them)
+boxm(Missing Values) --- boxi(Impute)
+boxi(Impute) --- boxu(Univariate)
+boxi(Impute) --- boxe(Multivariate)
+boxu(Univariate) --- boxn(Numerical)
+boxu(Univariate) --- boxc(Categorical)
+boxe(Multivariate) --- boxk(KNN Imputer)
+boxe(Multivariate) --- boxp(Iterative Imputer)
 ```
 
 
