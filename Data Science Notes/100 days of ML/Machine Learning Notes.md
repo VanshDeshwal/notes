@@ -172,8 +172,7 @@ The formula for standardization:
 
 The goal of <strong>Normalization</strong> is to change the values of numerical columns in a dataset to use a common scale, without distorting differences in the ranges of values or losing information.
 
-####⋗ Types of Normalization:
-
+#### Types of Normalization:
 
 <ul style="color: #dcdcdc; font-size: 16px; font-family: Arial, sans-serif; line-height: 1.6;">
     <li><strong>Min-Max Scaling (default)</strong></li>
@@ -183,22 +182,18 @@ The goal of <strong>Normalization</strong> is to change the values of numerical 
     <li>There are more normalization techniques available in <code>sklearn</code>.</li>
 </ul>
 
-<h3 style="color: #f1f1f1; font-family: Arial, sans-serif; text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.2);">
-    2.1 Min-Max Scaling Formula:
-</h3>
+#### 2.1 Min-Max Scaling Formula:
 
 <pre style="background-color: #222; color: #f1f1f1; padding: 10px; border-radius: 5px; font-size: 16px;">
     Xᵢ' = (Xᵢ - Xₘᵢₙ) / (Xₘₐₓ - Xₘᵢₙ)
 </pre>
 
 [code demo](https://colab.research.google.com/drive/1ctE9PPkGdt7yvRDNcvBN9u1RTiHoXImo#scrollTo=G1Cbr8so8YtX)
-<h3 style="color: #f1f1f1; font-family: Arial, sans-serif; text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.2);">
-    2.3 Max Absolute Scaling (Not Used Much)
-</h3>
 
-<p style="color: #dcdcdc; font-size: 16px; font-family: Arial, sans-serif; line-height: 1.6;">
-    Used when we have <strong>sparse data</strong>, meaning there are a lot of zeroes in the dataset.
-</p>
+#### 2.3 Max Absolute Scaling (Not Used Much)
+
+Used when we have <strong>sparse data</strong>, meaning there are a lot of zeroes in the dataset.
+
 
 <h3 style="color: #f1f1f1; font-family: Arial, sans-serif; text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.2);">
     ⋗ Formula:
