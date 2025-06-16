@@ -568,9 +568,12 @@ $$
 <h1 style="color: #f1f1f1; text-align: center; font-family: Arial, sans-serif; text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);">
     ⟢ <strong>Handling Missing Data (35-39)</strong> ⟣
 </h1>
+
+
 ```mermaid
 graph TB
-
+A --- B
+A --- C
 ```
 
 
