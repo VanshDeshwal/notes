@@ -92,7 +92,10 @@ drive.mount('/content/drive')
 !kaggle competitions download -c spaceship-titanic
 !unzip spaceship-titanic.zip
 ```
----------------------------------------------------------------------------
+
+
+---
+
 
 How to calculate accuracy score ?
 ```python
