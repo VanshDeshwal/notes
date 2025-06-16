@@ -14,6 +14,7 @@ import seaborn as sns
 ```python
 df = pd.read_csv('/content/sample_data/california_housing_train.csv') # Importing dataset
 ```
+
 ```python
 df = pd.read_csv('/content/sample_data/california_housing_train.csv')[['longitude','latitude','total_rooms','population']] # Importing selected columns
 ```
