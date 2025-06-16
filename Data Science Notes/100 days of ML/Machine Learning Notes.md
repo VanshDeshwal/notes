@@ -578,7 +578,6 @@ CCA means literally analyzing only those observations for which there is informa
 
 [demo code](https://colab.research.google.com/drive/1LxDKB3qg0jHH-lbXxqaiBEhCgcMBgoML#scrollTo=fDv0--X7LVYp)
 
-
 ### 2. Arbitrary Value Imputation:
 
 Choose some value that is not present in our data, and put that in place of all missing data in column
@@ -618,7 +617,7 @@ Replace missing values with most frequent category
 
 [demo code](https://colab.research.google.com/drive/1Hj75YFApBgCl-poAIFDQ5RPFF0o9AH9k#scrollTo=ZYYbBW5MNiA9)
 
-### 2.Missing Category Imputation:
+### 2. Missing Category Imputation:
 
 We create a new category for missing values called "missing"
 
@@ -627,15 +626,10 @@ We create a new category for missing values called "missing"
 Video 38 skipped
 ## KNN Imputer(39)
 ## Iterative Imputer(40)
-<hr style="border: 1px solid #6ab0f3; opacity: 0.6;">
-<h1 style="color: #f1f1f1; text-align: center; font-family: Arial, sans-serif; text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);">
-    ⟢ <strong>Outliers in Machine Learning (41-44)</strong> ⟣
-</h1>
 
+# Outliers in Machine Learning (41-44)
 
-<h2 style="color: #f1f1f1; font-family: Arial, sans-serif; text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.2);">
-    🛠️ How to Treat Outliers?
-</h2>
+## 🛠️ How to Treat Outliers?
 <ul style="color: #dcdcdc; font-size: 16px; font-family: Arial, sans-serif; line-height: 1.6;">
     <li><strong>Trimming:</strong> Delete the outliers.</li>
     <li><strong>Capping:</strong> Put limits on values, e.g., anything above <code style="color: #ffcc00;">90</code> is set to <code style="color: #ffcc00;">90</code> and anything below <code style="color: #ffcc00;">1</code> is set to <code style="color: #ffcc00;">1</code>.</li>
