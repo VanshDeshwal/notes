@@ -571,9 +571,16 @@ $$
 
 
 ```mermaid
-Flowchart TB
-A --- B
-A --- C
+%%{init: {'theme':'dark'}}%%
+graph TB
+A --- R
+A --- I
+I --- U
+I --- M
+U --- N
+U --- C
+M --- K
+M --- T
 ```
 
 
