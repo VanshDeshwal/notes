@@ -1,21 +1,24 @@
 
 # Libraries
 
-
 ```python
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 ```
-<h1 style="color: #f1f1f1; text-align: center; font-family: Arial, sans-serif; text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);">
-    ⟢ <strong>Basic lines Of Code</strong> ⟣
-</h1>
+
+# Basic lines Of Code
 
 
 ```python
 df = pd.read_csv('/content/sample_data/california_housing_train.csv') # Importing dataset
+```
+```python
 df = pd.read_csv('/content/sample_data/california_housing_train.csv')[['longitude','latitude','total_rooms','population']] # Importing selected columns
+```
+
+```
 df.head() # Returns first 5 rows
 df.tail() # Returns last 5 rows
 df.sample(5) # Returns 5 random rows
