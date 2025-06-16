@@ -786,19 +786,16 @@ not applicable in this example
 
 there is a sweet spot for the no. of features that we should include for training our model. more no of features could cause the performance to remain same or decrease, similarly less features will reduce the performance
 
-<h1 style="color: #f1f1f1; font-weight: bold; font-family: Arial, sans-serif; text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.2);">
-    ----------------------------⟢ <strong>Feature Extraction (47)</strong> ⟣----------------
-</h1>
+# Feature Extraction (47)
 
-<h1 style="color: #f1f1f1; font-weight: bold; font-family: Arial, sans-serif; text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.3); text-align: center;">
-    ⟢ <strong>PCA</strong> ⟣
-</h1>
 
--Its a unsupervised ml problem
--Its a complex technique
--It tries to catch the essence of higher dimention data to lower dimention.
-* benifits
--easier visualisatoin if data can be reduced to 3d or lower
+# PCA
+
+- Its a unsupervised ml problem
+- Its a complex technique
+- It tries to catch the essence of higher dimention data to lower dimention.
+- **Benifits:**
+	- easier visualisatoin if data can be reduced to 3d or lower
 
 <hr style="border: 1px solid #444; margin: 20px 0;">
 
