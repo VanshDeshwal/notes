@@ -5,6 +5,7 @@
 Lets assume we only have one training sample having 3 features $x_1,x_2,x_3$ .
 
 ```mermaid
+%%{init: { 'flowchart': { 'curve': 'stepBefore' } } }%%
 graph LR
 
 x1 --- a1
