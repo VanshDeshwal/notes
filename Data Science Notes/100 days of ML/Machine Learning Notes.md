@@ -793,23 +793,16 @@ there is a sweet spot for the no. of features that we should include for trainin
 
 - Its a unsupervised ml problem
 - Its a complex technique
-- It tries to catch the essence of higher dimention data to lower dimention.
-- **Benifits:**
-	- easier visualisatoin if data can be reduced to 3d or lower
+- It tries to catch the essence of higher dimension data to lower dimension.
+- **Benefits:**
+	- easier visualization if data can be reduced to 3d or lower
 
-<hr style="border: 1px solid #444; margin: 20px 0;">
+# Linear Regression(48)
 
-<h1 style="color: #f1f1f1; font-weight: bold; font-family: Arial, sans-serif; text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.3); text-align: center;">
-    ⟢ <strong>Linear Regression(48)</strong> ⟣
-</h1>
 
-<p style="color: #dcdcdc; font-size: 16px; font-family: Arial, sans-serif; line-height: 1.6;">
-    We try to find a straight line that best fits our distribution.  
-    The equation of the line is <code>y = mx + b</code>.  
-    <strong>m</strong> is the slope; it represents how much <strong>y</strong> depends on <strong>x</strong>.  
-    <strong>b</strong> is the offset.  
-    To find <strong>m</strong> and <strong>b</strong>, we have two methods:
-</p>
+We try to find a straight line that best fits our distribution.  The equation of the line is <code>y = mx + b</code>.  <strong>m</strong> is the slope; it represents how much <strong>y</strong> depends on <strong>x</strong>.  
+<strong>b</strong> is the offset.  To find <strong>m</strong> and <strong>b</strong>, we have two methods:
+
 <ol style="color: #dcdcdc; font-size: 16px; font-family: Arial, sans-serif; line-height: 1.6;">
     <li><strong>Closed-form (OLS)</strong> – Better for fewer dimensions.</li>
     <li><strong>Non closed-form (Gradient Descent)</strong> – Better for higher dimensions.</li>
