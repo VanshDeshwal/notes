@@ -4,53 +4,6 @@
 ## Neural Network Representation
 Lets assume we only have one training sample having 3 features $x_1,x_2,x_3$ .
 
-```dot
-
-```
-
-
-```mermaid
-%%{init: {"theme":"neutral", "flowchart": {"curve": "linear"}}}%%
-graph LR
-
-x1[$$x_1$$]
-x2[$$x_2$$]
-x3[$$x_3$$]
-
-a1(("$$a_1^{[1]}$$"))
-a2(("$$a_2^{[1]}$$"))
-a3(("$$a_3^{[1]}$$"))
-a4(("$$a_4^{[1]}$$"))
-
-x1 --- a1
-x1 --- a2
-x1 --- a3
-x1 --- a4
-x2 --- a1
-x2 --- a2
-x2 --- a3
-x2 --- a4
-x3 --- a1
-x3 --- a2
-x3 --- a3
-x3 --- a4
-
-z((" "))
-
-a1 --- z
-a2 --- z
-a3 --- z
-a4 --- z
-
-b --- z
-w --- z
-
-y["$$\hat y$$"]
-
-z --- y
-
-```
-
 
 ![[Pasted image 20250521091945.png]]
 
