@@ -891,8 +891,8 @@ For simplicity, we assume that we know the best value of $m$, and we just need t
 3. **Step 3:** Compute the derivative of the loss function.
 4. **Step 4:** $\frac{dL}{db}$ gives the slope of the loss function at $b$ = b.
 5. **Step 5:** Update $b$ using the formula:   $b_{new} = b_{old} - \eta * slope$
-Note: η (eta)</strong> is the learning rate (usually taken as <strong>0.01</strong>).
-6. <code>η * slope</code> is called the <strong>step size</strong>.
+		**Note**: $\eta$ (eta) is the learning rate (usually taken as **0.01**).
+6. $\eta * slope</code> is called the <strong>step size</strong>.
 7. Step 6:</strong> Repeat this process until <code>|b_old - b_new| &lt; 0.001</code>.
 
 
