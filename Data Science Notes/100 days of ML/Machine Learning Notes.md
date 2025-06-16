@@ -168,18 +168,12 @@ The formula for standardization:
     <li><strong>Gradient Descent</strong> (Linear Regression, Logistic Regression)</li>
 </ul>
 
-<h3 style="color: #f1f1f1; font-family: Arial, sans-serif; text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.2);">
-    2. Normalization (25)
-</h3>
+### 2. Normalization (25)
 
-<p style="color: #dcdcdc; font-size: 16px; font-family: Arial, sans-serif; line-height: 1.6;">
-    The goal of <strong>Normalization</strong> is to change the values of numerical columns in a dataset to use a common scale,
-    without distorting differences in the ranges of values or losing information.
-</p>
+The goal of <strong>Normalization</strong> is to change the values of numerical columns in a dataset to use a common scale, without distorting differences in the ranges of values or losing information.
 
-<h3 style="color: #f1f1f1; font-family: Arial, sans-serif; text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.2);">
-    ⋗ Types of Normalization:
-</h3>
+####⋗ Types of Normalization:
+
 
 <ul style="color: #dcdcdc; font-size: 16px; font-family: Arial, sans-serif; line-height: 1.6;">
     <li><strong>Min-Max Scaling (default)</strong></li>
