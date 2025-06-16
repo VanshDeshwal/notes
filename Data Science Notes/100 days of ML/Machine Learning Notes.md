@@ -582,6 +582,10 @@ boxu(Univariate) --- boxc(Categorical)
 boxe(Multivariate) --- boxk(KNN Imputer)
 boxe(Multivariate) --- boxp(Iterative Imputer)
 
+    boxn --> mv(Mean Value)
+    boxn --> rv(Random Value)
+    boxn --> ed(End Dist.)
+
 ```
 
 
