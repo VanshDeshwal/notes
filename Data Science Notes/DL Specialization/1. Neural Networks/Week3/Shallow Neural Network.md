@@ -8,12 +8,18 @@ Lets assume we only have one training sample having 3 features $x_1,x_2,x_3$ .
 graph LR
 
 x1 --- a1
-x1 --- a1
-x1 --- a1
+x1 --- a2
+x1 --- a3
 x1 --- a4
+x2 --- a1
+x2 --- a2
+x2 --- a3
+x2 --- a4
+x3 --- a1
+x3 --- a2
+x3 --- a3
+x3 --- a4
 
-x2 ---
-x3 --- 
 ```
 
 
