@@ -571,7 +571,7 @@ $$
 
 
 ```mermaid
-%%{init: {'theme':'dark'}}%%
+%%{init: {'theme':'neutral'}}%%
 graph TB
 boxm(Missing Values) --- boxr(Remove Them)
 boxm(Missing Values) --- boxi(Impute)
