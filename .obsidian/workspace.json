@@ -11,14 +11,12 @@
             "id": "4a34ccef804858fd",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Neural Network Basics.md",
-                "mode": "source",
-                "source": false
+                "file": "Pasted image 20250609114154.png"
               },
-              "icon": "lucide-file",
-              "title": "Neural Network Basics"
+              "icon": "lucide-image",
+              "title": "Pasted image 20250609114154"
             }
           }
         ]
@@ -181,17 +179,19 @@
   },
   "active": "4a34ccef804858fd",
   "lastOpenFiles": [
-    "Data Science Notes/DL Specialization/1. Neural Networks/Week1/Introduction To Deep Learning.md",
+    "README.md",
     "Pasted image 20250609114154.png",
     "Pasted image 20250609113931.png",
     "Pasted image 20250609113907.png",
-    "Pasted image 20250609113250.png",
     "Pasted image 20250609112332.png",
-    "Pasted image 20250609111811.png",
     "Pasted image 20250609110920.png",
     "Pasted image 20250609110128.png",
-    "Pasted image 20250609105759.png",
     "Pasted image 20250609104653.png",
+    "Pasted image 20250609104513.png",
+    "Pasted image 20250609104328.png",
+    "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Neural Network Basics.md",
+    "Data Science Notes/DL Specialization/1. Neural Networks/Week1/Introduction To Deep Learning.md",
+    "Pasted image 20250609113250.png",
     "Installation & Setup Instructions for Grade Management System.md",
     "Grade Management System - Project Report.md",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Untitled.md",
@@ -206,7 +206,6 @@
     "Data Science Notes/DL Specialization/1. Neural Networks/Week4/Deep Neural Network.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week3/Shallow Neural Network.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Python and Vectorization.md",
-    "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Neural Network Basics.md",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Untitled.md",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 1",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3",
@@ -221,7 +220,6 @@
     "Data Science Notes/DL Specialization/1. Neural Networks/Images",
     "Coding Notes/Python Basics.md",
     "Coding Notes/Cheat Sheet C++.md",
-    "Coding Notes/Array.md",
-    "README.md"
+    "Coding Notes/Array.md"
   ]
 }
