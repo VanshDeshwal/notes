@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Coding Notes/Python Basics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Python Basics"
             }
           }
         ]
@@ -161,23 +161,29 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5b76249b9b3d923a",
+  "active": "4dbdfbe7a9a0eac2",
   "lastOpenFiles": [
-    "Pasted image 20250609114154.png",
-    "Pasted image 20250609113931.png",
-    "Pasted image 20250609113907.png",
-    "Pasted image 20250609113250.png",
-    "Pasted image 20250609112332.png",
-    "Pasted image 20250609111811.png",
-    "Pasted image 20250609110920.png",
-    "Pasted image 20250609110128.png",
-    "Pasted image 20250609105759.png",
-    "Pasted image 20250609104653.png",
-    "Pasted image 20250609104513.png",
+    "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Untitled.md",
+    "Coding Notes/Python Basics.md",
+    "Data Science Notes/DL Specialization/5. Sequence Models/Images/Pasted image 20250609114154.png",
+    "Data Science Notes/DL Specialization/5. Sequence Models/Images/Pasted image 20250609113931.png",
+    "Data Science Notes/DL Specialization/5. Sequence Models/Images/Pasted image 20250609113907.png",
+    "Data Science Notes/DL Specialization/5. Sequence Models/Images/Pasted image 20250609113250.png",
+    "Data Science Notes/DL Specialization/5. Sequence Models/Images/Pasted image 20250609112332.png",
+    "Data Science Notes/DL Specialization/5. Sequence Models/Images/Pasted image 20250609111811.png",
+    "Data Science Notes/DL Specialization/5. Sequence Models/Images/Pasted image 20250609110920.png",
+    "Data Science Notes/DL Specialization/5. Sequence Models/Images/Pasted image 20250609110128.png",
+    "Data Science Notes/DL Specialization/5. Sequence Models/Images/Pasted image 20250609105759.png",
+    "Data Science Notes/DL Specialization/5. Sequence Models/Images/Pasted image 20250609104653.png",
+    "/Data Science Notes/DL Specialization/5. Sequence Models/Images",
+    "Data Science Notes/DL Specialization/5. Sequence Models/Images",
+    "/Data Science Notes/DL Specialization/5. Sequence Models",
+    "/Data Science Notes/DL Specialization",
+    "/Data Science Notes",
+    "Data Science Notes/ML_interview.pdf",
+    "README.md",
     "Installation & Setup Instructions for Grade Management System.md",
     "Grade Management System - Project Report.md",
-    "Data Science Notes/ML_interview.pdf",
-    "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Untitled.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Hyperparameter Tuning.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Batch Normalization.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 2/Optimizing Algorithms.md",
@@ -190,7 +196,6 @@
     "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Neural Network Basics.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week1/Introduction To Deep Learning.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Planar_data_classification_with_one_hidden_layer.ipynb",
-    "Coding Notes/Python Basics.md",
     "Coding Notes/Cheat Sheet C++.md",
     "Coding Notes/Array.md",
     "/Installation & Setup Instructions for Grade Management System.md",
@@ -201,13 +206,7 @@
     "Data Science Notes/DL Specialization/3. Structuring Machine Learning Projects/Untitled.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Multi-class Classification.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Intro to programing frameworks.md",
-    "/Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Hyperparameter Tuning.md",
     "/Data Science Notes/DL Specialization/1. Neural Networks/Planar_data_classification_with_one_hidden_layer.ipynb",
-    "Data Science Notes/DL Specialization/5. Sequence Models/Week 1",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 2",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Images",
-    "Data Science Notes/DL Specialization/1. Neural Networks/Week4"
+    "Data Science Notes/DL Specialization/5. Sequence Models/Week 1"
   ]
 }
