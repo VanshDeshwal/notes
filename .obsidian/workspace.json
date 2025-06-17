@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Data Science Notes/MLOps/ML Project lifecycle.md",
+                "file": "Data Science Notes/MLOps/Week 1/2. Deployment.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ML Project lifecycle"
+              "title": "2. Deployment"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 299.5,
-    "collapsed": true
+    "width": 299.5
   },
   "right": {
     "id": "b1fd7f94eb3b5b59",
@@ -180,10 +179,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4a34ccef804858fd",
+  "active": "c638cfb61292412d",
   "lastOpenFiles": [
+    "Data Science Notes/MLOps/Week 1/1. ML Project lifecycle.md",
+    "Data Science Notes/MLOps/Week 1/2. Deployment.md",
+    "Data Science Notes/MLOps/Week 1",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week3/Shallow Neural Network.md",
-    "Data Science Notes/MLOps/ML Project lifecycle.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Python and Vectorization.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Neural Network Basics.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week1/Introduction To Deep Learning.md",
@@ -223,7 +224,6 @@
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 2",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Images",
-    "Data Science Notes/DL Specialization/1. Neural Networks/Week4",
     "Coding Notes/Cheat Sheet C++.md",
     "Coding Notes/Array.md"
   ]
