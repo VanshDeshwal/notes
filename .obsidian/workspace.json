@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Data Science Notes/MLOps/Week 1/2. Deployment.md",
+                "file": "Data Science Notes/MLOps/Week 1/1. ML Project lifecycle.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2. Deployment"
+              "title": "1. ML Project lifecycle"
             }
           }
         ]
@@ -179,10 +179,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c638cfb61292412d",
+  "active": "4a34ccef804858fd",
   "lastOpenFiles": [
-    "Data Science Notes/MLOps/Week 1/1. ML Project lifecycle.md",
+    "Pasted image 20250617193416.png",
     "Data Science Notes/MLOps/Week 1/2. Deployment.md",
+    "Data Science Notes/MLOps/Week 1/1. ML Project lifecycle.md",
     "Data Science Notes/MLOps/Week 1",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week3/Shallow Neural Network.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Python and Vectorization.md",
