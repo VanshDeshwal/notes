@@ -36,7 +36,7 @@ flowchart LR
     D2[Monitor & maintain system]
   end
 
-  %% — WIRES — 
+  %% — CONNECTIONS — 
   A --> A1
   B --> B1 --> B2
   C --> C1 --> C2
@@ -44,6 +44,12 @@ flowchart LR
 
   %% — STYLING — 
   classDef phase fill:#cccccc,stroke:#888888,stroke-width:2px,color:#333333,font-weight:bold;
-  class B phase fill:#4fc1e9,stroke:#888888;    %% highlight “Data” phase
+  class A phase
+  class B phase
+  class C phase
+  class D phase
+
+  %% override just the “Data” phase color
+  style B fill:#4fc1e9,stroke:#888888,stroke-width:2px;
 
 ```
