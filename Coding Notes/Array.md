@@ -56,10 +56,6 @@ public:
 };
 ```
 
-### Time & Space Complexity
-
-- Time complexity: 𝑂(𝑚∗𝑛log⁡𝑛)O(m∗nlogn)
-- Space complexity: 𝑂(𝑚∗𝑛)O(m∗n)
 
 ## 2. Hash Table
 
@@ -103,12 +99,6 @@ public:
 };
 ```
 
-### Time & Space Complexity
-
-- Time complexity: 𝑂(𝑚∗𝑛)O(m∗n)
-- Space complexity:
-    - 𝑂(𝑚)O(m) extra space.
-    - 𝑂(𝑚∗𝑛)O(m∗n) space for the output list.
 
 # 271. Encode and Decode Strings - Explanation
 
@@ -123,29 +113,12 @@ Please implement `encode` and `decode`
 **Example 1:**
 
 ```java
-Input: ["neet","code","love","you"]
-
-Output:["neet","code","love","you"]
-```
-
-Copy
-
-**Example 2:**
-
-```java
 Input: ["we","say",":","yes"]
 
 Output: ["we","say",":","yes"]
 ```
 
-Copy
-
-**Constraints:**
-
-- `0 <= strs.length < 100`
-- `0 <= strs[i].length < 200`
-- `strs[i]` contains only UTF-8 characters.
-## 2. Encoding & Decoding (Optimal)
+## 1. Encoding & Decoding (Optimal)
 
 ### Python
 ```python
@@ -203,4 +176,43 @@ public:
         return res;
     }
 };
+```
+
+# 238. Product of Array Except Self - Explanation
+
+[Problem Link](https://neetcode.io/problems/products-of-array-discluding-self/)
+
+## Description
+
+Given an integer array `nums`, return an array `output` where `output[i]` is the product of all the elements of `nums` except `nums[i]`.
+
+Each product is **guaranteed** to fit in a **32-bit** integer.
+
+Follow-up: Could you solve it in 𝑂(𝑛)O(n) time without using the division operation?
+
+**Example 1:**
+
+```java
+Input: nums = [1,2,4,6]
+
+Output: [48,24,12,8]
+```
+
+## 1. Prefix & Suffix (Optimal)
+
+
+```python
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        res = [1] * (len(nums))
+
+        prefix = 1
+        for i in range(len(nums)):
+            res[i] = prefix
+            prefix *= nums[i]
+        postfix = 1
+        for i in range(len(nums) - 1, -1, -1):
+            res[i] *= postfix
+            postfix *= nums[i]
+        return res
 ```
