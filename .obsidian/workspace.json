@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Coding Notes/Python Basics.md",
+                "file": "Coding Notes/Array.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Python Basics"
+              "title": "Array"
             }
           }
         ]
@@ -181,6 +181,7 @@
   },
   "active": "4a34ccef804858fd",
   "lastOpenFiles": [
+    "Coding Notes/Python Basics.md",
     "Data Science Notes/MLOps/Images/Pasted image 20250617193416.png",
     "Data Science Notes/MLOps/Images",
     "Data Science Notes/MLOps/Images/Pasted image 20250617193540.png",
@@ -193,7 +194,6 @@
     "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Neural Network Basics.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week1/Introduction To Deep Learning.md",
     "Data Science Notes/100 days of ML/Machine Learning Notes.md",
-    "Coding Notes/Python Basics.md",
     "Data Science Notes/100 days of ML",
     "Data Science Notes/MLOps",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1/Normalizing training sets.md",
