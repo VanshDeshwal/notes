@@ -109,3 +109,98 @@ public:
 - Space complexity:
     - 𝑂(𝑚)O(m) extra space.
     - 𝑂(𝑚∗𝑛)O(m∗n) space for the output list.
+
+# 271. Encode and Decode Strings - Explanation
+
+[Problem Link](https://neetcode.io/problems/string-encode-and-decode/)
+
+## Description
+
+Design an algorithm to encode a list of strings to a single string. The encoded string is then decoded back to the original list of strings.
+
+Please implement `encode` and `decode`
+
+**Example 1:**
+
+```java
+Input: ["neet","code","love","you"]
+
+Output:["neet","code","love","you"]
+```
+
+Copy
+
+**Example 2:**
+
+```java
+Input: ["we","say",":","yes"]
+
+Output: ["we","say",":","yes"]
+```
+
+Copy
+
+**Constraints:**
+
+- `0 <= strs.length < 100`
+- `0 <= strs[i].length < 200`
+- `strs[i]` contains only UTF-8 characters.
+## 2. Encoding & Decoding (Optimal)
+
+### Python
+```python
+class Solution:
+    
+    def encode(self, strs: List[str]) -> str:
+        res = ""
+        for s in strs:
+            res += str(len(s)) + "#" + s
+        return res
+
+    def decode(self, s: str) -> List[str]:
+        res = []
+        i = 0
+        
+        while i < len(s):
+            j = i
+            while s[j] != '#':
+                j += 1
+            length = int(s[i:j])
+            i = j + 1
+            j = i + length
+            res.append(s[i:j])
+            i = j
+            
+        return res
+```
+
+### C++
+```C++
+class Solution {
+public:
+    string encode(vector<string>& strs) {
+        string res;
+        for (const string& s : strs) {
+            res += to_string(s.size()) + "#" + s;
+        }
+        return res;
+    }
+
+    vector<string> decode(string s) {
+        vector<string> res;
+        int i = 0;
+        while (i < s.size()) {
+            int j = i;
+            while (s[j] != '#') {
+                j++;
+            }
+            int length = stoi(s.substr(i, j - i));
+            i = j + 1;
+            j = i + length;
+            res.push_back(s.substr(i, length));
+            i = j;
+        }
+        return res;
+    }
+};
+```
