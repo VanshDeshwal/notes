@@ -30,33 +30,6 @@ class Solution:
         return list(res.values())
 ```
 
-##### C++
-```cpp
-class Solution {
-public:
-    vector<vector<string>> groupAnagrams(vector<string>& strs) {
-        unordered_map<string, vector<string>> res;
-        for (const auto& s : strs) {
-            vector<int> count(26, 0);
-            for (char c : s) {
-                count[c - 'a']++;
-            }
-            string key = to_string(count[0]);
-            for (int i = 1; i < 26; ++i) {
-                key += ',' + to_string(count[i]);
-            }
-            res[key].push_back(s);
-        }
-        vector<vector<string>> result;
-        for (const auto& pair : res) {
-            result.push_back(pair.second);
-        }
-        return result;
-    }
-};
-```
-
-
 ## 2. Hash Table
 
 We can count how many times each letter occurs in a word and based on that identify the anagrams
@@ -72,33 +45,6 @@ class Solution:
             res[tuple(count)].append(s)
         return list(res.values())
 ```
-
-##### C++
-```cpp
-class Solution {
-public:
-    vector<vector<string>> groupAnagrams(vector<string>& strs) {
-        unordered_map<string, vector<string>> res;
-        for (const auto& s : strs) {
-            vector<int> count(26, 0);
-            for (char c : s) {
-                count[c - 'a']++;
-            }
-            string key = to_string(count[0]);
-            for (int i = 1; i < 26; ++i) {
-                key += ',' + to_string(count[i]);
-            }
-            res[key].push_back(s);
-        }
-        vector<vector<string>> result;
-        for (const auto& pair : res) {
-            result.push_back(pair.second);
-        }
-        return result;
-    }
-};
-```
-
 
 # 271. Encode and Decode Strings - Explanation
 
@@ -120,7 +66,6 @@ Output: ["we","say",":","yes"]
 
 ## 1. Encoding & Decoding (Optimal)
 
-### Python
 ```python
 class Solution:
     
@@ -145,37 +90,6 @@ class Solution:
             i = j
             
         return res
-```
-
-### C++
-```C++
-class Solution {
-public:
-    string encode(vector<string>& strs) {
-        string res;
-        for (const string& s : strs) {
-            res += to_string(s.size()) + "#" + s;
-        }
-        return res;
-    }
-
-    vector<string> decode(string s) {
-        vector<string> res;
-        int i = 0;
-        while (i < s.size()) {
-            int j = i;
-            while (s[j] != '#') {
-                j++;
-            }
-            int length = stoi(s.substr(i, j - i));
-            i = j + 1;
-            j = i + length;
-            res.push_back(s.substr(i, length));
-            i = j;
-        }
-        return res;
-    }
-};
 ```
 
 # 238. Product of Array Except Self - Explanation
@@ -215,4 +129,68 @@ class Solution:
             res[i] *= postfix
             postfix *= nums[i]
         return res
+```
+
+# 36. Valid Sudoku - Explanation
+
+[Problem Link](https://neetcode.io/problems/valid-sudoku/)
+
+## Description
+
+You are given a `9 x 9` Sudoku board `board`. A Sudoku board is valid if the following rules are followed:
+
+1. Each row must contain the digits `1-9` without duplicates.
+2. Each column must contain the digits `1-9` without duplicates.
+3. Each of the nine `3 x 3` sub-boxes of the grid must contain the digits `1-9` without duplicates.
+
+Return `true` if the Sudoku board is valid, otherwise return `false`
+
+Note: A board does not need to be full or be solvable to be valid.
+
+**Example 1:**
+
+![](https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/0be40c5d-2d18-42b8-261b-13ca50de4100/public)
+
+**Example 1:**
+
+```java
+Input: board = 
+[["1","2",".",".","3",".",".",".","."],
+ ["4",".",".","5",".",".",".",".","."],
+ [".","9","1",".",".",".",".",".","3"],
+ ["5",".",".",".","6",".",".",".","4"],
+ [".",".",".","8",".","3",".",".","5"],
+ ["7",".",".",".","2",".",".",".","6"],
+ [".",".",".",".",".",".","2",".","."],
+ [".",".",".","4","1","9",".",".","8"],
+ [".",".",".",".","8",".",".","7","9"]]
+
+Output: false
+```
+
+Explanation: There are two 1's in the top-left 3x3 sub-box.
+
+## 1. Hash Set (One Pass)
+
+```python
+class Solution:
+    def isValidSudoku(self, board: List[List[str]]) -> bool:
+        cols = defaultdict(set)
+        rows = defaultdict(set)
+        squares = defaultdict(set)  
+
+        for r in range(9):
+            for c in range(9):
+                if board[r][c] == ".":
+                    continue
+                if ( board[r][c] in rows[r]
+                    or board[r][c] in cols[c]
+                    or board[r][c] in squares[(r // 3, c // 3)]):
+                    return False
+
+                cols[c].add(board[r][c])
+                rows[r].add(board[r][c])
+                squares[(r // 3, c // 3)].add(board[r][c])
+
+        return True
 ```
