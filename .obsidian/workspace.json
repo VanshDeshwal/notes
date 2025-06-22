@@ -11,12 +11,14 @@
             "id": "4a34ccef804858fd",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Pasted image 20250622190744.png"
+                "file": "Data Science Notes/100 days of ML/Libraries/Seaborn.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20250622190744"
+              "icon": "lucide-file",
+              "title": "Seaborn"
             }
           }
         ]
@@ -179,20 +181,25 @@
   },
   "active": "4a34ccef804858fd",
   "lastOpenFiles": [
-    "Pasted image 20250622190638.png",
-    "Pasted image 20250622190606.png",
-    "Pasted image 20250622190539.png",
-    "Pasted image 20250622190513.png",
-    "Pasted image 20250622190437.png",
-    "Pasted image 20250622190416.png",
-    "Pasted image 20250622190409.png",
-    "Pasted image 20250622190346.png",
-    "Pasted image 20250622190254.png",
-    "Pasted image 20250622190233.png",
-    "Pasted image 20250622190214.png",
+    "Data Science Notes/100 days of ML/Machine Learning Notes.md",
+    "Pasted image 20250622190744.png",
+    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622190638.png",
+    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622190606.png",
+    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622190539.png",
+    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622190513.png",
+    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622190437.png",
+    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622190416.png",
+    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622190409.png",
+    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622190346.png",
+    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622190254.png",
+    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs",
+    "Data Science Notes/100 days of ML/Libraries/New folder",
+    "Data Science Notes/100 days of ML/Libraries/Seaborn.md",
+    "Data Science Notes/100 days of ML/Libraries/Matplotlib.md",
+    "Data Science Notes/100 days of ML/Libraries",
+    "Data Science Notes/100 days of ML/New folder",
     "Data Science Notes/100 days of ML/Seaborn.md",
     "Coding Notes/Array.md",
-    "Data Science Notes/100 days of ML/Machine Learning Notes.md",
     "Data Science Notes/100 days of ML/Matplotlib.md",
     "Coding Notes/Cheat Sheet Python.md",
     "Coding Notes/Python Basics.md",
@@ -218,12 +225,6 @@
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Multi-class Classification.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Hyperparameter Tuning.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Intro to programing frameworks.md",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Batch Normalization.md",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1/Setting up.md",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 2/Optimizing Algorithms.md",
-    "Data Science Notes/DL Specialization/5. Sequence Models/Week 1",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 2",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1"
+    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Batch Normalization.md"
   ]
 }
