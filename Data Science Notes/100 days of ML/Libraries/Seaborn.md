@@ -96,8 +96,10 @@ sns.relplot(kind='line', data=temp_df, x='year', y='lifeExp', hue='country', sty
 ![[Pasted image 20250622185734.png]]
 
 ### Facet plots
-- facet plot -> figure level function -> work with `relplot`
+- figure level function
+- work with `relplot`
 - it will not work with scatterplot and lineplot
+if we want to plot multiple graphs
 
 ```python
 sns.relplot(data=tips, x='total_bill', y='tip', kind='line', col='sex', row='day')
