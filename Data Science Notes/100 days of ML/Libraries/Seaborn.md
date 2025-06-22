@@ -437,7 +437,7 @@ sns.catplot(data=tips, x='sex',y='total_bill',col='smoker',kind='box',row='time'
 
 ![[Pasted image 20250622223051.png]]
 
-# Regression Plots
+# 5. Regression Plots
 
 - regplot
 - lmplot
