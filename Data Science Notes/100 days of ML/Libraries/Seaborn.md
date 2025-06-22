@@ -44,6 +44,7 @@ classDef noBox fill:none,stroke:none,color:#57534e,font-family:inherit;
 ```python
 import seaborn as sns     #importing library
 tips = sns.load_dataset('tips')     #importing dataset
+sns.set_style("dark")
 ```
 # 1. Relational Plot
 
@@ -273,4 +274,16 @@ sns.clustermap(iris.iloc[:,[0,1,2,3]])
 
 ![[Pasted image 20250622190744.png]]
 
+# 4. Categorical Plots
 
+## Categorical Scatter Plot
+- Stripplot
+- Swarmplot
+## Categorical Distribution Plots
+- Boxplot
+- Violinplot
+### Categorical Estimate Plot -> for central tendency
+- Barplot
+- Pointplot
+- Countplot
+### Figure level function -> `catplot`
