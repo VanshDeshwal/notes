@@ -11,14 +11,12 @@
             "id": "4a34ccef804858fd",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Coding Notes/Array.md",
-                "mode": "source",
-                "source": false
+                "file": "Pasted image 20250622190744.png"
               },
-              "icon": "lucide-file",
-              "title": "Array"
+              "icon": "lucide-image",
+              "title": "Pasted image 20250622190744"
             }
           }
         ]
@@ -181,8 +179,6 @@
   },
   "active": "4a34ccef804858fd",
   "lastOpenFiles": [
-    "Data Science Notes/100 days of ML/Seaborn.md",
-    "Pasted image 20250622190744.png",
     "Pasted image 20250622190638.png",
     "Pasted image 20250622190606.png",
     "Pasted image 20250622190539.png",
@@ -192,9 +188,12 @@
     "Pasted image 20250622190409.png",
     "Pasted image 20250622190346.png",
     "Pasted image 20250622190254.png",
+    "Pasted image 20250622190233.png",
+    "Pasted image 20250622190214.png",
+    "Data Science Notes/100 days of ML/Seaborn.md",
+    "Coding Notes/Array.md",
     "Data Science Notes/100 days of ML/Machine Learning Notes.md",
     "Data Science Notes/100 days of ML/Matplotlib.md",
-    "Coding Notes/Array.md",
     "Coding Notes/Cheat Sheet Python.md",
     "Coding Notes/Python Basics.md",
     "Data Science Notes/MLOps/Images",
