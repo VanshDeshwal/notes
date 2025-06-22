@@ -110,8 +110,8 @@ accuracy_score(y_test,y_pred)
 Comma Separated Values
 Tabs Separated Values
 
-```
-pd.read_csv
+```python
+pd.read_csv('sample.csv')
 ```
 
 ## JSON/SQL (16)
