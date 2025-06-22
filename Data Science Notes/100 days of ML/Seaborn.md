@@ -169,3 +169,35 @@ sns.rugplot(data=tips,x='total_bill')
 
 ![[Pasted image 20250622125527.png]]
 
+# Matrix plot
+
+## Heat Map
+- Plot rectangular data as a color-encoded matrix
+
+```python
+temp_df = gap.pivot(index='country',columns='year',values='lifeExp')
+
+  
+
+# axes level function
+
+plt.figure(figsize=(15,15))
+
+sns.heatmap(temp_df)
+```
+
+![[Pasted image 20250622125932.png]]
+
+```python
+# annot
+
+temp_df = gap[gap['continent'] == 'Europe'].pivot(index='country',columns='year',values='lifeExp')
+
+  
+
+plt.figure(figsize=(15,15))
+
+sns.heatmap(temp_df,annot=True,linewidth=0.5, cmap='summer')
+```
+
+![[Pasted image 20250622130104.png]]![[Pasted image 20250622130158.png]]

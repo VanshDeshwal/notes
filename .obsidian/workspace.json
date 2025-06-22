@@ -167,7 +167,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -182,6 +183,9 @@
   },
   "active": "4a34ccef804858fd",
   "lastOpenFiles": [
+    "Pasted image 20250622130158.png",
+    "Pasted image 20250622130104.png",
+    "Pasted image 20250622125932.png",
     "Pasted image 20250622125527.png",
     "Pasted image 20250622125340.png",
     "Pasted image 20250622125231.png",
@@ -193,9 +197,6 @@
     "Data Science Notes/100 days of ML/Matplotlib.md",
     "Data Science Notes/100 days of ML/Seaborn.md",
     "Pasted image 20250622124221.png",
-    "Pasted image 20250622124047.png",
-    "Pasted image 20250622124008.png",
-    "Pasted image 20250622123706.png",
     "Coding Notes/Array.md",
     "Coding Notes/Cheat Sheet Python.md",
     "Coding Notes/Python Basics.md",
