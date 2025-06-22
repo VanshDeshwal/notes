@@ -107,7 +107,7 @@ sns.relplot(data=tips, x='total_bill', y='tip', kind='line', col='sex', row='day
 
 ![[Pasted image 20250622185900.png]]
 
-columns wrap
+- if the graphs are all in a row and difficult to see then we can wrap the columns using columns wrap
 
 ```python
 sns.relplot(data=gap, x='lifeExp', y='gdpPercap', kind='scatter', col='year', col_wrap=3)
@@ -160,8 +160,6 @@ sns.displot(data=tips, x='tip', kind='hist',hue='sex')
 ![[Pasted image 20250622190214.png]]
 
 ```python
-# element -> step
-
 sns.displot(data=tips, x='tip', kind='hist', hue='sex', element='step')
 ```
 
