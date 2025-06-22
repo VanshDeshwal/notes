@@ -201,3 +201,5 @@ sns.heatmap(temp_df,annot=True,linewidth=0.5, cmap='summer')
 ```
 
 ![[Pasted image 20250622130104.png]]![[Pasted image 20250622130158.png]]
+
+![[Pasted image 20250622130741.png]]
