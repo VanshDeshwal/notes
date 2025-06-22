@@ -55,7 +55,6 @@ tips = sns.load_dataset('tips')
 sns.scatterplot(data=tips, x='total_bill', y='tip', hue='sex', style='time', size='size')
 ```
 
-![[Pasted image 20250622123628.png]]
 
 ```python
 # relplot -> figure level -> square shape
@@ -63,7 +62,7 @@ sns.scatterplot(data=tips, x='total_bill', y='tip', hue='sex', style='time', siz
 sns.relplot(data=tips, x='total_bill', y='tip', kind='scatter',hue='sex',style='time',size='size')
 ```
 
-![[Pasted image 20250622124008.png]]
+![[Pasted image 20250622185406.png]]
 
 ## Line plot
 
@@ -87,7 +86,37 @@ sns.lineplot(data=temp_df, x='year', y='lifeExp')
 sns.relplot(data=temp_df, x='year', y='lifeExp', kind='line')
 ```
 
-![[Pasted image 20250622124221.png]]
+![[Pasted image 20250622185544.png]]
+
+```python
+temp_df = gap[gap['country'].isin(['India','Brazil','Germany'])]
+
+sns.relplot(kind='line', data=temp_df, x='year', y='lifeExp', hue='country', style='continent', size='continent')
+
+```
+
+
+![[Pasted image 20250622185734.png]]
+
+- facet plot -> figure level function -> work with relplot
+- it will not work with scatterplot and lineplot
+
+```python
+sns.relplot(data=tips, x='total_bill', y='tip', kind='line', col='sex', row='day')
+```
+
+![[Pasted image 20250622185900.png]]
+
+columns wrap
+
+```python
+sns.relplot(data=gap, x='lifeExp', y='gdpPercap', kind='scatter', col='year', col_wrap=3)
+```
+
+![[Pasted image 20250622185954.png]]
+
+
+
 
 # 2. Distribution Plots
 
@@ -106,7 +135,12 @@ sns.relplot(data=temp_df, x='year', y='lifeExp', kind='line')
 sns.histplot(data=tips, x='total_bill')
 ```
 
-![[Pasted image 20250622124951.png]]
+```python
+sns.displot(data=tips, x='total_bill', kind='hist')
+```
+
+![[Pasted image 20250622190124.png]]
+
 
 ```python
 # bins parameter
@@ -114,7 +148,8 @@ sns.histplot(data=tips, x='total_bill')
 sns.displot(data=tips, x='total_bill', kind='hist',bins=2)
 ```
 
-![[Pasted image 20250622125011.png]]
+![[Pasted image 20250622190143.png]]
+
 
 ```python
 # hue parameter
@@ -122,7 +157,7 @@ sns.displot(data=tips, x='total_bill', kind='hist',bins=2)
 sns.displot(data=tips, x='tip', kind='hist',hue='sex')
 ```
 
-![[Pasted image 20250622125052.png]]
+![[Pasted image 20250622190214.png]]
 
 ```python
 # element -> step
@@ -130,7 +165,7 @@ sns.displot(data=tips, x='tip', kind='hist',hue='sex')
 sns.displot(data=tips, x='tip', kind='hist', hue='sex', element='step')
 ```
 
-![[Pasted image 20250622125114.png]]
+![[Pasted image 20250622190233.png]]
 
 ```python
 # faceting using col and row -> not work on histplot function
@@ -138,7 +173,19 @@ sns.displot(data=tips, x='tip', kind='hist', hue='sex', element='step')
 sns.displot(data=tips, x='tip', kind='hist',col='sex',element='step')
 ```
 
-![[Pasted image 20250622125231.png]]
+![[Pasted image 20250622190254.png]]
+
+### Bivariate histogram
+
+- A bivariate histogram bins the data within rectangles that tile the plot
+- and then shows the count of observations within each rectangle with the fill color
+
+```python
+sns.displot(data=tips, x='total_bill', y='tip',kind='hist')
+```
+
+![[Pasted image 20250622190513.png]]
+
 
 ## KDE plot
 
@@ -148,13 +195,29 @@ Rather than using discrete bins, a KDE plot smooths the observations with a Gaus
 sns.kdeplot(data=tips,x='total_bill')
 ```
 
-![[Pasted image 20250622125340.png]]
+```python
+sns.displot(data=tips,x='total_bill',kind='kde')
+```
+
+![[Pasted image 20250622190346.png]]
 
 ```python
 # hue -> fill
 
 sns.displot(data=tips,x='total_bill', kind='kde', hue='sex', fill=True, height=10, aspect=2)
 ```
+
+![[Pasted image 20250622190416.png]]
+
+### Bivariate KDE plot
+
+- A bivariate KDE plot smoothens the (x, y) observations with a 2D Gaussian
+
+```python
+sns.kdeplot(data=tips, x='total_bill', y='tip')
+```
+
+![[Pasted image 20250622190539.png]]
 
 ## RUG plot
 
@@ -167,7 +230,8 @@ sns.kdeplot(data=tips,x='total_bill')
 sns.rugplot(data=tips,x='total_bill')
 ```
 
-![[Pasted image 20250622125527.png]]
+![[Pasted image 20250622190437.png]]
+
 
 # Matrix plot
 
@@ -186,7 +250,7 @@ plt.figure(figsize=(15,15))
 sns.heatmap(temp_df)
 ```
 
-![[Pasted image 20250622125932.png]]
+![[Pasted image 20250622190606.png]]
 
 ```python
 # annot
@@ -200,6 +264,17 @@ plt.figure(figsize=(15,15))
 sns.heatmap(temp_df,annot=True,linewidth=0.5, cmap='summer')
 ```
 
-![[Pasted image 20250622130104.png]]![[Pasted image 20250622130158.png]]
+![[Pasted image 20250622190638.png]]
 
-![[Pasted image 20250622130741.png]]
+## Cluster Map
+- Plot a matrix dataset as a hierarchically-clustered heatmap.
+- This function requires `scipy` to be available.
+
+```python
+iris = px.data.iris()
+sns.clustermap(iris.iloc[:,[0,1,2,3]])
+```
+
+![[Pasted image 20250622190744.png]]
+
+
