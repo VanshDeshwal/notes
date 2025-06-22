@@ -67,11 +67,8 @@ sns.relplot(data=tips, x='total_bill', y='tip', kind='scatter', hue='sex', style
 ## Line plot
 
 ```python
-gap = px.data.gapminder()
-
-temp_df = gap[gap['country'] == 'India']
-
-temp_df
+gap = px.data.gapminder()    #loading new data
+temp_df = gap[gap['country'] == 'India']     #taking data of only india
 ```
 
 ```python
@@ -88,6 +85,7 @@ sns.relplot(data=temp_df, x='year', y='lifeExp', kind='line')
 
 ![[Pasted image 20250622185544.png]]
 
+
 ```python
 temp_df = gap[gap['country'].isin(['India','Brazil','Germany'])]
 
@@ -95,10 +93,9 @@ sns.relplot(kind='line', data=temp_df, x='year', y='lifeExp', hue='country', sty
 
 ```
 
-
 ![[Pasted image 20250622185734.png]]
 
-- facet plot -> figure level function -> work with relplot
+- facet plot -> figure level function -> work with `relplot`
 - it will not work with scatterplot and lineplot
 
 ```python
