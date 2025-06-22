@@ -113,7 +113,7 @@ accuracy_score(y_test,y_pred)
 3. API
 4. Web Scraping
 
-# Understanding Data (19)
+# Understanding Data (19-22)
 
 What are the basic questions you should ask when you get new data
 
@@ -130,18 +130,19 @@ What are the basic questions you should ask when you get new data
 6. Are there duplicate values ?
 	- `df.duplicated().sum()`
 7. How is the correlation between cols ?
-	1. some input columns don't have any affect on output columns, so we want to remove them
-	2. 
+	- Some input columns don't have any affect on output columns, so we want to remove them
+	- `df.corr()`
+	- This tells us Pearson's correlation between columns
 
-
-
-# EDA (20-21)
+## EDA (20-21)
 
 purpose is to understand data fully
 
-## Univariate Analysis
+### Univariate Analysis (20)
 Each column can be considered as a variable, so analysing a column independently is univariate analysis
+prerequisites: seaborn, matplotlib
 
+### Bivariate Analysis (21)
 # Pandas Profiling (22)
 this automates the above task
 # Feature Engineering (23-47)
