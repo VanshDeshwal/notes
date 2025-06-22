@@ -407,7 +407,7 @@ sns.barplot(data=tips, x='sex', y='total_bill',hue='smoker',estimator=np.min)
 ![[Pasted image 20250622222649.png]]
 
 ```python
-sns.barplot(data=tips, x='sex', y='total_bill',ci=None)
+sns.barplot(data=tips, x='sex', y='total_bill',errorbar=None)
 ```
 
 ![[Pasted image 20250622222708.png]]
@@ -415,6 +415,176 @@ sns.barplot(data=tips, x='sex', y='total_bill',ci=None)
 ```python
 # point plot
 
-sns.pointplot(data=tips, x='sex', y='total_bill',hue='smoker',ci=None)
+sns.pointplot(data=tips, x='sex', y='total_bill',hue='smoker',errorbar=None)
 ```
 
+![[Pasted image 20250622222853.png]]
+
+When there are multiple observations in each category, it also uses bootstrapping to compute a confidence interval around the estimate, which is plotted using error bars
+
+```python
+# countplot
+
+sns.countplot(data=tips,x='sex',hue='day')
+```
+
+![[Pasted image 20250622222947.png]]
+
+A special case for the bar plot is when you want to show the number of observations in each category rather than computing a statistic for a second variable. This is similar to a histogram over a categorical, rather than quantitative, variable
+
+```python
+# faceting using catplot
+
+sns.catplot(data=tips, x='sex',y='total_bill',col='smoker',kind='box',row='time')
+```
+
+![[Pasted image 20250622223051.png]]
+
+### Regression Plots
+
+  
+
+- regplot
+
+- lmplot
+
+  
+
+In the simplest invocation, both functions draw a scatterplot of two variables, x and y, and then fit the regression model y ~ x and plot the resulting regression line and a 95% confidence interval for that regression.
+
+```python
+# axes level
+
+# hue parameter is not available
+
+sns.regplot(data=tips,x='total_bill',y='tip')
+```
+
+![[Pasted image 20250622223126.png]]
+
+```python
+sns.lmplot(data=tips,x='total_bill',y='tip',hue='sex')
+```
+
+![[Pasted image 20250622223143.png]]
+
+```python
+# residplot
+
+sns.residplot(data=tips,x='total_bill',y='tip')
+```
+
+![[Pasted image 20250622223204.png]]
+
+### A second way to plot Facet plots -> FacetGrid
+
+```python
+# figure level -> relplot -> displot -> catplot -> lmplot
+
+sns.catplot(data=tips,x='sex',y='total_bill',kind='violin',col='day',row='time')
+```
+
+![[Pasted image 20250622223230.png]]
+
+```python
+g = sns.FacetGrid(data=tips,col='day',row='time',hue='smoker')
+
+g.map(sns.boxplot,'sex','total_bill')
+
+g.add_legend()
+```
+
+![[Pasted image 20250622223258.png]]
+
+### Plotting Pairwise Relationship (PairGrid Vs Pairplot)
+
+```python
+sns.pairplot(iris,hue='species')
+```
+
+![[Pasted image 20250622223404.png]]
+
+```python
+# pair grid
+
+g = sns.PairGrid(data=iris,hue='species')
+
+# g.map
+
+g.map(sns.scatterplot)
+```
+
+![[Pasted image 20250622223421.png]]
+
+```python
+# map_diag -> map_offdiag
+
+g = sns.PairGrid(data=iris,hue='species')
+
+g.map_diag(sns.boxplot)
+
+g.map_offdiag(sns.kdeplot)
+```
+
+![[Pasted image 20250622223438.png]]
+
+```python
+# map_diag -> map_upper -> map_lower
+
+g = sns.PairGrid(data=iris,hue='species')
+
+g.map_diag(sns.histplot)
+
+g.map_upper(sns.kdeplot)
+
+g.map_lower(sns.scatterplot)
+```
+
+
+![[Pasted image 20250622223459.png]]
+
+```python
+# vars
+
+g = sns.PairGrid(data=iris,hue='species',vars=['sepal_width','petal_width'])
+
+g.map_diag(sns.histplot)
+
+g.map_upper(sns.kdeplot)
+
+g.map_lower(sns.scatterplot)
+```
+
+![[Pasted image 20250622223517.png]]
+
+### JointGrid Vs Jointplot
+
+```python
+sns.jointplot(data=tips,x='total_bill',y='tip',kind='hist',hue='sex')
+```
+
+![[Pasted image 20250622223542.png]]
+
+```python
+g = sns.JointGrid(data=tips,x='total_bill',y='tip')
+
+g.plot(sns.kdeplot,sns.violinplot)
+```
+
+![[Pasted image 20250622223600.png]]
+
+
+### Utility Functions
+
+```python
+# get dataset names
+
+sns.get_dataset_names()
+```
+
+```python
+# load dataset
+
+sns.load_dataset('planets')
+
+```
