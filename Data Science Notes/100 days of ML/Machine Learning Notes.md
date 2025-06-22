@@ -139,11 +139,12 @@ What are the basic questions you should ask when you get new data
 purpose is to understand data fully
 
 ### Univariate Analysis (20)
-Each column can be considered as a variable, so analysing a column independently is univariate analysis
-prerequisites: seaborn, matplotlib
+Each column can be considered as a variable, so analyzing a column independently is univariate analysis
+prerequisites: [[Seaborn]], [[Matplotlib]]
+
 
 ### Bivariate Analysis (21)
-# Pandas Profiling (22)
+## Pandas Profiling (22)
 this automates the above task
 # Feature Engineering (23-47)
 
