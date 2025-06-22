@@ -282,32 +282,28 @@ sns.clustermap(iris.iloc[:,[0,1,2,3]])
 ## Categorical Distribution Plots
 - Boxplot
 - Violinplot
-### Categorical Estimate Plot -> for central tendency
+## Categorical Estimate Plot -> for central tendency
 - Barplot
 - Pointplot
 - Countplot
-### Figure level function -> `catplot`
+## Figure level function -> `catplot`
+
+## Strip Plot
 
 ```python
-# strip plot
-
 # axes level function
 
 sns.stripplot(data=tips,x='day',y='total_bill')
 ```
 
-![[Pasted image 20250622222153.png]]
-
-
 ```python
-# using catplot
-
 # figure level function
 
 sns.catplot(data=tips, x='day',y='total_bill',kind='strip')
 ```
 
-![[Pasted image 20250622222221.png]]
+![[Pasted image 20250622222153.png]]
+
 
 ```python
 # jitter
@@ -317,14 +313,14 @@ sns.catplot(data=tips, x='day',y='total_bill',kind='strip',jitter=0.2,hue='sex')
 
 ![[Pasted image 20250622222238.png]]
 
+## Swarm Plot
 
 ```python
-# swarmplot
-
 sns.catplot(data=tips, x='day',y='total_bill',kind='swarm')
 ```
 
 ![[Pasted image 20250622222259.png]]
+
 
 ```python
 # hue
@@ -335,11 +331,12 @@ sns.swarmplot(data=tips, x='day',y='total_bill',hue='sex')
 ![[Pasted image 20250622222337.png]]
 
 
-### Boxplot
+## Boxplot
 
 A boxplot is a standardized way of displaying the distribution of data based on a five number summary (“minimum”, first quartile [Q1], median, third quartile [Q3] and “maximum”). It can tell you about your outliers and what their values are. Boxplots can also tell you if your data is symmetrical, how tightly your data is grouped and if and how your data is skewed.
 
 ![[Pasted image 20250622200729.png]]
+
 
 ```python
 sns.boxplot(data=tips,x='day',y='total_bill')
@@ -351,8 +348,8 @@ sns.boxplot(data=tips,x='day',y='total_bill')
 sns.catplot(data=tips,x='day',y='total_bill',kind='box')
 ```
 
-
 ![[Pasted image 20250622222359.png]]
+
 
 ```python
 # hue
@@ -362,6 +359,7 @@ sns.boxplot(data=tips,x='day',y='total_bill',hue='sex')
 
 ![[Pasted image 20250622222444.png]]
 
+
 ```python
 # single boxplot -> numerical col
 
@@ -370,11 +368,9 @@ sns.boxplot(data=tips,y='total_bill')
 
 ![[Pasted image 20250622222500.png]]
 
-### Violinplot = (Boxplot + KDEplot)
+## Violinplot = (Boxplot + KDEplot)
 
 ```python
-# violinplot
-
 sns.violinplot(data=tips,x='day',y='total_bill')
 ```
 
@@ -384,6 +380,7 @@ sns.catplot(data=tips,x='day',y='total_bill',kind='violin')
 
 ![[Pasted image 20250622222525.png]]
 
+
 ```python
 # hue
 
@@ -392,10 +389,9 @@ sns.catplot(data=tips,x='day',y='total_bill',kind='violin',hue='sex',split=True)
 
 ![[Pasted image 20250622222628.png]]
 
+## Bar Plot
 
 ```python
-# barplot
-
 # some issue with errorbar
 
 import numpy as np
@@ -406,15 +402,16 @@ sns.barplot(data=tips, x='sex', y='total_bill',hue='smoker',estimator=np.min)
 
 ![[Pasted image 20250622222649.png]]
 
+
 ```python
 sns.barplot(data=tips, x='sex', y='total_bill',errorbar=None)
 ```
 
 ![[Pasted image 20250622222708.png]]
 
-```python
-# point plot
+## Point Plot
 
+```python
 sns.pointplot(data=tips, x='sex', y='total_bill',hue='smoker',errorbar=None)
 ```
 
@@ -422,9 +419,9 @@ sns.pointplot(data=tips, x='sex', y='total_bill',hue='smoker',errorbar=None)
 
 When there are multiple observations in each category, it also uses bootstrapping to compute a confidence interval around the estimate, which is plotted using error bars
 
-```python
-# countplot
+## Count Plot
 
+```python
 sns.countplot(data=tips,x='sex',hue='day')
 ```
 
@@ -440,15 +437,10 @@ sns.catplot(data=tips, x='sex',y='total_bill',col='smoker',kind='box',row='time'
 
 ![[Pasted image 20250622223051.png]]
 
-### Regression Plots
-
-  
+# Regression Plots
 
 - regplot
-
 - lmplot
-
-  
 
 In the simplest invocation, both functions draw a scatterplot of two variables, x and y, and then fit the regression model y ~ x and plot the resulting regression line and a 95% confidence interval for that regression.
 
@@ -461,6 +453,7 @@ sns.regplot(data=tips,x='total_bill',y='tip')
 ```
 
 ![[Pasted image 20250622223126.png]]
+
 
 ```python
 sns.lmplot(data=tips,x='total_bill',y='tip',hue='sex')
