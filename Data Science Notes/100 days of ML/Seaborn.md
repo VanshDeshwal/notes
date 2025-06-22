@@ -106,3 +106,67 @@ sns.relplot(data=temp_df, x='year', y='lifeExp', kind='line')
 
 sns.histplot(data=tips, x='total_bill')
 ```
+
+![[Pasted image 20250622124951.png]]
+
+```python
+# bins parameter
+
+sns.displot(data=tips, x='total_bill', kind='hist',bins=2)
+```
+
+![[Pasted image 20250622125011.png]]
+
+```python
+# hue parameter
+
+sns.displot(data=tips, x='tip', kind='hist',hue='sex')
+```
+
+![[Pasted image 20250622125052.png]]
+
+```python
+# element -> step
+
+sns.displot(data=tips, x='tip', kind='hist', hue='sex', element='step')
+```
+
+![[Pasted image 20250622125114.png]]
+
+```python
+# faceting using col and row -> not work on histplot function
+
+sns.displot(data=tips, x='tip', kind='hist',col='sex',element='step')
+```
+
+![[Pasted image 20250622125231.png]]
+
+## KDE plot
+
+Rather than using discrete bins, a KDE plot smooths the observations with a Gaussian kernel, producing a continuous density estimate
+
+```python
+sns.kdeplot(data=tips,x='total_bill')
+```
+
+![[Pasted image 20250622125340.png]]
+
+```python
+# hue -> fill
+
+sns.displot(data=tips,x='total_bill', kind='kde', hue='sex', fill=True, height=10, aspect=2)
+```
+
+## RUG plot
+
+- Plot marginal distributions by drawing ticks along the x and y axes.
+- This function is intended to complement other plots by showing the location of individual observations in an unobtrusive way.
+
+```python
+sns.kdeplot(data=tips,x='total_bill')
+
+sns.rugplot(data=tips,x='total_bill')
+```
+
+![[Pasted image 20250622125527.png]]
+
