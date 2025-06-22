@@ -67,9 +67,4 @@ sns.relplot(data=tips, x='total_bill', y='tip', kind='scatter',hue='sex',style='
 ![[Pasted image 20250622123706.png]]
 
 
-
-
-
-
-
 ## Lineplot
