@@ -107,6 +107,12 @@ accuracy_score(y_test,y_pred)
 # Working with Data (15-18)
 
 ## CSV (15)
+Comma Separated Values
+Tabs Separated Values
+
+```
+pd.read_csv
+```
 
 ## JSON/SQL (16)
 ## API (17)
