@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 299.5
+    "width": 299.5,
+    "collapsed": true
   },
   "right": {
     "id": "b1fd7f94eb3b5b59",
@@ -166,7 +167,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -179,22 +181,22 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c638cfb61292412d",
+  "active": "4a34ccef804858fd",
   "lastOpenFiles": [
-    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622200729.png",
+    "Pasted image 20250622222708.png",
+    "Pasted image 20250622222649.png",
+    "Pasted image 20250622222628.png",
+    "Pasted image 20250622222525.png",
+    "Pasted image 20250622222500.png",
+    "Pasted image 20250622222444.png",
+    "Pasted image 20250622222359.png",
+    "Pasted image 20250622222337.png",
+    "Pasted image 20250622222259.png",
+    "Pasted image 20250622222238.png",
+    "Pasted image 20250622222221.png",
     "Data Science Notes/100 days of ML/Machine Learning Notes.md",
     "Data Science Notes/100 days of ML/Libraries/Seaborn.md",
     "Data Science Notes/100 days of ML/Libraries/Matplotlib.md",
-    "Pasted image 20250622190744.png",
-    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622190638.png",
-    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622190606.png",
-    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622190539.png",
-    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622190513.png",
-    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622190437.png",
-    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622190416.png",
-    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622190409.png",
-    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622190346.png",
-    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622190254.png",
     "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs",
     "Data Science Notes/100 days of ML/Libraries/New folder",
     "Data Science Notes/100 days of ML/Libraries",

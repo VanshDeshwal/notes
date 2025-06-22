@@ -288,6 +288,53 @@ sns.clustermap(iris.iloc[:,[0,1,2,3]])
 - Countplot
 ### Figure level function -> `catplot`
 
+```python
+# strip plot
+
+# axes level function
+
+sns.stripplot(data=tips,x='day',y='total_bill')
+```
+
+![[Pasted image 20250622222153.png]]
+
+
+```python
+# using catplot
+
+# figure level function
+
+sns.catplot(data=tips, x='day',y='total_bill',kind='strip')
+```
+
+![[Pasted image 20250622222221.png]]
+
+```python
+# jitter
+
+sns.catplot(data=tips, x='day',y='total_bill',kind='strip',jitter=0.2,hue='sex')
+```
+
+![[Pasted image 20250622222238.png]]
+
+
+```python
+# swarmplot
+
+sns.catplot(data=tips, x='day',y='total_bill',kind='swarm')
+```
+
+![[Pasted image 20250622222259.png]]
+
+```python
+# hue
+
+sns.swarmplot(data=tips, x='day',y='total_bill',hue='sex')
+```
+
+![[Pasted image 20250622222337.png]]
+
+
 ### Boxplot
 
 A boxplot is a standardized way of displaying the distribution of data based on a five number summary (“minimum”, first quartile [Q1], median, third quartile [Q3] and “maximum”). It can tell you about your outliers and what their values are. Boxplots can also tell you if your data is symmetrical, how tightly your data is grouped and if and how your data is skewed.
@@ -297,3 +344,77 @@ A boxplot is a standardized way of displaying the distribution of data based on 
 ```python
 sns.boxplot(data=tips,x='day',y='total_bill')
 ```
+
+```python
+# Using catplot
+
+sns.catplot(data=tips,x='day',y='total_bill',kind='box')
+```
+
+
+![[Pasted image 20250622222359.png]]
+
+```python
+# hue
+
+sns.boxplot(data=tips,x='day',y='total_bill',hue='sex')
+```
+
+![[Pasted image 20250622222444.png]]
+
+```python
+# single boxplot -> numerical col
+
+sns.boxplot(data=tips,y='total_bill')
+```
+
+![[Pasted image 20250622222500.png]]
+
+### Violinplot = (Boxplot + KDEplot)
+
+```python
+# violinplot
+
+sns.violinplot(data=tips,x='day',y='total_bill')
+```
+
+```python
+sns.catplot(data=tips,x='day',y='total_bill',kind='violin')
+```
+
+![[Pasted image 20250622222525.png]]
+
+```python
+# hue
+
+sns.catplot(data=tips,x='day',y='total_bill',kind='violin',hue='sex',split=True)
+```
+
+![[Pasted image 20250622222628.png]]
+
+
+```python
+# barplot
+
+# some issue with errorbar
+
+import numpy as np
+
+sns.barplot(data=tips, x='sex', y='total_bill',hue='smoker',estimator=np.min)
+```
+
+
+![[Pasted image 20250622222649.png]]
+
+```python
+sns.barplot(data=tips, x='sex', y='total_bill',ci=None)
+```
+
+![[Pasted image 20250622222708.png]]
+
+```python
+# point plot
+
+sns.pointplot(data=tips, x='sex', y='total_bill',hue='smoker',ci=None)
+```
+
