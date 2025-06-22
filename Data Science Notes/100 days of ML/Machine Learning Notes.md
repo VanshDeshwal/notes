@@ -114,11 +114,25 @@ accuracy_score(y_test,y_pred)
 4. Web Scraping
 
 # Understanding Data (19)
+
 What are the basic questions you should ask when you get new data
-How big is the data ?
-How does the data look like ?
-What is the data type of cols ?
-Are there any missing values ?
+
+1. How big is the data ?
+	- `df.shape`
+2. How does the data look like ?
+	- `df.sample(5)`
+3. What is the data type of cols ?
+	- `df.info`
+4. Are there any missing values ?
+	- `df.isnull().sum()`
+5. How does the data look mathematically ?
+	- `df.describe()`
+6. Are there duplicate values ?
+	- `df.duplicated().sum()`
+7. How is the correlation between cols ?
+	1. some input columns don't have any affect on output columns, so we want to remove them
+	2. 
+
 
 
 # EDA (20-21)
