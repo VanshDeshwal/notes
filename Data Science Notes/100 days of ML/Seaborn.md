@@ -42,8 +42,8 @@ classDef noBox fill:none,stroke:none,color:#57534e,font-family:inherit;
 
 
 ```python
-import seaborn as sns
-tips = sns.load_dataset('tips')
+import seaborn as sns     #importing library
+tips = sns.load_dataset('tips')     #importing dataset
 ```
 # 1. Relational Plot
 
@@ -59,7 +59,7 @@ sns.scatterplot(data=tips, x='total_bill', y='tip', hue='sex', style='time', siz
 ```python
 # relplot -> figure level -> square shape
 
-sns.relplot(data=tips, x='total_bill', y='tip', kind='scatter',hue='sex',style='time',size='size')
+sns.relplot(data=tips, x='total_bill', y='tip', kind='scatter', hue='sex', style='time', size='size')
 ```
 
 ![[Pasted image 20250622185406.png]]
