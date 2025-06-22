@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Data Science Notes/100 days of ML/Seaborn.md",
+                "file": "Coding Notes/Array.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Seaborn"
+              "title": "Array"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 299.5,
-    "collapsed": true
+    "width": 299.5
   },
   "right": {
     "id": "b1fd7f94eb3b5b59",
@@ -182,6 +181,7 @@
   },
   "active": "4a34ccef804858fd",
   "lastOpenFiles": [
+    "Data Science Notes/100 days of ML/Seaborn.md",
     "Pasted image 20250622190744.png",
     "Pasted image 20250622190638.png",
     "Pasted image 20250622190606.png",
@@ -192,10 +192,8 @@
     "Pasted image 20250622190409.png",
     "Pasted image 20250622190346.png",
     "Pasted image 20250622190254.png",
-    "Pasted image 20250622190233.png",
     "Data Science Notes/100 days of ML/Machine Learning Notes.md",
     "Data Science Notes/100 days of ML/Matplotlib.md",
-    "Data Science Notes/100 days of ML/Seaborn.md",
     "Coding Notes/Array.md",
     "Coding Notes/Cheat Sheet Python.md",
     "Coding Notes/Python Basics.md",
