@@ -104,7 +104,19 @@ y_pred = clf.predict(X_test) # clf is our model
 accuracy_score(y_test,y_pred)
 ```
 
+# Working with Data (15-18)
 
+## CSV (15)
+
+## JSON/SQL (16)
+## API (17)
+
+## Web Scraping (18)
+
+# Understanding Data (19)
+# EDA (20-21)
+
+# Pandas Profiling (22)
 # Feature Engineering (23-47)
 
 *  Feature engineering is the process of using domain knowledge to extract features from raw data
