@@ -56,8 +56,15 @@ tips = sns.load_dataset('tips')
 sns.scatterplot(data=tips, x='total_bill', y='tip', hue='sex', style='time', size='size')
 ```
 
+![[Pasted image 20250622123628.png]]
 
+```python
+# relplot -> figure level -> square shape
 
+sns.relplot(data=tips, x='total_bill', y='tip', kind='scatter',hue='sex',style='time',size='size')
+```
+
+![[Pasted image 20250622123706.png]]
 
 
 
