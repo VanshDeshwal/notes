@@ -47,7 +47,6 @@ tips = sns.load_dataset('tips')
 ```
 # 1. Relational Plot
 
-
 ## Scatter plot
 
 ```python
