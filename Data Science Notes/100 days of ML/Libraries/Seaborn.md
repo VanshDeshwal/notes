@@ -230,7 +230,7 @@ sns.rugplot(data=tips,x='total_bill')
 ![[Pasted image 20250622190437.png]]
 
 
-# Matrix plot
+# 3. Matrix plot
 
 ## Heat Map
 - Plot rectangular data as a color-encoded matrix
