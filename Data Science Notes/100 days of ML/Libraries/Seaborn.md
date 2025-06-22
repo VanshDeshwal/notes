@@ -239,8 +239,6 @@ sns.rugplot(data=tips,x='total_bill')
 ```python
 temp_df = gap.pivot(index='country',columns='year',values='lifeExp')
 
-  
-
 # axes level function
 
 plt.figure(figsize=(15,15))
@@ -255,7 +253,7 @@ sns.heatmap(temp_df)
 
 temp_df = gap[gap['continent'] == 'Europe'].pivot(index='country',columns='year',values='lifeExp')
 
-  
+#here we have changed the data from long data to wide data using pivot, need to learn more about this
 
 plt.figure(figsize=(15,15))
 
