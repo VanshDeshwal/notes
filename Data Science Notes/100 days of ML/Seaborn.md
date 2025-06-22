@@ -45,7 +45,7 @@ classDef noBox fill:none,stroke:none,color:#57534e,font-family:inherit;
 import seaborn as sns
 tips = sns.load_dataset('tips')
 ```
-# Relational Plot
+# 1. Relational Plot
 
 
 ## Scatter plot
@@ -90,3 +90,19 @@ sns.relplot(data=temp_df, x='year', y='lifeExp', kind='line')
 
 ![[Pasted image 20250622124221.png]]
 
+# 2. Distribution Plots
+
+- Used for univariate analysis
+- Used to find out the distribution
+- Range of the observation
+- Central Tendency
+- Is the data bimodal?
+- Are there outliers?
+
+## Histplot
+
+```python
+# plotting univariate histogram
+
+sns.histplot(data=tips, x='total_bill')
+```
