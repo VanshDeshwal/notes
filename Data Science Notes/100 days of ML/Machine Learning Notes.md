@@ -114,6 +114,13 @@ accuracy_score(y_test,y_pred)
 4. Web Scraping
 
 # Understanding Data (19)
+What are the basic questions you should ask when you get new data
+How big is the data ?
+How does the data look like ?
+What is the data type of cols ?
+Are there any missing values ?
+
+
 # EDA (20-21)
 
 purpose is to understand data fully
@@ -122,6 +129,7 @@ purpose is to understand data fully
 Each column can be considered as a variable, so analysing a column independently is univariate analysis
 
 # Pandas Profiling (22)
+this automates the above task
 # Feature Engineering (23-47)
 
 *  Feature engineering is the process of using domain knowledge to extract features from raw data
