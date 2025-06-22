@@ -95,11 +95,11 @@ sns.relplot(kind='line', data=temp_df, x='year', y='lifeExp', hue='country', sty
 
 ![[Pasted image 20250622185734.png]]
 
-### Facet plots
+### Facet plots (multiple plots for some value)
 - figure level function
 - work with `relplot`
 - it will not work with scatterplot and lineplot
-if we want to plot multiple graphs
+If we want to plot multiple graphs based of a value, then we can only do it using figure level function because the multiple graphs are on same canvas, and only figure level function can access the canvas
 
 ```python
 sns.relplot(data=tips, x='total_bill', y='tip', kind='line', col='sex', row='day')
