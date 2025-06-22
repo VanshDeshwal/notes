@@ -48,7 +48,7 @@ tips = sns.load_dataset('tips')
 # Relational Plot
 
 
-## Scatterplot
+## Scatter plot
 
 ```python
 # scatter plot -> axes level function
@@ -64,7 +64,29 @@ sns.scatterplot(data=tips, x='total_bill', y='tip', hue='sex', style='time', siz
 sns.relplot(data=tips, x='total_bill', y='tip', kind='scatter',hue='sex',style='time',size='size')
 ```
 
-![[Pasted image 20250622123706.png]]
+![[Pasted image 20250622124008.png]]
 
+## Line plot
 
-## Lineplot
+```python
+gap = px.data.gapminder()
+
+temp_df = gap[gap['country'] == 'India']
+
+temp_df
+```
+
+```python
+# axes level function
+
+sns.lineplot(data=temp_df, x='year', y='lifeExp')
+```
+
+```python
+# using relpplot
+
+sns.relplot(data=temp_df, x='year', y='lifeExp', kind='line')
+```
+
+![[Pasted image 20250622124221.png]]
+
