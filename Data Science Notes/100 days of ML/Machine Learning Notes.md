@@ -106,21 +106,20 @@ accuracy_score(y_test,y_pred)
 
 # Working with Data (15-18)
 
-## CSV (15)
-Comma Separated Values
-Tabs Separated Values
-
-```python
-pd.read_csv('sample.csv')
-```
-
-## JSON/SQL (16)
-## API (17)
-
-## Web Scraping (18)
+1. CSV
+	- Comma Separated Values
+	- Tabs Separated Values
+2.  JSON/SQL 
+3. API
+4. Web Scraping
 
 # Understanding Data (19)
 # EDA (20-21)
+
+purpose is to understand data fully
+
+## Univariate Analysis
+Each column can be considered as a variable, so analysing a column independently is univariate analysis
 
 # Pandas Profiling (22)
 # Feature Engineering (23-47)
