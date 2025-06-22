@@ -287,3 +287,13 @@ sns.clustermap(iris.iloc[:,[0,1,2,3]])
 - Pointplot
 - Countplot
 ### Figure level function -> `catplot`
+
+### Boxplot
+
+A boxplot is a standardized way of displaying the distribution of data based on a five number summary (“minimum”, first quartile [Q1], median, third quartile [Q3] and “maximum”). It can tell you about your outliers and what their values are. Boxplots can also tell you if your data is symmetrical, how tightly your data is grouped and if and how your data is skewed.
+
+![[Pasted image 20250622200729.png]]
+
+```python
+sns.boxplot(data=tips,x='day',y='total_bill')
+```
