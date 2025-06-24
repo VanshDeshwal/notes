@@ -332,7 +332,7 @@ sns.catplot(data=tips, x='day',y='total_bill',kind='strip',jitter=0.2,hue='sex')
 
 ![[Pasted image 20250622222238.png]]
 
-## Swarm Plot
+### Swarm Plot
 
 This is similar to scatter plot with one advantage being that we get a better idea of distribution of data along the column
 
@@ -351,8 +351,8 @@ sns.swarmplot(data=tips, x='day',y='total_bill',hue='sex')
 
 ![[Pasted image 20250622222337.png]]
 
-
-## Boxplot
+## Categorical Distribution plot
+### Boxplot
 
 A boxplot is a standardized way of displaying the distribution of data based on a five number summary (“minimum”, first quartile [Q1], median, third quartile [Q3] and “maximum”). It can tell you about your outliers and what their values are. Boxplots can also tell you if your data is symmetrical, how tightly your data is grouped and if and how your data is skewed.
 
@@ -389,7 +389,7 @@ sns.boxplot(data=tips,y='total_bill')
 
 ![[Pasted image 20250622222500.png]]
 
-## Violinplot = (Boxplot + KDEplot)
+### Violinplot = (Boxplot + KDEplot)
 
 ```python
 sns.violinplot(data=tips,x='day',y='total_bill')
@@ -410,7 +410,8 @@ sns.catplot(data=tips,x='day',y='total_bill',kind='violin',hue='sex',split=True)
 
 ![[Pasted image 20250622222628.png]]
 
-## Bar Plot
+## Categorical Estimation plot
+### Bar Plot
 
 ```python
 # some issue with errorbar
@@ -431,7 +432,7 @@ sns.barplot(data=tips, x='sex', y='total_bill',errorbar=None)
 
 ![[Pasted image 20250622222708.png]]
 
-## Point Plot
+### Point Plot
 
 ```python
 sns.pointplot(data=tips, x='sex', y='total_bill',hue='smoker',errorbar=None)
@@ -441,7 +442,7 @@ sns.pointplot(data=tips, x='sex', y='total_bill',hue='smoker',errorbar=None)
 
 
 
-## Count Plot
+### Count Plot
 
 ```python
 sns.countplot(data=tips,x='sex',hue='day')
