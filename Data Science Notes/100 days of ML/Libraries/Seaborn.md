@@ -514,6 +514,8 @@ g.add_legend()
 
 ```python
 sns.pairplot(iris,hue='species')
+
+# plots a scatterplot between all pairs of coulmns
 ```
 
 ![[Pasted image 20250622223404.png]]
