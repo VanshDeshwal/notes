@@ -499,14 +499,6 @@ sns.residplot(data=tips,x='total_bill',y='tip')
 - A second way to plot Facet plots -> Facet Grid
 
 ```python
-# figure level -> relplot -> displot -> catplot -> lmplot
-
-sns.catplot(data=tips,x='sex',y='total_bill',kind='violin',col='day',row='time')
-```
-
-![[Pasted image 20250622223230.png]]
-
-```python
 g = sns.FacetGrid(data=tips,col='day',row='time',hue='smoker')
 
 g.map(sns.boxplot,'sex','total_bill')
@@ -516,7 +508,9 @@ g.add_legend()
 
 ![[Pasted image 20250622223258.png]]
 
-### Plotting Pairwise Relationship (PairGrid Vs Pairplot)
+## Pair Plot
+
+- Plotting Pairwise Relationship (PairGrid Vs Pairplot)
 
 ```python
 sns.pairplot(iris,hue='species')
