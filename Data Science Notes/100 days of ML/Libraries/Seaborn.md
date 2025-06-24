@@ -513,9 +513,11 @@ g.add_legend()
 - Plotting Pairwise Relationship (PairGrid Vs Pairplot)
 
 ```python
+# pairplot
+
 sns.pairplot(iris,hue='species')
 
-# plots a scatterplot between all pairs of coulmns
+# plots a scatterplot between all pairs of coulmns and histogram/kde for diagonals
 ```
 
 ![[Pasted image 20250622223404.png]]
