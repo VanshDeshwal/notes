@@ -492,7 +492,11 @@ sns.residplot(data=tips,x='total_bill',y='tip')
 
 ![[Pasted image 20250622223204.png]]
 
-### A second way to plot Facet plots -> FacetGrid
+# 6. Multigrid Plots
+
+## Facet Grid
+
+- A second way to plot Facet plots -> Facet Grid
 
 ```python
 # figure level -> relplot -> displot -> catplot -> lmplot
