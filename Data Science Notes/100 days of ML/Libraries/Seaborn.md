@@ -477,6 +477,8 @@ sns.regplot(data=tips,x='total_bill',y='tip')
 
 
 ```python
+#lmplot: exactly same as regplot but with hue param
+
 sns.lmplot(data=tips,x='total_bill',y='tip',hue='sex')
 ```
 
