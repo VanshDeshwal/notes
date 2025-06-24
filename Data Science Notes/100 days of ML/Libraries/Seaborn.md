@@ -333,6 +333,8 @@ sns.catplot(data=tips, x='day',y='total_bill',kind='strip',jitter=0.2,hue='sex')
 
 ## Swarm Plot
 
+This is similar to scatter plot with one advantage being that we get a better idea of distribution of data along the column
+
 ```python
 sns.catplot(data=tips, x='day',y='total_bill',kind='swarm')
 ```
