@@ -575,7 +575,7 @@ g.map_lower(sns.scatterplot)
 
 ![[Pasted image 20250622223517.png]]
 
-### JointGrid Vs Jointplot
+# JointGrid Vs Jointplot
 
 ```python
 sns.jointplot(data=tips,x='total_bill',y='tip',kind='hist',hue='sex')
