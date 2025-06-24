@@ -575,7 +575,7 @@ g.map_lower(sns.scatterplot)
 
 ![[Pasted image 20250622223517.png]]
 
-# JointGrid Vs Jointplot
+## JointGrid Vs Jointplot
 
 - Used to study 2D and 1D together
 
@@ -596,7 +596,7 @@ g.plot(sns.kdeplot,sns.violinplot)
 ![[Pasted image 20250622223600.png]]
 
 
-### Utility Functions
+# Utility Functions
 
 ```python
 # get dataset names
