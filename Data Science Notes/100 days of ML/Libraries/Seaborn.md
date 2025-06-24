@@ -275,20 +275,37 @@ sns.clustermap(iris.iloc[:,[0,1,2,3]])
 ![[Pasted image 20250622190744.png]]
 
 # 4. Categorical Plots
+We use these plots for categorical variables
 
-## Categorical Scatter Plot
-- Stripplot
-- Swarmplot
-## Categorical Distribution Plots
-- Boxplot
-- Violinplot
-## Categorical Estimate Plot -> for central tendency
-- Barplot
-- Pointplot
-- Countplot
-## Figure level function -> `catplot`
+```mermaid
+%%{init: {'theme':'neutral', 'flowchart': {'nodeSpacing': 100, 'rankSpacing': 60}}}%%
+graph TB
+C(Categorical)
+S(Scatter)
+D(Distribution)
+E(Estimate)
 
-## Strip Plot
+
+C --- S
+C --- D
+C --- E
+
+S --- B1("<div style='text-align:left'>1. Strip plot <br/>2. Swarm plot </div>")
+
+D --- B2("<div style='text-align:left'>1. Box plot <br/>2. Violin plot </div>")
+
+E --- B3("<div style='text-align:left'>1. Bar plot <br/>2. Point plot <br/>3. Count plot </div>")
+
+
+class B1,B2,B3, noBox
+classDef noBox fill:none,stroke:none,color:#57534e,font-family:inherit;
+```
+## Categorical Scatterplot
+
+- Used for plotting categorical variables
+- Figure level function -> `catplot`
+
+### Strip Plot
 
 ```python
 # axes level function
