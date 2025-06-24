@@ -301,7 +301,8 @@ class B1,B2,B3, noBox
 classDef noBox fill:none,stroke:none,color:#57534e,font-family:inherit;
 ```
 ## Categorical Scatterplot
-
+	
+- This gives us a bivariate analysis
 - Used for plotting categorical variables
 - Figure level function -> `catplot`
 
