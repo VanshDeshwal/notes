@@ -485,7 +485,7 @@ sns.lmplot(data=tips,x='total_bill',y='tip',hue='sex')
 ![[Pasted image 20250622223143.png]]
 
 ```python
-# residplot
+# residplot: plot of error in prediction using regression, doted line represent 0 error
 
 sns.residplot(data=tips,x='total_bill',y='tip')
 ```
