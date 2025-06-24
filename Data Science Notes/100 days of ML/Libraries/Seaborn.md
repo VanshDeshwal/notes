@@ -414,8 +414,6 @@ sns.catplot(data=tips,x='day',y='total_bill',kind='violin',hue='sex',split=True)
 ### Bar Plot
 
 ```python
-# some issue with errorbar
-
 import numpy as np
 
 sns.barplot(data=tips, x='sex', y='total_bill',hue='smoker',estimator=np.min)
