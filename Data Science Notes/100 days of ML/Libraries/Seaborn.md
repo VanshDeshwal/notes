@@ -577,6 +577,8 @@ g.map_lower(sns.scatterplot)
 
 # JointGrid Vs Jointplot
 
+- Used to study 2D and 1D together
+
 ```python
 sns.jointplot(data=tips,x='total_bill',y='tip',kind='hist',hue='sex')
 ```
