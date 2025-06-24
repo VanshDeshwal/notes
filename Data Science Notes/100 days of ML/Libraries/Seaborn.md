@@ -321,6 +321,7 @@ sns.catplot(data=tips, x='day',y='total_bill',kind='strip')
 
 ![[Pasted image 20250622222153.png]]
 
+This width of each columns is introduced by `sns` to improve visibility i.e. some random noise is added to each column, this is called jitter.
 
 ```python
 # jitter
