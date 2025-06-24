@@ -586,6 +586,8 @@ sns.jointplot(data=tips,x='total_bill',y='tip',kind='hist',hue='sex')
 ![[Pasted image 20250622223542.png]]
 
 ```python
+# Joint Grid
+
 g = sns.JointGrid(data=tips,x='total_bill',y='tip')
 
 g.plot(sns.kdeplot,sns.violinplot)
