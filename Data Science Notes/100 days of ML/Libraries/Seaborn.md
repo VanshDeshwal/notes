@@ -420,6 +420,7 @@ import numpy as np
 sns.barplot(data=tips, x='sex', y='total_bill',hue='smoker',estimator=np.min)
 ```
 
+When there are multiple observations in each category, it also uses bootstrapping to compute a confidence interval around the estimate, which is plotted using error bars
 
 ![[Pasted image 20250622222649.png]]
 
@@ -438,7 +439,7 @@ sns.pointplot(data=tips, x='sex', y='total_bill',hue='smoker',errorbar=None)
 
 ![[Pasted image 20250622222853.png]]
 
-When there are multiple observations in each category, it also uses bootstrapping to compute a confidence interval around the estimate, which is plotted using error bars
+
 
 ## Count Plot
 
