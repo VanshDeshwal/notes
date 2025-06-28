@@ -859,14 +859,13 @@ $b$ is the offset.  To find $m$ and $b$, we have two methods:
 
 Given below are the direct formulas to find the optimal values of $b$ and $m$.
 
-$$
-begin{align*}
-b = \bar y - m \bar x
-$$
+
 
 $$
-m = \frac{\displaystyle \sum_{i=1}^n(x_i - \bar x)(y_i - \bar y)}{\displaystyle \sum_{i=1}^n(x_i - \bar x)^2}
-end{align*}
+\begin{align*}
+\boxed{b =  \bar y - m \bar x_i} \\[1ex]
+\boxed{m = \frac{\displaystyle \sum_{i=1}^n(x_i - \bar x)(y_i - \bar y)}{\displaystyle \sum_{i=1}^n(x_i - \bar x)^2}}
+\end{align*}
 $$
 
 
