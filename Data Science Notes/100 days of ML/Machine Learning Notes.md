@@ -1006,7 +1006,8 @@ $y = x_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n$
 
 $$
 \begin{align*}
-\hat y = x_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n
+\hat y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n \\\
+
 \end{align*}
 $$
 

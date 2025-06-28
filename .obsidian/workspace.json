@@ -20,8 +20,19 @@
               "icon": "lucide-file",
               "title": "Machine Learning Notes"
             }
+          },
+          {
+            "id": "4bf69acf4331d45e",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -179,13 +190,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4a34ccef804858fd",
+  "active": "4bf69acf4331d45e",
   "lastOpenFiles": [
+    "Data Science Notes/100 days of ML/Machine Learning Notes.md",
     "download.jpeg",
     "Data Science Notes/100 days of ML/Images/sample_graph.jpeg",
     "Data Science Notes/100 days of ML/Images/sample_graph_3.jpeg",
     "Data Science Notes/100 days of ML/Images/sample_graph_2.jpeg",
-    "Data Science Notes/100 days of ML/Machine Learning Notes.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1/Regularizing Neural Network.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1/Normalizing training sets.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week1/Introduction To Deep Learning.md",
