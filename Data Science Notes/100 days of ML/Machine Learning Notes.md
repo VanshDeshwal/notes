@@ -1029,16 +1029,22 @@ E = e^Te  \\\\
 = (Y_i^T - (X\beta)^T)(Y_i - X\beta) \\\\
 = Y_i^TY_i - Y_i^TX\beta -(X\beta)^TY_i +(X\beta)^TX\beta \\\\
 = Y_i^TY_i - 2Y_i^TX\beta  +(\beta^T X^T)X\beta \\\\
-\text{to find min beta we differentiate} \\\\
-\frac{dE}{d\beta}=\frac{d}{d\beta}[Y_i^TY_i - 2Y_i^TX\beta  +(\beta^T X^T)X\beta] \\\\
-= 0 - 2Y^TX + \frac{d}{d\beta}[\beta^T X^TX\beta] \\\
-= 0 - 2Y^TX + 2X^TX\beta^T \\\\
-X^TX\beta^T = Y^TX \\\\
-\beta^T = Y^TX(X^TX)^{-1} \\\\
-[\beta^T]^T = [Y^TX(X^TX)^{-1}]^T \\\\
-\beta = [(X^TX)^{-1}]^T[Y^TX]^T \\\\
-\beta = [(X^TX)^{-1}]^TX^TY
+\end{align*}
+$$
 
+To find $\beta$ such that error function is minimum, we differentiate
+
+$$
+\begin{align*}
+\frac{dE}{d\beta} &=\frac{d}{d\beta}[Y_i^TY_i - 2Y_i^TX\beta  +(\beta^T X^T)X\beta]=0 \\[1ex]
+&= 0 - 2Y^TX + \frac{d}{d\beta}[\beta^T X^TX\beta]=0 \\[1ex]
+&= 0 - 2Y^TX + 2X^TX\beta^T =0 \\[1ex]
+X^TX\beta^T &= Y^TX \\[1ex]
+\beta^T &= Y^TX(X^TX)^{-1} \\[1ex]
+[\beta^T]^T &= [Y^TX(X^TX)^{-1}]^T \\[1ex]
+\beta &= [(X^TX)^{-1}]^T[Y^TX]^T \\[1ex]
+\beta &= [(X^TX)^{-1}]^TX^TY \\[1ex]
+\boxed{\beta = (X^TX)^{-1}X^TY}
 \end{align*}
 $$
 
