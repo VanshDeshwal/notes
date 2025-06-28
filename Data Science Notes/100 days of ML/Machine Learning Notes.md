@@ -1006,7 +1006,8 @@ $y = x_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n$
 
 $$
 \begin{align*}
-\hat y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n \\\
+\hat y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n \\\\
+
 \begin{bmatrix}
 x^{(1)}_1 & x^{(3)}_1 & \dots & x^{(m)}_1 \\
 x^{(1)}_2 & x^{(3)}_2 & \dots & x^{(m)}_2 \\
