@@ -1117,16 +1117,19 @@ To reduce overfitting there are three methods
     2. Bagging
     3. Boosting
 ## 1. Regularization (55)
-### 1. 1. Ridge Regularization
+### 1.1. Ridge Regularization
 
-Bagging
-bagging helps in reducing variance
-in bagging, we divide training data in parts and feed it to the multiplt instances of same algo then take majority vote.
-depending on how we sample the data to feed into the algo, there are 4 types of bagging
-0.bagging: sampling rows with replacement(means same column might get repeated)
-1.pasting: sampling rows without replacement
-2.random subspaces: sampling columns
-3.random patches: choose both rows and columns randomly
+## 2. Bagging
+
+- Bagging helps in reducing variance
+- In bagging, we divide training data in parts and feed it to the multiple instances of same algo then take majority vote.
+
+Depending on how we sample the data to feed into the algo, there are 4 types of bagging
+1. bagging: sampling rows with replacement(means same column might get repeated)
+2. pasting: sampling rows without replacement
+3. random subspaces: sampling columns
+4. random patches: choose both rows and columns randomly
+
 Bagging Tips
 Bagging generally gives better results than Pasting
 Good results come around the 25% to 50% row sampling mark
