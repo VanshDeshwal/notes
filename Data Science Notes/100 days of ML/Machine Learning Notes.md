@@ -1004,6 +1004,11 @@ or a hyper plane cutting the nD space.
 So instead of writing $y = mx_1 + nx_2 + b$ for consistency we write the equation as,
 $y = x_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n$
 
+$$
+\begin{align*}
+\hat y = x_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n
+\end{align*}
+$$
 
 
 
