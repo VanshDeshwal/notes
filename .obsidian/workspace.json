@@ -20,19 +20,8 @@
               "icon": "lucide-file",
               "title": "Machine Learning Notes"
             }
-          },
-          {
-            "id": "9b1cbdb9e495d362",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -190,8 +179,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9b1cbdb9e495d362",
+  "active": "c638cfb61292412d",
   "lastOpenFiles": [
+    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1/Normalizing training sets.md",
+    "Data Science Notes/DL Specialization/1. Neural Networks/Week1/Introduction To Deep Learning.md",
+    "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Neural Network Basics.md",
+    "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Python and Vectorization.md",
+    "Data Science Notes/DL Specialization/1. Neural Networks/Week3/Shallow Neural Network.md",
+    "Data Science Notes/DL Specialization/1. Neural Networks/Week4/Deep Neural Network.md",
     "Data Science Notes/100 days of ML/Machine Learning Notes.md",
     "Data Science Notes/100 days of ML/Images/sample_graph_3.jpeg",
     "Data Science Notes/100 days of ML/Images/sample_graph_2.jpeg",
@@ -221,13 +216,8 @@
     "Data Science Notes/MLOps/Week 1/1. ML Project lifecycle.md",
     "Data Science Notes/MLOps/Week 1/2. Deployment.md",
     "Data Science Notes/MLOps/Week 1",
-    "Data Science Notes/DL Specialization/1. Neural Networks/Week3/Shallow Neural Network.md",
-    "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Python and Vectorization.md",
-    "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Neural Network Basics.md",
-    "Data Science Notes/DL Specialization/1. Neural Networks/Week1/Introduction To Deep Learning.md",
     "Data Science Notes/100 days of ML",
     "Data Science Notes/MLOps",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1/Normalizing training sets.md",
     "Data Science Notes/DL Specialization/3. Structuring Machine Learning Projects/Untitled.md",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Untitled.md",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Recurrent Neural Networks.md",
