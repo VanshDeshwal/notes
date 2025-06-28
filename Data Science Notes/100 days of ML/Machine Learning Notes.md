@@ -996,10 +996,9 @@ $n \rightarrow$  no. of rows
 $k \rightarrow$ total no. of independent columns
 # Multiple Linear Regression (50)
 
-When we have more than 1 columns in the input ex: $x_1 \vert x_2 \vert y$ .
-Like we had a line cutting the 2D space in simple LR,
-In multiple LR  we have a plane cutting the 3D space
-or a hyper plane cutting the nD space.
+When we have more than 1 columns in the input ex: $x_1 \vert x_2 \vert y$ , and we want a hyper plane cutting it in two parts we call it multiple linear regression.
+Wee will use OLS method to derive direct formula
+
 
 So instead of writing $y = mx_1 + nx_2 + b$ for consistency we write the equation as,
 $y = x_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n$
