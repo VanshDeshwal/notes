@@ -996,7 +996,12 @@ $n \rightarrow$  no. of rows
 $k \rightarrow$ total no. of independent columns
 # Multiple Linear Regression (50)
 
-When we have more than 1 columns in the input ex: $x_1 \vert x_2 \vert x_3 \vert y$ .
+When we have more than 1 columns in the input ex: $x_1 \vert x_2 \vert y$ .
+Like we had a line cutting the 2D space in simple LR,
+In multiple LR  we have a plane cutting the 3D space
+or a hyper plane cutting the nD space.
+
+
 
 
 # Gradient Descent(51)
