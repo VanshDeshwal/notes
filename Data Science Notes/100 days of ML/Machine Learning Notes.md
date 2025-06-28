@@ -1048,6 +1048,11 @@ X^TX\beta^T &= Y^TX \\[1ex]
 \end{align*}
 $$
 
+## Why gradient descent ?
+
+So if we can just find the direct formula to calculate coefficients then why use gradient descent ?
+	Its because of the step where we are finding the inverse of a matrix, finding the inverse of a matrix with $n$ values takes $O(n^3)$ time.
+
 
 
 # Gradient Descent(51)
