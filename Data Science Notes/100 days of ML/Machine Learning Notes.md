@@ -1026,8 +1026,18 @@ E =  \sum_{i=1}^n (y_i - \hat y_i)^2 \\\\
 
 E = e^Te  \\\\
 = (Y_i - \hat Y_i)^T(Y_i - \hat Y_i) \\\\
-= (Y_i^T - (X\beta)^T)(Y_i - \hat Y_i) \\\\
-= Y_i^TY_i - Y_i^T\hat Y_i -(X\beta)^TY_i +(X\beta)^T\hat Y_i
+= (Y_i^T - (X\beta)^T)(Y_i - X\beta) \\\\
+= Y_i^TY_i - Y_i^TX\beta -(X\beta)^TY_i +(X\beta)^TX\beta \\\\
+= Y_i^TY_i - 2Y_i^TX\beta  +(\beta^T X^T)X\beta \\\\
+\text{to find min beta we differentiate} \\\\
+\frac{dE}{d\beta}=\frac{d}{d\beta}[Y_i^TY_i - 2Y_i^TX\beta  +(\beta^T X^T)X\beta] \\\\
+= 0 - 2Y^TX + \frac{d}{d\beta}[\beta^T X^TX\beta] \\\
+= 0 - 2Y^TX + 2X^TX\beta^T \\\\
+X^TX\beta^T = Y^TX \\\\
+\beta^T = Y^TX(X^TX)^{-1} \\\\
+[\beta^T]^T = [Y^TX(X^TX)^{-1}]^T \\\\
+\beta = [(X^TX)^{-1}]^T[Y^TX]^T \\\\
+\beta = [(X^TX)^{-1}]^TX^TY
 
 \end{align*}
 $$
