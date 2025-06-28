@@ -860,11 +860,13 @@ $b$ is the offset.  To find $m$ and $b$, we have two methods:
 Given below are the direct formulas to find the optimal values of $b$ and $m$.
 
 $$
+begin{align*}
 b = \bar y - m \bar x
 $$
 
 $$
-m = \frac{\sum_{i=1}^n(x_i - \bar x)(y_i - \bar y)}{\sum_{i=1}^n(x_i - \bar x)^2}
+m = \frac{\displaystyle \sum_{i=1}^n(x_i - \bar x)(y_i - \bar y)}{\displaystyle \sum_{i=1}^n(x_i - \bar x)^2}
+end{align*}
 $$
 
 
@@ -897,7 +899,7 @@ Since $E(m,b)$ depends on two variables we have to use partial derivatives.
 First lets solve for $b$
 
 $$
-\frac{\partial E(m,b)}{\partial b} = \frac{\partial \sum_{i=1}^n (y_i - mx_i - b)^2}{\partial b} = 0
+\frac{\partial E(m,b)}{\partial b} = \frac{\partial}{\partial b} \sum_{i=1}^n (y_i - mx_i - b)^2 = 0
 $$
 
 $$
@@ -912,7 +914,7 @@ $$
 Dividing both sides by $n$ (no. of students)
 
 $$
- =  \frac{\sum_{i=1}^n y_i}{n} - \frac{\sum_{i=1}^nmx_i}{n} - \frac{\sum_{i=1}^n b}{n} = 0
+ =  \frac{\displaystyle \sum_{i=1}^n y_i}{n} - \frac{\displaystyle \sum_{i=1}^nmx_i}{n} - \frac{\displaystyle \sum_{i=1}^n b}{n} = 0
 $$
 $$
  =  \bar y - m \bar x_i - b = 0
@@ -924,35 +926,20 @@ Now we solve for $m$,
 
 $$
 \begin{align*}
-\frac{\partial E(m,b)}{\partial m} = \frac{\partial \sum_{i=1}^n (y_i - mx_i - b)^2}{\partial m} = 0  \\\\
-= \frac{\partial \sum_{i=1}^n (y_i - mx_i - \bar y + m \bar x_i)^2}{\partial m} = 0 \\\\
+\frac{\partial E(m,b)}{\partial m} = \frac{\partial}{\partial m} \sum_{i=1}^n (y_i - mx_i - b)^2= 0  \\\\
+= \frac{\partial}{\partial m} \sum_{i=1}^n (y_i - mx_i - \bar y + m \bar x_i)^2 = 0 \\\\
 =\sum_{i=1}^n 2(y_i - mx_i - \bar y + m \bar x_i)(-x_i + \bar x) = 0 \\\\
 =-2\sum_{i=1}^n (y_i - mx_i - \bar y + m \bar x_i)(x_i - \bar x) = 0 \\\\
 = \sum_{i=1}^n [(y_i - \bar y) - m(x_i  - \bar x_i)](x_i - \bar x) = 0 \\\\
 = \sum_{i=1}^n [(y_i - \bar y)(x_i - \bar x) - m(x_i  - \bar x_i)^2] = 0 \\\\
 = \sum_{i=1}^n (y_i - \bar y)(x_i - \bar x) = m\sum_{i=1}^n(x_i  - \bar x_i)^2 \\\\
-\boxed{m = \frac{\sum_{i=1}^n (y_i - \bar y)(x_i - \bar x)}{\sum_{i=1}^n(x_i  - \bar x_i)^2}}
+\boxed{m = \frac{\displaystyle \sum_{i=1}^n (y_i - \bar y)(x_i - \bar x)}{\displaystyle \sum_{i=1}^n(x_i  - \bar x_i)^2}}
 
 \end{align*}
 $$
 
-$$
-\begin{align*}
-\frac{\partial E(m,b)}{\partial m} &= \frac{\partial}{\partial m} \sum_{i=1}^n (y_i - mx_i - b)^2 \\
-&= \frac{\partial}{\partial m} \sum_{i=1}^n \left[ (y_i - \bar{y}) - m(x_i - \bar{x}) \right]^2 \\
-&= 2 \sum_{i=1}^n \left[ (y_i - \bar{y}) - m(x_i - \bar{x}) \right] \cdot \frac{\partial}{\partial m} \left[ -m(x_i - \bar{x}) \right] \\
-&= -2 \sum_{i=1}^n \left[ (y_i - \bar{y}) - m(x_i - \bar{x}) \right] (x_i - \bar{x}) \\
-&= 0 \\
-\Rightarrow \sum_{i=1}^n (y_i - \bar{y})(x_i - \bar{x}) &= m \sum_{i=1}^n (x_i - \bar{x})^2 \\
-\Rightarrow m &= \frac{\sum_{i=1}^n (y_i - \bar{y})(x_i - \bar{x})}{\sum_{i=1}^n (x_i - \bar{x})^2}
-\end{align*}
-$$
 
-
-$$
-
-
-<hr style="border: 1px solid #444; margin: 20px 0;">
+---
 
 # Regression Metrics (49)
 
