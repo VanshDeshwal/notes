@@ -899,21 +899,13 @@ First lets solve for $b$
 
 $$
 \begin{align*}
-\frac{\partial E(m,b)}{\partial b} = \frac{\partial}{\partial b} \sum_{i=1}^n (y_i - mx_i - b)^2 = 0 \\\\
-=  \sum_{i=1}^n \frac{\partial(y_i - mx_i - b)^2}{\partial b} = 0 \\\\
-
+\frac{\partial E(m,b)}{\partial b} = \frac{\partial}{\partial b} \sum_{i=1}^n (y_i - mx_i - b)^2 = 0 \\[1ex]
+=  \sum_{i=1}^n \frac{\partial(y_i - mx_i - b)^2}{\partial b} = 0 \\[1ex]
+=  \sum_{i=1}^n -2(y_i - mx_i - b) = 0 \\[1ex]
+=  \sum_{i=1}^n y_i - \sum_{i=1}^nmx_i - \sum_{i=1}^n b = 0
 \end{align*}
 $$
 
-$$
-
-$$
-$$
- =  \sum_{i=1}^n -2(y_i - mx_i - b) = 0
-$$
-$$
- =  \sum_{i=1}^n y_i - \sum_{i=1}^nmx_i - \sum_{i=1}^n b = 0
-$$
 Dividing both sides by $n$ (no. of students)
 
 $$
