@@ -1025,6 +1025,9 @@ $$
 \beta^{(n)}
 \end{bmatrix} \\\\
 \hat Y &= X\beta \\\\
+\end{align*}
+$$
+\begin{align*}
 E =  \sum_{i=1}^n (y_i - \hat y_i)^2 \\\\
 
 E = e^Te  \\\\
