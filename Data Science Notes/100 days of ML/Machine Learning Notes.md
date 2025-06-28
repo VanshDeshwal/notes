@@ -1025,7 +1025,9 @@ $$
 E =  \sum_{i=1}^n (y_i - \hat y_i)^2 \\\\
 
 E = e^Te  \\\\
-= (Y_i - \hat Y_i)^T(Y_i - \hat Y_i)
+= (Y_i - \hat Y_i)^T(Y_i - \hat Y_i) \\\\
+= (Y_i^T - \hat Y_i^T)(Y_i - \hat Y_i) \\\\
+
 
 \end{align*}
 $$
