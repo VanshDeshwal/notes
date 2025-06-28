@@ -1010,21 +1010,21 @@ $$
 \hat y_{2} \\
 \vdots \\
 \hat y_{n}
-\end{bmatrix} =
+\end{bmatrix} &=
 \begin{bmatrix}
-1 & x_{1} & x^{3} & \dots & x^{m} \\
-1 & x_{1} & x^{3} & \dots & x^{m} \\
-1 & x_{1} & x^{2} & \dots & x^{m} \\
+1 & x_{11} & x_{12} & \dots & x_{1m} \\
+1 & x_{21} & x_{22} & \dots & x_{2m} \\
+1 & x_{31} & x_{32} & \dots & x_{3m} \\
 \vdots    & \vdots    & \ddots     & \vdots \\
-1 & x_{1} & x^{3} & \dots & x^{m} \\
-\end{bmatrix}_{n_x \times m}
+1 & x_{n1} & x^{n3} & \dots & x^{nm} \\
+\end{bmatrix}
 \begin{bmatrix}
 \beta^{(0)} \\
 \beta^{(1)} \\
 \vdots \\
 \beta^{(n)}
 \end{bmatrix} \\\\
-\hat Y = X\beta \\\\
+\hat Y &= X\beta \\\\
 E =  \sum_{i=1}^n (y_i - \hat y_i)^2 \\\\
 
 E = e^Te  \\\\
