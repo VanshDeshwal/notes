@@ -994,8 +994,8 @@ R^2_{adj} = 1 - \Big[ \frac{(1-R^2)(n-1)}{(n-1-k)} \Big]
 $$
 $n \rightarrow$  no. of rows
 $k \rightarrow$ total no. of independent columns
-
 # Multiple Linear Regression (50)
+
 
 # Gradient Descent(51)
 
