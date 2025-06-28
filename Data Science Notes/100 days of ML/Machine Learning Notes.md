@@ -925,10 +925,10 @@ Now we solve for $m$,
 $$
 \begin{align*}
 \frac{\partial E(m,b)}{\partial m} = \frac{\partial \sum_{i=1}^n (y_i - mx_i - b)^2}{\partial m} = 0  \\\\
-= \frac{\partial \sum_{i=1}^n (y_i - mx_i - \bar y - m \bar x_i)^2}{\partial m} = 0 \\\\
-=\sum_{i=1}^n 2(y_i - mx_i - \bar y - m \bar x_i)(-x_i - \bar x) = 0 \\\\
-=-2\sum_{i=1}^n (y_i - mx_i - \bar y - m \bar x_i)(x_i + \bar x) = 0 \\\\
-= \sum_{i=1}^n [(y_i - \bar y) - m(x_i  + \bar x_i)](x_i + \bar x) = 0 \\\\
+= \frac{\partial \sum_{i=1}^n (y_i - mx_i - \bar y + m \bar x_i)^2}{\partial m} = 0 \\\\
+=\sum_{i=1}^n 2(y_i - mx_i - \bar y - m \bar x_i)(-x_i + \bar x) = 0 \\\\
+=-2\sum_{i=1}^n (y_i - mx_i - \bar y - m \bar x_i)(x_i - \bar x) = 0 \\\\
+= \sum_{i=1}^n [(y_i - \bar y) - m(x_i  + \bar x_i)](x_i - \bar x) = 0 \\\\
 = \sum_{i=1}^n [(y_i - \bar y)(x_i + \bar x) - m(x_i  + \bar x_i)^2] = 0 \\\\
 = \sum_{i=1}^n (y_i - \bar y)(x_i + \bar x) = \sum_{i=1}^n m(x_i  + \bar x_i)^2 
 
