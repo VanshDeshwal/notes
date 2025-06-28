@@ -1014,7 +1014,8 @@ x^{(1)}_2 & x^{(3)}_2 & \dots & x^{(m)}_2 \\
 x^{(1)}_3 & x^{(2)}_3 & \dots & x^{(m)}_3 \\
 \vdots    & \vdots    & \ddots     & \vdots \\
 x^{(1)}_{n_x} & x^{(3)}_{n_x} & \dots & x^{(m)}_{n_x} \\
-\end{bmatrix}_{n_x \times m}
+\end{bmatrix}_{n_x \times m} \\\\
+
 \end{align*}
 $$
 
