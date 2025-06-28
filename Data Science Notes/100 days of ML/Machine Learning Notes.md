@@ -996,6 +996,8 @@ $n \rightarrow$  no. of rows
 $k \rightarrow$ total no. of independent columns
 # Multiple Linear Regression (50)
 
+When we have more than 1 columns in the input ex: $x_1 \vert x_2 \vert x_3 \vert y$ .
+
 
 # Gradient Descent(51)
 
