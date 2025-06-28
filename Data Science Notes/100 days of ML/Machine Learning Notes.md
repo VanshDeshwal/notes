@@ -1027,14 +1027,15 @@ $$
 \hat Y &= X\beta \\\\
 \end{align*}
 $$
+$$
 \begin{align*}
-E =  \sum_{i=1}^n (y_i - \hat y_i)^2 \\\\
+E &=  \sum_{i=1}^n (y_i - \hat y_i)^2 \\\\
 
-E = e^Te  \\\\
-= (Y_i - \hat Y_i)^T(Y_i - \hat Y_i) \\\\
-= (Y_i^T - (X\beta)^T)(Y_i - X\beta) \\\\
-= Y_i^TY_i - Y_i^TX\beta -(X\beta)^TY_i +(X\beta)^TX\beta \\\\
-= Y_i^TY_i - 2Y_i^TX\beta  +(\beta^T X^T)X\beta \\\\
+E &= e^Te  \\\\
+&= (Y_i - \hat Y_i)^T(Y_i - \hat Y_i) \\\\
+&= (Y_i^T - (X\beta)^T)(Y_i - X\beta) \\\\
+&= Y_i^TY_i - Y_i^TX\beta -(X\beta)^TY_i +(X\beta)^TX\beta \\\\
+&= Y_i^TY_i - 2Y_i^TX\beta  +(\beta^T X^T)X\beta \\\\
 \end{align*}
 $$
 
