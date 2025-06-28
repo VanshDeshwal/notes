@@ -997,16 +997,20 @@ $k \rightarrow$ total no. of independent columns
 # Multiple Linear Regression (50)
 
 When we have more than 1 columns in the input ex: $x_1 \vert x_2 \vert y$ , and we want a hyper plane cutting it in two parts we call it multiple linear regression.
-Wee will use OLS method to derive direct formula
-
+We will use OLS method to derive direct formula.
 
 So instead of writing $y = mx_1 + nx_2 + b$ for consistency we write the equation as,
-$y = x_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n$
+$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n$
 
 $$
 \begin{align*}
 \hat y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n \\\\
-
+\begin{bmatrix}
+\hat y_{1} \\
+\hat y_{2} \\
+\vdots \\
+\hat y_{m}
+\end{bmatrix} =
 \begin{bmatrix}
 1 & x^{(1)}_1 & x^{(3)}_1 & \dots & x^{(m)}_1 \\
 1 & x^{(1)}_2 & x^{(3)}_2 & \dots & x^{(m)}_2 \\
@@ -1018,7 +1022,7 @@ $$
 \beta^{(0)} \\
 \beta^{(1)} \\
 \vdots \\
-\beta^{(m)}
+\beta^{(n)}
 \end{bmatrix} \\\\
 \hat Y = X\beta \\\\
 E =  \sum_{i=1}^n (y_i - \hat y_i)^2 \\\\
