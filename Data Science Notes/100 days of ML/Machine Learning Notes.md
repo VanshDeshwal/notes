@@ -1004,10 +1004,11 @@ $y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n$
 
 $$
 \begin{align*}
-\hat y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n \\\\
+\hat y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n \\[1ex]
 \begin{bmatrix}
 \hat y_{1} \\
 \hat y_{2} \\
+\hat y_{3} \\
 \vdots \\
 \hat y_{n}
 \end{bmatrix} &=
@@ -1016,26 +1017,26 @@ $$
 1 & x_{21} & x_{22} & \dots & x_{2m} \\
 1 & x_{31} & x_{32} & \dots & x_{3m} \\
 \vdots    & \vdots    & \ddots     & \vdots \\
-1 & x_{n1} & x^{n3} & \dots & x^{nm} \\
+1 & x_{n1} & x_{n3} & \dots & x_{nm} \\
 \end{bmatrix}
 \begin{bmatrix}
-\beta^{(0)} \\
-\beta^{(1)} \\
+\beta_{0} \\
+\beta_{1} \\
+\beta_{2} \\
 \vdots \\
-\beta^{(n)}
-\end{bmatrix} \\\\
-\hat Y &= X\beta \\\\
+\beta_{n}
+\end{bmatrix} \\[1ex]
+\hat Y &= X\beta \\[1ex]
 \end{align*}
 $$
 $$
 \begin{align*}
-E &=  \sum_{i=1}^n (y_i - \hat y_i)^2 \\\\
-
-E &= e^Te  \\\\
-&= (Y_i - \hat Y_i)^T(Y_i - \hat Y_i) \\\\
-&= (Y_i^T - (X\beta)^T)(Y_i - X\beta) \\\\
-&= Y_i^TY_i - Y_i^TX\beta -(X\beta)^TY_i +(X\beta)^TX\beta \\\\
-&= Y_i^TY_i - 2Y_i^TX\beta  +(\beta^T X^T)X\beta \\\\
+E &=  \sum_{i=1}^n (y_i - \hat y_i)^2 \\[1ex]
+E &= e^Te \\[1ex]
+&= (Y_i - \hat Y_i)^T(Y_i - \hat Y_i) \\[1ex]
+&= (Y_i^T - (X\beta)^T)(Y_i - X\beta) \\[1ex]
+&= Y_i^TY_i - Y_i^TX\beta -(X\beta)^TY_i +(X\beta)^TX\beta \\[1ex]
+&= Y_i^TY_i - 2Y_i^TX\beta  +(\beta^T X^T)X\beta \\[1ex]
 \end{align*}
 $$
 
@@ -1059,9 +1060,7 @@ $$
 
 So if we can just find the direct formula to calculate coefficients then why use gradient descent ?
 	Its because of the step where we are finding the inverse of a matrix, finding the inverse of a matrix with $n$ values takes $O(n^3)$ time.
-
-
-
+	
 # Gradient Descent(51)
 
 - Gradient Descent finds the minima of any differentiable function.  
@@ -1117,9 +1116,8 @@ To reduce overfitting there are three methods
     1. Regularization
     2. Bagging
     3. Boosting
-
-Regularization (55)
-1. Ridge Regularization
+## 1. Regularization (55)
+### 1. 1. Ridge Regularization
 
 Bagging
 bagging helps in reducing variance
