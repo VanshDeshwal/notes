@@ -1009,12 +1009,23 @@ $$
 \hat y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n \\\\
 
 \begin{bmatrix}
-x^{(1)}_1 & x^{(3)}_1 & \dots & x^{(m)}_1 \\
-x^{(1)}_2 & x^{(3)}_2 & \dots & x^{(m)}_2 \\
-x^{(1)}_3 & x^{(2)}_3 & \dots & x^{(m)}_3 \\
+1 & x^{(1)}_1 & x^{(3)}_1 & \dots & x^{(m)}_1 \\
+1 & x^{(1)}_2 & x^{(3)}_2 & \dots & x^{(m)}_2 \\
+1 & x^{(1)}_3 & x^{(2)}_3 & \dots & x^{(m)}_3 \\
 \vdots    & \vdots    & \ddots     & \vdots \\
-x^{(1)}_{n_x} & x^{(3)}_{n_x} & \dots & x^{(m)}_{n_x} \\
-\end{bmatrix}_{n_x \times m} \\\\
+1 & x^{(1)}_{n_x} & x^{(3)}_{n_x} & \dots & x^{(m)}_{n_x} \\
+\end{bmatrix}_{n_x \times m}
+\begin{bmatrix}
+\beta^{(0)} \\
+\beta^{(1)} \\
+\vdots \\
+\beta^{(m)}
+\end{bmatrix} \\\\
+\hat Y = X\beta \\\\
+E =  \sum_{i=1}^n (y_i - \hat y_i)^2 \\\\
+
+E = e^Te  \\\\
+= (Y_i - \hat Y_i)^T(Y_i - \hat Y_i)
 
 \end{align*}
 $$
