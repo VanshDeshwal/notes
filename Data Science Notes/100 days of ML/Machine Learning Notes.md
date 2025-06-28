@@ -1009,14 +1009,14 @@ $$
 \hat y_{1} \\
 \hat y_{2} \\
 \vdots \\
-\hat y_{m}
+\hat y_{n}
 \end{bmatrix} =
 \begin{bmatrix}
-1 & x^{(1)}_1 & x^{(3)}_1 & \dots & x^{(m)}_1 \\
-1 & x^{(1)}_2 & x^{(3)}_2 & \dots & x^{(m)}_2 \\
-1 & x^{(1)}_3 & x^{(2)}_3 & \dots & x^{(m)}_3 \\
+1 & x_{(1)} & x^{(3)}_1 & \dots & x^{(m)}_1 \\
+1 & x_{(1)} & x^{(3)}_2 & \dots & x^{(m)}_2 \\
+1 & x_{1} & x^{(2)}_3 & \dots & x^{(m)}_3 \\
 \vdots    & \vdots    & \ddots     & \vdots \\
-1 & x^{(1)}_{n_x} & x^{(3)}_{n_x} & \dots & x^{(m)}_{n_x} \\
+1 & x_{1} & x^{(3)}_{n_x} & \dots & x^{(m)}_{n_x} \\
 \end{bmatrix}_{n_x \times m}
 \begin{bmatrix}
 \beta^{(0)} \\
