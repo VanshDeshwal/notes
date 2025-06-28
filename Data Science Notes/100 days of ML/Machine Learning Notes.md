@@ -899,35 +899,34 @@ First lets solve for $b$
 
 $$
 \begin{align*}
-\frac{\partial E(m,b)}{\partial b} = \frac{\partial}{\partial b} \sum_{i=1}^n (y_i - mx_i - b)^2 = 0 \\[1ex]
-=  \sum_{i=1}^n \frac{\partial(y_i - mx_i - b)^2}{\partial b} = 0 \\[1ex]
-=  \sum_{i=1}^n -2(y_i - mx_i - b) = 0 \\[1ex]
-=  \sum_{i=1}^n y_i - \sum_{i=1}^nmx_i - \sum_{i=1}^n b = 0
+\frac{\partial E(m,b)}{\partial b} &= \frac{\partial}{\partial b} \sum_{i=1}^n (y_i - mx_i - b)^2 = 0 \\[1ex]
+&=  \sum_{i=1}^n \frac{\partial(y_i - mx_i - b)^2}{\partial b} = 0 \\[1ex]
+&=  \sum_{i=1}^n -2(y_i - mx_i - b) = 0 \\[1ex]
+&=  \sum_{i=1}^n y_i - \sum_{i=1}^nmx_i - \sum_{i=1}^n b = 0
 \end{align*}
 $$
 
 Dividing both sides by $n$ (no. of students)
 
 $$
- =  \frac{\displaystyle \sum_{i=1}^n y_i}{n} - \frac{\displaystyle \sum_{i=1}^nmx_i}{n} - \frac{\displaystyle \sum_{i=1}^n b}{n} = 0
-$$
-$$
- =  \bar y - m \bar x_i - b = 0
-$$
-$$
+\begin{align*}
+&= \frac{\displaystyle \sum_{i=1}^n y_i}{n} - \frac{\displaystyle \sum_{i=1}^nmx_i}{n} - \frac{\displaystyle \sum_{i=1}^n b}{n} = 0 \\[1ex]
+&=  \bar y - m \bar x_i - b = 0 \\[4ex]
 \boxed{b =  \bar y - m \bar x_i} \tag{1}
+\end{align*}
 $$
+
 Now we solve for $m$,
 
 $$
 \begin{align*}
-\frac{\partial E(m,b)}{\partial m} = \frac{\partial}{\partial m} \sum_{i=1}^n (y_i - mx_i - b)^2= 0  \\\\
-= \frac{\partial}{\partial m} \sum_{i=1}^n (y_i - mx_i - \bar y + m \bar x_i)^2 = 0 \\\\
-=\sum_{i=1}^n 2(y_i - mx_i - \bar y + m \bar x_i)(-x_i + \bar x) = 0 \\\\
-=-2\sum_{i=1}^n (y_i - mx_i - \bar y + m \bar x_i)(x_i - \bar x) = 0 \\\\
-= \sum_{i=1}^n [(y_i - \bar y) - m(x_i  - \bar x_i)](x_i - \bar x) = 0 \\\\
-= \sum_{i=1}^n [(y_i - \bar y)(x_i - \bar x) - m(x_i  - \bar x_i)^2] = 0 \\\\
-= \sum_{i=1}^n (y_i - \bar y)(x_i - \bar x) = m\sum_{i=1}^n(x_i  - \bar x_i)^2 \\\\
+\frac{\partial E(m,b)}{\partial m} &= \frac{\partial}{\partial m} \sum_{i=1}^n (y_i - mx_i - b)^2= 0  \\\\
+&= \frac{\partial}{\partial m} \sum_{i=1}^n (y_i - mx_i - \bar y + m \bar x_i)^2 = 0 \\\\
+&=\sum_{i=1}^n 2(y_i - mx_i - \bar y + m \bar x_i)(-x_i + \bar x) = 0 \\\\
+&=-2\sum_{i=1}^n (y_i - mx_i - \bar y + m \bar x_i)(x_i - \bar x) = 0 \\\\
+&= \sum_{i=1}^n [(y_i - \bar y) - m(x_i  - \bar x_i)](x_i - \bar x) = 0 \\\\
+&= \sum_{i=1}^n [(y_i - \bar y)(x_i - \bar x) - m(x_i  - \bar x_i)^2] = 0 \\\\
+&= \sum_{i=1}^n (y_i - \bar y)(x_i - \bar x) = m\sum_{i=1}^n(x_i  - \bar x_i)^2 \\\\
 \boxed{m = \frac{\displaystyle \sum_{i=1}^n (y_i - \bar y)(x_i - \bar x)}{\displaystyle \sum_{i=1}^n(x_i  - \bar x_i)^2}}
 
 \end{align*}
