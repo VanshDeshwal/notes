@@ -179,8 +179,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c638cfb61292412d",
+  "active": "4a34ccef804858fd",
   "lastOpenFiles": [
+    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1/Regularizing Neural Network.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1/Normalizing training sets.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week1/Introduction To Deep Learning.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Neural Network Basics.md",
@@ -225,7 +226,6 @@
     "Grade Management System - Project Report.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Multi-class Classification.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Hyperparameter Tuning.md",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Intro to programing frameworks.md",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Batch Normalization.md"
+    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Intro to programing frameworks.md"
   ]
 }
