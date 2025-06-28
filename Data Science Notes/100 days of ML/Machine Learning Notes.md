@@ -938,24 +938,16 @@ $$
 
 $$
 \begin{align*}
-\frac{\partial E(m,b)}{\partial m}
-&= \frac{\partial}{\partial m} \sum_{i=1}^n (y_i - m x_i - b)^2
-\\[1ex]
-&= \frac{\partial}{\partial m} \sum_{i=1}^n \bigl[(y_i - \bar y) - m (x_i - \bar x)\bigr]^2
-\\[1ex]
-&= 2 \sum_{i=1}^n \bigl[(y_i - \bar y) - m (x_i - \bar x)\bigr]\;\frac{\partial}{\partial m}\bigl[-m (x_i - \bar x)\bigr]
-\\[1ex]
-&= -2 \sum_{i=1}^n (y_i - \bar y - m (x_i - \bar x))\,(x_i - \bar x)
-\\[1ex]
-&\overset{!}{=} 0
-\quad\Longrightarrow\quad
-\sum_{i=1}^n (y_i - \bar y)(x_i - \bar x)
-= m \sum_{i=1}^n (x_i - \bar x)^2
-\\[1ex]
-\therefore\quad
-m &= \frac{\displaystyle \sum_{i=1}^n (y_i - \bar y)(x_i - \bar x)}
-{\displaystyle \sum_{i=1}^n (x_i - \bar x)^2}
+\frac{\partial E(m,b)}{\partial m} &= \frac{\partial}{\partial m} \sum_{i=1}^n (y_i - mx_i - b)^2 \\
+&= \frac{\partial}{\partial m} \sum_{i=1}^n \left[ (y_i - \bar{y}) - m(x_i - \bar{x}) \right]^2 \\
+&= 2 \sum_{i=1}^n \left[ (y_i - \bar{y}) - m(x_i - \bar{x}) \right] \cdot \frac{\partial}{\partial m} \left[ -m(x_i - \bar{x}) \right] \\
+&= -2 \sum_{i=1}^n \left[ (y_i - \bar{y}) - m(x_i - \bar{x}) \right] (x_i - \bar{x}) \\
+&= 0 \\
+\Rightarrow \sum_{i=1}^n (y_i - \bar{y})(x_i - \bar{x}) &= m \sum_{i=1}^n (x_i - \bar{x})^2 \\
+\Rightarrow m &= \frac{\sum_{i=1}^n (y_i - \bar{y})(x_i - \bar{x})}{\sum_{i=1}^n (x_i - \bar{x})^2}
 \end{align*}
+$$
+
 
 $$
 
