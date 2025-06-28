@@ -1026,8 +1026,8 @@ E =  \sum_{i=1}^n (y_i - \hat y_i)^2 \\\\
 
 E = e^Te  \\\\
 = (Y_i - \hat Y_i)^T(Y_i - \hat Y_i) \\\\
-= (Y_i^T - \hat Y_i^T)(Y_i - \hat Y_i) \\\\
-= Y_i^TY_i - Y_i^T\hat Y_i -\hat Y_i^TY_i +\hat Y_i^T\hat Y_i
+= (Y_i^T - (X\beta)^T)(Y_i - \hat Y_i) \\\\
+= Y_i^TY_i - Y_i^T\hat Y_i -(X\beta)^TY_i +(X\beta)^T\hat Y_i
 
 \end{align*}
 $$
