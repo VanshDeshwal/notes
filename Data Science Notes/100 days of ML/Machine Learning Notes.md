@@ -1012,11 +1012,11 @@ $$
 \hat y_{n}
 \end{bmatrix} =
 \begin{bmatrix}
-1 & x_{(1)} & x^{(3)}_1 & \dots & x^{(m)}_1 \\
-1 & x_{(1)} & x^{(3)}_2 & \dots & x^{(m)}_2 \\
-1 & x_{1} & x^{(2)}_3 & \dots & x^{(m)}_3 \\
+1 & x_{1} & x^{(3)} & \dots & x^{(m)} \\
+1 & x_{1} & x^{(3)} & \dots & x^{(m)} \\
+1 & x_{1} & x^{(2)} & \dots & x^{(m)} \\
 \vdots    & \vdots    & \ddots     & \vdots \\
-1 & x_{1} & x^{(3)}_{n_x} & \dots & x^{(m)}_{n_x} \\
+1 & x_{1} & x^{3} & \dots & x^{(m} \\
 \end{bmatrix}_{n_x \times m}
 \begin{bmatrix}
 \beta^{(0)} \\
