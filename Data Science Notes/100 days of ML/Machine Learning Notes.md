@@ -145,7 +145,16 @@ prerequisites: [[Seaborn]], [[Matplotlib]]
 
 ### Bivariate Analysis (21)
 ## Pandas Profiling (22)
-this automates the above task
+
+This library  automates the above task
+
+```python
+from pandas_profiling import ProfileReport
+prof = ProfileReport(df)
+prof.to_file(output_file='output.html')
+```
+
+This will generate a file in the current directory that includes all the graphs and reports
 # Feature Engineering (23-47)
 
 *  Feature engineering is the process of using domain knowledge to extract features from raw data

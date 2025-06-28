@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Data Science Notes/100 days of ML/Libraries/Seaborn.md",
+                "file": "Data Science Notes/100 days of ML/Machine Learning Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Seaborn"
+              "title": "Machine Learning Notes"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 299.5
+    "width": 299.5,
+    "collapsed": true
   },
   "right": {
     "id": "b1fd7f94eb3b5b59",
@@ -179,8 +180,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c0fa10d6969b4b2d",
+  "active": "4a34ccef804858fd",
   "lastOpenFiles": [
+    "Data Science Notes/100 days of ML/Libraries/Seaborn.md",
     "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622223542.png",
     "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622223517.png",
     "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622223459.png",
@@ -191,9 +193,7 @@
     "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622223230.png",
     "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622223204.png",
     "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622223143.png",
-    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622223126.png",
     "Data Science Notes/100 days of ML/Machine Learning Notes.md",
-    "Data Science Notes/100 days of ML/Libraries/Seaborn.md",
     "Data Science Notes/100 days of ML/Libraries/Matplotlib.md",
     "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs",
     "Data Science Notes/100 days of ML/Libraries/New folder",
