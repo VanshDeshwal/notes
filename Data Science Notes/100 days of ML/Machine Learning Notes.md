@@ -1182,6 +1182,11 @@ Similarly.
 $$
 \frac{\partial L}{\partial \beta_2} = -\frac{2}{n}\sum_{i=1}^n(y_i - \hat y_i)x_{i2}\\
 $$
+In General, for $m$ columns.
+
+$$
+\frac{\partial L}{\partial \beta_m} = -\frac{2}{n}\sum_{i=1}^n(y_i - \hat y_i)x_{im}\\
+$$
 
 
 # Bias Variance Tradeoff (54-)
