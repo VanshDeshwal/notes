@@ -11,14 +11,12 @@
             "id": "4a34ccef804858fd",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Data Science Notes/100 days of ML/Machine Learning Notes.md",
-                "mode": "source",
-                "source": false
+                "file": "Data Science Notes/DL Specialization/1. Neural Networks/Images/Pasted image 20250521102647.jpg"
               },
-              "icon": "lucide-file",
-              "title": "Machine Learning Notes"
+              "icon": "lucide-image",
+              "title": "Pasted image 20250521102647"
             }
           }
         ]
@@ -74,7 +72,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -182,11 +181,11 @@
   },
   "active": "4a34ccef804858fd",
   "lastOpenFiles": [
+    "Data Science Notes/100 days of ML/Machine Learning Notes.md",
     "Coding Notes/Array.md",
     "Coding Notes/Cheat Sheet Python.md",
     "Coding Notes/Python Basics.md",
     "Coding Notes/Cheat Sheet C++.md",
-    "Data Science Notes/100 days of ML/Machine Learning Notes.md",
     "Data Science Notes/100 days of ML/Libraries/Seaborn.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Python and Vectorization.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Neural Network Basics.md",
