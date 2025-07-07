@@ -1135,8 +1135,10 @@ $$
 \end{align*}
 $$
 
-$L = \frac{1}{n}\sum_{i=1}^n(y_i - \hat y_i)$
+$L = \frac{1}{n}\sum_{i=1}^n(y_i - \hat y_i)^2$
 
+Why mean squared error ? 
+	doesent matter, if we minimise squared error then we also minimise mse 
 
 # Bias Variance Tradeoff (54-)
 
