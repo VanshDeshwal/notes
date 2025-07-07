@@ -1212,10 +1212,24 @@ To reduce overfitting there are three methods
     1. Regularization
     2. Bagging
     3. Boosting
-## 1. Regularization (55)
-### 1.1. Ridge Regularization
+# Regularization (55)
+## 1. Ridge Regularization
 
-## 2. Bagging
+## 2. Lasso Regularization (L1 Regularization) (56)
+
+## 3. Elastic Regularization (57)
+
+# Logistic Regression (58)
+
+# SoftMax Regression (60)
+
+# Decision Tree (61)
+
+# Ensemble (60)
+
+## Voting Ensemble (63)
+
+## Bagging Ensemble (64)
 
 - Bagging helps in reducing variance
 - In bagging, we divide training data in parts and feed it to the multiple instances of same algo then take majority vote.
@@ -1231,6 +1245,7 @@ Bagging generally gives better results than Pasting
 Good results come around the 25% to 50% row sampling mark
 Random patches and subspaces should be used while dealing with high dimensional data
 To find the correct hyperparameter values we can do GridSearchCV/RandomSearchCV
+
 # Random forest (65)
 
 sampling is done randomly and given to multiple decision tree
@@ -1241,6 +1256,9 @@ whenever training random forests, we use random samples to input in forest. ther
 
 Feature Importance
 some features are more important than the others , we can find that using random forests
+
+# AdaBoost (66)
+
 
 # K-Means Clustering (103)
 
@@ -1265,5 +1283,19 @@ We use a method called (Elbow Method)
 [demo code](https://colab.research.google.com/drive/1BpB9SNu9SUx-BDqa1PR6xKxq6mSGwMzk#scrollTo=f9407509)
 (104)
 
-# Implementation from Scratch (105)
+
+
+
+
+# Gradient Boosting
+
+# KNN
+
 # Support Vector Machines (113)
+
+# Naive Bayes
+
+# XGBoost
+
+# DBScan Clustering
+
