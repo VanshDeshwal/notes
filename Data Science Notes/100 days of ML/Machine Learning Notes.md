@@ -1188,6 +1188,12 @@ $$
 \boxed{\frac{\partial L}{\partial \beta_m} = -\frac{2}{n}\sum_{i=1}^n(y_i - \hat y_i)x_{im}}\\
 $$
 
+## Stochastic Gradient Descent
+
+- used most of the time
+Problem with batch gradient descent ?
+	- 
+
 
 # Bias Variance Tradeoff (54-)
 
