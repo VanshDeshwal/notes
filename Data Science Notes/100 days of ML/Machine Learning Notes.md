@@ -1222,7 +1222,7 @@ To reduce overfitting there are three methods
 ## 1. Ridge Regularization
 
 - Also called L2 regularization
-- We add something extra to a model 
+- We add some  extra information to a model that reduces overfitting
 
 ## 2. Lasso Regularization
 
