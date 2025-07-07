@@ -1156,6 +1156,20 @@ Now lets say we have $n$ columns instead of 2,
 $$
 \frac{\partial L}{\partial \beta_0} = -\frac{2}{n}\Big[(y_1 - \hat y_1) + (y_2 - \hat y_2) + (y_3 - \hat y_3) + \dots + (y_n - \hat y_n)\Big] \\
 $$
+
+Calculating for $\beta_1$ with 2 columns
+
+$$
+\begin{align*}
+L = \frac{1}{2}\sum_{i=1}^2(y_i - \hat y_i)^2 \\
+L = \frac{1}{2}\Big[(y_1 - \hat y_1)^2 + (y_2 - \hat y_2)^2\Big] \\
+L = \frac{1}{2}\Big[(y_1 - \beta_0 - \beta_1x_{11} - \beta_2x_{12})^2+(y_2 - \beta_0 - \beta_1x_{21} - \beta_2x_{22})^2\Big] \\
+\frac{\partial L}{\partial \beta_1} = \frac{1}{2}\Big[2(y_1 - \hat y_1)(-x_{11}) + 2(y_2 - \hat y_2)(-x_{21})\Big] \\
+\frac{\partial L}{\partial \beta_1} = -\frac{2}{2}\Big[(y_1 - \hat y_1) + (y_2 - \hat y_2)\Big] \\
+\end{align*}
+$$
+
+
 # Bias Variance Tradeoff (54-)
 
 **Bias:** If our model follows some training points very closely than others, its called high biased
