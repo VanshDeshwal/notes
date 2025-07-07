@@ -1185,7 +1185,7 @@ $$
 In General, for $m$ columns.
 
 $$
-\frac{\partial L}{\partial \beta_m} = -\frac{2}{n}\sum_{i=1}^n(y_i - \hat y_i)x_{im}\\
+\boxed{\frac{\partial L}{\partial \beta_m} = -\frac{2}{n}\sum_{i=1}^n(y_i - \hat y_i)x_{im}}\\
 $$
 
 
