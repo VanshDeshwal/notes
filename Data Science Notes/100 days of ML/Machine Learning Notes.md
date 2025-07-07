@@ -1177,6 +1177,13 @@ $$
 \frac{\partial L}{\partial \beta_1} = -\frac{2}{n}\sum_{i=1}^n(y_i - \hat y_i)x_{i1}\\
 $$
 
+Similarly.
+
+$$
+\frac{\partial L}{\partial \beta_2} = -\frac{2}{n}\sum_{i=1}^n(y_i - \hat y_i)x_{i2}\\
+$$
+
+
 # Bias Variance Tradeoff (54-)
 
 **Bias:** If our model follows some training points very closely than others, its called high biased
