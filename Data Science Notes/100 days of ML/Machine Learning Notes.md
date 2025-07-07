@@ -1138,7 +1138,7 @@ $$
 $L = \frac{1}{n}\sum_{i=1}^n(y_i - \hat y_i)^2$
 
 Why mean squared error ? 
-	doesn't matter, if we minimise squared error then we also minimise mse 
+	doesn't matter, if we minimize squared error then we also minimize M.S.E 
 
 # Bias Variance Tradeoff (54-)
 
