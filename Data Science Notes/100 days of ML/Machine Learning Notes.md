@@ -1118,16 +1118,9 @@ initial b value is 0, we will do one manually then show next iterations using a 
 %%{init: {'theme':'neutral', 'flowchart': {'nodeSpacing': 100, 'rankSpacing': 60}}}%%
 graph TB
 
-G(Gradient Descent) --- B(Batc)
-G(Gradient Descent) --- S(Supervised)
-G(Gradient Descent) --- M(Custom)
-
-U --- T("<div style='text-align:left'>1. Equal Width (Uniform)<br/>2. Equal Frequency<br/>3. K Means </div>")
-
-S --- P("<div style='text-align:left'>1. Decision Tree Binning </div>")
-
-class T,P noBox
-classDef noBox fill:none,stroke:none,color:#57534e,font-family:inherit;
+G(Gradient Descent) --- B(Batch GD)
+G(Gradient Descent) --- S(Stochastic GD)
+G(Gradient Descent) --- M(Mini-Batch GD)
 ```
 
 # Bias Variance Tradeoff (54-)
