@@ -1218,12 +1218,15 @@ To reduce overfitting there are three methods
     1. Regularization
     2. Bagging
     3. Boosting
-# Regularization (55)
+# Regularization
 ## 1. Ridge Regularization
 
-## 2. Lasso Regularization (L1 Regularization) (56)
+- Also called L2 regularization
+- We add something extra to a model 
 
-## 3. Elastic Regularization (57)
+## 2. Lasso Regularization
+
+## 3. Elastic Regularization
 
 # Logistic Regression (58)
 
