@@ -1193,7 +1193,7 @@ $$
 - used most of the time
 Problem with batch gradient descent ?
 	- very slow with big data
-
+	- we have to load whole $X_train$ into ram to find $\hat y$ using np.dot
 
 
 # Bias Variance Tradeoff (54-)
