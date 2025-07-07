@@ -1190,10 +1190,14 @@ $$
 
 ## Stochastic Gradient Descent
 
-- used most of the time
+- Only 1 row is processed in each epoch
+- Used most of the time
+
 Problem with batch gradient descent ?
 	- very slow with big data
 	- we have to load whole $X_train$ into ram to find $\hat y$ using np.dot
+
+## Mini Batch Gradient Descent
 
 
 # Bias Variance Tradeoff (54-)
