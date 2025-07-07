@@ -1174,7 +1174,7 @@ $$
 \frac{\partial L}{\partial \beta_1} = -\frac{2}{n}\Big[(y_1 - \hat y_1)(x_{11}) + (y_2 - \hat y_2)(x_{21}) + (y_3 - \hat y_3)(x_{31}) + \dots + (y_n - \hat y_n)(x_{n1})\Big] \\
 $$
 $$
-\frac{\partial L}{\partial \beta_1} = -\frac{2}{n}\sum(y_1 - \hat y_1)x_{11}\\
+\frac{\partial L}{\partial \beta_1} = -\frac{2}{n}\sum_{i=1}^n(y_i - \hat y_i)x_{i1}\\
 $$
 
 # Bias Variance Tradeoff (54-)
