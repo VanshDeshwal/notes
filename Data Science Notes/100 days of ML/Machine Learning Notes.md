@@ -1123,6 +1123,10 @@ G(Gradient Descent) --- S(Stochastic GD)
 G(Gradient Descent) --- M(Mini-Batch GD)
 ```
 
+## Batch Gradient Descent
+
+
+
 # Bias Variance Tradeoff (54-)
 
 **Bias:** If our model follows some training points very closely than others, its called high biased
