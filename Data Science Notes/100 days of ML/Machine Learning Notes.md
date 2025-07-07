@@ -1199,6 +1199,7 @@ Problem with batch gradient descent ?
 
 ## Mini Batch Gradient Descent
 
+We decide after how many rows we will process in each epoch. that many rows is the batch size
 # Polynomial Regression (53)
 
 Used to fit a polynomial instead of straight line to a data
