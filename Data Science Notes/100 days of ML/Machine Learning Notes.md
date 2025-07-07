@@ -1139,7 +1139,16 @@ $L = \frac{1}{n}\sum_{i=1}^n(y_i - \hat y_i)^2$
 
 Why mean squared error ? 
 	doesn't matter, if we minimize squared error then we also minimize M.S.E 
+Since we have only 2 rows of data lets expand the loss function as
 
+$$
+\begin{align*}
+L = \frac{1}{2}\sum_{i=1}^2(y_i - \hat y_i)^2 \\
+L = \frac{1}{2}[(y_1 - \hat y_1)^2 + (y_2 - \hat y_2)^2] \\
+L = \frac{1}{2}[(y_1 - \beta_0 - \beta_1x_{11} - \beta_2x_{12})^2+(y_2 - \beta_0 - \beta_1x_{21} - \beta_2x_{22})^2] \\
+
+\end{align*}
+$$
 # Bias Variance Tradeoff (54-)
 
 **Bias:** If our model follows some training points very closely than others, its called high biased
