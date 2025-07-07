@@ -1084,12 +1084,13 @@ We take a random line:  $y = mx + b$.
 $$
 \begin{align*}
 y = mx + b \\[1ex]
-\text{we know m, find best b} \\[1ex]
-\text{our loss function } L = \sum_{i=1}^n(y_i - \hat y_i)^2 \\[1ex]
-\text{We want to minimise this for dome 'b'} \\[1ex]
-\frac{dL}{db} = \frac{d}{db}\sum_{i=1}^n(y_i - \hat y_i)^2 \\[1ex]
+L(m,b) = \sum_{i=1}^n(y_i - \hat y_i)^2 \\[1ex]
+\text{We want to minimise this for some `b'} \\[1ex]
+\frac{dL(m,b)}{db} = \frac{d}{db}\sum_{i=1}^n(y_i - \hat y_i)^2 \\[1ex]
 = \frac{d}{db}\sum_{i=1}^n(y_i - mx_i - b)^2 \\[1ex]
-\boxed{\text{Slope } = -2 \sum_{i=1}^n(y_i - mx_i - b)} 
+\boxed{\text{b\_slope } = -2 \sum_{i=1}^n(y_i - mx_i - b)} \\[1ex]
+\text{Similarly for m} \\[1ex]
+\boxed{\text{m\_slope } = -2 \sum_{i=1}^n(y_i - mx_i - b)(x_i)} \\[1ex]
 \end{align*}
 $$
 
@@ -1097,11 +1098,15 @@ In Short we repeat the below process...
 
 $$
 \begin{align*}
-\text{choose random b} \\[1ex]
-\boxed{\text{Slope } = -2 \sum_{i=1}^n(y_i - mx_i - b)} \\[1ex]
-b_{new} = b_{old} - \eta\text{Slope} ,\\[1ex]
+\text{choose random m,b} \\[1ex]
+\boxed{\text{b\_slope } = -2 \sum_{i=1}^n(y_i - mx_i - b)} \\[1ex]
+\boxed{\text{m\_slope } = -2 \sum_{i=1}^n(y_i - mx_i - b)(x_i)} \\[1ex]
+b_{new} = b_{old} - \eta\text{b\_slope} ,\\[1ex]
+m_{new} = m_{old} - \eta\text{m\_slope} ,\\[1ex]
 \eta = 0.01 \\[1ex]
-\dots \text{untill } b_{old} - b_{new} < 0.001
+\dots \text{untill } \\[1ex]
+b_{old} - b_{new} < 0.001 \\[1ex]
+m_{old} - m_{new} < 0.001
 \end{align*} 
 $$
  
