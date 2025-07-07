@@ -1223,6 +1223,8 @@ To reduce overfitting there are three methods
 
 - Also called L2 regularization
 - We add some  extra information to a model that reduces overfitting
+- Most people use this in all of their models because there is no downside of keeping it
+
 
 ## 2. Lasso Regularization
 
