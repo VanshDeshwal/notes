@@ -1202,8 +1202,13 @@ Problem with batch gradient descent ?
 We decide after how many rows we will process in each epoch. that many rows is the batch size
 # Polynomial Regression (53)
 
-Used to fit a polynomial instead of straight line to a data
+- Used to fit a polynomial instead of straight line to a data
+- There is a hyper parameter called `degree`
+If our table is 2 columns, X|Y and `degree = 3` then we do $Y=\beta_0 + \beta_1X^1 + \beta_2X^2$  
+then apply linear regression
 
+Why is polynomial Regression also called polynomial linear regression ?
+	Because the relationship between Y and Coefficients $\beta_m$ is still linear
 # Bias Variance Tradeoff (54-)
 
 **Bias:** If our model follows some training points very closely than others, its called high biased
