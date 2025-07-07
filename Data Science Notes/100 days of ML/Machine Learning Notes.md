@@ -1112,6 +1112,10 @@ $$
  
 initial b value is 0, we will do one manually then show next iterations using a loop
 
+# Types of Gradient Descent
+
+
+
 # Bias Variance Tradeoff (54-)
 
 **Bias:** If our model follows some training points very closely than others, its called high biased
