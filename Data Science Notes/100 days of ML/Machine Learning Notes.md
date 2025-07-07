@@ -1252,13 +1252,12 @@ sampling is done randomly and given to multiple decision tree
 Hyper Parameter Tuning
 we can find best combination of hyper parameters, see video
 OOB score
-whenever training random forests, we use random samples to input in forest. there are always around 37% rows that are never choosen for sampling, so we use them as test set.
+whenever training random forests, we use random samples to input in forest. there are always around 37% rows that are never chosen for sampling, so we use them as test set.
 
 Feature Importance
 some features are more important than the others , we can find that using random forests
 
 # AdaBoost (66)
-
 
 # K-Means Clustering (103)
 
