@@ -1173,7 +1173,9 @@ For $n$ columns instead of 2,
 $$
 \frac{\partial L}{\partial \beta_1} = -\frac{2}{n}\Big[(y_1 - \hat y_1)(x_{11}) + (y_2 - \hat y_2)(x_{21}) + (y_3 - \hat y_3)(x_{31}) + \dots + (y_n - \hat y_n)(x_{n1})\Big] \\
 $$
-
+$$
+\frac{\partial L}{\partial \beta_1} = -\frac{2}{n}\sum(y_1 - \hat y_1)x_{11}\\
+$$
 
 # Bias Variance Tradeoff (54-)
 
