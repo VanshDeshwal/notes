@@ -1192,7 +1192,8 @@ $$
 
 - used most of the time
 Problem with batch gradient descent ?
-	- 
+	- very slow with big data
+
 
 
 # Bias Variance Tradeoff (54-)
