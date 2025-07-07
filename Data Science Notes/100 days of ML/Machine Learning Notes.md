@@ -1171,7 +1171,7 @@ $$
 For $n$ columns instead of 2,
 
 $$
-\frac{\partial L}{\partial \beta_1} = -\frac{2}{n}\Big[(y_1 - \hat y_1)(x) + (y_2 - \hat y_2)\Big] \\
+\frac{\partial L}{\partial \beta_1} = -\frac{2}{n}\Big[(y_1 - \hat y_1)(x_{11}) + (y_2 - \hat y_2)(x_{11}) + (y_3 - \hat y_3)(x_{11}) + \dots + (y_n - \hat y_n)(x_{11})\Big] \\
 $$
 
 
