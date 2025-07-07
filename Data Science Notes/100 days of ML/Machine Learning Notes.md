@@ -1125,6 +1125,17 @@ G(Gradient Descent) --- M(Mini-Batch GD)
 
 ## Batch Gradient Descent
 
+$y=\beta_0 + \beta_1x_1 + \beta_2x_2$
+
+$$
+\begin{align*}
+\beta_0 = \beta_0 - \eta(\frac{\partial L}{\partial \beta_0}) \\[1ex]
+\beta_1 = \beta_1 - \eta(\frac{\partial L}{\partial \beta_1}) \\[1ex]
+\beta_2 = \beta_2 - \eta(\frac{\partial L}{\partial \beta_2}) \\[1ex]
+\end{align*}
+$$
+
+$L = \frac{1}{n}\sum_{i=1}^n(y_i - \hat y_i)$
 
 
 # Bias Variance Tradeoff (54-)
