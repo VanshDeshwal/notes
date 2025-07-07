@@ -1068,15 +1068,15 @@ So if we can just find the direct formula to calculate coefficients then why use
 	- We will use it to find the best-fit line.
 
 We take a random line:  $y = mx + b$.  
-For simplicity, we assume that we know the best value of $m$, and we just need to find the best value of $b$.
-
 ## Steps of Gradient Descent:
 
-- **Step 1:** Choose a random $b$, say $b$ = $10$.
-- **Step 2:** We now have a line. Next, we look at its **loss function** and find the value of $b$ that minimizes the loss function. This is where Gradient Descent is used.
+- **Step 1:** Choose a random $b$ and $m$, say $b$ = $10$ and $m$ = 1.
+- **Step 2:** We now have a line. Next, we look at its **loss function** and find the value of $b$ & $m$ that minimizes the loss function. This is where Gradient Descent is used.
 - **Step 3:** Compute the derivative of the loss function.
-- **Step 4:** $\frac{dL}{db}$ gives the slope of the loss function at $b$ = b.
-- **Step 5:** Update $b$ using the formula:   $b_{new} = b_{old} - \eta * slope$
+- **Step 4:** $\frac{dL(m,b)}{db}$ gives the b component of slope of the loss function at $b$ = b, lets call it $b\_slope$
+		Similarly, $\frac{dL(m,b)}{dm}$ gives the m component of  slope of the loss function at $m$ = m, call it $m\_slope$
+- **Step 5:** Update $b$ using the formula:   $b_{new} = b_{old} - \eta * b\_slope$
+		Update $m$ using the formula:   $m_{new} = m_{old} - \eta * m\_slope$
 		- **Note**: $\eta$ (eta) is the learning rate (usually taken as **0.01**).
 		- $\eta * slope$ is called the **step size**.
 - **Step 6:** Repeat this process until $b_{old} - b_{new} < 0.001$ .
