@@ -1300,9 +1300,9 @@ $$
 	as $\lambda$ increases, the loss function becomes narrow and moves towards origin
 - Why the name Ridge Regression ?
 	??
-
-
 ## 2. Lasso Regularization
+- Also called L1 regularization
+- 
 
 ## 3. Elastic Regularization
 
