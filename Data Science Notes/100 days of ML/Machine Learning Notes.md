@@ -1280,13 +1280,14 @@ L = (XW-Y)^T (XW-Y)+\lambda W^TW \\[1ex]
 \frac{dL}{dW} = 2X^TXW -2X^TY +0 + 2\lambda W = 0 \\[1ex]
 X^TXW +\lambda W = X^TY \\[1ex]
 (X^TX +\lambda I)W = X^TY \\[1ex]
-\boxed{W = (X^TX +\lambda)^{-1}X^TY}
+\boxed{W = (X^TX +\lambda I)^{-1}X^TY}
 \end{align*}
 $$
 The value of $W$ that we got in OLS multiple regression was:
 $$
-\boxed{W = (X^TX +\lambda)^{-1}X^TY}
+\boxed{W = (X^TX)^{-1}X^TY}
 $$
+
 
 
 ## 2. Lasso Regularization
