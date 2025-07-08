@@ -952,13 +952,13 @@ We will use the below plot as reference
 ## 1. MAE (Mean Absolute Error)
 
 $$
-MAE = \frac{\sum^n_{i=1} \vert y_i - \hat y_i\vert}{n}
+MAE = \frac{\displaystyle\sum^n_{i=1} \vert y_i - \hat y_i\vert}{n}
 $$
 
 ## 2. MSE (Mean Squared Error)
 
 $$
-MSE = \frac{\sum^n_{i=1}(y_i - \hat y_i)^2}{n}
+MSE = \frac{\displaystyle\sum^n_{i=1}(y_i - \hat y_i)^2}{n}
 $$
 
 ## 3. RMSE(Root Mean Squared Error)
@@ -986,7 +986,7 @@ and $SS_M$ is sum of squared error in mean
 - To fix this, we define the **Adjusted R² Score**.
 
 $$
-R^2 = 1 - \frac{\Big[\sum_{i=1}^n(y_i - \hat y_i)^2\Big]_{Reg}}{\Big[\sum_{i=1}^n(y_i - \hat y_i)^2\Big]_{Mean}}
+R^2 = 1 - \frac{\Big[\displaystyle\sum_{i=1}^n(y_i - \hat y_i)^2\Big]_{Reg}}{\Big[\displaystyle\sum_{i=1}^n(y_i - \hat y_i)^2\Big]_{Mean}}
 $$
 
 $$
@@ -1251,7 +1251,10 @@ L = \sum_{i=1}^n(y_i - mx_i -\bar y + m \bar x_i)^2 + \lambda(m^2) \\[1ex]
 \frac{\partial L}{\partial m} = 2\sum_{i=1}^n(y_i - mx_i -\bar y + m \bar x_i)(-x_i + \bar x_i) + 2\lambda m = 0 \\[1ex]
 -2\sum_{i=1}^n(y_i - mx_i -\bar y + m \bar x_i)(x_i - \bar x_i) + 2\lambda m = 0 \\[1ex]
 \lambda m -\sum_{i=1}^n\Big[(y_i -\bar y) - m(x_i  - \bar x_i)\Big](x_i - \bar x_i) = 0 \\[1ex]
-
+\lambda m -\sum_{i=1}^n\Big[(y_i -\bar y)(x_i - \bar x_i) - m(x_i - \bar x_i)^2\Big] = 0 \\[1ex]
+\lambda m -\sum_{i=1}^n(y_i -\bar y)(x_i - \bar x_i) +m\sum_{i=1}^n(x_i - \bar x_i)^2 = 0 \\[1ex]
+\lambda m  +m\sum_{i=1}^n(x_i - \bar x_i)^2 = \sum_{i=1}^n(y_i -\bar y)(x_i - \bar x_i) \\[1ex]
+\boxed{m = \frac{\displaystyle\sum_{i=1}^n(y_i -\bar y)(x_i - \bar x_i)}{\displaystyle\sum_{i=1}^n(x_i - \bar x_i)^2 + \lambda}} \\[1ex]
 \end{align*}
 $$
 
