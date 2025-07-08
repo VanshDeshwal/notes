@@ -1228,7 +1228,11 @@ To reduce overfitting there are three methods
 - We add some  extra information to a model that reduces overfitting
 - Most people use this in all of their models because there is no downside of keeping it
 
-
+$$
+\boxed{L = \sum_{i=1}^n(y_i - \hat y_i)^2 + \underbrace{\lambda(m^2)}_{\text{extra info}}} \\[1ex]
+$$
+- $\lambda$ is a hyper parameter whose value ranges from 0 to $\infty$ 
+- 
 ## 2. Lasso Regularization
 
 ## 3. Elastic Regularization
