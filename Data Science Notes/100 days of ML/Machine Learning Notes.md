@@ -1248,7 +1248,10 @@ After doing $\frac{\partial L}{\partial b}$ = 0, we get $b =  \bar y - m \bar x_
 $$
 \begin{align*}
 L = \sum_{i=1}^n(y_i - mx_i -\bar y + m \bar x_i)^2 + \lambda(m^2) \\[1ex]
-\frac{\partial L}{\partial m} = 2(y_i - mx_i -\bar y + m \bar x_i)(-x_i + \bar x_i) + 2\lambda m
+\frac{\partial L}{\partial m} = 2\sum_{i=1}^n(y_i - mx_i -\bar y + m \bar x_i)(-x_i + \bar x_i) + 2\lambda m = 0 \\[1ex]
+-2\sum_{i=1}^n(y_i - mx_i -\bar y + m \bar x_i)(x_i - \bar x_i) + 2\lambda m = 0 \\[1ex]
+\lambda m -\sum_{i=1}^n\Big[(y_i -\bar y) - m(x_i  - \bar x_i)\Big](x_i - \bar x_i) = 0 \\[1ex]
+
 \end{align*}
 $$
 
