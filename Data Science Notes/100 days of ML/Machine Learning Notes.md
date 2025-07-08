@@ -1289,6 +1289,10 @@ $$
 $$
 #### For nD data using Gradient Descent:
 
+### Ridge Regression 5 Key Points
+- How the coefficients get affected ?
+	All coefficients shrink towards 0 but never reaches 0.
+	
 
 
 ## 2. Lasso Regularization
