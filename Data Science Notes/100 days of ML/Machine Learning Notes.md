@@ -1287,6 +1287,7 @@ The value of $W$ that we got in OLS multiple regression was:
 $$
 \boxed{W = (X^TX)^{-1}X^TY}
 $$
+#### For nD data using Gradient Descent:
 
 
 
