@@ -1302,7 +1302,13 @@ $$
 	??
 ## 2. Lasso Regularization
 - Also called L1 regularization
-- 
+
+$$
+\boxed{L = \sum_{i=1}^n(y_i - \hat y_i)^2 + \underbrace{\lambda\vert\vert W \vert\vert}_{\text{extra info}}} \\[1ex]
+$$
+
+
+
 
 ## 3. Elastic Regularization
 
