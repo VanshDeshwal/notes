@@ -1234,6 +1234,16 @@ $$
 - $\lambda$ is a hyper parameter whose value ranges from 0 to $\infty$ 
 ### Proof that adding $\lambda(m^2)$ reduces $m$
 
+$$
+\begin{align*}
+L = \sum_{i=1}^n(y_i - \hat y_i)^2 + \lambda(m^2) \\[1ex]
+L = \sum_{i=1}^n(y_i - mx_i -b)^2 + \lambda(m^2) \\[1ex]
+
+\end{align*}
+$$
+
+Finding $\frac{\partial L}{\partial b}$ will be same as linear regression, so lets focus on finding $\frac{\partial L}{\partial m}$,
+
 
 
 
