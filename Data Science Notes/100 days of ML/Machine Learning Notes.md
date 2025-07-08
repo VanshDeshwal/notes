@@ -1310,6 +1310,18 @@ $$
 
 ### Lasso Regression 4 Key Points
 
+1. How are coefficients affected with $\alpha$ and $\lambda$
+
+2. Higher coefficients are affected more
+
+3. Impact of $\lambda$ on Bias and Variance
+
+4. Effect of Regularization on Loss function
+
+
+### Why Lasso Regression creates sparsity ?
+
+
 
 ## 3. Elastic Regularization
 
