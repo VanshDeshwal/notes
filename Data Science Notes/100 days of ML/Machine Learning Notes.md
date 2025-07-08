@@ -1242,7 +1242,15 @@ L = \sum_{i=1}^n(y_i - mx_i -b)^2 + \lambda(m^2) \\[1ex]
 \end{align*}
 $$
 
-Finding $\frac{\partial L}{\partial b}$ will be same as linear regression, so lets focus on finding $\frac{\partial L}{\partial m}$,
+Finding $\frac{\partial L}{\partial b}$ = 0 will be same as OLS simple linear regression, so lets focus on finding $\frac{\partial L}{\partial m}$,
+After doing $\frac{\partial L}{\partial b}$ = 0, we get $b =  \bar y - m \bar x_i$ 
+
+$$
+\begin{align*}
+L = \sum_{i=1}^n(y_i - mx_i -\bar y + m \bar x_i)^2 + \lambda(m^2) \\[1ex]
+\frac{\partial L}{\partial m} = 2(y_i - mx_i -\bar y + m \bar x_i)(-x_i + \bar x_i) + 2\lambda m
+\end{align*}
+$$
 
 
 
