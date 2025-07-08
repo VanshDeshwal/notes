@@ -1258,7 +1258,12 @@ L = \sum_{i=1}^n(y_i - mx_i -\bar y + m \bar x_i)^2 + \lambda(m^2) \\[1ex]
 \end{align*}
 $$
 
+The value of $m$ that we got in OLS simple regression was:
+$$
+\boxed{m = \frac{\displaystyle\sum_{i=1}^n(y_i -\bar y)(x_i - \bar x_i)}{\displaystyle\sum_{i=1}^n(x_i - \bar x_i)^2}}
+$$
 
+We can see that the difference is that in Ridge regression we are adding $\lambda$ in denominator  of $m$, and $\lambda$ is a hyperparameter with range $0-\infty$ . So we can conclude that by adding the term $\lambda(m^2)$ we always decrease the value of $m$ hence reducing overfitting.
 
 
 ## 2. Lasso Regularization
