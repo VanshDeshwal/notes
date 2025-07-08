@@ -1296,7 +1296,7 @@ $$
 	Large coefficients shrink more, smaller ones shrink less
 - Bias Variance Tradeoff
 	yes
-- Impact on the Loss function
+- Impact of $\lambda$ on the Loss function
 	yes
 - ertert
 	ted
