@@ -1295,7 +1295,11 @@ $$
 - Higher values are impacted more
 	Large coefficients shrink more, smaller ones shrink less
 - Bias Variance Tradeoff
-	
+	yes
+- dfgdfgd
+	yes
+- ertert
+	ted
 
 
 ## 2. Lasso Regularization
