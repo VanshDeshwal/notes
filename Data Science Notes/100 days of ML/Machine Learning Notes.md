@@ -1297,8 +1297,8 @@ $$
 - Bias Variance Tradeoff
 	yes
 - Impact of $\lambda$ on the Loss function
-	yes
-- ertert
+	as $\lambda$ increases, the loss function becomes narrow and moves towards origin
+- Why the name Ridge Regression ?
 	ted
 
 
