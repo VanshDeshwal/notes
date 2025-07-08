@@ -1233,12 +1233,12 @@ $$
 $$
 - $\lambda$ is a hyper parameter whose value ranges from 0 to $\infty$ 
 ### Proof that adding $\lambda(m^2)$ reduces $m$
+#### For 2D data using OLS:
 
 $$
 \begin{align*}
 L = \sum_{i=1}^n(y_i - \hat y_i)^2 + \lambda(m^2) \\[1ex]
 L = \sum_{i=1}^n(y_i - mx_i -b)^2 + \lambda(m^2) \\[1ex]
-
 \end{align*}
 $$
 
@@ -1264,6 +1264,12 @@ $$
 $$
 
 We can see that the difference is that in Ridge regression we are adding $\lambda$ in denominator  of $m$, and $\lambda$ is a hyperparameter with range $0-\infty$ . So we can conclude that by adding the term $\lambda(m^2)$ we always decrease the value of $m$ hence reducing overfitting.
+
+#### For nD data using OLS:
+- We have n feature columns
+- We have m columns
+
+
 
 
 ## 2. Lasso Regularization
