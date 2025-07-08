@@ -1279,8 +1279,8 @@ L = (XW-Y)^T (XW-Y)+\lambda W^TW \\[1ex]
 = W^TX^TXW - 2W^TX^TY + Y^TY+\lambda W^TW \\[1ex]
 \frac{dL}{dW} = 2X^TXW -2X^TY +0 + 2\lambda W = 0 \\[1ex]
 X^TXW +\lambda W = X^TY \\[1ex]
-W(X^TX +\lambda) = X^TY \\[1ex]
-W = \frac{X^TY}{X^TX +\lambda} \\[1ex]
+W(X^TX +\lambda I) = X^TY \\[1ex]
+W = X^TYX^TX +\lambda \\[1ex]
 
 \end{align*}
 $$
