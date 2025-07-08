@@ -1219,6 +1219,9 @@ To reduce overfitting there are three methods
     2. Bagging
     3. Boosting
 # Regularization
+- What is over fitting in linear regression ?
+	Our line is $y = mx + b$, here $m$ is the weight of $x$. when $m$ is very high means our $y$ depends very highly on $x$ only, i.e. over fitting. If $m$ is low means $y$ doesn't depend on x(our data), i.e. under fitting
+	
 ## 1. Ridge Regularization
 
 - Also called L2 regularization
