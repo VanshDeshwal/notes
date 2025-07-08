@@ -1295,11 +1295,11 @@ $$
 - Higher values are impacted more
 	Large coefficients shrink more, smaller ones shrink less
 - Bias Variance Tradeoff
-	yes
+	??
 - Impact of $\lambda$ on the Loss function
 	as $\lambda$ increases, the loss function becomes narrow and moves towards origin
 - Why the name Ridge Regression ?
-	ted
+	??
 
 
 ## 2. Lasso Regularization
