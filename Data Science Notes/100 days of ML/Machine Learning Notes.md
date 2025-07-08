@@ -1276,6 +1276,8 @@ L = (XW-Y)^T (XW-Y)+\lambda W^TW \\[1ex]
 = [(XW)^T - Y^T](XW-Y)+\lambda W^TW \\[1ex]
 = [W^TX^T - Y^T](XW-Y)+\lambda W^TW \\[1ex]
 = W^TX^TXW - W^TX^TY- Y^TXW + Y^TY+\lambda W^TW \\[1ex]
+= W^TX^TXW - 2W^TX^TY + Y^TY+\lambda W^TW \\[1ex]
+\frac{dL}{dW} = 
 \end{align*}
 $$
 
