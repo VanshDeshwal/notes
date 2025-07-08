@@ -1293,7 +1293,8 @@ $$
 - How the coefficients get affected ?
 	All coefficients shrink towards 0 but never reaches 0.
 - Higher values are impacted more
-	
+	Large coefficients shrink more, smaller ones shrink less
+- 
 
 
 ## 2. Lasso Regularization
