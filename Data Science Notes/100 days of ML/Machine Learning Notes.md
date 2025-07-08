@@ -1305,7 +1305,7 @@ $$
 - Also called L1 regularization
 
 $$
-\boxed{L = \sum_{i=1}^n(y_i - \hat y_i)^2 + \underbrace{\lambda\vert\vert W \vert\vert}_{\text{extra info}}} \\[1ex]
+\boxed{L = \sum_{i=1}^n(y_i - \hat y_i)^2 + \lambda\vert\vert W \vert\vert}
 $$
 
 ### Lasso Regression 4 Key Points
@@ -1324,6 +1324,12 @@ $$
 
 
 ## 3. Elastic Regularization
+
+$$
+\boxed{L = \sum_{i=1}^n(y_i - \hat y_i)^2 + a\vert\vert W \vert\vert^2 + b\vert\vert W \vert\vert}
+$$
+
+
 
 # Logistic Regression (58)
 
