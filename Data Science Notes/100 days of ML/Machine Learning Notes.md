@@ -1290,16 +1290,17 @@ $$
 #### For nD data using Gradient Descent:
 
 ### Ridge Regression 5 Key Points
-- How the coefficients get affected ?
+
+1. How the coefficients get affected ?
 	All coefficients shrink towards 0 but never reaches 0.
-- Higher values are impacted more
+2. Higher values are impacted more
 	Large coefficients shrink more, smaller ones shrink less
-- Bias Variance Tradeoff
+3. Bias Variance Tradeoff
 	??
-- Impact of $\lambda$ on the Loss function
-	as $\lambda$ increases, the loss function becomes narrow and moves towards origin
-- Why the name Ridge Regression ?
-	??
+4. Impact of $\lambda$ on the Loss function
+	 As $\lambda$ increases, the loss function becomes narrow and moves towards origin
+5. Why the name Ridge Regression ?
+	 ??
 ## 2. Lasso Regularization
 - Also called L1 regularization
 
@@ -1307,7 +1308,7 @@ $$
 \boxed{L = \sum_{i=1}^n(y_i - \hat y_i)^2 + \underbrace{\lambda\vert\vert W \vert\vert}_{\text{extra info}}} \\[1ex]
 $$
 
-
+### Lasso Regression 4 Key Points
 
 
 ## 3. Elastic Regularization
