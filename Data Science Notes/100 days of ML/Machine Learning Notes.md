@@ -1268,7 +1268,16 @@ We can see that the difference is that in Ridge regression we are adding $\lambd
 #### For nD data using OLS:
 - We have n feature columns
 - We have m columns
-
+In the value of $L$ that we got from multiple linear regression we add a regularization term
+$$
+\begin{align*}
+L = (XW-Y)^T (XW-Y)+\lambda\vert\vert W \vert\vert^2 \\[1ex]
+L = (XW-Y)^T (XW-Y)+\lambda W^TW \\[1ex]
+= [(XW)^T - Y^T](XW-Y)+\lambda W^TW \\[1ex]
+= [W^TX^T - Y^T](XW-Y)+\lambda W^TW \\[1ex]
+= W^TX^TXW - W^TX^TY- Y^TXW + Y^TY+\lambda W^TW \\[1ex]
+\end{align*}
+$$
 
 
 
