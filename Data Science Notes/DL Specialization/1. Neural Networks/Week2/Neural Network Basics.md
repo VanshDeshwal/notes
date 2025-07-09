@@ -108,7 +108,7 @@ $$
 }
 
 ## Logistic Regression Gradient Descent
-Lets assume we only have one training example having two parameters $x_1$ and $x_2$. then the cost function will be same as the loss function.
+Let's assume we only have one training example having two parameters $x_1$ and $x_2$. then the cost function will be same as the loss function.
 To find the loss function we use forward propagation.
 $$ z=w_1x_1 + w_2x_2 + b$$
 $$\hat y = a=\sigma(z)$$
@@ -116,7 +116,6 @@ $$\hat y = a=\sigma(z)$$
 Then, our loss function $L$ will be as follows:
 
 $$L(a,y) =  -\left( y \log(a) + (1 - y) \log (1 - a) \right) \tag{1}$$
-
 
 Our aim is to find $a$ and $y$ such that Loss is minimum. For that we use gradient descent.
 In our case to apply gradient descent we need $\frac{dL(a,y)}{dw_1}$,$\frac{dL(a,y)}{dw_2}$,$\frac{dL(a,y)}{db}$.
