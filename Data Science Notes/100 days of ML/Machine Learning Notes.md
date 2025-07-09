@@ -1331,14 +1331,20 @@ $$
 
 # Logistic Regression (58)
 
-- We can only use this if our data is linearly seperable
+- We can only use this if our data is linearly separable
 - For 2D we don't use the equation of line as : $y=mx+b$, instead we use : $Ax + By +c = 0$
 
 ## Perceptron Trick
-Lets say we make a scatter plot and see that there are linearly seperable green and blue dots in that plot.
-We start by taking random values of A and B, i.e. drawing a random line
-Now we run a loop, lets say 1000 times
-In each loop we pick a random dot and ask if its on the correct side of the line, if not we move the line so that its on the correct side, else we do nothing
+Lets say we make a scatter plot and see that there are linearly separable green and blue dots in that plot.
+### Algorithm:
+Initialize random A,B,C
+for i in range(1000):
+	pick random dot
+	if on correct side of line:
+		do nothing
+	else:
+		move line such its on correct side
+
 
 
 
