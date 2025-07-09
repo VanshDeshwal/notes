@@ -1369,7 +1369,25 @@ for i in range(epoch):
 
 for i in range(epoch):
 	randomly select a point
-	$[W]_{new}$ =  $[W]_{old} - \eta(y_i - \hat y_i) [X]$
+	$[W]_{new}$ =  $[W]_{old} - \eta(y_i + \hat y_i) [X]$
+
+### Problem with this implementation
+- If there is a wide white area between the scatter of both dots, then the final line could be anywhere according to this implementation, but we want the line to be in the middle.
+- In this previous algo, we are only moving the line if point is in wrong region
+- But in new algo we will also move the line is point is in correct region
+- The movement direction will be same as previous algo, but now movement magnitude will depend on how close the point is from the line, closer the point more the magnitude of move
+
+Our control is only on $\hat y$, previously $\hat y$ was either 0 or 1 i.e. if $Ax + By + C > 0$ then $\hat y$ = 1 and if $Ax + By + C < 0$ then $\hat y$ = 0.
+Now we will use sigmoid function instead of the previously used step function.
+
+### Updated Algorithm:
+
+$z$ is the output of equation after putting in the data points. so, $\hat y_i = \sigma(z)$.
+
+for i in range(epoch):
+	randomly select a point
+	$[W]_{new}$ =  $[W]_{old} - \eta(y_i + \sigma(z)) [X]$	
+
 
 # SoftMax Regression (60)
 
