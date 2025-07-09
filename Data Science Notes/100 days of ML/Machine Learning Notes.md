@@ -1331,7 +1331,9 @@ $$
 
 # Logistic Regression (58)
 
-
+- We can only use this if our data is linearly seperable
+- For 2D we don't use the equation of line as : $y=mx+b$, instead we use : $Ax + By +c = 0$
+- 
 
 
 # SoftMax Regression (60)
