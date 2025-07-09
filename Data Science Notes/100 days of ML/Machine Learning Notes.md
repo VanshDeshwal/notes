@@ -1388,6 +1388,9 @@ for i in range(epoch):
 	randomly select a point
 	$[W]_{new}$ =  $[W]_{old} - \eta(y_i + \sigma(z)) [X]$	
 
+### Some problem still exist
+
+## Gradient Descent
 
 # SoftMax Regression (60)
 
