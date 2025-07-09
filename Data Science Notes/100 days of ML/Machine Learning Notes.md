@@ -1344,6 +1344,14 @@ for i in range(1000):
 		do nothing
 	else:
 		move line such its on correct side
+### How to label regions
+- $Ax + By + C = 0$ if the line
+- $Ax + By + C > 0$ is the positive region 
+- $Ax + By + C < 0$  is the negative region
+### Transformations
+- Changes in $C$, moves the line parallel direction
+- Changes in $A$ rotates the line about the point of y intercept
+- Changes in $B$ rotates the line about the point of x intercept
 
 
 
