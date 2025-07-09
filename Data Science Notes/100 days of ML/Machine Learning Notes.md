@@ -1392,6 +1392,13 @@ for i in range(epoch):
 
 ## Gradient Descent
 
+# Classification Metrics
+
+## Accuracy
+
+## Confusion Matrix
+
+
 # SoftMax Regression (60)
 
 # Decision Tree (61)
