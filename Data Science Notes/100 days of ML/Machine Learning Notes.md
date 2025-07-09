@@ -1329,9 +1329,10 @@ $$
 \boxed{L = \sum_{i=1}^n(y_i - \hat y_i)^2 + a\vert\vert W \vert\vert^2 + b\vert\vert W \vert\vert}
 $$
 
-
-
 # Logistic Regression (58)
+
+
+
 
 # SoftMax Regression (60)
 
