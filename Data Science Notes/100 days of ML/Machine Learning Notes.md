@@ -1336,7 +1336,7 @@ $$
 
 ## Perceptron Trick
 Lets say we make a scatter plot and see that there are linearly separable green and blue dots in that plot.
-### Algorithm:
+### Rough Algorithm:
 Initialize random A,B,C
 for i in range(1000):
 	pick random dot
@@ -1352,6 +1352,18 @@ for i in range(1000):
 - Changes in $C$, moves the line parallel direction
 - Changes in $A$ rotates the line about the point of y intercept
 - Changes in $B$ rotates the line about the point of x intercept
+
+### Actual Algorithm:
+Our line in 2D :  $Ax + By + C = 0$, Generalized form : $W_0 + W_1X_1 + W_2X_2 = 0$
+For nD : $\displaystyle\sum_{i=0}^n W_i,X_i = 0$ , $X_0 = 1$. 
+So, $X_n$ contains actual output, and if we put all points 
+
+for i in range(epoch):
+	randomly select a point
+	if $X_n \in$ -ve and  $\sum W_iX_i> 0$ :
+		$[W_0 W_1 \dots W_n]_{new}$ =  $[W_0 W_1 \dots W_n]_{old} - \eta [X_0 X_1 \dots X_n]$
+	if $X_n \in$ +ve and  $\sum W_iX_i< 0$ :
+		$[W_0 W_1 \dots W_n]_{new}$ =  $[W_0 W_1 \dots W_n]_{old} + \eta [X_0 X_1 \dots X_n]$
 
 
 
