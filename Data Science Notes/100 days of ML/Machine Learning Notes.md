@@ -1333,7 +1333,13 @@ $$
 
 - We can only use this if our data is linearly seperable
 - For 2D we don't use the equation of line as : $y=mx+b$, instead we use : $Ax + By +c = 0$
-- 
+
+## Perceptron Trick
+Lets say we make a scatter plot and see that there are linearly seperable green and blue dots in that plot.
+We start by taking random values of A and B, i.e. drawing a random line
+Now we run a loop, lets say 1000 times
+In each loop we pick a random dot and ask if its on the correct side of the line, if not we move the line so that its on the correct side, else we do nothing
+
 
 
 # SoftMax Regression (60)
