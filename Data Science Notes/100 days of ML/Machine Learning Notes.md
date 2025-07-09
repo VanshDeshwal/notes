@@ -1365,8 +1365,11 @@ for i in range(epoch):
 	if $X_i \in$ +ve and  $\sum W_iX_i< 0$ :
 		$[W_0 W_1 \dots W_n]_{new}$ =  $[W_0 W_1 \dots W_n]_{old} + \eta [X_0 X_1 \dots X_n]$
 
+### Reduced Algorithm:
 
-
+for i in range(epoch):
+	randomly select a point
+	$[W]_{new}$ =  $[W]_{old} - \eta(y_i - \hat y_i) [X]$
 
 # SoftMax Regression (60)
 
