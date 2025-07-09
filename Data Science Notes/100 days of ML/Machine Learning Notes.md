@@ -1204,7 +1204,7 @@ We decide after how many rows we will process in each epoch. that many rows is t
 
 - Used to fit a polynomial instead of straight line to a data
 - There is a hyper parameter called `degree`
-If our table is 2 columns, X|Y and `degree = 3` then we do $Y=\beta_0 + \beta_1X^1 + \beta_2X^2$  
+If our table is 2 columns, X | Y and `degree = 3` then we do $Y=\beta_0 + \beta_1X^1 + \beta_2X^2$  
 then apply linear regression
 
 Why is polynomial Regression also called polynomial linear regression ?
@@ -1333,7 +1333,9 @@ $$
 
 - We can only use this if our data is linearly separable
 - For 2D we don't use the equation of line as : $y=mx+b$, instead we use : $Ax + By +c = 0$
-
+Self note:
+	In linear regression our data table looks like this: X | Y, and we say its 2D because when we draw scatter plot it has only one color of dots and we have to draw a best fit line through those dots for which we use both input and output columns.
+	In logistic regression our data table looks like this: X1 | X2 | Y, and we say its 2D because its scatterplot will have dots of two colors and if it looks linearly separable then we can draw a line in between them, but this scatterplot is X1 vs X2, so we use only input columns to plot a line and then use Y column to check and adjust that line repeatedly.
 ## Perceptron Trick
 Lets say we make a scatter plot and see that there are linearly separable green and blue dots in that plot.
 ### Rough Algorithm:
@@ -1355,14 +1357,12 @@ for i in range(1000):
 
 ### Actual Algorithm:
 Our line in 2D :  $Ax + By + C = 0$, Generalized form : $W_0 + W_1X_1 + W_2X_2 = 0$
-For nD : $\displaystyle\sum_{i=0}^n W_i,X_i = 0$ , $X_0 = 1$. 
-So, $X_n$ contains actual output, and if we put all points 
-
+For nD (n feature columns) : $\displaystyle\sum_{i=0}^n W_i,X_i = 0$ , $X_0 = 1$. 
 for i in range(epoch):
 	randomly select a point
-	if $X_n \in$ -ve and  $\sum W_iX_i> 0$ :
+	if $X_i \in$ -ve and  $\sum W_iX_i> 0$ :
 		$[W_0 W_1 \dots W_n]_{new}$ =  $[W_0 W_1 \dots W_n]_{old} - \eta [X_0 X_1 \dots X_n]$
-	if $X_n \in$ +ve and  $\sum W_iX_i< 0$ :
+	if $X_i \in$ +ve and  $\sum W_iX_i< 0$ :
 		$[W_0 W_1 \dots W_n]_{new}$ =  $[W_0 W_1 \dots W_n]_{old} + \eta [X_0 X_1 \dots X_n]$
 
 
