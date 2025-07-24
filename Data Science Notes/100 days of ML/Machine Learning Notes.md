@@ -1151,7 +1151,7 @@ L = \frac{1}{2}\Big[(y_1 - \beta_0 - \beta_1x_{11} - \beta_2x_{12})^2+(y_2 - \be
 \end{align*}
 $$
 
-Now lets say we have $n$ columns instead of 2, 
+Now lets say we have $n$ rows instead of 2, 
 
 $$
 \frac{\partial L}{\partial \beta_0} = -\frac{2}{n}\Big[(y_1 - \hat y_1) + (y_2 - \hat y_2) + (y_3 - \hat y_3) + \dots + (y_n - \hat y_n)\Big] \\
@@ -1168,7 +1168,7 @@ L = \frac{1}{2}\Big[(y_1 - \beta_0 - \beta_1x_{11} - \beta_2x_{12})^2+(y_2 - \be
 \end{align*}
 $$
 
-For $n$ columns instead of 2,
+For $n$ rows instead of 2,
 
 $$
 \frac{\partial L}{\partial \beta_1} = -\frac{2}{n}\Big[(y_1 - \hat y_1)(x_{11}) + (y_2 - \hat y_2)(x_{21}) + (y_3 - \hat y_3)(x_{31}) + \dots + (y_n - \hat y_n)(x_{n1})\Big] \\
