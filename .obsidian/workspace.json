@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Neural Network Basics.md",
+                "file": "Data Science Notes/100 days of ML/Machine Learning Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Neural Network Basics"
+              "title": "Machine Learning Notes"
             }
           }
         ],
@@ -197,6 +197,7 @@
   },
   "active": "8490cb1771871284",
   "lastOpenFiles": [
+    "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Neural Network Basics.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Python and Vectorization.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week3/Shallow Neural Network.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week4/Deep Neural Network.md",
@@ -217,7 +218,6 @@
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1/Setting up.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1/Regularizing Neural Network.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1/Normalizing training sets.md",
-    "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Neural Network Basics.md",
     "Coding Notes/Array.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week1/Introduction To Deep Learning.md",
     "Data Science Notes/100 days of ML/Libraries/Seaborn.md",

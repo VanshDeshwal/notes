@@ -1016,7 +1016,7 @@ $$
 1 & x_{11} & x_{12} & \dots & x_{1m} \\
 1 & x_{21} & x_{22} & \dots & x_{2m} \\
 1 & x_{31} & x_{32} & \dots & x_{3m} \\
-\vdots    & \vdots    & \ddots     & \vdots \\
+\vdots    & \vdots  & \vdots    & \ddots     & \vdots \\
 1 & x_{n1} & x_{n3} & \dots & x_{nm} \\
 \end{bmatrix}
 \begin{bmatrix}
