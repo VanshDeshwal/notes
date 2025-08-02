@@ -1436,6 +1436,20 @@ w_0 + w_1x_{m1} + w_2x_{m2} + w_3x_{m3} + \dots + w_nx_{mn} \\
 \hat y_{3} \\
 \vdots \\
 \hat y_{m}
+\end{bmatrix} &= \sigma
+\begin{bmatrix}
+1 + x_{11} + x_{12} + x_{13} + \dots + x_{1n} \\
+1 + x_{21} + x_{22} + x_{23} + \dots + x_{2n} \\
+1 + x_{31} + x_{32} + x_{33} + \dots + x_{3n} \\
+\vdots  \\
+1 + x_{m1} + x_{m2} + w_3x_{m3} + \dots + w_nx_{mn} \\
+\end{bmatrix} \\[1ex]
+\begin{bmatrix}
+\hat y_{1} \\
+\hat y_{2} \\
+\hat y_{3} \\
+\vdots \\
+\hat y_{m}
 \end{bmatrix} &=
 \begin{bmatrix}
 1 & x_{11} & x_{12} & \dots & x_{1n} \\
