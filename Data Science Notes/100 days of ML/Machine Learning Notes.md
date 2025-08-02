@@ -1459,8 +1459,8 @@ We know that the loss function for logistic regression is:
 
 $$
 \begin{align*}
-L = \frac{1}{m}\sum_{i=1}^m \big[y_i\log(\hat y_i) + (1-y_i)\log(1-\hat y_i)\big] \\[1ex]
-= \frac{1}{m}[\sum_{i=1}^m y_i\log(\hat y_i) + \sum_{i=1}^m(1-y_i)\log(1-\hat y_i)\big] \\ [1ex]
+L = -\frac{1}{m}\sum_{i=1}^m \big[y_i\log(\hat y_i) + (1-y_i)\log(1-\hat y_i)\big] \\[1ex]
+= -\frac{1}{m}[\sum_{i=1}^m y_i\log(\hat y_i) + \sum_{i=1}^m(1-y_i)\log(1-\hat y_i)\big] \\ [1ex]
 
 \end{align*}
 $$
@@ -1468,9 +1468,46 @@ Lets first convert the first term in matrix form
 
 $$
 \begin{align*}
-\sum_{i=1}^m y_i\log(\hat y_i) \\
+\sum_{i=1}^m y_i\log(\hat y_i) = \\
 = y_1\log(\hat y_1) + y_2\log(\hat y_2) + y_3\log(\hat y_3) + \dots + y_n\log(\hat y_n) \\
+=\begin{bmatrix}
+y_{1} \\
+y_{2} \\
+y_{3} \\
+\vdots \\
+y_{m}
+\end{bmatrix}
+\begin{bmatrix}
+\log(\hat y_1) \\
+\log(\hat y_2) \\
+\log(\hat y_3) \\
+\vdots  \\
+\log(\hat y_n) \\
+\end{bmatrix} \\[1ex]
+=\begin{bmatrix}
+y_{1} \\
+y_{2} \\
+y_{3} \\
+\vdots \\
+y_{m}
+\end{bmatrix}
+\log
+\begin{bmatrix}
+\hat y_1 \\
+\hat y_2 \\
+\hat y_3 \\
+\vdots  \\
+\hat y_n \\
+\end{bmatrix} \\[1ex]
+\text{substituting from the above equation we get} \\[1ex]
+= Y\log(\sigma(XW))
+\end{align*}
+$$
+So, our loss function becomes,
 
+$$
+\begin{align*}
+L = - \frac{1}{m}[Y\log\hat Y + (1-Y)\log(1- \hat Y)] \\[1ex] \text{  where } \hat Y = \sigma(XW)
 \end{align*}
 $$
 
