@@ -1448,10 +1448,10 @@ w_0 + w_1x_{m1} + w_2x_{m2} + w_3x_{m3} + \dots + w_nx_{mn} \\
 w_0 \\
 w_1 \\
 w_2 \\
-w_3 \\
 \vdots \\
 w_n
 \end{bmatrix} \\[1ex]
+\hat Y = \sigma(XW)
 \begin{bmatrix}
 \hat y_{1} \\
 \hat y_{2} \\
