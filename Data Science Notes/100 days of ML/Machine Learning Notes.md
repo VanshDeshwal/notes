@@ -1441,7 +1441,7 @@ w_0 + w_1x_{m1} + w_2x_{m2} + w_3x_{m3} + \dots + w_nx_{mn} \\
 1 & x_{11} & x_{12} & x_{13} & \dots & x_{1n} \\
 1 & x_{21} & x_{22} & x_{23} & \dots & x_{2n} \\
 1 & x_{31} & x_{32} & x_{33} & \dots & x_{3n} \\
-\vdots  \\
+\vdots  & \vdots  & \vdots    & \ddots     & \vdots\\
 1 & x_{m1} & x_{m2} & x_{m3} & \dots & x_{mn} \\
 \end{bmatrix}
 \begin{bmatrix}
@@ -1451,7 +1451,7 @@ w_2 \\
 \vdots \\
 w_n
 \end{bmatrix} \\[1ex]
-\hat Y = \sigma(XW)
+\hat Y = \sigma(XW) \\[1ex]
 \begin{bmatrix}
 \hat y_{1} \\
 \hat y_{2} \\
