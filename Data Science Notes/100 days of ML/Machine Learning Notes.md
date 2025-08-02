@@ -1454,8 +1454,10 @@ w_n
 \hat Y = \sigma(XW)
 \end{align*}
 $$
-
-We know that the loss function for logistic regression is:
+We now know that to predict the new values we that to put the features in this equation, but to get the best predictions we need best W's, best W's are the ones which gives minimum loss function value.
+To find such W's we need to apply gradient descent
+In the process of gradient descent we find derivatives of loss function, to make that step fast we need to convert our loss function into a matrix form.
+The loss function for logistic regression is:
 
 $$
 \begin{align*}
@@ -1503,13 +1505,15 @@ y_{m}
 = Y\log(\sigma(XW))
 \end{align*}
 $$
-So, our loss function becomes,
+So, our loss function in matrix form becomes,
 
 $$
 \begin{align*}
 L = - \frac{1}{m}[Y\log\hat Y + (1-Y)\log(1- \hat Y)] \\[1ex] \text{  where } \hat Y = \sigma(XW)
 \end{align*}
 $$
+
+
 
 
 
