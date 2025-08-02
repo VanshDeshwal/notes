@@ -1459,15 +1459,18 @@ We know that the loss function for logistic regression is:
 
 $$
 \begin{align*}
-L = \frac{1}{m}\sum_{i=1}^m \big[y_1\log(\hat y_i) + (1-y_i)\log(1-\hat y_i)\big] \\[1ex]
-= \frac{1}{m}[\sum_{i=1}^m y_1\log(\hat y_i) + \sum_{i=1}^m(1-y_i)\log(1-\hat y_i)\big] \\ [1ex]
+L = \frac{1}{m}\sum_{i=1}^m \big[y_i\log(\hat y_i) + (1-y_i)\log(1-\hat y_i)\big] \\[1ex]
+= \frac{1}{m}[\sum_{i=1}^m y_i\log(\hat y_i) + \sum_{i=1}^m(1-y_i)\log(1-\hat y_i)\big] \\ [1ex]
 
 \end{align*}
 $$
 Lets first convert the first term in matrix form
 
 $$
-\sum_{i=1}^m y_1\log(\hat y_i)
+\begin{align*}
+\sum_{i=1}^m y_i\log(\hat y_i) \\
+= y1\log
+\end{align*}
 $$
 
 
