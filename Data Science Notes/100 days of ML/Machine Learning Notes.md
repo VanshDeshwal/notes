@@ -1459,7 +1459,8 @@ We know that the loss function for logistic regression is:
 
 $$
 \begin{align*}
-L = \frac{1}{m}\sum_{i=1}^m [y_1\log(\hat y_i) + (1-y_i)\log(1-\hat y_i)
+L = \frac{1}{m}\sum_{i=1}^m \big[y_1\log(\hat y_i) + (1-y_i)\log(1-\hat y_i)\big] \\[1ex]
+= \frac{1}{m}[\sum_{i=1}^m y_1\log(\hat y_i) + \sum_{i=1}^m(1-y_i)\log(1-\hat y_i)\big] \\
 \end{align*}
 $$
 
