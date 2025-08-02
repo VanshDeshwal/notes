@@ -1459,7 +1459,7 @@ We know that the loss function for logistic regression is:
 
 $$
 \begin{align*}
-
+L = \frac{1}{m}\sum y_1\log(\hat y_i) + 
 \end{align*}
 $$
 
