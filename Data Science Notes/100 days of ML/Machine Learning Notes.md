@@ -1469,7 +1469,8 @@ Lets first convert the first term in matrix form
 $$
 \begin{align*}
 \sum_{i=1}^m y_i\log(\hat y_i) \\
-= y1\log
+= y_1\log(\hat y_1) + y_2\log(\hat y_2) + y_3\log(\hat y_3) + \dots + y_n\log(\hat y_n) \\
+
 \end{align*}
 $$
 
