@@ -1512,6 +1512,24 @@ $$
 L = - \frac{1}{m}[Y\log\hat Y + (1-Y)\log(1- \hat Y)] \\[1ex] \text{  where } \hat Y = \sigma(XW)
 \end{align*}
 $$
+Lets find $\frac{\triangle L}{\triangle W}$,
+process is straignt forward and simple, its in the video no 74.
+
+$$
+\begin{align*}
+\frac{\triangle L}{\triangle W} = - \frac{1}{m}[Y(1-\hat Y) - \hat Y(1 - Y)]X \\[1ex]
+= - \frac{1}{m}[Y-Y\hat Y - \hat Y + \hat YY)]X \\[1ex]
+\boxed{= - \frac{1}{m}[Y - \hat Y]X} \\[1ex]
+
+\end{align*}
+$$
+
+Gradient descent step:
+
+$$
+W = W + \frac{\eta}{m}[Y - \hat Y]X
+$$
+
 
 
 
