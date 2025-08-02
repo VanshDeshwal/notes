@@ -1513,7 +1513,7 @@ L = - \frac{1}{m}[Y\log\hat Y + (1-Y)\log(1- \hat Y)] \\[1ex] \text{  where } \h
 \end{align*}
 $$
 Lets find $\frac{\triangle L}{\triangle W}$,
-process is straignt forward and simple, its in the video no 74.
+process is straight forward and simple, its in the video no 74.
 
 $$
 \begin{align*}
