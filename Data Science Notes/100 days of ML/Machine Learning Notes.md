@@ -1554,10 +1554,15 @@ This fixes the problems with accuracy
 
 ```mermaid
 %%{init: {
-  "theme": "dark",
+  "theme": "base",
   "themeVariables": {
-    "titleColor": "#ffffff",
-    "axisTextColor": "#ffffff"
+    "quadrant1Fill": "#f08080",
+    "quadrant2TextFill": "#006400",
+    "quadrant2Fill": "#90ee90",
+    "quadrant3Fill": "#f08080",
+    "quadrant4TextFill": "#006400",
+    "quadrant4Fill": "#90ee90"
+ 
   }
 }}%%
 quadrantChart
