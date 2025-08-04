@@ -1567,8 +1567,8 @@ This fixes the problems with accuracy
 }}%%
 quadrantChart
     title Actual vs Predicted Confusion Quadrant
-    x-axis Low Predicted --> High Predicted
-    y-axis Low Actual --> High Actual
+    x-axis Predicted 1 --> Predicted 0
+    y-axis Low 0 --> Actual 1
     quadrant-1 FALSE NEGATIVE
     quadrant-2 TRUE POSITIVE
     quadrant-3 FALSE POSITIVE
