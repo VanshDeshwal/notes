@@ -1572,8 +1572,8 @@ quadrantChart
     y-axis Low Actual --> High Actual
     quadrant-1 FALSE NEGATIVE
     quadrant-2 TRUE POSITIVE
-    quadrant-3 TRUE NEGATIVE
-    quadrant-4 FALSE POSITIVE
+    quadrant-3 FALSE POSITIVE
+    quadrant-4 TRUE NEGATIVE
 
 ```
 
