@@ -1554,7 +1554,7 @@ This fixes the problems with accuracy
 
 ```mermaid
 %%{init: {
-  "theme": "default",
+  "theme": "dark",
   "themeVariables": {
     "quadrant1Fill": "#90ee90",
     "quadrant1TextFill": "#006400",
