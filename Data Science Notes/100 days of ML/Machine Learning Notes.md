@@ -1553,36 +1553,41 @@ It tells us how much mistake we are making, but doesn't tell us what type of mis
 This fixes the problems with accuracy
 
 ```mermaid
-%%{init: {"theme": "default"}}%%
-graph TD
-    %% Nodes
-    A1["True Negative"]:::block
-    A2["False Positive"]:::block
-    B1["False Negative"]:::block
-    B2["True Positive"]:::block
+%%{init: {
 
-    %% Positioning using invisible nodes
-    A1 -.-> A2
-    A1 --> B1
-    A2 --> B2
-    B1 -.-> B2
+    "quadrant1Fill": "#d0f0c0",
 
-    %% Labels for axes
-    subgraph X_AXIS [ ]
-        direction LR
-        XA[" "]:::invisible --> XB["predicted →"]:::label
-    end
+    "quadrant2Fill": "#f0d0c0",
 
-    subgraph Y_AXIS [ ]
-        direction TB
-        YA["↑ actual"]:::label --> YB[" "]:::invisible
-    end
+    "quadrant3Fill": "#c0d0f0",
 
-    %% Styling
-    classDef block fill:#f9f,stroke:#333,stroke-width:1px;
-    classDef label fill:none,stroke:none,color:#000,font-weight:bold;
-    classDef invisible fill:none,stroke:none;
+    "quadrant4Fill": "#f0c0f0",
 
+    "quadrant1TextFill": "#006400",
+
+    "quadrant2TextFill": "#8B0000",
+
+    "quadrant3TextFill": "#00008B",
+
+    "quadrant4TextFill": "#8B008B"
+
+}}%%
+
+quadrantChart
+
+    title Actual vs Predicted Confusion Quadrant
+
+    x-axis Low Predicted --> High Predicted
+
+    y-axis Low Actual --> High Actual
+
+    quadrant-1 True Positive
+
+    quadrant-2 False Negative
+
+    quadrant-3 True Negative
+
+    quadrant-4 False Positive
 ```
 
 
