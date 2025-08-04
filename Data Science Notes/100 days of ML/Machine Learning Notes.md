@@ -1570,10 +1570,10 @@ quadrantChart
     title Actual vs Predicted Confusion Quadrant
     x-axis Low Predicted --> High Predicted
     y-axis Low Actual --> High Actual
-    quadrant-1 **True Positive**
-    quadrant-2 **False Negative**
-    quadrant-3 **True Negative**
-    quadrant-4 **False Positive**
+    quadrant-1 𝗧𝗿𝘂𝗲 𝗣𝗼𝘀𝗶𝘁𝗶𝘃𝗲
+    quadrant-2 𝗙𝗮𝗹𝘀𝗲 𝗡𝗲𝗴𝗮𝘁𝗶𝘃𝗲
+    quadrant-3 𝗧𝗿𝘂𝗲 𝗡𝗲𝗴𝗮𝘁𝗶𝘃𝗲
+    quadrant-4 𝗙𝗮𝗹𝘀𝗲 𝗣𝗼𝘀𝗶𝘁𝗶𝘃𝗲
 
 ```
 
