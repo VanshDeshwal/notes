@@ -1537,6 +1537,9 @@ $$
 We use these to compare classification algorithms
 ## Accuracy
 
+$$
+\text{accuracy} = \frac{\text{no. of correct predictions}}{\text{total no. of predictions}}
+$$
 
 
 ## Confusion Matrix
