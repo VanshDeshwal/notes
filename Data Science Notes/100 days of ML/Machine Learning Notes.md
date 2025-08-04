@@ -1556,13 +1556,12 @@ This fixes the problems with accuracy
 %%{init: {
   "theme": "dark",
   "themeVariables": {
+    "textColor": "#ffffff",
+    "titleColor": "#ffffff",
     "quadrant1Fill": "#f08080",
-    "quadrant2TextFill": "#006400",
     "quadrant2Fill": "#90ee90",
     "quadrant3Fill": "#f08080",
-    "quadrant4TextFill": "#006400",
     "quadrant4Fill": "#90ee90"
- 
   }
 }}%%
 quadrantChart
@@ -1573,6 +1572,7 @@ quadrantChart
     quadrant-2 TRUE POSITIVE
     quadrant-3 FALSE POSITIVE
     quadrant-4 TRUE NEGATIVE
+
 
 ```
 
