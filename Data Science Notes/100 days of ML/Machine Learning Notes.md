@@ -1552,6 +1552,38 @@ It tells us how much mistake we are making, but doesn't tell us what type of mis
 
 This fixes the problems with accuracy
 
+```mermaid
+%%{init: {"theme": "default"}}%%
+graph TD
+    %% Nodes
+    A1["True Negative"]:::block
+    A2["False Positive"]:::block
+    B1["False Negative"]:::block
+    B2["True Positive"]:::block
+
+    %% Positioning using invisible nodes
+    A1 -.-> A2
+    A1 --> B1
+    A2 --> B2
+    B1 -.-> B2
+
+    %% Labels for axes
+    subgraph X_AXIS [ ]
+        direction LR
+        XA[" "]:::invisible --> XB["predicted →"]:::label
+    end
+
+    subgraph Y_AXIS [ ]
+        direction TB
+        YA["↑ actual"]:::label --> YB[" "]:::invisible
+    end
+
+    %% Styling
+    classDef block fill:#f9f,stroke:#333,stroke-width:1px;
+    classDef label fill:none,stroke:none,color:#000,font-weight:bold;
+    classDef invisible fill:none,stroke:none;
+
+```
 
 
 
