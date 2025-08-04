@@ -1546,9 +1546,14 @@ $$
 	- It depends on the problem we are solving
 
 ### The problem with accuracy score
-It tells us how much mistake we are making, but doesn't tell us what type of mistake we are making, false positives or false negatives. Knowing this can be important for many 
+It tells us how much mistake we are making, but doesn't tell us what type of mistake we are making, false positives or false negatives. Knowing this can be important for many use cases.
 
 ## Confusion Matrix
+
+This fixes the problems with accuracy
+
+
+
 
 ## Precision
 
