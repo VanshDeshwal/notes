@@ -1559,11 +1559,10 @@ This fixes the problems with accuracy
     "quadrant1Fill": "#90ee90",
     "quadrant1TextFill": "#006400",
     "quadrant2Fill": "#f08080",
-    "quadrant2TextFill": "#8b0000",
     "quadrant3Fill": "#90ee90",
     "quadrant3TextFill": "#006400",
-    "quadrant4Fill": "#f08080",
-    "quadrant4TextFill": "#8b0000"
+    "quadrant4Fill": "#f08080"
+ 
   }
 }}%%
 quadrantChart
