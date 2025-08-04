@@ -1541,6 +1541,10 @@ $$
 \text{accuracy} = \frac{\text{no. of correct predictions}}{\text{total no. of predictions}}
 $$
 - What if we want to do multi class classification? Then how will be define accuracy?
+	- Its the same
+- How much accuracy is good ?
+	- It depends on the problem we are solving
+
 
 ## Confusion Matrix
 
