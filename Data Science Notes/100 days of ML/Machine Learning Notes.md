@@ -1554,40 +1554,24 @@ This fixes the problems with accuracy
 
 ```mermaid
 %%{init: {
-
-    "quadrant1Fill": "#d0f0c0",
-
-    "quadrant2Fill": "#f0d0c0",
-
-    "quadrant3Fill": "#c0d0f0",
-
-    "quadrant4Fill": "#f0c0f0",
-
-    "quadrant1TextFill": "#006400",
-
-    "quadrant2TextFill": "#8B0000",
-
-    "quadrant3TextFill": "#00008B",
-
-    "quadrant4TextFill": "#8B008B"
-
+    "quadrant1Fill": "#90ee90",   /* light green */
+    "quadrant1TextFill": "#006400",
+    "quadrant2Fill": "#f08080",   /* light red */
+    "quadrant2TextFill": "#8b0000",
+    "quadrant3Fill": "#90ee90",
+    "quadrant3TextFill": "#006400",
+    "quadrant4Fill": "#f08080",
+    "quadrant4TextFill": "#8b0000"
 }}%%
-
 quadrantChart
+    title Actual vs Predicted Confusion Quadrant
+    x-axis Low Predicted --> High Predicted
+    y-axis Low Actual --> High Actual
+    quadrant-1 True Positive
+    quadrant-2 False Negative
+    quadrant-3 True Negative
+    quadrant-4 False Positive
 
-    title Actual vs Predicted Confusion Quadrant
-
-    x-axis Low Predicted --> High Predicted
-
-    y-axis Low Actual --> High Actual
-
-    quadrant-1 True Positive
-
-    quadrant-2 False Negative
-
-    quadrant-3 True Negative
-
-    quadrant-4 False Positive
 ```
 
 
