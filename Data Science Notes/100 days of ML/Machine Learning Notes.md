@@ -1556,12 +1556,12 @@ This fixes the problems with accuracy
 %%{init: {
   "theme": "dark",
   "themeVariables": {
-    "quadrant1Fill": "#90ee90",
-    "quadrant1TextFill": "#006400",
-    "quadrant2Fill": "#f08080",
-    "quadrant3Fill": "#90ee90",
-    "quadrant3TextFill": "#006400",
-    "quadrant4Fill": "#f08080"
+    "quadrant1Fill": "#f08080",
+    "quadrant2TextFill": "#006400",
+    "quadrant2Fill": "#90ee90",
+    "quadrant3Fill": "#f08080",
+    "quadrant4TextFill": "#006400",
+    "quadrant4Fill": "#90ee90"
  
   }
 }}%%
