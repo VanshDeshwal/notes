@@ -1534,17 +1534,18 @@ $$
 
 # Classification Metrics
 
+We use these to compare classification algorithms
 ## Accuracy
+
+
+
+## Confusion Matrix
 
 ## Precision
 
 ## Recall
 
 ## F1 Score
-
-## Confusion Matrix
-
-
 # SoftMax Regression (60)
 
 # Decision Tree (61)
