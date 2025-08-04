@@ -1545,6 +1545,9 @@ $$
 - How much accuracy is good ?
 	- It depends on the problem we are solving
 
+### The problem with accuracy score
+
+
 
 ## Confusion Matrix
 
