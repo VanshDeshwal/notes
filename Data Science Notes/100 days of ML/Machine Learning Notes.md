@@ -1576,6 +1576,17 @@ quadrantChart
 
 ```
 
+$$
+\text{accuracy} = \frac{\text{TP + TN}}{\text{TP + TN + FP + FN}}
+$$
+- What are Type 1 errors ?
+	- False Positives
+- What are Type 2 errors ?
+	- False Negatives
+
+### Confusion matrix for multi class classification
+
+
 
 
 ## Precision
