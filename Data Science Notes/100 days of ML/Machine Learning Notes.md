@@ -1625,6 +1625,20 @@ watch full video, make notes again
 
 # SoftMax Regression (60)
 
+Used for multi class logistic regression. Lets say we have three classes, 1-2-3.
+
+$$
+\sigma(z)_1 = \frac{e^{z_1}}{e^{z_1} + e^{z_2} + e^{z_3}}
+$$
+$$
+\sigma(z)_2 = \frac{e^{z_2}}{e^{z_1} + e^{z_2} + e^{z_3}}
+$$
+$$
+\sigma(z)_3 = \frac{e^{z_3}}{e^{z_1} + e^{z_2} + e^{z_3}}
+$$
+So, we use softmax function on all three classes as above
+
+
 # Decision Tree (61)
 
 # Ensemble (60)
