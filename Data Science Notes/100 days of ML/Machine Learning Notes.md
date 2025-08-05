@@ -1597,6 +1597,9 @@ $$
 \text{accuracy} = \frac{\text{true predictions}}{\text{total}}
 $$
 
+### When is accuracy misleading ?
+
+When the dataset is imbalanced, i.e. there are 99% of yes and 1% no in actual data. and we make a model that always outputs yes, then our accuracy will be 99%
 
 ## Precision
 
