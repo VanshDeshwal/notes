@@ -1586,38 +1586,16 @@ $$
 
 ### Confusion matrix for multi class classification
 
-```mermaid
-%%{init: {
-  "theme": "default",
-  "themeVariables": {
-    "titleColor": "#ffffff",
-    "axisTextColor": "#ffffff",
-    "quadrant1Fill": "#90ee90",
-    "quadrant2Fill": "#f08080",
-    "quadrant3Fill": "#f08080",
-    "quadrant4Fill": "#90ee90",
-    "quadrant1TextFill": "#000000",
-    "quadrant2TextFill": "#000000",
-    "quadrant3TextFill": "#000000",
-    "quadrant4TextFill": "#000000"
-  }
-}}%%
-quadrantChart
-    title Per-Class Precision vs Recall
-    x-axis Low Precision --> High Precision
-    y-axis Low Recall --> High Recall
-    quadrant-1 High Precision & High Recall
-    quadrant-2 Low Precision & High Recall
-    quadrant-3 Low Precision & Low Recall
-    quadrant-4 High Precision & Low Recall
+| Actual \ Predicted | Class 1 | Class 2 | Class 3 |
+|--------------------|---------|---------|---------|
+| **Class 1**        |   40    |   2     |   3     |
+| **Class 2**        |   4     |   35    |   1     |
+| **Class 3**        |   5     |   3     |   30    |
+Here the diagonal is the true predictions
 
-    Class A: [0.75, 0.82]
-    Class B: [0.45, 0.78]
-    Class C: [0.35, 0.32]
-    Class D: [0.85, 0.40]
-    Class E: [0.60, 0.65]
-
-```
+$$
+\text{accuracy} = \frac{\text{true predictions}}{\text{total}}
+$$
 
 
 ## Precision
