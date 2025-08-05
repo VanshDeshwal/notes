@@ -1637,7 +1637,10 @@ $$
 \sigma(z)_3 = \frac{e^{z_3}}{e^{z_1} + e^{z_2} + e^{z_3}}
 $$
 So, we use softmax function on all three classes as above
-
+And loss function is this
+$$
+L = -\frac{1}{m} \sum_{i=1}^m \sum_{k=1}^k y^i_k \log(\hat y^i_k)
+$$
 
 # Decision Tree (61)
 
