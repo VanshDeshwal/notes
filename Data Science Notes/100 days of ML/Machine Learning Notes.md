@@ -1603,14 +1603,19 @@ $$
 
 ## Precision
 
-
-
-
-
+$$
+\text{precision} = \frac{\text{TP}}{\text{TP + FP}}
+$$
 
 ## Recall
 
+$$
+\text{Recall} = \frac{\text{TP}}{\text{TP + FN}}
+$$
+
 ## F1 Score
+
+
 # SoftMax Regression (60)
 
 # Decision Tree (61)
