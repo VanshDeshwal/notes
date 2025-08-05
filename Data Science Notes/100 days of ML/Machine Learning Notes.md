@@ -1620,6 +1620,8 @@ There i s always a tradeoff between precision and recall, F1 score is a combinat
 $$
 \text{F1} = \frac{2 PR}{P+R}
 $$
+### How all this works in multi class
+watch full video, make notes again
 
 # SoftMax Regression (60)
 
