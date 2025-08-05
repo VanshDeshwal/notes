@@ -1615,6 +1615,11 @@ $$
 
 ## F1 Score
 
+There i s always a tradeoff between precision and recall, F1 score is a combination of precision and recall, more precisely its a harmonic mean of the two.
+
+$$
+\text{F1} = \frac{2 PR}{P+R}
+$$
 
 # SoftMax Regression (60)
 
