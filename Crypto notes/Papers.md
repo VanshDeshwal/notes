@@ -50,3 +50,21 @@ We used an Intel-provided accelerated feature extraction library that can proces
 Figure 1 shows our processing steps. First, we run the Intel tool on each capture to get JSON flow records. We extract metadata features for every flow, and we also extract TLS, DNS, or HTTP fields if those protocols appear. Next, we do simple preprocessing to make the data fair for testing. We mask source (sa) and destination (da) IPs by replacing them with “IP_masked,” so participants cannot trace flows back to real addresses. We remove the original time_start and time_end fields and add a new feature, time_length, that holds the time difference. We also assign each flow a unique ID and add its true label from the pcap. After these steps, we obtain 484,056 flows for NetML, 551,372 for CICIDS2017, and 163,711 for non-vpn2016.
 
 Finally, we split each dataset randomly into three parts: 10% of each class goes to the test-challenge set, another 10% to the test-std set, and the remaining 80% to the training set. The overall data preparation workflow is summarized in Figure 1.
+
+### 3.2 Malware Detection Datasets  
+Our first task is to focus on finding malware flows in network traffic through routers. Clear detailed steps explaining how we built our own dataset from both public sources follow in the next two sections.
+
+#### 3.2.1 NetML. 
+Stratosphere IPS provided raw traffic data files for the dataset. We made this dataset for finding malware in traffic by using 30 of over 300 raw traffic files from Stratosphere IPS. Table 2 shows the chosen capture files. Each file has flows for one class. For example, every flow from capture_win15.pcap is labeled top-level as malware and fine-grained as Artemis. Figure 2 shows how many flows belong to each fine-grained class in NetML. At the top level, flows are marked as benign or malware. At the fine-grained level, there are twenty malware types plus one benign class.
+
+#### 3.2.2 CICIDS2017.
+The CICIDS2017 [19] dataset has raw packet captures of various malware attacks and normal network flows. This dataset has five traces each day of one week, totaling thirty-five files. We filtered flows of interest using the website instructions. We downloaded CICIDS2017 from its source, and used our flow feature extraction tool to get the flow data. We could not extract features for Botnet and Heartbleed attacks, so these two classes were left out of our final CICIDS2017 dataset. Table 3 lists the malware types we kept and the files they came from. Figure 3 shows the flow count for each fine-grained class. Like the other malware datasets, CICIDS2017 has top-level tags for benign or malware and fine-grained tags for seven malware types plus a benign class. Only packets in certain time windows with chosen IP address pairs were kept per the CICIDS2017 guide. We ran feature tool on filtered pcaps to produce JSON flow records with metadata fields like packet count, byte count, and flow duration.
+
+### 3.3 Traffic Classification Dataset: non-vpn2016  
+The third dataset is for sorting network flows by application and is named non-vpn2016. We built it by running our flow feature tool on only the non-vpn raw traffic files from the CIC website, since our tool cannot yet process VLAN data.
+
+We assign three levels of labels to this dataset: top-level, mid-level, and fine-grained. Top-level labels group flows into seven main types: P2P, audio, chat, email, file_transfer, tor, and video. Mid-level labels specify 18 common apps (for example, facebook and skype). Fine-grained labels split those into 31 detailed classes (facebook_audio, facebook_chat, skype_audio, skype_chat, etc.). Table 4 lists the capture files we used to create non-vpn2016.
+
+After feature extraction, Figure 4 shows the number of flows for each top-level class, Figure 5 shows counts for mid-level apps, and Figure 6 shows counts for fine-grained classes.
+
+Class imbalance—when some labels have far more flows than others—is common but can bias model results. For example, in Figure 6, facebook_audio, hangouts_audio, skype_audio, and skype_file each have many more samples than other classes.
