@@ -68,3 +68,8 @@ We assign three levels of labels to this dataset: top-level, mid-level, and fine
 After feature extraction, Figure 4 shows the number of flows for each top-level class, Figure 5 shows counts for mid-level apps, and Figure 6 shows counts for fine-grained classes.
 
 Class imbalance—when some labels have far more flows than others—is common but can bias model results. For example, in Figure 6, facebook_audio, hangouts_audio, skype_audio, and skype_file each have many more samples than other classes.
+
+## 4 NETML DATASET ANALYSIS
+Here we look at flow details for the training parts of all three sets. We use four types of data: (1) basic info, (2) TLS, (3) DNS, and (4) HTTP. Basic info means simple data that works for any flow, like how many packets there are, bytes sent and received, and how long the flow lasts. Protocol data cover TLS, DNS, or HTTP only when those packets exist in the flow. For TLS, we note the count of cipher suites and extensions that the client or server uses. For DNS, we use the query name and the answer IP as examples. For HTTP, we list fields like the status code and the request method. Basic info applies to every flow, but protocol data only apply when the flow has that protocol’s packets. Thus, Table 5 shows how many flows in each set have basic info, TLS, DNS, or HTTP data.
+
+In the training sets, NetML has 387,268 flows, CICIDS2017 has 441,116 flows, and non-vpn2016 has 131,065 flows. These numbers reflect the available flow pool.
