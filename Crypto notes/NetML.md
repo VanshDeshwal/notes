@@ -194,3 +194,9 @@ We present the NetML data sets for malware detection and traffic classification.
 
 This paper focuses on both malware detection and application classification.
 MLmethods implemented: random forest, SVM, MLP.
+
+Dataset for malware detection: NetML
+malware: CICIDS2017 
+traffic classification: non-vpn2016
+
+we provide a platform for researchers to participate in our firstly announced network traffic analytics challenge and baseline results obtained by RF, SVM and MLP models. We choose only Metadata features (such as number of packets, number of bytes, time duration etc.) to expedite the efficiency of baseline classifiers; however, we strongly encourage researchers to investigate TLS, DNS and HTTP features as well.
