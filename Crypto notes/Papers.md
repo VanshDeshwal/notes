@@ -70,6 +70,50 @@ After feature extraction, Figure 4 shows the number of flows for each top-level 
 Class imbalance—when some labels have far more flows than others—is common but can bias model results. For example, in Figure 6, facebook_audio, hangouts_audio, skype_audio, and skype_file each have many more samples than other classes.
 
 ## 4 NETML DATASET ANALYSIS
-Here we look at flow details for the training parts of all three sets. We use four types of data: (1) basic info, (2) TLS, (3) DNS, and (4) HTTP. Basic info means simple data that works for any flow, like how many packets there are, bytes sent and received, and how long the flow lasts. Protocol data cover TLS, DNS, or HTTP only when those packets exist in the flow. For TLS, we note the count of cipher suites and extensions that the client or server uses. For DNS, we use the query name and the answer IP as examples. For HTTP, we list fields like the status code and the request method. Basic info applies to every flow, but protocol data only apply when the flow has that protocol’s packets. Thus, Table 5 shows how many flows in each set have basic info, TLS, DNS, or HTTP data.
+In this part we look at the flow details for the training parts of all three sets. We take four types of features: (1) Metadata, (2) TLS, (3) DNS, and (4) HTTP. Metadata features work for any flow. These include the number of packets, bytes in and bytes out, flow time length, and more. Protocol-specific features only apply if a flow has that protocol. TLS features include how many cipher suites and extensions the client or server uses. DNS features include the query name and the answer IP. HTTP features include the status code and the request method. While Metadata features come from any flow, protocol-specific features only come if the flow has TLS, DNS, or HTTP packets. So Table 5 shows how many flows in each set have Metadata, TLS, DNS, and HTTP data. The training set sizes are 387,268 for NetML, 441,116 for CICIDS2017, and 131,065 for non-vpn2016. This section shows feature coverage in each dataset and highlights where protocols differ. We use this analysis to plan model use of these features.
 
-In the training sets, NetML has 387,268 flows, CICIDS2017 has 441,116 flows, and non-vpn2016 has 131,065 flows. These numbers reflect the available flow pool.
+---
+
+### 4.1 Metadata Features
+
+_Metadata Histograms_  
+Metadata features are mostly counts or histograms made for each flow. Histogram features return fixed-size arrays like intervals_ccnt[] and hdr_ccnt[]. We compute the average value for each array index and show these means in Figures 18 and 19, and in Figures 20 and 21. In the charts, the horizontal axis is the array index and the vertical axis is the mean value at that index across all flow samples in each dataset for training sets.
+
+_Single-Value Features_  
+Other Metadata features like bytes_in or src_prt give a single number, for example 160 or 6006. We show how often each feature value appears in Figures 10–17. In these charts, the horizontal axis is the feature’s value and the vertical axis is how many flows have that value. Each plot uses 100 equally sized bins to display the distribution clearly. It helps choose features better.
+
+_Distribution Insights_  
+Looking at these feature distributions tells us which values separate classes best. For example, the hdr_bin_40 feature is smaller in malware than in benign flows. In the non-vpn2016 data, this same feature is often smaller for P2P, chat, email, and tor flows. There is one outlier in the time_length feature of NetML, with a value near seven million, which makes its histogram odd. We do not clean these outliers in this work and leave that for future research. We plot all histograms with 100 equal bins, as seen in Figures 10 through 17, to keep value ranges clear and comparable. These differences show models learn.
+
+_Coverage Summary_  
+We can get Metadata features from any flow sample. In this work, we extract 31 Metadata features with our flow feature tool. In the NetML training set, all 387,268 flow samples yield every Metadata feature. Likewise, the CICIDS2017 training set has 441,116 flows with these features, and the non-vpn2016 training set has 131,065 flows with every metadata feature listed in Table 1. These numbers show metadata coverage.
+
+### 4.2 TLS Features  
+We use several client-side and server-side TLS features. Some include the list of cipher suites offered, the list of extensions advertised, and the key exchange length offered by client or server. We extract 14 total TLS features. In the NetML training set, 114,396 flows have TLS data, about 30% of all flows. In CICIDS2017, 74,836 flows (about 15%) include TLS. In non-vpn2016, only 1,262 flows (under 1%) have TLS.
+
+Figures 22 and 23 show how often each single-value client-advertised TLS feature appears in NetML, CICIDS2017, and non-vpn2016 training sets. Figures 24 and 25 show the same for server-advertised features. In these plots, the horizontal axis is the feature value from the extraction tool and the vertical axis is how many flows have that value.
+
+Figures 26 and 27 first row show the sizes of returned TLS arrays (array length vs. count). The next four rows show which cipher suites and TLS extensions appear in each set. In those charts, the horizontal axis is an index for each suite or extension type, and the vertical axis is how many times it appears. A full mapping from index to hex code is in the appendix.
+
+In NetML, we see 122 unique cipher-suite hex codes and 38 unique TLS extension codes. In CICIDS2017, there are 11 unique codes for both cipher suites and extensions. In non-vpn2016, we find 16 cipher-suite codes and 12 extension codes. Common hex values are in Figures 34 and 35 for all sets. Note that the P2P class in non-vpn2016 has no TLS flows. We do not compare codes across datasets here. Finally, one integer value gives counts for other TLS features and key exchange lengths.
+
+### 4.3 DNS Features  
+Our tool gives several DNS query and answer features (see Table 1). Like TLS, some DNS features are single values and some are arrays. For example, **dns_query_cnt** and **dns_answer_cnt** each return one integer, while **dns_answer_ttl** returns an array of numbers, and names or classes return arrays of strings.
+
+- **NetML:** 60,271 flows have DNS data (about 15% of training).
+    
+- **CICIDS2017:** 93,224 flows have DNS data (about 21%).
+    
+- **non-vpn2016:** 8,179 flows have DNS data (under 7%).
+    
+
+Figures 28 and 29 plot the single-value DNS features by class. You can see **dns_query_cnt** is always 1, so it offers no discrimination and can be dropped. Likewise, **dns_query_class** is always 1 and can be ignored.
+
+Figures 30 and 31 show the array-like DNS features. For **dns_query_name** and **dns_answer_ip**, the horizontal axis is the array index (first entry, second entry, etc.) and the vertical axis is how often that entry appears. Other array features plot “array length” on the horizontal and “count of flows with that length” on the vertical.
+
+We also looked at which DNS names and IPs appear most often. Figures 36 and 37 list the top five values of **dns_query_name** and **dns_answer_ip** in each training set. Surprisingly, almost every class in all three datasets has a blank (empty) **dns_answer_ip** for most flows, except the P2P class in non-vpn2016, which has more actual IP answers.
+
+### 4.4 HTTP Features  
+We extract six HTTP features for flows with HTTP packets (Table 1). Three are single integers—http_method, http_code, http_content_len. The other three—http_uri, http_host, http_content_type—are strings mapped to integer indexes.
+
+Figures 38–39 show the top http_content_type, http_host, and http_uri values for each top-level class in all three datasets. The http_content_type feature clearly helps spot malware: in both malware-detection sets, “text/html” appears most in malware flows. If a flow has a different content type, the model can likely mark it benign. In the non-vpn2016 set, each app class has a distinct common content type. Note that non-vpn2016’s Tor class has no HTTP features, as expected for encrypted traffic.
