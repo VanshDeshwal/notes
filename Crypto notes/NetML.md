@@ -189,3 +189,8 @@ Full rules: [GitHub Challenge Page](https://www.github.com/ACANETS/NetML-Competi
 ## 7 Conclusion
 
 We present the NetML data sets for malware detection and traffic classification. We supply flow features and multi-level labels to form a shared resource. We analyze features and give baselines in seven tasks. RF excels at malware detection but struggles on imbalanced traffic classes. Future work: deep learning for fine-grained tasks, SMOTE for imbalance. We hope NetML becomes a standard platform for AI-driven network flow analytics.
+
+
+
+This paper focuses on both malware detection and application classification.
+MLmethods implemented: random forest, SVM, MLP.
