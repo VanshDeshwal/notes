@@ -117,3 +117,22 @@ We also looked at which DNS names and IPs appear most often. Figures 36 and 37 l
 We extract six HTTP features for flows with HTTP packets (Table 1). Three are single integers—http_method, http_code, http_content_len. The other three—http_uri, http_host, http_content_type—are strings mapped to integer indexes.
 
 Figures 38–39 show the top http_content_type, http_host, and http_uri values for each top-level class in all three datasets. The http_content_type feature clearly helps spot malware: in both malware-detection sets, “text/html” appears most in malware flows. If a flow has a different content type, the model can likely mark it benign. In the non-vpn2016 set, each app class has a distinct common content type. Note that non-vpn2016’s Tor class has no HTTP features, as expected for encrypted traffic.
+
+## 5 NETML CHALLENGE BASELINES  
+In this section, we show how to use our three datasets for flow analysis. We give simple machine learning methods as baselines. We train models on the training sets and test them on the test-std sets. All results below come from the test-std sets unless we say otherwise.
+
+### 5.1 Baselines  
+We pick three easy classification models: Random Forest, Support Vector Machine (SVM), and Multi-Layer Perceptron (MLP). Random Forest is quick to train, SVM is common and works well, and MLP points toward deep learning’s power. We build these models using scikit-learn in Python. Since TLS, DNS, and HTTP features are missing for many flows (see Section 4), we use only Metadata features for these baselines.
+
+#### 5.1.1 Random Forest Classifier  
+Random Forest makes many decision trees and combines their votes. Each tree votes on the class, and the majority wins. We use this model because it is simple, fast, and often accurate. We set the number of trees (estimators) to 100 and the maximum depth of each tree to 10.
+
+#### 5.1.2 Support Vector Machine Classifier  
+Support Vector Machines draw a boundary (hyperplane) that best separates two classes. The data points closest to the boundary are the support vectors. SVMs are known for good accuracy. A downside is that they can take a long time to train on large datasets like ours. To ease this, you can train on a smaller sample and keep the rest for validation. We use the default settings: regularization C = 1.0 and the radial basis function (RBF) kernel.
+
+#### 5.1.3 Multi-Layer Perceptron Classifier  
+A perceptron is a single node that combines inputs, applies weights, and passes the sum through an activation function (often sigmoid). An MLP is a network of these perceptrons in several layers: an input layer, one or more hidden layers, and an output layer. MLPs are feed-forward neural networks trained by backpropagation to learn data patterns. Deep neural networks are more complex MLPs with many hidden layers. Recent studies show that neural networks can beat classic methods like Random Forest and SVM on many tasks. Here, we use a simple MLP with one hidden layer of 121 units. We apply L2 regularization with alpha = 0.0001 and train using the Adam optimizer.
+
+### 5.2 PreProcessing
+
+As said in Section 4, not all flows have TLS, DNS, or HTTP data. So we use only Metadata features for baseline tests. All classifiers need input as a two-dimensional grid with columns as features and rows as flow examples. Thus, we turn our data into a matrix. First, we drop source and destination IP fields because they are masked. All other Metadata fields hold numbers, so we can load them directly into a matrix for training. For array fields like hdr_ccnt[], we split each element into its own feature: hdr_ccnt_0, hdr_ccnt_1, and so on up to hdr_ccnt_k for a total of k+1 features. These go into separate matrix columns. Figure 7 shows how we capture traffic and make our feature matrices. Before training, we standardize each column so each feature has a normal distribution. For Random Forest and MLP, we set aside 80% of the training data to train the model and keep 20% for validation. For SVM, we only train on 10% and use 90% to validate because SVM is slow when training on large sets. After making all columns, we check for missing values and find none since Metadata exists. We then apply a standard scaler to make each feature have zero mean and unit variance. Next, we split our matrix into training and validation sets. For Random Forest and MLP, 80% trains and 20% validates. For SVM, we use 10% for training and 90% for validation to speed up. We set a random seed for reproducible splits and save them for future use.
