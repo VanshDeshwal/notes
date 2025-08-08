@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "Machine Learning Notes"
             }
+          },
+          {
+            "id": "0d3d1ea2ca374fdb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Crypto notes/Papers.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Papers"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -53,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#NetML",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,12 +89,12 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 297.5,
-    "collapsed": true
+    "width": 297.5
   },
   "right": {
     "id": "b1fd7f94eb3b5b59",
@@ -181,14 +196,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4a34ccef804858fd",
+  "active": "0d3d1ea2ca374fdb",
   "lastOpenFiles": [
+    "Crypto notes/Papers.md",
+    "Crypto notes",
+    "Data Science Notes/100 days of ML/Machine Learning Notes.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Python and Vectorization.md",
     "Data Science Notes/ML_interview.pdf",
     "Data Science Notes/100 days of ML/Libraries/NumPy.md",
     "Data Science Notes/100 days of ML/Libraries/Matplotlib.md",
     "Data Science Notes/100 days of ML/Libraries/Seaborn.md",
-    "Data Science Notes/100 days of ML/Machine Learning Notes.md",
     "Data Science Notes/100 days of ML/Libraries/Untitled",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week1/Introduction To Deep Learning.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Neural Network Basics.md",
@@ -212,7 +229,6 @@
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1/Normalizing training sets.md",
     "Coding Notes/Array.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Images/Pasted image 20250521102647.jpg",
-    "Coding Notes/Cheat Sheet Python.md",
     "download.jpeg",
     "Data Science Notes/100 days of ML/Images/sample_graph.jpeg",
     "Data Science Notes/100 days of ML/Images/sample_graph_3.jpeg",
@@ -226,7 +242,6 @@
     "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622223421.png",
     "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs",
     "Data Science Notes/100 days of ML/Libraries/New folder",
-    "Data Science Notes/100 days of ML/Libraries",
-    "Data Science Notes/100 days of ML/New folder"
+    "Data Science Notes/100 days of ML/Libraries"
   ]
 }
