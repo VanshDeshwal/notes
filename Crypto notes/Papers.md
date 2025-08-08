@@ -136,3 +136,74 @@ A perceptron is a single node that combines inputs, applies weights, and passes 
 ### 5.2 PreProcessing
 
 As said in Section 4, not all flows have TLS, DNS, or HTTP data. So we use only Metadata features for baseline tests. All classifiers need input as a two-dimensional grid with columns as features and rows as flow examples. Thus, we turn our data into a matrix. First, we drop source and destination IP fields because they are masked. All other Metadata fields hold numbers, so we can load them directly into a matrix for training. For array fields like hdr_ccnt[], we split each element into its own feature: hdr_ccnt_0, hdr_ccnt_1, and so on up to hdr_ccnt_k for a total of k+1 features. These go into separate matrix columns. Figure 7 shows how we capture traffic and make our feature matrices. Before training, we standardize each column so each feature has a normal distribution. For Random Forest and MLP, we set aside 80% of the training data to train the model and keep 20% for validation. For SVM, we only train on 10% and use 90% to validate because SVM is slow when training on large sets. After making all columns, we check for missing values and find none since Metadata exists. We then apply a standard scaler to make each feature have zero mean and unit variance. Next, we split our matrix into training and validation sets. For Random Forest and MLP, 80% trains and 20% validates. For SVM, we use 10% for training and 90% for validation to speed up. We set a random seed for reproducible splits and save them for future use.
+
+### 5.3 Results
+
+We look at seven cases in total.
+
+- **Malware detection** is a two-class (benign vs. malware) problem. We report the **True Positive Rate (TPR)** (how many malware we find) and **False Alarm Rate (FAR)** (how many benign we mark as malware). They are:
+    $$
+    TPR=TPTP+FN,FAR=FPTN+FP \text{TPR} = \frac{TP}{TP + FN}, \quad \text{FAR} = \frac{FP}{TN + FP}TPR=TP+FNTP​,FAR=TN+FPFP
+    $$​
+- **Multi-class tasks** (the 20+ malware types or the app classes) use **F1 score** and **mean average precision (mAP)**. They are:
+    $$
+    F1=2×precision×recallprecision+recall,mAP=1N∑i=1NAPi F1 = \frac{2 \times \text{precision}\times \text{recall}}{\text{precision} + \text{recall}}, \quad \text{mAP} = \frac{1}{N}\sum_{i=1}^{N}AP_iF1=precision+recall2×precision×recall​,mAP=N1​i=1∑N​APi$$​
+
+#### 5.3.1 Malware Detection
+
+|Dataset|Model|TPR|FAR|
+|---|---|---|---|
+|**NetML**|RF|0.9937|0.0092|
+||SVM|0.9624|0.0137|
+||MLP|0.9887|0.0171|
+|**CICIDS**|RF|0.9859|0.0044|
+||SVM|0.9780|0.0028|
+||MLP|0.9872|0.0069|
+
+- On **NetML**, Random Forest (RF) gives the best TPR (0.9937) and lowest FAR (0.0092).
+    
+- On **CICIDS2017**, MLP has the highest TPR (0.9872) but SVM has the lowest FAR (0.0028).
+    
+
+#### 5.3.2 Multi-class Classification
+
+|Case|Model|F1|mAP|
+|---|---|---|---|
+|**NetML-f**|RF|0.7442|0.4217|
+||SVM|0.6959|0.3536|
+||MLP|0.7314|0.4116|
+|**CICIDS-f**|RF|0.9872|0.8682|
+||SVM|0.9850|0.8621|
+||MLP|0.9889|0.8966|
+|**non-vpn-t**|RF|0.6273|0.3257|
+|**non-vpn-m**|RF|0.3693|0.3223|
+|**non-vpn-f**|RF|0.2486|0.2127|
+
+- For **NetML-f**, RF is best (F1 = 0.7442, mAP = 0.4217).
+    
+- For **CICIDS-f**, MLP is best (F1 = 0.9889, mAP = 0.8966).
+    
+- For **non-vpn2016** at all three levels (top, mid, fine), RF is also the best but scores are low.
+    
+
+Figure 8 shows confusion matrices for the two malware sets. In **NetML** we see Adload vs. TrickBot mix-ups and Artemis flows often labeled Ursnif. In **CICIDS2017**, webAttack is often missed, and infiltration sometimes looks like benign.
+
+Switching to multi-class slightly lowers FAR but keeps TPR high. For example, RF on NetML-f gives TPR = 0.9922 with FAR = 0.0051.
+
+Figure 9 shows confusion for **non-vpn2016**. Most mistakes go into the “audio” class or, at mid/fine levels, into “skype” or “facebook_audio.” This bias matches the class sizes—big classes push the model to favor them.
+
+## 6 NETML CHALLENGE AND WORKSHOP  
+We have set up a scoring server so participants can upload their predictions for both test and challenge sets, and we show a live leaderboard. We host the first NetML challenge and workshop to help the field move forward. The workshop will take place at IJCAI 2020. We ask that any paper using the NetML, CICIDS2017, or non-vpn2016 data should:  
+• report results on the test-std set as shown on the leaderboard  
+• report TPR and FAR for binary malware detection  
+• report F1 and mAP for multi-class tasks  
+• compare against the baseline numbers in this paper  
+For full challenge rules and data details, please see the GitHub page: [https://www.github.com/ACANETS/NetML-Competition2020](https://www.github.com/ACANETS/NetML-Competition2020)
+
+## 7 CONCLUSION  
+To support AI research on network flows, we present the NetML datasets. They include open-source data for malware detection and traffic classification. We share flow features and multiple label levels to give everyone a single data source. We describe each dataset’s details and give baseline scores across seven tasks using three standard ML models. We find Random Forest works best for malware detection but less well on traffic classification when classes are unbalanced.
+
+Our results open new research directions. For example, using deep neural networks may improve fine-grained labels, and methods like SMOTE can fix class imbalance. We hope the NetML datasets drive future AI research on network traffic. They aim to give everyone a shared data platform to build and test new analytics methods. We also release code and encourage community contributions to keep the data current. We welcome new approaches that use more features. We also include labels for malware and apps.
+
+## ACKNOWLEDGMENT  
+This work was partly supported by the Intel Corporation.
