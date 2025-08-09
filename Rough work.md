@@ -25,5 +25,6 @@ Random Forest, Support Vector Machine (SVM) and Multi-layer Perceptron (MLP)
 
 protocol specific (TLS, DNS and HTTP) features are not available for all of the flows in the datasets. Therefore, we use only Metadata features to obtain baseline results.
 
+We observe that Random Forest is the best performing model for malware detection tasks, but it lacks accuracy for traffic classification problems due to class imbalance.
 
 
