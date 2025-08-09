@@ -16,4 +16,7 @@ TLS:
 	
 DNS:
 - dns_query_cnt and dns_answer_cnt features have a single integer value returned while the other DNS query and answer features return array of integers for dns_answer_ttl and strings for the rest.
+
+HTTP:
+- http_content_type feature is very important to classify benign samples from malware flows
 - 
