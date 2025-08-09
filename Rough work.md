@@ -14,3 +14,6 @@ MetaData: most of the features are array based, such as interval count histogram
 TLS:
 	14 different TLS features are extracted
 	
+DNS:
+- dns_query_cnt and dns_answer_cnt features have a single integer value returned while the other DNS query and answer features return array of integers for dns_answer_ttl and strings for the rest.
+- 
