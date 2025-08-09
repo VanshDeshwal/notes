@@ -19,4 +19,11 @@ DNS:
 
 HTTP:
 - http_content_type feature is very important to classify benign samples from malware flows
-- 
+
+Three ML models are used:
+Random Forest, Support Vector Machine (SVM) and Multi-layer Perceptron (MLP)
+
+protocol specific (TLS, DNS and HTTP) features are not available for all of the flows in the datasets. Therefore, we use only Metadata features to obtain baseline results.
+
+
+
