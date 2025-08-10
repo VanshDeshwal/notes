@@ -19,6 +19,15 @@ The authors used a combination of three datasets for their experiments. Benign t
 For preprocessing, sessions with less than 784 payload bytes were removed, as they were not informative enough. The ISCX2016 dataset was further cleaned by removing irrelevant protocols (e.g., SNMP, LLMNR) and noisy traffic such as UDP broadcasts (e.g., Dropbox LAN Discovery). The benign set was built as an equal mix of StratosphereIPS and ISCX2016 (after filtering) to increase diversity. To address the imbalance between benign and malicious samples, the benign set was sub-sampled so that the final dataset contained 50% benign and 50% malware samples, totaling 18k sessions. Of these, 57.9% were TLS-encrypted. While the benign/malicious classes were balanced, the malware family distribution remained imbalanced.
 For each group, we calculate five statistics for packet size and inter-arrival time (10 features) plus four totals and rates (bytes, packets, bytes/s, packets/s). Arranging these for five groups forms a 5×14 feature matrix, representing the malware or benign traffic as an image.
 
+MalDIST was compared against:
+
+1. **Classical ML models** — Random Forest (RF), Support Vector Machine (SVM) with standardized data, and K-Nearest Neighbor (KNN) with _k=3_, which gave the best results among tested values (_k=3–10_).
+    
+2. **DeepMAL** — Session-based variant (better-performing) using a convolutional layer and fully connected layers for malware detection and classification.
+    
+3. **M2CNN** — CNN (based on LeNet-5) using the first 784 payload bytes of each session reshaped into a 28×28 image for malware detection.
+    
+4. **M1CNN** — DL model on raw traffic data without feature extraction, tested for encapsulation identification, encrypted traffic classification, and protocol-specific classification.
 
 ## Choosing data
 
