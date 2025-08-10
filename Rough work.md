@@ -6,6 +6,11 @@ Authors are transfering models from internet classification domain to malware tr
 
 Converting DISTILLER to MalDIST and comparing it to current state of the art malware traffic classification models
 
+## Cleaned version
+
+Today Network trafic is encrypted to improve privacy, but that makes it harder to classify malicious traffic.attackers are taking advantage of encryption to deliver malware inside the network.Recent state-of-the-art Deep-Learning architectures for encrypted traffic classifications demonstrated superb results in tasks of traffic categorization over encrypted traffic. one of such archiutecture is 
+DISTILLER, authors are transfering this model to the malware  detection and classification
+
 ## Choosing data
 
 Combination of 3 datasets used:
