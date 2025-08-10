@@ -3,3 +3,7 @@ we present a Deep-Learning model for malware traffic detection and classificatio
 Network trafic is encrypted to improve privacy, but that makes it harder to classify malicious traffic.
 attackers are taking advantage of encryption to deliver malware inside the network.
 Authors are transfering models from internet classification domain to malware traffic classification because the former has shown great results.
+
+Converting DISTILLER to MalDIST and comparing it to current state of the art malware traffic classification models
+
+
