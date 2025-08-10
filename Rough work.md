@@ -9,6 +9,10 @@ Converting DISTILLER to MalDIST and comparing it to current state of the art mal
 ## Cleaned version
 
 Today, network traffic is encrypted to improve privacy, but that makes it harder to classify malicious traffic. Attackers are taking advantage of encryption to deliver malware inside the network. Recent state-of-the-art deep learning architectures for encrypted traffic classification have demonstrated superb results in tasks of traffic categorization over encrypted traffic. One such architecture is DISTILLER, and the authors are transferring this model to malware detection and classification.
+The authors used a combination of three datasets for their experiments. Benign traffic was taken from **StratosphereIPS** (same benign PCAPs as in the NetML dataset) and **ISCX2016** (105 selected benign PCAPs out of 150 labeled files covering various applications like Facebook, YouTube, Spotify, and traffic types such as streaming, VoIP, and chat, with VPN/non-VPN labels). Malware traffic was obtained from **Malware-Traffic-Analysis.net (MTA)**, selecting four families: Dridex, Hancitor, Emotet, and Valak.
+
+
+
 ## Choosing data
 
 Combination of 3 datasets used:
