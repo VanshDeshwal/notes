@@ -15,9 +15,27 @@ MalDIST model was compared with
 ## Cleaned version
 
 Today, network traffic is encrypted to improve privacy, but that makes it harder to classify malicious traffic. Attackers are taking advantage of encryption to deliver malware inside the network. Recent state-of-the-art deep learning architectures for encrypted traffic classification have demonstrated superb results in tasks of traffic categorization over encrypted traffic. One such architecture is DISTILLER, and the authors are transferring this model to malware detection and classification.
+**MalDIST Architecture** — The work adapts the encrypted traffic classifier **DISTILLER** for malware detection (binary) and malware family classification. DISTILLER originally used two input modalities:
+
+1. The first 784 payload bytes of a session.
+    
+2. Protocol fields from the first 32 packets (direction, size, inter-arrival time, TCP window size).
+    
+
+MalDIST introduces a third modality — statistical features from the first 32 packets — aimed at real-time detection. Packets are grouped into: bidirectional, source→destination, destination→source, handshake, and data transfer. For each group, five statistics (min, max, mean, std, skewness) for packet size and inter-arrival time (10 features) plus four totals/rates (bytes, packets, bytes/s, packets/s) are computed, forming a 5×14 feature matrix.
+
+The architecture has three subnetworks:
+
+- **Payload modality** — two 1D CNN layers (16, 32 filters, kernel 25) with ReLU and max-pooling, followed by dense (128 nodes, ReLU).
+    
+- **Protocol fields modality** — bidirectional GRU (64 units, ReLU) and dense (128 nodes).
+    
+- **Statistical modality** — bidirectional LSTM (65 units) + 2D CNN layers (32, 32, 64, 128 filters) with leaky-ReLU, 2D max-pooling, and dense layers (512, 128 nodes).
+    
+
+Outputs are merged into a 384-dimensional vector, passed to a shared dense layer (ReLU) and then two identical branches for detection and classification, each with a dense (128, ReLU) and a SoftMax output. Dropout layers follow dense layers to reduce overfitting.
 The authors used a combination of three datasets for their experiments. Benign traffic was taken from **StratosphereIPS** (same benign PCAPs as in the NetML dataset) and **ISCX2016** (105 selected benign PCAPs out of 150 labeled files covering various applications like Facebook, YouTube, Spotify, and traffic types such as streaming, VoIP, and chat, with VPN/non-VPN labels). Malware traffic was obtained from **Malware-Traffic-Analysis.net (MTA)**, selecting four families: Dridex, Hancitor, Emotet, and Valak.
 For preprocessing, sessions with less than 784 payload bytes were removed, as they were not informative enough. The ISCX2016 dataset was further cleaned by removing irrelevant protocols (e.g., SNMP, LLMNR) and noisy traffic such as UDP broadcasts (e.g., Dropbox LAN Discovery). The benign set was built as an equal mix of StratosphereIPS and ISCX2016 (after filtering) to increase diversity. To address the imbalance between benign and malicious samples, the benign set was sub-sampled so that the final dataset contained 50% benign and 50% malware samples, totaling 18k sessions. Of these, 57.9% were TLS-encrypted. While the benign/malicious classes were balanced, the malware family distribution remained imbalanced.
-For each group, we calculate five statistics for packet size and inter-arrival time (10 features) plus four totals and rates (bytes, packets, bytes/s, packets/s). Arranging these for five groups forms a 5×14 feature matrix, representing the malware or benign traffic as an image.
 
 MalDIST was compared against:
 
