@@ -1641,8 +1641,13 @@ And loss function is this
 $$
 L = -\frac{1}{m} \sum_{i=1}^m \sum_{k=1}^k y^i_k \log(\hat y^i_k)
 $$
-#
+### some things are still left
 # Decision Tree (61)
+
+They are jest nested if else statements
+
+
+
 
 # Ensemble (60)
 
