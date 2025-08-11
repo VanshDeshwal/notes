@@ -1691,6 +1691,12 @@ graph TD
 
 ```
 
+Advantages:
+- minimal data prepration
+- cost of using the tree for inference is logarithmic in the number of data points used to train the tree
+Disadvantages:
+- overfitting
+- prone to errors in imbalanced datasets
 
 # Ensemble (60)
 
