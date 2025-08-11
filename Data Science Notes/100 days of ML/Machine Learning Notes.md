@@ -1666,6 +1666,30 @@ Lets say this is our data
 | 14  | Rain     | Mild | High   | Strong | No    |
 
 
+```mermaid
+graph TD
+    A(["<b>Outlook</b>"]):::blue --> B([Sunny])
+    A --> C([Overcast])
+    A --> D([Rainy])
+
+    B --> E(["<b>Windy</b>"]):::blue
+    E --> F([High])
+    E --> G([Low])
+    F --> H(["<b>Play=No</b>"]):::brown
+    G --> I(["<b>Play=Yes</b>"]):::brown
+
+    C --> J(["<b>Play=Yes</b>"]):::brown
+
+    D --> K(["<b>Humidity</b>"]):::blue
+    K --> L([High])
+    K --> M([Low])
+    L --> N(["<b>Play=No</b>"]):::brown
+    M --> O(["<b>Play=Yes</b>"]):::brown
+
+    classDef blue fill:#cce6ff,stroke:#000,stroke-width:1px;
+    classDef brown fill:#ffe6cc,stroke:#000,stroke-width:1px;
+
+```
 
 
 # Ensemble (60)
