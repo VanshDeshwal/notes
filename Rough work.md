@@ -111,3 +111,11 @@ gpt--
 The existing rule-based malware detection systems are highly accurate at their assigned tasks, but they cannot adapt to the evolution of malware. Some malware can even disable such systems. Moreover, it is easier for attackers to develop new bypassing techniques. The authors’ solution is based on cross-layer and cross-protocol traffic classification, using supervised learning methods.
 
 Network behavioral modeling is widely used for malware detection, but most studies focus on specific malware types or attacks. This work combines multi-layer and multi-protocol features at various resolutions to detect both known and new malware.
+
+The solution analyzes data streams in four resolutions across Internet, Transport, and Application layers: **Transaction** (single client-server interaction, e.g., HTTP, DNS, SSL), **Session** (unique 4-tuple of IPs and ports), **Flow** (group of sessions between two IPs within a time window), and **Conversation Window** (group of flows over an observation period).
+
+For each cumulative feature, we calculate additional statistics: minimum, first quartile, median, third quartile, maximum, average, standard deviation, variance, and entropy.
+
+We tested three classification algorithms—Naïve Bayes, Decision Tree (J48), and Random Forest—using CFS for feature selection, with all models implemented in the Weka library.
+
+Due to data imbalance, we evaluated detection performance using TPR, FPR, and AUC metrics.
