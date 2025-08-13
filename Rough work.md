@@ -84,3 +84,6 @@ The existing rule based malware detection systems are highly accurate at doing t
 
 An additional strength of our approach is its ability to take into account the fact that targeted machines can be behind NAT
 
+make short:
+Network behavioral modeling is a popular approach for malware detection and malware family classification [12]. However, most of the existing studies (e.g., [6], [13]) focus on specific types of malware, such as Bots, or on a specific type of attack such as DoS or anomalies detection in specific protocols or network layers. Our work combines features from different layers and protocols, extracted in various resolutions, and are able to detect a variety of known and new malware
+
