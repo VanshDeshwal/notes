@@ -187,3 +187,6 @@ After applying the **Correlation Feature Selection (CFS)** algorithm to the data
         
 
 These features collectively cover **behavioral indicators across TCP, HTTP, and DNS** at different granularities, forming the foundation of the detection and classification process.
+
+**Experiment 2 – Detection of Unknown Malicious Families:**  
+The model was trained in a leave-one-out manner, excluding one malware family at a time and testing on it, with general families (General Malware, Emerging Threats) removed. Random Forest achieved very high accuracy in detecting most new families (AUC ≈ 0.98), except Conficker (AUC 0.77). Naïve Bayes performed well in most cases but struggled with complex families like APT1 and Xpaj.
