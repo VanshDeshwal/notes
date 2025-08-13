@@ -81,3 +81,4 @@ MALDIST - A NEW DISTILLER ARCHITECTURE FOR MALWARE DETECTION AND CLASSIFICATION 
 
 
 Author is extracting 972 total features.correlation based feature selection is used to narrow those features down to... outperforms existing rule-based systems like snort and suricata.
+Malware programs are capable of hiding themselves in systems or disabling their activity when they discover attempts to detect them.Therefore, it is required to use passive systems (i.e., trusted monitoring) that can detect malicious activities on targeted machines without accessing them.
