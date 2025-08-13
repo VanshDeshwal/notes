@@ -82,3 +82,5 @@ MALDIST - A NEW DISTILLER ARCHITECTURE FOR MALWARE DETECTION AND CLASSIFICATION 
 
 The existing rule based malware detection systems are highly accurate at doing the task assigned to them, but they are unable to adapt with evolution of malware, also some malwares can disable such systems. its also easier for attackers to develop new bypassing techniques. authors solution is based on cross-layers and crossprotocols traffic classification, using supervised learning methods.
 
+An additional strength of our approach is its ability to take into account the fact that targeted machines can be behind NAT
+
