@@ -190,3 +190,75 @@ These features collectively cover **behavioral indicators across TCP, HTTP, and 
 
 **Experiment 2 – Detection of Unknown Malicious Families:**  
 The model was trained in a leave-one-out manner, excluding one malware family at a time and testing on it, with general families (General Malware, Emerging Threats) removed. Random Forest achieved very high accuracy in detecting most new families (AUC ≈ 0.98), except Conficker (AUC 0.77). Naïve Bayes performed well in most cases but struggled with complex families like APT1 and Xpaj.
+
+
+A. Malware families
+1) Family classification
+After applying the **Correlation Feature Selection (CFS)** algorithm to the dataset, the original 927 features were reduced to **12 key features**. These span multiple network layers, protocols, and observation resolutions, ensuring broad coverage of different aspects of traffic behavior.
+
+**1. Session-Level Features (TCP)**
+
+- **Number of packets with RST flag** 
+    
+- **Number of packets sent by client with ACK flag**
+    
+- **Ratio of destination ports to sessions**
+    
+
+**2. Flow-Level Features**
+
+- **HTTP:** Median inter-arrival time
+    
+- **DNS:**
+    
+    - Query name Alexa 1M Rank
+        
+    - Count of DNS response address records
+        
+    - Count of DNS response answer records
+        
+    - Count of DNS response authoritative records
+        
+
+**3. Conversation Window-Level Features**
+
+- **TCP:**
+    
+    - Number of duplicate ACKs
+        
+    - Number of keep-alive packets
+        
+- **DNS:**
+    
+    - Ratio of sessions to good DNS responses
+        
+- **General:**
+    
+    - Number of flows
+        
+
+These features collectively cover **behavioral indicators across TCP, HTTP, and DNS** at different granularities, forming the foundation of the detection and classification process.
+
+2) Detection of unknown malicious families:**  
+The model was trained in a leave-one-out manner, excluding one malware family at a time and testing on it, with general families (General Malware, Emerging Threats) removed. Random Forest achieved very high accuracy in detecting most new families (AUC ≈ 0.98), except Conficker (AUC 0.77). Naïve Bayes performed well in most cases but struggled with complex families like APT1 and Xpaj.
+
+B. Effect of environments 
+1) Network environment robustness:
+Using data from five diverse environments, we trained on all but one and tested on the excluded one. Accuracy was high when classifying sandbox environments trained on other sandboxes but dropped (AUC ≈ 0.7) for real network traffic trained on sandbox data. The method is more robust between similar environments, and transfer learning or separate training could improve performance across dissimilar environments.
+
+2) Real Network Traffic Experiment
+
+This experiment used only real network traffic, split chronologically to train on earlier data and test on later captures. The dataset contained 2,693 malicious instances from four families and 10,000 randomly selected benign instances. This setup tested performance under realistic, noisy network conditions.
+
+C. Chronological experiments
+1) Four Weeks Foresight:
+
+The model was trained on traffic up to a given week and tested on the following 4 weeks, with CFS selecting features for each split. Random Forest achieved stable, high performance (average AUC = 0.966) and detected most malware up to four weeks before relevant rules were deployed. Performance dips occurred when new malware behaved very differently from previous samples. Naïve Bayes and J48 underperformed due to overfitting.
+
+2) Global Foresight
+
+Extending the previous setup, the model was tested on all future data. Accuracy decreased over time due to malware evolution but remained strong—AUC ≥ 0.9 even for threats 3.5 years later, and above 0.95 within one year—showing the method’s ability to detect threats well in advance.
+
+D Robustness of Features
+
+Across experiments, only 204 of 927 features were ever selected, with an average of 27 per weekly model. Many were used for over 100 weeks, showing a small stable set can be effective long-term. Cross-environment testing showed that global feature sets often matched or outperformed environment-specific sets (except for Naïve Bayes), proving global features can work across different environments.
