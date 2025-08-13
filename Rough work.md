@@ -119,3 +119,71 @@ For each cumulative feature, we calculate additional statistics: minimum, first 
 We tested three classification algorithms—Naïve Bayes, Decision Tree (J48), and Random Forest—using CFS for feature selection, with all models implemented in the Weka library.
 
 Due to data imbalance, we evaluated detection performance using TPR, FPR, and AUC metrics.
+
+We used network traffic captures containing both malicious and benign data, collected from diverse sources to ensure variety and realism.  
+**Malicious traffic** included:
+
+- 2,585 records from the Verint sandbox
+    
+- 7,991 from an academic sandbox
+    
+- 4,167 from VirusTotal
+    
+- 23,600 from Emerging Threats
+    
+- 12,377 from public open-source datasets
+    
+
+**Benign traffic** was gathered from:
+
+- 10 days of activity in a student lab at Ben-Gurion University
+    
+- Corporate network traffic from Verint, containing both benign and malicious flows
+    
+
+The data came from both sandboxed environments and real operational networks, stored as `tcpdump` `.pcap` files.
+
+After applying the **Correlation Feature Selection (CFS)** algorithm to the dataset, the original 927 features were reduced to **12 key features**. These span multiple network layers, protocols, and observation resolutions, ensuring broad coverage of different aspects of traffic behavior.
+
+**1. Session-Level Features (TCP)**
+
+- **Number of packets with RST flag** 
+    
+- **Number of packets sent by client with ACK flag**
+    
+- **Ratio of destination ports to sessions**
+    
+
+**2. Flow-Level Features**
+
+- **HTTP:** Median inter-arrival time
+    
+- **DNS:**
+    
+    - Query name Alexa 1M Rank
+        
+    - Count of DNS response address records
+        
+    - Count of DNS response answer records
+        
+    - Count of DNS response authoritative records
+        
+
+**3. Conversation Window-Level Features**
+
+- **TCP:**
+    
+    - Number of duplicate ACKs
+        
+    - Number of keep-alive packets
+        
+- **DNS:**
+    
+    - Ratio of sessions to good DNS responses
+        
+- **General:**
+    
+    - Number of flows
+        
+
+These features collectively cover **behavioral indicators across TCP, HTTP, and DNS** at different granularities, forming the foundation of the detection and classification process.
