@@ -109,3 +109,5 @@ We applied the CFS algorithm for feature selection that identified the 12 networ
 gpt--
 
 The existing rule-based malware detection systems are highly accurate at their assigned tasks, but they cannot adapt to the evolution of malware. Some malware can even disable such systems. Moreover, it is easier for attackers to develop new bypassing techniques. The authors’ solution is based on cross-layer and cross-protocol traffic classification, using supervised learning methods.
+
+Network behavioral modeling is widely used for malware detection, but most studies focus on specific malware types or attacks. This work combines multi-layer and multi-protocol features at various resolutions to detect both known and new malware.
