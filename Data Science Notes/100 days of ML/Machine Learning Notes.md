@@ -1698,6 +1698,9 @@ Disadvantages:
 - overfitting
 - prone to errors in imbalanced datasets
 
+
+Learn about entropy (important)
+
 # Ensemble (60)
 
 ## Voting Ensemble (63)
