@@ -1699,7 +1699,7 @@ Disadvantages:
 - prone to errors in imbalanced datasets
 
 
-Learn about entropy (important)
+Learn about entropy and gini impurity
 
 # Ensemble (60)
 
