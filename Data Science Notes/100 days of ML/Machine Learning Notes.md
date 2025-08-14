@@ -1700,7 +1700,9 @@ Disadvantages:
 
 
 Learn about entropy and gini impurity
+how this works with numerical columns
 
+## Hyperparameter Tuning
 # Ensemble (60)
 
 ## Voting Ensemble (63)
