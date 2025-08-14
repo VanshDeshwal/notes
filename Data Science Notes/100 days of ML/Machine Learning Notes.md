@@ -1703,6 +1703,10 @@ Learn about entropy and gini impurity
 how this works with numerical columns
 
 ## Hyperparameter Tuning
+gini/entropy
+depth
+
+## Regression Trees
 # Ensemble (60)
 
 ## Voting Ensemble (63)
