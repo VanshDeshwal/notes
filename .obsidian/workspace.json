@@ -49,8 +49,7 @@
               "title": "Rough work"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -210,10 +209,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "be50e00d4caa8972",
+  "active": "4a34ccef804858fd",
   "lastOpenFiles": [
-    "Data Science Notes/100 days of ML/Machine Learning Notes.md",
     "Rough work.md",
+    "Data Science Notes/100 days of ML/Machine Learning Notes.md",
     "Crypto notes/NetML.md",
     "Crypto notes/Papers.md",
     "Crypto notes",
