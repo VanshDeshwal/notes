@@ -1763,6 +1763,8 @@ We use a method called (Elbow Method)
 
 ## Intuition
 
+Lets take a toy dataset as follows
+
 | IQ  | CGPA | Salary |
 | --- | ---- | ------ |
 | 90  | 8    | 3      |
@@ -1770,7 +1772,8 @@ We use a method called (Elbow Method)
 | 110 | 6    | 8      |
 | 120 | 9    | 6      |
 | 80  | 5    | 3      |
-
+In any type of boosting we take the mistakes of 1 model and tell the other model about it so that other model makes less mistakes.
+Lets take an example of 3 models
 
 ```mermaid
 %%{init: {"theme": "dark"}}%%
@@ -1778,6 +1781,7 @@ flowchart LR
   %% Three horizontally connected boxes with lines on the far left and right
   L(( )) --- A[Model 1] --- B[Model 2] --- C[Model 3] --- R(( ))
 ```
+In Gradient Boosting the first model is just taking average of all the values of y column and outputs it, so in our case $\frac{3+4+8+6+3}{5} = 4.8$ . We have got output of model 1, but we have to feed the mistakes of model 1 into model 2, so we need to find how much mistake its making and we call it residue. residue = original - predicted, that's how we got our **res 1** column
 
 | IQ  | CGPA | Salary | pred 1 | res 1 |
 | --- | ---- | ------ | ------ | :---: |
@@ -1787,12 +1791,36 @@ flowchart LR
 | 120 | 9    | 6      | 4.8    |  1.2  |
 | 80  | 5    | 3      | 4.8    | -1.8  |
 
+Now our next models i.e. Model 2,3,... has to be decision trees, because research shows they gives best results in gradient boosting
+
 ```mermaid
 %%{init: {"theme": "dark"}}%%
 flowchart LR
   %% Three horizontally connected boxes with lines on the far left and right
   L(( )) --- A[Average] --- B[Decision Tree] --- C[Decision Tree] --- R(( ))
 ```
+
+The input features for model 2 are IQ, CGPA, res1. so in short we can say that model 2 is trying to predict the mistake that model 1 will make given IQ, CGPA. below is the tree that model 2 made.
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart TB
+    %% Level 0
+    A[IQ <= 105]
+
+    %% Level 1
+    A --> B[IQ <= 95]
+    A --> C[CGPA <= 7.5]
+
+    %% Level 2
+    B --> D[-1.8]
+    B --> E[-0.8]
+    C --> F[3.2]
+    C --> G[1.2]
+
+```
+
+so now we got the output of model 2, but we need to feed model 2's mistakes into model 3, for that we need to find res 2, also to reduce overfitting we introduce learning rate in our equation to find residual. residual = 
 
 | IQ  | CGPA | Salary | pred 1 | res 1 | pred 2 | res 2 | pred 3 |
 | --- | ---- | ------ | ------ | :---: | ------ | ----- | ------ |
