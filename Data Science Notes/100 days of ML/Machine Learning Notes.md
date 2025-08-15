@@ -1772,7 +1772,35 @@ We use a method called (Elbow Method)
 | 80  | 5    | 3      |
 
 
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+  %% Three horizontally connected boxes with lines on the far left and right
+  L(( )) --- A[Model 1] --- B[Model 2] --- C[Model 3] --- R(( ))
+```
 
+| IQ  | CGPA | Salary | pred 1 | res 1 |
+| --- | ---- | ------ | ------ | :---: |
+| 90  | 8    | 3      | 4.8    | -1.8  |
+| 100 | 7    | 4      | 4.8    | -0.8  |
+| 110 | 6    | 8      | 4.8    |  3.2  |
+| 120 | 9    | 6      | 4.8    |  1.2  |
+| 80  | 5    | 3      | 4.8    | -1.8  |
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+  %% Three horizontally connected boxes with lines on the far left and right
+  L(( )) --- A[Average] --- B[Decision Tree] --- C[Decision Tree] --- R(( ))
+```
+
+| IQ  | CGPA | Salary | pred 1 | res 1 | pred 2 | res 2 | pred 3 |
+| --- | ---- | ------ | ------ | :---: | ------ | ----- | ------ |
+| 90  | 8    | 3      | 4.8    | -1.8  | -1.8   | -1.62 | -1.62  |
+| 100 | 7    | 4      | 4.8    | -0.8  | -0.8   | -0.72 | -0.72  |
+| 110 | 6    | 8      | 4.8    |  3.2  | 3.2    | 2.88  | 2.88   |
+| 120 | 9    | 6      | 4.8    |  1.2  | 1.2    | 1.08  | 1.08   |
+| 80  | 5    | 3      | 4.8    | -1.8  | -1.8   | -1.62 | -1.62  |
 
 # KNN
 
