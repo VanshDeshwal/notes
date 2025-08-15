@@ -1761,6 +1761,19 @@ We use a method called (Elbow Method)
 
 # Gradient Boosting
 
+## Intuition
+
+| IQ  | CGPA | Salary |
+| --- | ---- | ------ |
+| 90  | 8    | 3      |
+| 100 | 7    | 4      |
+| 110 | 6    | 8      |
+| 120 | 9    | 6      |
+| 80  | 5    | 3      |
+
+
+
+
 # KNN
 
 # Support Vector Machines (113)
