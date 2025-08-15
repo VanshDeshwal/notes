@@ -1821,6 +1821,7 @@ flowchart TB
 ```
 
 so now we got the output of model 2, but we need to feed model 2's mistakes into model 3, for that we need to find res 2, also to reduce overfitting we introduce learning rate in our equation to find residual. residual = actual - learning_rate(pred). so for row 1 we will get $res2 = 3 - (4.8 + 0.1(-1.8)) = -1.62$ 
+We want to 
 
 | IQ  | CGPA | Salary | pred 1 | res 1 | pred 2 | res 2 | pred 3 |
 | --- | ---- | ------ | ------ | :---: | ------ | ----- | ------ |
