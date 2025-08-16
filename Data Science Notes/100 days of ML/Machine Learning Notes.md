@@ -1837,7 +1837,7 @@ pred 3 = m1 + 0.1(m2) + 0.1(m3), where m1, m2, m3 are outputs of model 1,2,3.
 | 80  | 5    | 3      | 4.8    | -1.8  | -1.8   | -1.62 | -1.62  |
 ## Mathematics Of Gradient Boosting
 
-In ML, whenever we train a model we get a function, that function outputs $y\_pred$ given the input features. Sometimes that function might be sum of several functions, F(x) = f1(x) + f2(x) + ...
+In ML, whenever we train a model we get a function, that function outputs $y\_pred$ given the input features. Sometimes that function might be sum of several functions, $F(x)=f_1(x)+f_2(x)+\dots$ 
 If we can see our data is in a straight lines we apply linear regression, sometimes a function is so complex that we cant apply linear regression or polynomial regression (Runge's Phenomenon).
 So we have to make several small function that can make that big function. We add these small functions in stages.
 
@@ -1857,6 +1857,12 @@ $$
 	$$
 	(d) Update $f_m(x) = f_{m-1}(x) + \sum_{j=1}^{J_m} \gamma_{jm} I(x \in R_{jm}).$
 3. Output $\hat f(x) = f_{M}(x).$
+
+#### Algo Explaination
+
+$F(x) = f_0(x)+f_1(x)+f_2(x)\dots$ our aim is to find all these small functions other than $f_0(x)$ are decision trees.
+
+	Step1: 
 
 # KNN
 
