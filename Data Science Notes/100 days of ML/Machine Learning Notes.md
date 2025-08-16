@@ -1881,10 +1881,13 @@ We train some models may be same or different, then we take the predictions of t
 - now we have 3 sets, train valid and test
 - train all models on train
 - make new dataset with columns model1_pred, model2_pred, model3_pred, y
-- train random forest regressor using these
+- train random forest regressor (meta model) using these
 ## Stacking
 
-- 
+This differs in the way we divide our dataset, we use k fold approach
+- choose a value of K, lets use k=4
+- lets say we have 1000 rows in our dataset
+- divide into train(800) and test(200)
 # KNN
 
 # Support Vector Machines
