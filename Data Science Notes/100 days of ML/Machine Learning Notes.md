@@ -1952,7 +1952,9 @@ style D fill:#6699ff,stroke:#ffffff,stroke-width:2px
 
 - we train model 1 on white sets and get y_pred on blue set
 - do this for all 4 copies
-- now we have 4 blue y_preds, i.e. 800 
+- now we have 4 blue y_preds, we combine these to get a model1_pred with 800 rows
+- repeat this for all base models.
+- now
 # KNN
 
 # Support Vector Machines
