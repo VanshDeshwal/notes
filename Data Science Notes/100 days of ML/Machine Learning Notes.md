@@ -1890,7 +1890,7 @@ This differs in the way we divide our dataset, we use k fold approach
 - divide into train(800) and test(200)
 - Now divide train into 4 part since k=4
 - we now have 4 parts of train dataset
-- make 4 copies of train datasert
+- make 4 copies of train dataset
 
 ```mermaid
 %%{init: {"theme":"dark"}}%%
@@ -1902,7 +1902,57 @@ columns 1
     C["200"]
     D["200"]
   end
+
+style A fill:#6699ff,stroke:#ffffff,stroke-width:2px
+
 ```
+
+```mermaid
+%%{init: {"theme":"dark"}}%%
+block-beta
+columns 1
+  block:ID
+    A["200"]
+    B["200"]
+    C["200"]
+    D["200"]
+  end
+
+style B fill:#6699ff,stroke:#ffffff,stroke-width:2px
+```
+
+```mermaid
+%%{init: {"theme":"dark"}}%%
+block-beta
+columns 1
+  block:ID
+    A["200"]
+    B["200"]
+    C["200"]
+    D["200"]
+  end
+
+style C fill:#6699ff,stroke:#ffffff,stroke-width:2px
+```
+
+```mermaid
+%%{init: {"theme":"dark"}}%%
+block-beta
+columns 1
+  block:ID
+    A["200"]
+    B["200"]
+    C["200"]
+    D["200"]
+  end
+
+style D fill:#6699ff,stroke:#ffffff,stroke-width:2px
+
+```
+
+- we train model 1 on white sets and get y_pred on blue set
+- do this for all 4 copies
+- now we have 4 blue y_preds, i.e. 800 
 # KNN
 
 # Support Vector Machines
