@@ -1698,7 +1698,7 @@ gini/entropy
 depth
 
 ## Regression Trees
-# Ensemble (60)
+# Ensemble
 
 ## Voting Ensemble (63)
 
@@ -1870,9 +1870,12 @@ Step2: rest is easy
 ## For classification
 watch video
 
+# Stacking and Bending Ensembles
+
+
 # KNN
 
-# Support Vector Machines (113)
+# Support Vector Machines
 
 # Naive Bayes
 
