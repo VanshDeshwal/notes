@@ -1888,6 +1888,9 @@ This differs in the way we divide our dataset, we use k fold approach
 - choose a value of K, lets use k=4
 - lets say we have 1000 rows in our dataset
 - divide into train(800) and test(200)
+- Now divide train into 4 part since k=4
+- we now have 4 parts of train dataset
+- make 4 copies of train datasert
 # KNN
 
 # Support Vector Machines
