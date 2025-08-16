@@ -1894,16 +1894,14 @@ This differs in the way we divide our dataset, we use k fold approach
 
 ```mermaid
 %%{init: {"theme":"dark"}}%%
-flowchart TB
-  subgraph ID
-    A["200"]:::highlight
+block-beta
+columns 1
+  block:ID
+    A["200"]
     B["200"]
     C["200"]
     D["200"]
   end
-
-  classDef highlight fill:#ff6666,stroke:#ffffff,stroke-width:2px;
-
 ```
 # KNN
 
