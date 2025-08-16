@@ -1821,7 +1821,12 @@ flowchart TB
 ```
 
 so now we got the output of model 2, but we need to feed model 2's mistakes into model 3, for that we need to find res 2, also to reduce overfitting we introduce learning rate in our equation to find residual. residual = actual - learning_rate(pred). so for row 1 we will get $res2 = 3 - (4.8 + 0.1(-1.8)) = -1.62$ 
-We want to get the res as close to 0 as possible
+We want to get the res as close to 0 as possible.
+Similarly for pred 3, the input is IQ, CGPA and  our model try to predict res2 which is the mistakes of model 2 and model 1 combined.
+pred 3 = m1 + 0.1(m2) + 0.1(m3), where m1, m2, m3 are outputs of model 1,2,3.
+	note: learning rate has to be same for all models
+
+
 
 | IQ  | CGPA | Salary | pred 1 | res 1 | pred 2 | res 2 | pred 3 |
 | --- | ---- | ------ | ------ | :---: | ------ | ----- | ------ |
@@ -1830,6 +1835,28 @@ We want to get the res as close to 0 as possible
 | 110 | 6    | 8      | 4.8    |  3.2  | 3.2    | 2.88  | 2.88   |
 | 120 | 9    | 6      | 4.8    |  1.2  | 1.2    | 1.08  | 1.08   |
 | 80  | 5    | 3      | 4.8    | -1.8  | -1.8   | -1.62 | -1.62  |
+## Mathematics Of Gradient Boosting
+
+In ML, whenever we train a model we get a function, that function outputs $y\_pred$ given the input features. Sometimes that function might be sum of several functions, F(x) = f1(x) + f2(x) + ...
+If we can see our data is in a straight lines we apply linear regression, sometimes a function is so complex that we cant apply linear regression or polynomial regression (Runge's Phenomenon).
+So we have to make several small function that can make that big function. We add these small functions in stages.
+
+### Algorithm
+
+Input: training set $\{(x_i, y_i)\}_{i=1}^n$  a differentiable loss function $L(y, F(x))$, number of iterations $M$.
+1. Initialize $f_0(x) =$ arg min$_\gamma$ $\sum_{i=1}^N L(y_i, \gamma)$.
+2. For $m = 1$ to $M$:
+	(a) For $i = 1,2,\dots, N$ compute
+		$$
+r_{im} = -\left[ \frac{\partial L(y_i, f(x_i))}{\partial f(x_i)} \right]_{f = f_{m-1}}
+$$
+	(b) Fit a regression tree to the target $r_{im}$ giving terminal regions $R_jm$ $, j=1,2,\dots,J_m$.
+	(c) For $j=1,2,\dots,J_m$ compute
+	$$
+	\gamma_{jm} = \text{arg min}_{\gamma} \sum_{x_i \in R_{jm}} L(y_i, f_{m-1}(x_i) + \gamma).
+	$$
+	(d) Update $f_m(x) = f_{m-1}(x) + \sum_{j=1}^{J_m} \gamma_{jm} I(x \in R_{jm}).$
+3. Output $\hat f(x) = f_{M}(x).$
 
 # KNN
 
