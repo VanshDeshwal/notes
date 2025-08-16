@@ -1891,6 +1891,24 @@ This differs in the way we divide our dataset, we use k fold approach
 - Now divide train into 4 part since k=4
 - we now have 4 parts of train dataset
 - make 4 copies of train datasert
+
+```mermaid
+block-beta
+
+columns 1
+
+  block:ID
+
+    A["200"]
+
+    B["200"]
+
+    C["200"]
+
+    D["200"]
+
+  end
+```
 # KNN
 
 # Support Vector Machines
