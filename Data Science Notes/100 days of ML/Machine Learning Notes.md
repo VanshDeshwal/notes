@@ -1954,7 +1954,9 @@ style D fill:#6699ff,stroke:#ffffff,stroke-width:2px
 - do this for all 4 copies
 - now we have 4 blue y_preds, we combine these to get a model1_pred with 800 rows
 - repeat this for all base models.
-- now
+- now we make a dataset with columns, model1_pred, model2_pred,..., y
+- now we train random forest regressor on this data.
+- now we train all our models again normally on original data.
 # KNN
 
 # Support Vector Machines
