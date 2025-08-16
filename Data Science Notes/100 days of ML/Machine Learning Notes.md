@@ -1872,7 +1872,19 @@ watch video
 
 # Stacking and Bending Ensembles
 
+We train some models may be same or different, then we take the predictions of those models and we give it to a random forest regressor and that will give us the final output
 
+## Bending
+
+- We divide data into test and train
+- We divide the train further into train and valid
+- now we have 3 sets, train valid and test
+- train all models on train
+- make new dataset with columns model1_pred, model2_pred, model3_pred, y
+- train random forest regressor using these
+## Stacking
+
+- 
 # KNN
 
 # Support Vector Machines
