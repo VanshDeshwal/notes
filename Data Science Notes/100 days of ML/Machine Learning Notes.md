@@ -1862,8 +1862,11 @@ $$
 
 $F(x) = f_0(x)+f_1(x)+f_2(x)\dots$ our aim is to find all these small functions other than $f_0(x)$ are decision trees.
 
-	Step1: 
+Step1:  calculate $f_0(x) =$ arg min$_\gamma$ $\sum_{i=1}^N L(y_i, \gamma)$
 
+arg min$_\gamma$: means that find the value of gamma for which this expression value is minimum, so for that we just differentiate wrt gamma. this will give us the mean of y values. so our $F_0$ is just calculating mean.
+
+Step2: 
 # KNN
 
 # Support Vector Machines (113)
