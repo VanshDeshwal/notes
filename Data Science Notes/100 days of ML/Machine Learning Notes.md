@@ -1960,6 +1960,14 @@ style D fill:#6699ff,stroke:#ffffff,stroke-width:2px
 # KNN
 
 # Support Vector Machines
+## Hard Margin SVM
+
+
+
+
+## Soft Margin SVM
+
+
 
 # Naive Bayes
 
