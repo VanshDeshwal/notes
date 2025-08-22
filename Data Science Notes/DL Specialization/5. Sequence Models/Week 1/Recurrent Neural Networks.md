@@ -160,15 +160,15 @@ doesn't work well with past dependencies, means prediction based on past charact
 
   - Splitting the words and get values of C and U at each place:
 
-| Word    | Update gate(U)             | Cell memory (C) |
-| ------- | -------------------------- | --------------- |
-| The     | 0                          | val             |
-| cat     | 1                          | new_val         |
-| which   | 0                          | new_val         |
-| already | 0                          | new_val         |
-| ...     | 0                          | new_val         |
-| was     | 1 (I don't need it anymore)| newer_val       |
-| full    | ..                         | ..              |
+| Word    | Update gate(U)              | Cell memory (C) |
+| ------- | --------------------------- | --------------- |
+| The     | 0                           | val             |
+| cat     | 1                           | new_val         |
+| which   | 0                           | new_val         |
+| already | 0                           | new_val         |
+| ...     | 0                           | new_val         |
+| was     | 1 (I don't need it anymore) | newer_val       |
+| full    | ..                          | ..              |
 
 - Drawing for the GRUs   
   ![](Images/19.png)
@@ -190,15 +190,15 @@ doesn't work well with past dependencies, means prediction based on past charact
 
 ### Long Short Term Memory (LSTM)
 - LSTM - the other type of RNN that can enable you to account for long-term dependencies. It's more powerful and general than GRU.
-- In LSTM , C<sup>\<t></sup> != a<sup>\<t></sup>
+- In LSTM , $C^{<t>} != a^{<t>}$
 - Here are the equations of an LSTM unit:   
   ![](Images/21.png)
-- In GRU we have an update gate `U`, a relevance gate `r`, and a candidate cell variables C<sup>\~\<t></sup> while in LSTM we have an update gate `U` (sometimes it's called input gate I), a forget gate `F`, an output gate `O`, and a candidate cell variables C<sup>\~\<t></sup>
+- In GRU we have an update gate `U`, a relevance gate `r`, and a candidate cell variables $C^{\sim<t>}$ while in LSTM we have an update gate `U` (sometimes it's called input gate I), a forget gate `F`, an output gate `O`, and a candidate cell variables $C^{\sim<t>}$ 
 - Drawings (inspired by http://colah.github.io/posts/2015-08-Understanding-LSTMs/):    
   ![](Images/22.png)
 - Some variants on LSTM includes:
   - LSTM with **peephole connections**.
-    - The normal LSTM with C<sup>\<t-1></sup> included with every gate.
+    - The normal LSTM with $C^{<t-1>}$ included with every gate.
 - There isn't a universal superior between LSTM and it's variants. One of the advantages of GRU is that it's simpler and can be used to build much bigger network but the LSTM is more powerful and general.
 
 ### Bidirectional RNN
@@ -211,7 +211,7 @@ doesn't work well with past dependencies, means prediction based on past charact
   ![](Images/24.png)
 - Note, that BiRNN is an **acyclic graph**.
 - Part of the forward propagation goes from left to right, and part - from right to left. It learns from both sides.
-- To make predictions we use y&#770;<sup>\<t></sup> by using the two activations that come from left and right.
+- To make predictions we use $\hat y^{<t>}$ by using the two activations that come from left and right.
 - The blocks here can be any RNN block including the basic RNNs, LSTMs, or GRUs.
 - For a lot of NLP or text processing problems, a BiRNN with LSTM appears to be commonly used.
 - The disadvantage of BiRNNs that you need the entire sequence before you can process it. For example, in live speech recognition if you use BiRNNs you will need to wait for the person who speaks to stop to take the entire sequence and then make your predictions.
