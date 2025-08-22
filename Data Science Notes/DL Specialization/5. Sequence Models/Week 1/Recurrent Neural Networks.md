@@ -90,14 +90,15 @@ job of a language model is that we input a sentence and the model will estimate 
 very computation heavy
 doesn't work well with past dependencies, means prediction based on past characters is not very good
 
-## Vanishing Gradients with RNNs
+### Vanishing gradients with RNNs
 
-* The cat, which already ate ..........., was full.
-* The cats, which already ate ........., were full.
-As we can see, was and were depends on cat and cats.
-Basic RNN is not good with very long term dependencies 
-
-Exploding gradients is also a problem but it is easy to spot, we will see multiple NAN(not a number) is the output, and then we can just use gradient clipping : rescale some of the gradients, or set max value
-
-## Gated Recurrent Unit (GRU)
-
+- One of the problems with naive RNNs that they run into **vanishing gradient** problem.
+    
+- An RNN that process a sequence data with the size of 10,000 time steps, has 10,000 deep layers which is very hard to optimize.
+    
+- Let's take an example. Suppose we are working with language modeling problem and there are two sequences that model tries to learn:
+    
+    - "The **cat**, which already ate ..., **was** full"
+    - "The **cats**, which already ate ..., **were** full"
+    - Dots represent many words in between.
+- What we need to learn here that "was" came with "cat" and that "were" came with "cats". The naive RNN is not very good at capturing very long-term dependencies like this.
