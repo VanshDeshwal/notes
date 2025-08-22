@@ -277,9 +277,7 @@ We get positive example by using the same skip-grams technique, with a fixed win
     - And so if you train this algorithm, you end up with a pretty decent sentiment classification algorithm.
     - Also, it will generalize better even if words weren't in your dataset. For example you have the sentence "Completely **absent** of good taste, good service, and good ambience", then even if the word "absent" is not in your label training set, if it was in your 1 billion or 100 billion word corpus used to train the word embeddings, it might still get this right and generalize much better even to words that were in the training set used to train the word embeddings but not necessarily in the label training set that you had for specifically the sentiment classification problem.
 
-#### Debiasing word embeddings
-
-[](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C5%20-%20Sequence%20Models/Notes/Readme.md#debiasing-word-embeddings)
+### Debiasing word embeddings
 
 - We want to make sure that our word embeddings are free from undesirable forms of bias, such as gender bias, ethnicity bias and so on.
 - Horrifying results on the trained word embeddings in the context of Analogies:
@@ -296,8 +294,8 @@ We get positive example by using the same skip-grams technique, with a fixed win
     - Here are the steps:
         1. Identify the direction:
             - Calculate the difference between:
-                - ehe - eshe
-                - emale - efemale
+                - $e_{he} - e_{she}$
+                - $e_{male} - e_{female}$
                 - ....
             - Choose some k differences and average them.
             - This will help you find this:  
