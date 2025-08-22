@@ -222,20 +222,16 @@ $$
         - Like for example we payed attention to the first three words through $\alpha^{<1,1>}$, $\alpha^{<1,2>}$, $\alpha^{<1,3>}$
     - We are going to softmax the attention weights so that their sum is 1:  
         [![](https://github.com/amanchadha/coursera-deep-learning-specialization/raw/master/C5%20-%20Sequence%20Models/Notes/Images/72.png)](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C5%20-%20Sequence%20Models/Notes/Images/72.png)
-    - Now we need to know how to calculate e<t, t'>. We will compute e using a small neural network (usually 1-layer, because we will need to compute this a lot):  
+    - Now we need to know how to calculate $e^{<t, t'>}$. We will compute e using a small neural network (usually 1-layer, because we will need to compute this a lot):  
         [![](https://github.com/amanchadha/coursera-deep-learning-specialization/raw/master/C5%20-%20Sequence%20Models/Notes/Images/73.png)](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C5%20-%20Sequence%20Models/Notes/Images/73.png)
-        - s<t-1> is the hidden state of the RNN s, and a<t'> is the activation of the other bidirectional RNN.
+        - $s^{<t-1>}$ is the hidden state of the RNN $s$, and $a^{<t'>}$ is the activation of the other bidirectional RNN.
 - One of the disadvantages of this algorithm is that it takes quadratic time or quadratic cost to run.
 - One fun way to see how attention works is by visualizing the attention weights:  
     [![](https://github.com/amanchadha/coursera-deep-learning-specialization/raw/master/C5%20-%20Sequence%20Models/Notes/Images/74.png)](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C5%20-%20Sequence%20Models/Notes/Images/74.png)
 
-### Speech recognition - Audio data
+## Speech recognition - Audio data
 
-[](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C5%20-%20Sequence%20Models/Notes/Readme.md#speech-recognition---audio-data)
-
-#### Speech recognition
-
-[](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C5%20-%20Sequence%20Models/Notes/Readme.md#speech-recognition)
+### Speech recognition
 
 - One of the most exciting developments using sequence-to-sequence models has been the rise of very accurate speech recognition.
 - Let's define the speech recognition problem:
@@ -273,9 +269,7 @@ $$
         - This paper's ideas were also used by Baidu's DeepSpeech.
 - Using both attention model and CTC cost can help you to build an accurate speech recognition system.
 
-#### Trigger Word Detection
-
-[](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C5%20-%20Sequence%20Models/Notes/Readme.md#trigger-word-detection)
+### Trigger Word Detection
 
 - With the rise of deep learning speech recognition, there are a lot of devices that can be waked up by saying some words with your voice. These systems are called trigger word detection systems.
 - For example, Alexa - a smart device made by Amazon - can answer your call "Alexa, what time is it?" and then Alexa will respond to you.
@@ -283,10 +277,10 @@ $$
     [![](https://github.com/amanchadha/coursera-deep-learning-specialization/raw/master/C5%20-%20Sequence%20Models/Notes/Images/79.png)](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C5%20-%20Sequence%20Models/Notes/Images/79.png)
 - For now, the trigger word detection literature is still evolving so there actually isn't a single universally agreed on the algorithm for trigger word detection yet. But let's discuss an algorithm that can be used.
 - Let's now build a model that can solve this problem:
-    - X: audio clip
-    - X has been preprocessed and spectrogram features have been returned of X
-        - X<1>, X<2>, ... , X<t>
-    - Y will be labels 0 or 1. 0 represents the non-trigger word, while 1 is that trigger word that we need to detect.
+    - $X$: audio clip
+    - $X$ has been preprocessed and spectrogram features have been returned of X
+        - $X^{<1>}, X^{<2>}, \dots , X^{<t>}$
+    - $Y$ will be labels 0 or 1. 0 represents the non-trigger word, while 1 is that trigger word that we need to detect.
     - The model architecture can be like this:  
         [![](https://github.com/amanchadha/coursera-deep-learning-specialization/raw/master/C5%20-%20Sequence%20Models/Notes/Images/80.png)](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C5%20-%20Sequence%20Models/Notes/Images/80.png)
         - The vertical lines in the audio clip represent moment just after the trigger word. The corresponding to this will be 1.
@@ -294,5 +288,3 @@ $$
     - A hack to solve this is to make an output a few ones for several times or for a fixed period of time before reverting back to zero.  
         [![](https://github.com/amanchadha/coursera-deep-learning-specialization/raw/master/C5%20-%20Sequence%20Models/Notes/Images/81.png)](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C5%20-%20Sequence%20Models/Notes/Images/81.png)  
         [![](https://github.com/amanchadha/coursera-deep-learning-specialization/raw/master/C5%20-%20Sequence%20Models/Notes/Images/85.png)](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C5%20-%20Sequence%20Models/Notes/Images/85.png)
-
-## Extras
