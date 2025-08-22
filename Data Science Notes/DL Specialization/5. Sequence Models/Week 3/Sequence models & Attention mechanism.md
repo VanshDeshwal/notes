@@ -158,8 +158,15 @@ $$
         
         Modified precision = sum(Count clip) / sum(Count) = 4/6
         
-- So here are the equations for modified precision for the n-grams case:  
-    [![](https://github.com/amanchadha/coursera-deep-learning-specialization/raw/master/C5%20-%20Sequence%20Models/Notes/Images/60.png)](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C5%20-%20Sequence%20Models/Notes/Images/60.png)
+- So here are the equations for modified precision for the n-grams case:
+- $$
+p_1 = \frac{\displaystyle \sum_{\text{unigram} \in \hat{y}} count_{clip}(\text{unigram})}
+           {\displaystyle \sum_{\text{unigram} \in \hat{y}} count(\text{unigram})}
+\qquad\qquad
+p_n = \frac{\displaystyle \sum_{\text{ngram} \in \hat{y}} count_{clip}(\text{ngram})}
+           {\displaystyle \sum_{\text{ngram} \in \hat{y}} count(\text{ngram})}
+$$
+
 - Let's put this together to formalize the BLEU score:
     - **Pn** = Bleu score on one type of n-gram
     - **Combined BLEU score** = BP * exp(1/n * sum(Pn))
@@ -169,9 +176,7 @@ $$
 - BLEU score has several open source implementations.
 - It is used in a variety of systems like machine translation and image captioning.
 
-#### Attention Model Intuition
-
-[](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C5%20-%20Sequence%20Models/Notes/Readme.md#attention-model-intuition)
+### Attention Model Intuition
 
 - So far we were using sequence to sequence models with an encoder and decoders. There is a technique called _attention_ which makes these models even better.
 - The attention idea has been one of the most influential ideas in deep learning.
@@ -198,9 +203,7 @@ $$
     - And so to generate any word there will be a set of attention weights that controls which words we are looking at right now.  
         [![](https://github.com/amanchadha/coursera-deep-learning-specialization/raw/master/C5%20-%20Sequence%20Models/Notes/Images/67.png)](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C5%20-%20Sequence%20Models/Notes/Images/67.png)
 
-#### Attention Model
-
-[](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C5%20-%20Sequence%20Models/Notes/Readme.md#attention-model)
+### Attention Model
 
 - Lets formalize the intuition from the last section into the exact details on how this can be implemented.
 - First we will have an bidirectional RNN (most common is LSTMs) that encodes French language:  
@@ -208,13 +211,15 @@ $$
 - For learning purposes, lets assume that a<t'> will include the both directions activations at time step t'.
 - We will have a unidirectional RNN to produce the output using a context `c` which is computed using the attention weights, which denote how much information does the output needs to look in a<t'>  
     [![](https://github.com/amanchadha/coursera-deep-learning-specialization/raw/master/C5%20-%20Sequence%20Models/Notes/Images/69.png)](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C5%20-%20Sequence%20Models/Notes/Images/69.png)
-- Sum of the attention weights for each element in the sequence should be 1:  
-    [![](https://github.com/amanchadha/coursera-deep-learning-specialization/raw/master/C5%20-%20Sequence%20Models/Notes/Images/70.png)](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C5%20-%20Sequence%20Models/Notes/Images/70.png)
+- Sum of the attention weights for each element in the sequence should be 1:  $$
+\sum_{t'} \alpha^{\langle 1, t' \rangle} = 1
+$$
+
 - The context `c` is calculated using this equation:  
     [![](https://github.com/amanchadha/coursera-deep-learning-specialization/raw/master/C5%20-%20Sequence%20Models/Notes/Images/71.png)](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C5%20-%20Sequence%20Models/Notes/Images/71.png)
 - Lets see how can we compute the attention weights:
-    - So alpha<t, t'> = amount of attention y<t> should pay to a<t'>
-        - Like for example we payed attention to the first three words through alpha<1,1>, alpha<1,2>, alpha<1,3>
+    - So $\alpha^{<t, t'>}$ = amount of attention $y^{<t>}$ should pay to $a^{<t'>}$
+        - Like for example we payed attention to the first three words through $\alpha^{<1,1>}$, $\alpha^{<1,2>}$, $\alpha^{<1,3>}$
     - We are going to softmax the attention weights so that their sum is 1:  
         [![](https://github.com/amanchadha/coursera-deep-learning-specialization/raw/master/C5%20-%20Sequence%20Models/Notes/Images/72.png)](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C5%20-%20Sequence%20Models/Notes/Images/72.png)
     - Now we need to know how to calculate e<t, t'>. We will compute e using a small neural network (usually 1-layer, because we will need to compute this a lot):  
