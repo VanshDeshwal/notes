@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Data Science Notes/DL Specialization/5. Sequence Models/Week 3/Untitled.md",
+                "file": "Data Science Notes/DL Specialization/5. Sequence Models/Week 3/Sequence models & Attention mechanism.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "Sequence models & Attention mechanism"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 297.5
+    "width": 297.5,
+    "collapsed": true
   },
   "right": {
     "id": "b1fd7f94eb3b5b59",
@@ -183,7 +184,7 @@
   "active": "4a34ccef804858fd",
   "lastOpenFiles": [
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 2/Natural Language Processing & Word Embeddings.md",
-    "Data Science Notes/DL Specialization/5. Sequence Models/Week 3/Untitled.md",
+    "Data Science Notes/DL Specialization/5. Sequence Models/Week 3/Sequence models & Attention mechanism.md",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Recurrent Neural Networks.md",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 4",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 3",
