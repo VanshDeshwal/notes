@@ -11,30 +11,15 @@
             "id": "4a34ccef804858fd",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Data Science Notes/DL Specialization/5. Sequence Models/Week 2/Natural Language Processing & Word Embeddings.md",
-                "mode": "source",
-                "source": false
+                "file": "Data Science Notes/DL Specialization/Deep Learning Cert.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Natural Language Processing & Word Embeddings"
-            }
-          },
-          {
-            "id": "d09180861c9d8ec3",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.9.10"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.9.10"
+              "icon": "lucide-file-text",
+              "title": "Deep Learning Cert"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -91,8 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 297.5,
-    "collapsed": true
+    "width": 297.5
   },
   "right": {
     "id": "b1fd7f94eb3b5b59",
@@ -195,8 +179,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d09180861c9d8ec3",
+  "active": "4a34ccef804858fd",
   "lastOpenFiles": [
+    "Data Science Notes/DL Specialization/5. Sequence Models/Week 2/Natural Language Processing & Word Embeddings.md",
+    "Data Science Notes/DL Specialization/Deep Learning Cert.pdf",
+    "Data Science Notes/DL Specialization/Untitled",
     "Crypto notes/Papers.md",
     "Crypto notes/NetML.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1/Normalizing training sets.md",
@@ -214,7 +201,6 @@
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 2",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 1",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 3/Sequence models & Attention mechanism.md",
-    "Data Science Notes/DL Specialization/5. Sequence Models/Week 2/Natural Language Processing & Word Embeddings.md",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Recurrent Neural Networks.md",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 4",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 3",
@@ -222,9 +208,7 @@
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 2",
     "Data Science Notes/100 days of ML/Machine Learning Notes.md",
     "Rough work.md",
-    "Crypto notes",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Python and Vectorization.md",
-    "Data Science Notes/ML_interview.pdf",
     "Data Science Notes/100 days of ML/Libraries/NumPy.md",
     "Data Science Notes/100 days of ML/Libraries/Matplotlib.md",
     "Data Science Notes/100 days of ML/Libraries/Seaborn.md",
@@ -232,7 +216,6 @@
     "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Neural Network Basics.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week3/Shallow Neural Network.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week4/Deep Neural Network.md",
-    "Projects/Credit Risk Modeling/1. Business Overview of the Project.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Images/Pasted image 20250521102647.jpg",
     "download.jpeg",
     "Data Science Notes/100 days of ML/Images/sample_graph.jpeg",
