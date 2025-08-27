@@ -1,7 +1,7 @@
 
 > Learn to implement the foundational layers of CNNs (pooling, convolutions) and to stack them properly in a deep network to solve multi-class image classification problems.
 
-### Computer vision
+# Computer vision
 
 - Computer vision is one of the applications that are rapidly active thanks to deep learning.
 - Some of the applications of computer vision that are using deep learning includes:
@@ -21,7 +21,7 @@
     - For example, a `1000x1000` image will represent 3 million feature/input to the full connected neural network. If the following hidden layer contains 1000, then we will want to learn weights of the shape `[1000, 3 million]` which is 3 billion parameter only in the first layer and thats so computationally expensive!
 - One of the solutions is to build this using **convolution layers** instead of the **fully connected layers**.
 
-### Edge detection example
+# Edge detection example
 
 - The convolution operation is one of the fundamentals blocks of a CNN. One of the examples about convolution is the image edge detection operation.
     
@@ -66,7 +66,7 @@
 - What we learned in the deep learning is that we don't need to hand craft these numbers, we can treat them as weights and then learn them. It can learn horizontal, vertical, angled, or any edge type automatically rather than getting them by hand.
     
 
-### Padding
+# Padding
 
 - In order to to use deep neural networks we really need to use **paddings**.
     
@@ -99,7 +99,7 @@
 - In computer vision f is usually odd. Some of the reasons is that its have a center value.
     
 
-### Strided convolution
+# Strided convolution
 
 - Strided convolution is another piece that are used in CNNs.
     
@@ -122,7 +122,7 @@
     ```
     
 
-### Convolutions over volumes
+# Convolutions over volumes
 
 - We see how convolution works with 2D images, now lets see if we want to convolve 3D images (RGB image)
 - We will convolve an image of height, width, # of channels with a filter of a height, width, same # of channels. Hint that the image number channels and the filter number of channels are the same.
@@ -139,7 +139,7 @@
     - Result image: `4x4x10`
     - In the last result p=0, s=1
 
-### One Layer of a Convolutional Network
+# One Layer of a Convolutional Network
 
 - First we convolve some filters to a given input and then add a bias to each filter output and then get RELU of the result. Example:
     
@@ -177,7 +177,7 @@
     ```
     
 
-### A simple convolution network example
+# A simple convolution network example
 
 - Lets build a big example.
     - Input Image are: `a0 = 39x39x3`
@@ -206,7 +206,7 @@
     - Pooling `#Pool`
     - Fully connected `#FC`
 
-### Pooling layers
+# Pooling layers
 
 - Other than the conv layers, CNNs often uses pooling layers to reduce the size of the inputs, speed up computation, and to make some of the features it detects more robust.
 - Max pooling example:
@@ -227,7 +227,7 @@
     - Padding are rarely uses here.
     - Max or average pooling.
 
-### Convolutional neural network example
+# Convolutional neural network example
 
 - Now we will deal with a full CNN example. This example is something like the _**LeNet-5**_ that was invented by Yann Lecun.
     - Input Image are: `a0 = 32x32x3`
@@ -265,7 +265,7 @@
 - Fully connected layers has the most parameters in the network.
 - To consider using these blocks together you should look at other working examples firsts to get some intuitions.
 
-### Why convolutions?
+# Why convolutions?
 
 - Two main advantages of Convs are:
     - Parameter sharing.

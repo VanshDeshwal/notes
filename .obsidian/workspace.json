@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Data Science Notes/DL Specialization/3. Structuring Machine Learning Projects/Week 2/ML Strategy 2.md",
+                "file": "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Recurrent Neural Networks.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ML Strategy 2"
+              "title": "Recurrent Neural Networks"
             }
           }
         ]
@@ -167,8 +167,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -184,6 +183,11 @@
   },
   "active": "4a34ccef804858fd",
   "lastOpenFiles": [
+    "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 4/Special applications.md",
+    "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 3/Object detection.md",
+    "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 2/Deep convolutional models.md",
+    "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 1/Foundations of CNNs.md",
+    "Data Science Notes/DL Specialization/3. Structuring Machine Learning Projects/Week 2/ML Strategy 2.md",
     "Data Science Notes/DL Specialization/3. Structuring Machine Learning Projects/Week 1/ML Strategy 1.md",
     "Data Science Notes/100 days of ML/Machine Learning Notes.md",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 2/Natural Language Processing & Word Embeddings.md",
@@ -193,11 +197,6 @@
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Hyperparameter Tuning.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Batch Normalization.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 2/Optimizing Algorithms.md",
-    "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 4/Special applications.md",
-    "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 3/Object detection.md",
-    "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 2/Deep convolutional models.md",
-    "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 1/Foundations of CNNs.md",
-    "Data Science Notes/DL Specialization/3. Structuring Machine Learning Projects/Week 2/ML Strategy 2.md",
     "Data Science Notes/DL Specialization/3. Structuring Machine Learning Projects/Week 2",
     "Data Science Notes/DL Specialization/3. Structuring Machine Learning Projects/Week 1",
     "Data Science Notes/DL Specialization/1. Neural Networks/Week4/Deep Neural Network.md",

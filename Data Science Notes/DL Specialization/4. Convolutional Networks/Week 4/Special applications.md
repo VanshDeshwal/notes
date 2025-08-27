@@ -1,9 +1,9 @@
 
 > Discover how CNNs can be applied to multiple fields, including art generation and face recognition. Implement your own algorithm to generate art and recognize faces!
 
-### Face Recognition
+# Face Recognition
 
-#### What is face recognition?
+## What is face recognition?
 
 - Face recognition system identifies a person's face. It can work on both images or videos.
 - **Liveness detection** within a video face recognition system prevents the network from identifying a face in an image. It can be learned by supervised deep learning using a dataset for live human and in-live human and sequence learning.
@@ -19,7 +19,7 @@
         - "who is this person?"
 - We can use a face verification system to make a face recognition system. The accuracy of the verification system has to be high (around 99.9% or more) to be use accurately within a recognition system because the recognition system accuracy will be less than the verification system given K persons.
 
-#### One Shot Learning
+## One Shot Learning
 
 - One of the face recognition challenges is to solve one shot learning problem.
 - One Shot Learning: A recognition system is able to recognize a person, learning from one image.
@@ -31,7 +31,7 @@
         - If d( **img1**, **img2** ) <= T Then the faces are the same.
 - Similarity function helps us solving the one shot learning. Also its robust to new inputs.
 
-#### Siamese Network
+## Siamese Network
 
 - We will implement the similarity function using a type of NNs called Siamease Network in which we can pass multiple inputs to the two or more networks with the same architecture and parameters.
 - Siamese network architecture are as the following:
@@ -41,7 +41,7 @@
     - If `X1`, `X2` are the same person, we want d to be low. If they are different persons, we want d to be high.
     - [[Taigman et. al., 2014. DeepFace closing the gap to human level performance]](https://www.cv-foundation.org/openaccess/content_cvpr_2014/html/Taigman_DeepFace_Closing_the_2014_CVPR_paper.html)
 
-#### Triplet Loss
+## Triplet Loss
 
 - Triplet Loss is one of the loss functions we can use to solve the similarity distance in a Siamese network.
 - Our learning objective in the triplet loss function is to get the distance between an **Anchor** image and a **positive** or a **negative** image.
@@ -75,7 +75,7 @@
 - Commercial recognition systems are trained on a large datasets like 10/100 million images.
 - There are a lot of pretrained models and parameters online for face recognition.
 
-#### Face Verification and Binary Classification
+## Face Verification and Binary Classification
 
 - Triplet loss is one way to learn the parameters of a conv net for face recognition there's another way to learn these parameters as a straight binary classification problem.
 - Learning the similarity function another way:
@@ -94,9 +94,9 @@
     - [FaceNet](https://github.com/davidsandberg/facenet)
     - [DeepFace](https://github.com/RiweiChen/DeepFace)
 
-### Neural Style Transfer
+# Neural Style Transfer
 
-#### What is neural style transfer?
+## What is neural style transfer?
 
 - Neural style transfer is one of the application of Conv nets.
 - Neural style transfer takes a content image `C` and a style image `S` and generates the content image `G` with the style of style image.
@@ -104,7 +104,7 @@
 - In order to implement this you need to look at the features extracted by the Conv net at the shallower and deeper layers.
 - It uses a previously trained convolutional network like VGG, and builds on top of that. The idea of using a network trained on a different task and applying it to a new task is called transfer learning.
 
-#### What are deep ConvNets learning?
+## What are deep ConvNets learning?
 
 - Visualizing what a deep network is learning:
     - Given this AlexNet like Conv net:
@@ -121,7 +121,7 @@
     - [![](https://github.com/amanchadha/coursera-deep-learning-specialization/raw/master/C4%20-%20Convolutional%20Neural%20Networks/Notes/Images/receptiveField.png)](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C4%20-%20Convolutional%20Neural%20Networks/Notes/Images/receptiveField.png)
     - From [A guide to receptive field arithmetic for Convolutional Neural Networks](https://medium.com/@nikasa1889/a-guide-to-receptive-field-arithmetic-for-convolutional-neural-networks-e0f514068807)
 
-#### Cost Function
+## Cost Function
 
 - We will define a cost function for the generated image that measures how good it is.
 - Give a content image C, a style image S, and a generated image G:
@@ -140,7 +140,7 @@
     - You will go through this:
         - [![](https://github.com/amanchadha/coursera-deep-learning-specialization/raw/master/C4%20-%20Convolutional%20Neural%20Networks/Notes/Images/41.png)](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C4%20-%20Convolutional%20Neural%20Networks/Notes/Images/41.png)
 
-#### Content Cost Function
+## Content Cost Function
 
 - In the previous section we showed that we need a cost function for the content image and the style image to measure how similar is them to each other.
 - Say you use hidden layer `l` to compute content cost.
@@ -151,7 +151,7 @@
 - If `a(c)[l]` and `a(G)[l]` are similar then they will have the same content
     - `J(C, G) at a layer l = 1/2 || a(c)[l] - a(G)[l] ||^2`
 
-#### Style Cost Function
+## Style Cost Function
 
 - Meaning of the _**style**_ of an image:
     - Say you are using layer l's activation to measure _**style**_.
@@ -192,7 +192,7 @@
         - Define the optimizer and the learning rate
     7. Initialize the TensorFlow graph and run it for a large number of iterations, updating the generated image at every step.
 
-#### 1D and 3D Generalizations
+## 1D and 3D Generalizations
 
 - So far we have used the Conv nets for images which are 2D.
 - Conv nets can work with 1D and 3D data as well.
@@ -214,8 +214,8 @@
     - Applying 32 filters with F = 5, S = 1
     - Output shape will be (6, 6, 6, 32)
 
-## Extras
-### Keras
+# Extras
+## Keras
 
 - Keras is a high-level neural networks API (programming framework), written in Python and capable of running on top of several lower-level frameworks including TensorFlow, Theano, and CNTK.
 - Keras was developed to enable deep learning engineers to build and experiment with different models very quickly.

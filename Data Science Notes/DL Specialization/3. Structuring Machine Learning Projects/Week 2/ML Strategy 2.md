@@ -140,30 +140,27 @@
     - You want to build an object recognition system that detects pedestrians, cars, stop signs, and traffic lights (image has multiple labels).
     - Then Y shape will be `(4,m)` because we have 4 classes and each one is a binary one.
     - Then  
-        `Cost = (1/m) * sum(sum(L(y_hat(i)_j, y(i)_j))), i = 1..m, j = 1..4`, where  
-        `L = - y(i)_j * log(y_hat(i)_j) - (1 - y(i)_j) * log(1 - y_hat(i)_j)`
+$$
+\text{Cost} = \frac{1}{m} 
+\sum_{i=1}^{m} 
+\sum_{j=1}^{4} 
+\left[
+    - y^{(i)}_{j} \log \hat{y}^{(i)}_{j}
+    - \left(1 - y^{(i)}_{j}\right) 
+      \log \left(1 - \hat{y}^{(i)}_{j}\right)
+\right],
+\quad i = 1, \dots, m; \, j = 1, \dots, 4.
 $$
 
-\text{Cost} = \frac{1}{m} \sum_{i=1}^{m} \sum_{j=1}^{4} 
-L\big(\hat{y}^{(i)}_{j}, y^{(i)}_{j}\big)
-
-where
-
-L\big(\hat{y}^{(i)}_{j}, y^{(i)}_{j}\big) 
-= - y^{(i)}_{j} \log\big(\hat{y}^{(i)}_{j}\big) 
-  - \big(1 - y^{(i)}_{j}\big) \log\big(1 - \hat{y}^{(i)}_{j}\big).
-
-$$
 - In the last example you could have trained 4 neural networks separately but if some of the earlier features in neural network can be shared between these different types of objects, then you find that training one neural network to do four things results in better performance than training 4 completely separate neural networks to do the four tasks separately.
 - Multi-task learning will also work if y isn't complete for some labels. For example:
-    
-    ```
+```
     Y = [1 ? 1 ...]
         [0 0 1 ...]
         [? 1 ? ...]
-    ```
-    
-    - And in this case it will do good with the missing data, just the loss function will be different:  
+```
+
+- And in this case it will do good with the missing data, just the loss function will be different:  
         `Loss = (1/m) * sum(sum(L(y_hat(i)_j, y(i)_j) for all j which y(i)_j != ?))`
 - Multi-task learning makes sense:
     1. Training on a set of tasks that could benefit from having shared lower-level features.
@@ -178,12 +175,12 @@ $$
 - Example 1:
     - Speech recognition system:
         
-        ```
+```
         Audio ---> Features --> Phonemes --> Words --> Transcript    # non-end-to-end system
         Audio ---------------------------------------> Transcript    # end-to-end deep learning system
-        ```
+```
         
-    - End-to-end deep learning gives data more freedom, it might not use phonemes when training!
+- End-to-end deep learning gives data more freedom, it might not use phonemes when training!
 - To build the end-to-end deep learning system that works well, we need a big dataset (more data then in non end-to-end system). If we have a small dataset the ordinary implementation could work just fine.
 - Example 2:
     - Face recognition system:

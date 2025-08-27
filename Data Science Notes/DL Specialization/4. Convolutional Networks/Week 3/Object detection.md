@@ -1,7 +1,7 @@
 
 > Learn how to apply your knowledge of CNNs to one of the toughest but hottest field of computer vision: Object detection.
 
-### Object Localization
+# Object Localization
 
 - Object detection is one of the areas in which deep learning is doing great in the past two years.
     
@@ -84,7 +84,7 @@
     - In practice we use logistic regression for `pc`, log likely hood loss for classes, and squared error for the bounding box.
         
 
-### Landmark Detection
+# Landmark Detection
 
 - In some of the computer vision problems you will need to output some points. That is called **landmark detection**.
     
@@ -107,8 +107,7 @@
     
 - Hint, in your labeled data, if `l1x,l1y` is the left corner of left eye, all other `l1x,l1y` of the other examples has to be the same.
     
-
-### Object Detection
+# Object Detection
 
 - We will use a Conv net to solve the object detection problem using a technique called the sliding windows detection algorithm.
 - For example lets say we are working on Car object detection.
@@ -127,7 +126,7 @@
 - To solve this problem, we can implement the sliding windows with a _**Convolutional approach**_.
 - One other idea is to compress your deep learning model.
 
-### Convolutional Implementation of Sliding Windows
+# Convolutional Implementation of Sliding Windows
 
 - Turning FC layer into convolutional layers (predict image class from four classes):
     - [![](https://github.com/amanchadha/coursera-deep-learning-specialization/raw/master/C4%20-%20Convolutional%20Neural%20Networks/Notes/Images/19.png)](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C4%20-%20Convolutional%20Neural%20Networks/Notes/Images/19.png)
@@ -149,7 +148,7 @@
     - [![](https://github.com/amanchadha/coursera-deep-learning-specialization/raw/master/C4%20-%20Convolutional%20Neural%20Networks/Notes/Images/23.png)](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C4%20-%20Convolutional%20Neural%20Networks/Notes/Images/23.png)
     - In red, the rectangle we want and in blue is the required car rectangle.
 
-### Bounding Box Predictions
+# Bounding Box Predictions
 
 - A better algorithm than the one described in the last section is the [YOLO algorithm](https://arxiv.org/abs/1506.02640).
     
@@ -173,7 +172,7 @@
 - In the next sections we will see some ideas that can make the YOLO algorithm better.
     
 
-### Intersection Over Union
+# Intersection Over Union
 
 - Intersection Over Union is a function used to evaluate the object detection algorithm.
 - It computes size of intersection and divide it by the union. More generally, _IoU_ _is a measure of the overlap between two bounding boxes_.
@@ -185,7 +184,7 @@
 - If `IOU >=0.5` then its good. The best answer will be 1.
 - The higher the IOU the better is the accuracy.
 
-### Non-max Suppression
+# Non-max Suppression
 
 - One of the problems we have addressed in YOLO is that it can detect an object multiple times.
 - Non-max Suppression is a way to make sure that YOLO detects the object just once.
@@ -201,7 +200,7 @@
         2. Discard any remaining box with `IoU > 0.5` with that box output in the previous step i.e any box with high overlap(greater than overlap threshold of 0.5).
 - If there are multiple classes/object types `c` you want to detect, you should run the Non-max suppression `c` times, once for every output class.
 
-### Anchor Boxes
+# Anchor Boxes
 
 - In YOLO, a grid only detects one object. What if a grid cell wants to detect multiple object?
     - [![](https://github.com/amanchadha/coursera-deep-learning-specialization/raw/master/C4%20-%20Convolutional%20Neural%20Networks/Notes/Images/27.png)](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C4%20-%20Convolutional%20Neural%20Networks/Notes/Images/27.png)
@@ -222,7 +221,7 @@
     - You may also use a k-means algorithm on your dataset to specify that.
 - Anchor boxes allows your algorithm to specialize, means in our case to easily detect wider images or taller ones.
 
-### YOLO Algorithm
+# YOLO Algorithm
 
 - YOLO is a state-of-the-art object detection model that is fast and accurate
     
@@ -428,7 +427,7 @@
     - [https://github.com/thtrieu/darkflow](https://github.com/thtrieu/darkflow)
     - [https://pjreddie.com/darknet/yolo/](https://pjreddie.com/darknet/yolo/)
 
-### Region Proposals (R-CNN)
+# Region Proposals (R-CNN)
 
 - R-CNN is an algorithm that also makes an object detection.
     

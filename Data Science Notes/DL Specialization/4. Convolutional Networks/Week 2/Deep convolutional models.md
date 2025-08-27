@@ -1,7 +1,7 @@
 
 > Learn about the practical tricks and methods used in deep CNNs straight from the research papers.
 
-### Why look at case studies?
+# Why look at case studies?
 
 - We learned about Conv layer, pooling layer, and fully connected layers. It turns out that computer vision researchers spent the past few years on how to put these layers together.
 - To get some intuitions you have to see the examples that has been made.
@@ -14,7 +14,7 @@
 - There are also an architecture called **Inception** that was made by Google that are very useful to learn and apply to your tasks.
 - Reading and trying the mentioned models can boost you and give you a lot of ideas to solve your task.
 
-### Classic networks
+# Classic networks
 
 - In this section we will talk about classic networks which are **LeNet-5**, **AlexNet**, and **VGG**.
     
@@ -75,7 +75,7 @@
     - VGG paper is attractive it tries to make some rules regarding using CNNs.
     - [[Simonyan & Zisserman 2015. Very deep convolutional networks for large-scale image recognition]](https://arxiv.org/abs/1409.1556)
 
-### Residual Networks (ResNets)
+# Residual Networks (ResNets)
 
 - Very, very deep NNs are difficult to train because of vanishing and exploding gradients problems.
 - In this section we will learn about skip connection which makes you take the activation from one layer and suddenly feed it to another layer even much deeper in NN which allows you to train large NNs even with layers greater than 100.
@@ -95,7 +95,7 @@
     - Some people are trying to train 1000 layer now which isn't used in practice.
     - [He et al., 2015. Deep residual networks for image recognition]
 
-### Why ResNets work
+# Why ResNets work
 
 - Lets see some example that illustrates why resNet work.
     
@@ -154,7 +154,7 @@
         - [![](https://github.com/amanchadha/coursera-deep-learning-specialization/raw/master/C4%20-%20Convolutional%20Neural%20Networks/Notes/Images/17.png)](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C4%20-%20Convolutional%20Neural%20Networks/Notes/Images/17.png)
         - The conv can be bottleneck 1 x 1 conv
 
-### Network in Network and 1 X 1 convolutions
+# Network in Network and 1 X 1 convolutions
 
 - A 1 x 1 convolution - We also call it Network in Network- is so useful in many CNN models.
     
@@ -185,7 +185,7 @@
 - [[Lin et al., 2013. Network in network]](https://arxiv.org/abs/1312.4400)
     
 
-### Inception network motivation
+# Inception network motivation
 
 - When you design a CNN you have to decide all the layers yourself. Will you pick a 3 x 3 Conv or 5 x 5 Conv or maybe a max pooling layer. You have so many choices.
 - What **inception** tells us is, Why not use all of them at once?
@@ -223,7 +223,7 @@
 - Example of inception model in Keras:
     - [![](https://github.com/amanchadha/coursera-deep-learning-specialization/raw/master/C4%20-%20Convolutional%20Neural%20Networks/Notes/Images/inception_block1a.png)](https://github.com/amanchadha/coursera-deep-learning-specialization/blob/master/C4%20-%20Convolutional%20Neural%20Networks/Notes/Images/inception_block1a.png)
 
-### Inception network (GoogleNet)
+# Inception network (GoogleNet)
 
 - The inception network consist of concatenated blocks of the Inception module.
 - The name inception was taken from a _meme_ image which was taken from **Inception movie**
@@ -234,7 +234,7 @@
 - Since the development of the Inception module, the authors and the others have built another versions of this network. Like inception v2, v3, and v4. Also there is a network that has used the inception module and the ResNet together.
 - [[Szegedy et al., 2014, Going Deeper with Convolutions]](https://arxiv.org/abs/1409.4842)
 
-### Using Open-Source Implementation
+# Using Open-Source Implementation
 
 - We have learned a lot of NNs and ConvNets architectures.
 - It turns out that a lot of these NN are difficult to replicated. because there are some details that may not presented on its papers. There are some other reasons like:
@@ -244,7 +244,7 @@
 - If you see a research paper and you want to build over it, the first thing you should do is to look for an open source implementation for this paper.
 - Some advantage of doing this is that you might download the network implementation along with its parameters/weights. The author might have used multiple GPUs and spent some weeks to reach this result and its right in front of you after you download it.
 
-### Transfer Learning
+# Transfer Learning
 
 - If you are using a specific NN architecture that has been trained before, you can use this pretrained parameters/weights instead of random initialization to solve your problem.
 - It can help you boost the performance of the NN.
@@ -263,7 +263,7 @@
 - Another example:
     - If you have enough data, you can fine tune all the layers in your pretrained network but don't random initialize the parameters, leave the learned parameters as it is and learn from there.
 
-### Data Augmentation
+# Data Augmentation
 
 - If data is increased, your deep NN will perform better. Data augmentation is one of the techniques that deep learning uses to increase the performance of deep NN.
 - The majority of computer vision applications needs more data right now.
@@ -284,7 +284,7 @@
     - You can use a different CPU thread to make you a distorted mini batches while you are training your NN.
 - Data Augmentation has also some hyperparameters. A good place to start is to find an open source data augmentation implementation and then use it or fine tune these hyperparameters.
 
-### State of Computer Vision
+# State of Computer Vision
 
 - For a specific problem we may have a little data for it or a lots of data.
 - Speech recognition problems for example has a big amount of data, while image recognition has a medium amount of data and the object detection has a small amount of data nowadays.
