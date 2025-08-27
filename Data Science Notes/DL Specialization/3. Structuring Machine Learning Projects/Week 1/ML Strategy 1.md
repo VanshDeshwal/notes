@@ -151,17 +151,17 @@ quadrantChart
 
 - Suppose that the cat classification algorithm gives these results:
     
-    |Humans|1%|7.5%|
-    |---|---|---|
-    |**Training error**|8%|8%|
-    |**Dev Error**|10%|10%|
-    
-    - In the left example, because the human level error is 1% then we have to focus on the **bias**.
-    - In the right example, because the human level error is 7.5% then we have to focus on the **variance**.
-    - The human-level error as a proxy (estimate) for Bayes optimal error. Bayes optimal error is always less (better), but human-level in most cases is not far from it.
-    - You can't do better than Bayes error unless you are overfitting.
-    - `Avoidable bias = Training error - Human (Bayes) error`
-    - `Variance = Dev error - Training error`
+| Humans             | 1%  | 7.5% |
+| ------------------ | --- | ---- |
+| **Training error** | 8%  | 8%   |
+| **Dev Error**      | 10% | 10%  |
+
+- In the left example, because the human level error is 1% then we have to focus on the **bias**.
+- In the right example, because the human level error is 7.5% then we have to focus on the **variance**.
+- The human-level error as a proxy (estimate) for Bayes optimal error. Bayes optimal error is always less (better), but human-level in most cases is not far from it.
+- You can't do better than Bayes error unless you are overfitting.
+- `Avoidable bias = Training error - Human (Bayes) error`
+- `Variance = Dev error - Training error`
 
 # Understanding human-level performance
 

@@ -1,4 +1,4 @@
-### Carrying out error analysis
+# Carrying out error analysis
 
 - Error analysis - process of manually examining mistakes that your algorithm is making. It can give you insights into what to do next. E.g.:
     
@@ -13,40 +13,38 @@
     
 - Sometimes, you can evaluate multiple error analysis ideas in parallel and choose the best idea. Create a spreadsheet to do that and decide, e.g.:
     
-    |Image|Dog|Great Cats|blurry|Instagram filters|Comments|
-    |---|---|---|---|---|---|
-    |1|✓|||✓|Pitbull|
-    |2|✓||✓|✓||
-    |3|||||Rainy day at zoo|
-    |4||✓||||
-    |....||||||
-    |**% totals**|**8%**|**43%**|**61%**|**12%**||
+| Image        | Dog    | Great Cats | blurry  | Instagram filters | Comments         |
+| ------------ | ------ | ---------- | ------- | ----------------- | ---------------- |
+| 1            | ✓      |            |         | ✓                 | Pitbull          |
+| 2            | ✓      |            | ✓       | ✓                 |                  |
+| 3            |        |            |         |                   | Rainy day at zoo |
+| 4            |        | ✓          |         |                   |                  |
+| ....         |        |            |         |                   |                  |
+| **% totals** | **8%** | **43%**    | **61%** | **12%**           |                  |
     
 - In the last example you will decide to work on great cats or blurry images to improve your performance.
-    
 - This quick counting procedure, which you can often do in, at most, small numbers of hours can really help you make much better prioritization decisions, and understand how promising different approaches are to work on.
-    
 
-### Cleaning up incorrectly labeled data
+# Cleaning up incorrectly labeled data
 
 - DL algorithms are quite robust to random errors in the training set but less robust to systematic errors. But it's OK to go and fix these labels if you can.
     
 - If you want to check for mislabeled data in dev/test set, you should also try error analysis with the mislabeled column. Ex:
     
-    |Image|Dog|Great Cats|blurry|Mislabeled|Comments|
-    |---|---|---|---|---|---|
-    |1|✓|||||
-    |2|✓||✓|||
-    |3||||||
-    |4||✓||||
-    |....||||||
-    |**% totals**|**8%**|**43%**|**61%**|**6%**||
-    
-    - Then:
-        - If overall dev set error: 10%
-            - Then errors due to incorrect data: 0.6%
-            - Then errors due to other causes: 9.4%
-        - Then you should focus on the 9.4% error rather than the incorrect data.
+| Image        | Dog    | Great Cats | blurry  | Mislabeled | Comments |
+| ------------ | ------ | ---------- | ------- | ---------- | -------- |
+| 1            | ✓      |            |         |            |          |
+| 2            | ✓      |            | ✓       |            |          |
+| 3            |        |            |         |            |          |
+| 4            |        | ✓          |         |            |          |
+| ....         |        |            |         |            |          |
+| **% totals** | **8%** | **43%**    | **61%** | **6%**     |          |
+
+- Then:
+	- If overall dev set error: 10%
+	    - Then errors due to incorrect data: 0.6%
+	    - Then errors due to other causes: 9.4%
+    - Then you should focus on the 9.4% error rather than the incorrect data.
 - Consider these guidelines while correcting the dev/test mislabeled examples:
     
     - Apply the same process to your dev and test sets to make sure they continue to come from the same distribution.
@@ -54,14 +52,14 @@
     - Train and (dev/test) data may now come from a slightly different distributions.
     - It's very important to have dev and test sets to come from the same distribution. But it could be OK for a train set to come from slightly other distribution.
 
-### Build your first system quickly, then iterate
+# Build your first system quickly, then iterate
 
 - The steps you take to make your deep learning project:
     - Setup dev/test set and metric
     - Build initial system quickly
     - Use Bias/Variance analysis & Error analysis to prioritize next steps.
 
-### Training and testing on different distributions
+# Training and testing on different distributions
 
 - A lot of teams are working with deep learning applications that have training sets that are different from the dev/test sets due to the hunger of deep learning to data.
 - There are some strategies to follow up when training set distribution differs from dev/test sets distribution.
@@ -72,7 +70,7 @@
         - Advantages: the distribution you care about is your target now.
         - Disadvantage: the distributions in training and dev/test sets are now different. But you will get a better performance over a long time.
 
-### Bias and Variance with mismatched data distributions
+# Bias and Variance with mismatched data distributions
 
 - Bias and Variance analysis changes when training and Dev/test set is from the different distribution.
 - Example: the cat classification example. Suppose you've worked in the example and reached this
@@ -108,7 +106,7 @@
         - Is the difference is big (positive) then maybe you need to find a bigger dev set (dev set and test set come from the same distribution, so the only way for there to be a huge gap here, for it to do much better on the dev set than the test set, is if you somehow managed to overfit the dev set).
 - Unfortunately, there aren't many systematic ways to deal with data mismatch. There are some things to try about this in the next section.
 
-### Addressing data mismatch
+# Addressing data mismatch
 
 - There aren't completely systematic solutions to this, but there some things you could try.
 
@@ -122,7 +120,7 @@
             2. Generate cars using 3D graphics in a car classification example.
     - Be cautious and bear in mind whether or not you might be accidentally simulating data only from a tiny subset of the space of all possible examples because your NN might overfit these generated data (like particular car noise or a particular design of 3D graphics cars).
 
-### Transfer learning
+# Transfer learning
 
 - Apply the knowledge you took in a task A and apply it in another task B.
 - For example, you have trained a cat classifier with a lot of data, you can use the part of the trained NN it to solve x-ray classification problem.
@@ -135,7 +133,7 @@
     - You have a lot of data for the task A you are transferring from and relatively less data for the task B your transferring to.
     - Low level features from task A could be helpful for learning task B.
 
-### Multi-task learning
+# Multi-task learning
 
 - Whereas in transfer learning, you have a sequential process where you learn from task A and then transfer that to task B. In multi-task learning, you start off simultaneously, trying to have one neural network do several things at the same time. And then each of these tasks helps hopefully all of the other tasks.
 - Example:
@@ -144,6 +142,18 @@
     - Then  
         `Cost = (1/m) * sum(sum(L(y_hat(i)_j, y(i)_j))), i = 1..m, j = 1..4`, where  
         `L = - y(i)_j * log(y_hat(i)_j) - (1 - y(i)_j) * log(1 - y_hat(i)_j)`
+$$
+
+\text{Cost} = \frac{1}{m} \sum_{i=1}^{m} \sum_{j=1}^{4} 
+L\big(\hat{y}^{(i)}_{j}, y^{(i)}_{j}\big)
+
+where
+
+L\big(\hat{y}^{(i)}_{j}, y^{(i)}_{j}\big) 
+= - y^{(i)}_{j} \log\big(\hat{y}^{(i)}_{j}\big) 
+  - \big(1 - y^{(i)}_{j}\big) \log\big(1 - \hat{y}^{(i)}_{j}\big).
+
+$$
 - In the last example you could have trained 4 neural networks separately but if some of the earlier features in neural network can be shared between these different types of objects, then you find that training one neural network to do four things results in better performance than training 4 completely separate neural networks to do the four tasks separately.
 - Multi-task learning will also work if y isn't complete for some labels. For example:
     
@@ -162,7 +172,7 @@
 - If you can train a big enough NN, the performance of the multi-task learning compared to splitting the tasks is better.
 - Today transfer learning is used more often than multi-task learning.
 
-### What is end-to-end deep learning?
+# What is end-to-end deep learning?
 
 - Some systems have multiple stages to implement. An end-to-end deep learning system implements all these stages with a single NN.
 - Example 1:
@@ -207,7 +217,7 @@
     
     - In this example non-end-to-end system works better because we don't have enough data to train end-to-end system.
 
-### Whether to use end-to-end deep learning
+# Whether to use end-to-end deep learning
 
 - Pros of end-to-end deep learning:
     - Let the data speak. By having a pure machine learning approach, your NN learning input from X to Y may be more able to capture whatever statistics are in the data, rather than being forced to reflect human preconceptions.
