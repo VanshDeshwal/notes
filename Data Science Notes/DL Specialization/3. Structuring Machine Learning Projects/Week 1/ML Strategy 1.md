@@ -1,5 +1,3 @@
-## ML Strategy 1
-
 ### Why ML Strategy
 
 - You have a lot of ideas for how to improve the accuracy of your deep learning system:
