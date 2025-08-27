@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 2/Untitled.md",
+                "file": "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Multi-class Classification.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "Multi-class Classification"
             }
           }
         ]
@@ -183,8 +183,16 @@
   },
   "active": "4a34ccef804858fd",
   "lastOpenFiles": [
+    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Intro to programing frameworks.md",
+    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Hyperparameter Tuning.md",
+    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Batch Normalization.md",
+    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 2/Optimizing Algorithms.md",
+    "Data Science Notes/DL Specialization/5. Sequence Models/Week 2/Natural Language Processing & Word Embeddings.md",
+    "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Recurrent Neural Networks.md",
+    "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 4/Special applications.md",
+    "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 3/Object detection.md",
+    "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 2/Deep convolutional models.md",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 1/Foundations of CNNs.md",
-    "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 2/Untitled.md",
     "Data Science Notes/DL Specialization/3. Structuring Machine Learning Projects/Week 1/ML Strategy 1.md",
     "Data Science Notes/DL Specialization/3. Structuring Machine Learning Projects/Week 2/ML Strategy 2.md",
     "Data Science Notes/DL Specialization/3. Structuring Machine Learning Projects/Week 2",
@@ -197,16 +205,11 @@
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 3/Sequence models & Attention mechanism.md",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 4/Transformer Network.md",
     "Data Science Notes/DL Specialization/Deep Learning Cert.pdf",
-    "Data Science Notes/DL Specialization/5. Sequence Models/Week 2/Natural Language Processing & Word Embeddings.md",
     "Data Science Notes/DL Specialization/Untitled",
     "Crypto notes/Papers.md",
     "Crypto notes/NetML.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1/Normalizing training sets.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1/Regularizing Neural Network.md",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 2/Optimizing Algorithms.md",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Batch Normalization.md",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Intro to programing frameworks.md",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Hyperparameter Tuning.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Multi-class Classification.md",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Untitled.md",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Images",
@@ -214,11 +217,8 @@
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 3",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 2",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 1",
-    "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Recurrent Neural Networks.md",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 4",
     "Data Science Notes/DL Specialization/5. Sequence Models/Untitled.md",
-    "Data Science Notes/100 days of ML/Machine Learning Notes.md",
-    "Rough work.md",
     "Data Science Notes/DL Specialization/1. Neural Networks/Images/Pasted image 20250521102647.jpg",
     "download.jpeg",
     "Data Science Notes/100 days of ML/Images/sample_graph.jpeg",
