@@ -35,12 +35,30 @@
     - Suppose we run the classifier on 10 images which are 5 cats and 5 non-cats. The classifier identifies that there are 4 cats, but it identified 1 wrong cat.
         
     - Confusion matrix:
-        
-        ||Predicted cat|Predicted non-cat|
-        |---|---|---|
-        |Actual cat|3|2|
-        |Actual non-cat|1|4|
-        
+    
+```mermaid
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "quadrant1Fill": "#f08080",
+    "quadrant2TextFill": "#006400",
+    "quadrant2Fill": "#90ee90",
+    "quadrant3Fill": "#f08080",
+    "quadrant4TextFill": "#006400",
+    "quadrant4Fill": "#90ee90"
+ 
+  }
+}}%%
+quadrantChart
+    x-axis Predicted cat --> Predicted non-cat
+    y-axis Actual non-cat --> Actual cat
+    quadrant-1 2
+    quadrant-2 3
+    quadrant-3 1
+    quadrant-4 4
+```
+
+
     - **Precision**: percentage of true cats in the recognized result: P = 3/(3 + 1)
         
     - **Recall**: percentage of true recognition cat of the all cat predictions: R = 3/(3 + 2)
