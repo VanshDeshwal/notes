@@ -168,8 +168,6 @@
 
 ### Surpassing human-level performance
 
-[](https://github.com/amanchadha/coursera-deep-learning-specialization/tree/master/C3%20-%20Structuring%20Machine%20Learning%20Projects/Notes#surpassing-human-level-performance)
-
 - In some problems, deep learning has surpassed human-level performance. Like:
     - Online advertising.
     - Product recommendation.
@@ -178,8 +176,6 @@
 - It's harder for machines to surpass human-level performance in natural perception task. But there are already some systems that achieved it.
 
 ### Improving your model performance
-
-[](https://github.com/amanchadha/coursera-deep-learning-specialization/tree/master/C3%20-%20Structuring%20Machine%20Learning%20Projects/Notes#improving-your-model-performance)
 
 - The two fundamental asssumptions of supervised learning:
     1. You can fit the training set pretty well. This is roughly saying that you can achieve low **avoidable bias**.
@@ -198,11 +194,7 @@
 
 ## ML Strategy 2
 
-[](https://github.com/amanchadha/coursera-deep-learning-specialization/tree/master/C3%20-%20Structuring%20Machine%20Learning%20Projects/Notes#ml-strategy-2)
-
 ### Carrying out error analysis
-
-[](https://github.com/amanchadha/coursera-deep-learning-specialization/tree/master/C3%20-%20Structuring%20Machine%20Learning%20Projects/Notes#carrying-out-error-analysis)
 
 - Error analysis - process of manually examining mistakes that your algorithm is making. It can give you insights into what to do next. E.g.:
     
@@ -233,8 +225,6 @@
 
 ### Cleaning up incorrectly labeled data
 
-[](https://github.com/amanchadha/coursera-deep-learning-specialization/tree/master/C3%20-%20Structuring%20Machine%20Learning%20Projects/Notes#cleaning-up-incorrectly-labeled-data)
-
 - DL algorithms are quite robust to random errors in the training set but less robust to systematic errors. But it's OK to go and fix these labels if you can.
     
 - If you want to check for mislabeled data in dev/test set, you should also try error analysis with the mislabeled column. Ex:
@@ -262,16 +252,12 @@
 
 ### Build your first system quickly, then iterate
 
-[](https://github.com/amanchadha/coursera-deep-learning-specialization/tree/master/C3%20-%20Structuring%20Machine%20Learning%20Projects/Notes#build-your-first-system-quickly-then-iterate)
-
 - The steps you take to make your deep learning project:
     - Setup dev/test set and metric
     - Build initial system quickly
     - Use Bias/Variance analysis & Error analysis to prioritize next steps.
 
 ### Training and testing on different distributions
-
-[](https://github.com/amanchadha/coursera-deep-learning-specialization/tree/master/C3%20-%20Structuring%20Machine%20Learning%20Projects/Notes#training-and-testing-on-different-distributions)
 
 - A lot of teams are working with deep learning applications that have training sets that are different from the dev/test sets due to the hunger of deep learning to data.
 - There are some strategies to follow up when training set distribution differs from dev/test sets distribution.
@@ -283,8 +269,6 @@
         - Disadvantage: the distributions in training and dev/test sets are now different. But you will get a better performance over a long time.
 
 ### Bias and Variance with mismatched data distributions
-
-[](https://github.com/amanchadha/coursera-deep-learning-specialization/tree/master/C3%20-%20Structuring%20Machine%20Learning%20Projects/Notes#bias-and-variance-with-mismatched-data-distributions)
 
 - Bias and Variance analysis changes when training and Dev/test set is from the different distribution.
 - Example: the cat classification example. Suppose you've worked in the example and reached this
@@ -322,8 +306,6 @@
 
 ### Addressing data mismatch
 
-[](https://github.com/amanchadha/coursera-deep-learning-specialization/tree/master/C3%20-%20Structuring%20Machine%20Learning%20Projects/Notes#addressing-data-mismatch)
-
 - There aren't completely systematic solutions to this, but there some things you could try.
 
 1. Carry out manual error analysis to try to understand the difference between training and dev/test sets.
@@ -338,8 +320,6 @@
 
 ### Transfer learning
 
-[](https://github.com/amanchadha/coursera-deep-learning-specialization/tree/master/C3%20-%20Structuring%20Machine%20Learning%20Projects/Notes#transfer-learning)
-
 - Apply the knowledge you took in a task A and apply it in another task B.
 - For example, you have trained a cat classifier with a lot of data, you can use the part of the trained NN it to solve x-ray classification problem.
 - To do transfer learning, delete the last layer of NN and it's weights and:
@@ -352,8 +332,6 @@
     - Low level features from task A could be helpful for learning task B.
 
 ### Multi-task learning
-
-[](https://github.com/amanchadha/coursera-deep-learning-specialization/tree/master/C3%20-%20Structuring%20Machine%20Learning%20Projects/Notes#multi-task-learning)
 
 - Whereas in transfer learning, you have a sequential process where you learn from task A and then transfer that to task B. In multi-task learning, you start off simultaneously, trying to have one neural network do several things at the same time. And then each of these tasks helps hopefully all of the other tasks.
 - Example:
@@ -381,8 +359,6 @@
 - Today transfer learning is used more often than multi-task learning.
 
 ### What is end-to-end deep learning?
-
-[](https://github.com/amanchadha/coursera-deep-learning-specialization/tree/master/C3%20-%20Structuring%20Machine%20Learning%20Projects/Notes#what-is-end-to-end-deep-learning)
 
 - Some systems have multiple stages to implement. An end-to-end deep learning system implements all these stages with a single NN.
 - Example 1:
@@ -428,8 +404,6 @@
     - In this example non-end-to-end system works better because we don't have enough data to train end-to-end system.
 
 ### Whether to use end-to-end deep learning
-
-[](https://github.com/amanchadha/coursera-deep-learning-specialization/tree/master/C3%20-%20Structuring%20Machine%20Learning%20Projects/Notes#whether-to-use-end-to-end-deep-learning)
 
 - Pros of end-to-end deep learning:
     - Let the data speak. By having a pure machine learning approach, your NN learning input from X to Y may be more able to capture whatever statistics are in the data, rather than being forced to reflect human preconceptions.
