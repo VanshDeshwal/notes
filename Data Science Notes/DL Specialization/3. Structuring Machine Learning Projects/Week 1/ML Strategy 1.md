@@ -46,7 +46,10 @@
     "quadrant3Fill": "#f08080",
     "quadrant4TextFill": "#006400",
     "quadrant4Fill": "#90ee90"
- 
+  },
+  "quadrantChart": {
+    "chartWidth": 300,
+    "chartHeight": 300
   }
 }}%%
 quadrantChart
@@ -56,6 +59,7 @@ quadrantChart
     quadrant-2 3
     quadrant-3 1
     quadrant-4 4
+
 ```
 
 
