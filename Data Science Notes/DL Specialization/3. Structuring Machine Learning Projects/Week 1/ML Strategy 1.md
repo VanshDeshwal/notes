@@ -1,4 +1,4 @@
-### Why ML Strategy
+# Why ML Strategy
 
 - You have a lot of ideas for how to improve the accuracy of your deep learning system:
     - Collect more data.
@@ -12,7 +12,7 @@
     - Change network architecture (activation functions, # of hidden units, etc.)
 - This course will give you some strategies to help analyze your problem to go in a direction that will help you get better results.
 
-### Orthogonalization
+# Orthogonalization
 
 - Some deep learning developers know exactly what hyperparameter to tune in order to try to achieve one effect. This is a process we call orthogonalization.
 - In orthogonalization, you have some controls, but each control does a specific task and doesn't affect other controls.
@@ -26,7 +26,7 @@
     4. Performs well in real world.
         - If its not achieved you could try change dev. set, change cost function...
 
-### Single number evaluation metric
+# Single number evaluation metric
 
 - Its better and faster to set a single number evaluation metric for your project before you start it.
     
@@ -58,7 +58,7 @@
     
     - You can think of `F1` score as an average of precision and recall `F1 = 2 / ((1/P) + (1/R))`
 
-### Satisfying and Optimizing metric
+# Satisfying and Optimizing metric
 
 - Its hard sometimes to get a single number evaluation metric. Ex:
     
@@ -83,19 +83,19 @@
     ```
     
 
-### Train/dev/test distributions
+# Train/dev/test distributions
 
 - Dev and test sets have to come from the same distribution.
 - Choose dev set and test set to reflect data you expect to get in the future and consider important to do well on.
 - Setting up the dev set, as well as the validation metric is really defining what target you want to aim at.
 
-### Size of the dev and test sets
+# Size of the dev and test sets
 
 - An old way of splitting the data was 70% training, 30% test or 60% training, 20% dev, 20% test.
 - The old way was valid for a number of examples ~ <100000
 - In the modern deep learning if you have a million or more examples a reasonable split would be 98% training, 1% dev, 1% test.
 
-### When to change dev/test sets and metrics
+# When to change dev/test sets and metrics
 
 - Let's take an example. In a cat classification example we have these metric results:
     
@@ -119,7 +119,7 @@
 - Conclusion: if doing well on your metric + dev/test set doesn't correspond to doing well in your application, change your metric and/or dev/test set.
     
 
-### Why human-level performance?
+# Why human-level performance?
 
 - We compare to human-level performance because of two main reasons:
     1. Because of advances in deep learning, machine learning algorithms are suddenly working much better and so it has become much more feasible in a lot of application areas for machine learning algorithms to actually become competitive with human-level performance.
@@ -132,7 +132,7 @@
     - Gain insight from manual error analysis: why did a person get it right?
     - Better analysis of bias/variance.
 
-### Avoidable bias
+# Avoidable bias
 
 - Suppose that the cat classification algorithm gives these results:
     
@@ -148,7 +148,7 @@
     - `Avoidable bias = Training error - Human (Bayes) error`
     - `Variance = Dev error - Training error`
 
-### Understanding human-level performance
+# Understanding human-level performance
 
 - When choosing human-level performance, it has to be chosen in the terms of what you want to achieve with the system.
 - You might have multiple human-level performances based on the human experience. Then you choose the human-level performance (proxy for Bayes error) that is more suitable for the system you're trying to build.
@@ -164,7 +164,7 @@
 - So having an estimate of human-level performance gives you an estimate of Bayes error. And this allows you to more quickly make decisions as to whether you should focus on trying to reduce a bias or trying to reduce the variance of your algorithm.
 - These techniques will tend to work well until you surpass human-level performance, whereupon you might no longer have a good estimate of Bayes error that still helps you make this decision really clearly.
 
-### Surpassing human-level performance
+# Surpassing human-level performance
 
 - In some problems, deep learning has surpassed human-level performance. Like:
     - Online advertising.
@@ -173,9 +173,9 @@
 - The last examples are not natural perception task, rather learning on structural data. Humans are far better in natural perception tasks like computer vision and speech recognition.
 - It's harder for machines to surpass human-level performance in natural perception task. But there are already some systems that achieved it.
 
-### Improving your model performance
+# Improving your model performance
 
-- The two fundamental asssumptions of supervised learning:
+- The two fundamental assumptions of supervised learning:
     1. You can fit the training set pretty well. This is roughly saying that you can achieve low **avoidable bias**.
     2. The training set performance generalizes pretty well to the dev/test set. This is roughly saying that **variance** is not too bad.
 - To improve your deep learning supervised system follow these guidelines:
