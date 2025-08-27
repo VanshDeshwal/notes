@@ -59,22 +59,18 @@ quadrantChart
     quadrant-2 3
     quadrant-3 1
     quadrant-4 4
-
 ```
 
-
-    - **Precision**: percentage of true cats in the recognized result: P = 3/(3 + 1)
+- **Precision**: percentage of true cats in the recognized result: P = 3/(3 + 1)
+- **Recall**: percentage of true recognition cat of the all cat predictions: R = 3/(3 + 2)      
+- **Accuracy**: (3+4)/10
         
-    - **Recall**: percentage of true recognition cat of the all cat predictions: R = 3/(3 + 2)
-        
-    - **Accuracy**: (3+4)/10
-        
-- Using a precision/recall for evaluation is good in a lot of cases, but separately they don't tell you which algothims is better. Ex:
+- Using a precision/recall for evaluation is good in a lot of cases, but separately they don't tell you which algorithms is better. Ex:
     
-    |Classifier|Precision|Recall|
-    |---|---|---|
-    |A|95%|90%|
-    |B|98%|85%|
+| Classifier | Precision | Recall |
+| ---------- | --------- | ------ |
+| A          | 95%       | 90%    |
+| B          | 98%       | 85%    |
     
 - A better thing is to combine precision and recall in one single (real) number evaluation metric. There a metric called `F1` score, which combines them
     
@@ -84,27 +80,24 @@ quadrantChart
 
 - Its hard sometimes to get a single number evaluation metric. Ex:
     
-    |Classifier|F1|Running time|
-    |---|---|---|
-    |A|90%|80 ms|
-    |B|92%|95 ms|
-    |C|92%|1,500 ms|
+| Classifier | F1  | Running time |
+| ---------- | --- | ------------ |
+| A          | 90% | 80 ms        |
+| B          | 92% | 95 ms        |
+| C          | 92% | 1,500 ms     |
     
 - So we can solve that by choosing a single optimizing metric and decide that other metrics are satisfying. Ex:
-    
-    ```
+```
     Maximize F1                     # optimizing metric
     subject to running time < 100ms # satisficing metric
-    ```
+```
     
 - So as a general rule:
-    
-    ```
+   ```
     Maximize 1     # optimizing metric (one optimizing metric)
     subject to N-1 # satisficing metric (N-1 satisficing metrics)
     ```
     
-
 # Train/dev/test distributions
 
 - Dev and test sets have to come from the same distribution.
@@ -121,16 +114,16 @@ quadrantChart
 
 - Let's take an example. In a cat classification example we have these metric results:
     
-    |Metric|Classification error|
-    |---|---|
-    |Algorithm A|3% error (But a lot of porn images are treated as cat images here)|
-    |Algorithm B|5% error|
-    
-    - In the last example if we choose the best algorithm by metric it would be "A", but if the users decide it will be "B"
-    - Thus in this case, we want and need to change our metric.
-    - `OldMetric = (1/m) * sum(y_pred[i] != y[i] ,m)`
+| Metric      | Classification error                                               |
+| ----------- | ------------------------------------------------------------------ |
+| Algorithm A | 3% error (But a lot of porn images are treated as cat images here) |
+| Algorithm B | 5% error                                                           |
+
+- In the last example if we choose the best algorithm by metric it would be "A", but if the users decide it will be "B"
+- Thus in this case, we want and need to change our metric.
+- `OldMetric = (1/m) * sum(y_pred[i] != y[i] ,m)`
         - Where m is the number of Dev set items.
-    - `NewMetric = (1/sum(w[i])) * sum(w[i] * (y_pred[i] != y[i]) ,m)`
+- `NewMetric = (1/sum(w[i])) * sum(w[i] * (y_pred[i] != y[i]) ,m)`
         - where:
             - `w[i] = 1 if x[i] is not porn`
             - `w[i] = 10 if x[i] is porn`
