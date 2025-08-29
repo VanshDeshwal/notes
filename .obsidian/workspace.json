@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "Recurrent Neural Networks"
             }
+          },
+          {
+            "id": "3ff90b79d7348ecf",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.12"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.12"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -181,7 +194,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4a34ccef804858fd",
+  "active": "3ff90b79d7348ecf",
   "lastOpenFiles": [
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 4/Special applications.md",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 3/Object detection.md",
