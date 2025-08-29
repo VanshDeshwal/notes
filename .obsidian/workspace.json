@@ -13,28 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Recurrent Neural Networks.md",
+                "file": "Crypto notes/Speaker Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Recurrent Neural Networks"
-            }
-          },
-          {
-            "id": "3ff90b79d7348ecf",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.9.12"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.9.12"
+              "title": "Speaker Notes"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -194,8 +181,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3ff90b79d7348ecf",
+  "active": "4a34ccef804858fd",
   "lastOpenFiles": [
+    "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Recurrent Neural Networks.md",
+    "Crypto notes/Speaker Notes.md",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 4/Special applications.md",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 3/Object detection.md",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 2/Deep convolutional models.md",
@@ -204,7 +193,6 @@
     "Data Science Notes/DL Specialization/3. Structuring Machine Learning Projects/Week 1/ML Strategy 1.md",
     "Data Science Notes/100 days of ML/Machine Learning Notes.md",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 2/Natural Language Processing & Word Embeddings.md",
-    "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Recurrent Neural Networks.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Multi-class Classification.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Intro to programing frameworks.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Hyperparameter Tuning.md",
@@ -225,7 +213,6 @@
     "Crypto notes/NetML.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1/Normalizing training sets.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 1/Regularizing Neural Network.md",
-    "Data Science Notes/DL Specialization/4. Convolutional Networks/Untitled.md",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Images",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 4",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 3",
