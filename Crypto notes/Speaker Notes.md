@@ -1,4 +1,4 @@
-Hi, good morning. So today I’m going to talk about a few research papers in the area of network traffic analysis and malware detection.  
+Hi, good afternoon. I am Vansh Deshwal, Masters Student at ISI  So today I’m going to talk about a few research papers in the area of network traffic analysis and malware detection.  
 Basically, I’ll go through what datasets they used, what techniques they applied, and what worked or didn’t work.
 
 🔹 Packet Analysis for Network Forensics: A Comprehensive Survey
