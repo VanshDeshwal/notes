@@ -172,10 +172,11 @@ Benign traffic came from diverse environments.
 Annotation was manual, which they note as an important dependency.”
 
 Slide 3
-“Flow-based features came from packet headers: duration, packet counts, byte counts, inter-arrival times.
+“
+In terms of layers: L1–L3 were headers, L4 involved payload inspection.”
+Flow-based features came from packet headers: duration, packet counts, byte counts, inter-arrival times.
 DPI features were signal-based: FFT coefficients, LPC parameters, MinMax amplitudes, bi-grams.
 So flow ignores payload, DPI processes it.
-In terms of layers: L1–L3 were headers, L4 involved payload inspection.”
 
 Slide 4
 “The flow approach hit at least 98% accuracy across benign datasets, with very low false positives.
