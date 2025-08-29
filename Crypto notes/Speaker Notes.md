@@ -1,3 +1,6 @@
+Hi, good morning. So today I’m going to talk about a few research papers in the area of network traffic analysis and malware detection.  
+Basically, I’ll go through what datasets they used, what techniques they applied, and what worked or didn’t work.
+
 🔹 Packet Analysis for Network Forensics: A Comprehensive Survey
 
 Slide 1
@@ -173,12 +176,19 @@ Annotation was manual, which they note as an important dependency.”
 
 Slide 3
 “
+
 In terms of layers: L1–L3 were headers, L4 involved payload inspection.”
 Flow-based features came from packet headers: duration, packet counts, byte counts, inter-arrival times.
 DPI features were signal-based: FFT coefficients, LPC parameters, MinMax amplitudes, bi-grams.
 So flow ignores payload, DPI processes it.
 
-Slide 4
+Slide 4: ------
+
+Slide 5
 “The flow approach hit at least 98% accuracy across benign datasets, with very low false positives.
 DPI also had high accuracy, but struggled with generic malware families because labeling was harder.
 The main takeaway is: DPI can be effective with just a couple packets — good for early detection — while flow-based methods work well when you have more complete statistics.”
+
+
+To conclude, each of these papers adds a different perspective, Across all of them, we can see recurring challenges: the need for better datasets, handling encrypted traffic, and balancing accuracy with real-time efficiency.  
+Thank you
