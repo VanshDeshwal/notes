@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Interview Prep/Untitled.md",
+                "file": "Interview Prep/Prep.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "Prep"
             }
           }
         ]
@@ -184,7 +184,7 @@
   "active": "4a34ccef804858fd",
   "lastOpenFiles": [
     "Crypto notes/Speaker Notes.md",
-    "Interview Prep/Untitled.md",
+    "Interview Prep/Prep.md",
     "Interview Prep",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Recurrent Neural Networks.md",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 4/Special applications.md",
