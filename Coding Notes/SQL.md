@@ -12,3 +12,4 @@ SELECT department_name, location FROM departments
 WHERE location LIKE 'S%'
 ```
 
+- Write a query to select all the distinct companies (`company_name`) in the `Works` table..
