@@ -86,3 +86,21 @@ WHERE p.player_name IN (
 ORDER BY p.score DESC
 LIMIT 3;
 ```
+
+
+
+```sql
+SELECT 
+    m.match_id,                        -- Match ID
+    m.player1,         -- Player 1 name
+    m.player2,         -- Player 2 name
+    m.winner,           -- Winner name
+    m.match_date,                      -- Date of the match
+    p.score            -- Winner's score
+FROM Matches AS m                     -- (Take data from Matches table)
+JOIN Players AS p                     -- (Join with Players table to get winner's score)
+    ON m.winner = p.player_name       -- (Match winner name with player_name in Players)
+ORDER BY 
+    m.match_date DESC                 -- (Sort by date, latest first)
+LIMIT 5;   
+```
