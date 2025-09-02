@@ -55,3 +55,34 @@ WHERE view_count = 0
 ORDER BY author_id
 ```
 
+Write a query to find the names of the **top 3 distinct players** by highest score who have **won** matches, including their **scores**.
+
+Table 1: **Players**
+
+|player_id|player_name|score|rank|
+|---|---|---|---|
+|1|Alice|1200|5|
+|2|Bob|1500|2|
+|3|Charlie|1300|4|
+|4|David|1600|1|
+|5|Eve|1100|6|
+
+Table 2: **Matches**
+
+|match_id|player1|player2|winner|match_date|
+|---|---|---|---|---|
+|101|Alice|Bob|Bob|2024-01-15|
+|102|Charlie|David|David|2024-01-16|
+|103|Eve|Bob|Bob|2024-01-17|
+|104|Alice|David|David|2024-01-18|
+|105|Charlie|Eve|Charlie|2024-01-19|
+```sql
+SELECT p.player_name, p.score
+FROM Players p
+WHERE p.player_name IN (
+    SELECT winner
+    FROM Matches
+)
+ORDER BY p.score DESC
+LIMIT 3;
+```
