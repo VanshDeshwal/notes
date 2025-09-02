@@ -95,8 +95,8 @@ LIMIT 3;
 ```sql
 SELECT 
     m.match_id,            -- Match ID
-    m.player1,             -- Player 1
-    m.player2,             -- Player 2
+    m.player_1,             -- Player 1
+    m.player_2,             -- Player 2
     m.winner,              -- Winner
     m.match_date,          -- Match date
     p.score                -- Winner's score
