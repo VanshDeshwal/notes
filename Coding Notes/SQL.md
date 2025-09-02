@@ -39,3 +39,11 @@ SELECT employee_name, company, salary FROM Employees
 WHERE category = 'Full-Time'
 ORDER BY salary DESC
 ```
+
+- Write a query to group the employees by their department and display the total number of employees (as total_employees) in each department.
+
+```sql
+SELECT department, COUNT(*) as total_employees FROM Employees 
+GROUP BY department
+```
+
