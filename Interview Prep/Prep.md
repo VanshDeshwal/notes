@@ -11,17 +11,18 @@ Probability & Statistics
 3. Normal Distribution & CLT — https://www.kaggle.com/code/vi20027804/understanding-the-central-limit-theorem (Uber DS – asked 3 times, 2024)  
   
 Machine Learning Algorithms  
-4. Linear Regression (from scratch) — [https://lnkd.in/gcZVE4kt](https://lnkd.in/gcZVE4kt) (Uber ML Round – asked 2 times, 2024)  
-5. Logistic Regression — [https://lnkd.in/gsTkMUvz](https://lnkd.in/gsTkMUvz) (Walmart Labs – asked 2 times, 2023)  
-6. Decision Trees — [https://lnkd.in/gJnhyyAs](https://lnkd.in/gJnhyyAs) (PhonePe ML Round – asked 2 times, 2025)  
-7. Random Forests — [https://lnkd.in/giU-RPwd](https://lnkd.in/giU-RPwd) (Paytm Analytics – asked 2 times, 2024)  
+1. Linear Regression (from scratch) —  (Uber ML Round – asked 2 times, 2024)  
+2. Logistic Regression —  (Walmart Labs – asked 2 times, 2023)  
+3. Decision Trees —  (PhonePe ML Round – asked 2 times, 2025)  
+4. Random Forests — (Paytm Analytics – asked 2 times, 2024)  
   
 Unsupervised Learning  
-8. K-Means Clustering — [https://lnkd.in/g6C2Qk6Y](https://lnkd.in/g6C2Qk6Y) (Fractal Analytics – 2023)  
-9. PCA (Dimensionality Reduction) — [https://lnkd.in/gjxAusR9](https://lnkd.in/gjxAusR9) (Google AI Residency – asked 2 times, 2024)  
+5. K-Means Clustering — (Fractal Analytics – 2023)  
+6. PCA (Dimensionality Reduction) — (Google AI Residency – asked 2 times, 2024)  
   
 Deep Learning Basics  
-10. Neural Network from Scratch — [https://lnkd.in/gDN7cE5V](https://lnkd.in/gDN7cE5V) (DeepMind Task – 2023)  
-11. Activation Functions — [https://lnkd.in/gZCtxRVA](https://lnkd.in/gZCtxRVA) (InterviewBit – asked 3 times, 2024)  
-12. CNN for Image Classification — [https://lnkd.in/gGs7tZ9h](https://lnkd.in/gGs7tZ9h) (Samsung Research – asked 2 times, 2025)  
-13. RNN/LSTM for Time Series — [https://lnkd.in/gTgnHBYh](https://lnkd.in/gTgnHBYh) (JP Morgan Quant ML 2024)
+7. Neural Network from Scratch — (DeepMind Task – 2023)  
+8. Activation Functions —  (InterviewBit – asked 3 times, 2024)  
+9. CNN for Image Classification — (Samsung Research – asked 2 times, 2025)  
+10. RNN/LSTM for Time Series — [https://lnkd.in/gTgnHBYh](https://lnkd.in/gTgnHBYh) (JP Morgan Quant ML 2024)
+
