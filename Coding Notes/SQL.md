@@ -47,3 +47,11 @@ SELECT department, COUNT(*) as total_employees FROM Employees
 GROUP BY department
 ```
 
+- Write a query to retrieve the author_id, author_name, and publication_name for authors whose articles got zero views. The result should be sorted by author_id in ascending order.
+
+```sql
+SELECT author_id, author_name, publication_name FROM Views
+WHERE view_count = 0
+ORDER BY author_id
+```
+
