@@ -1688,9 +1688,9 @@ Rules:
 
 
 
-# L Leader Election----------------------
+# L10: Leader Election
 
-# 🔹 1. Motivation
+## 🔹 1. Motivation
 
 - Many consensus algorithms assume there is a **leader** (or proposer) in each round to drive progress.
     
@@ -1705,7 +1705,7 @@ Rules:
 
 ---
 
-# 🔹 2. Byzantine Leader Election (BLE) — Definition
+## 🔹 2. Byzantine Leader Election (BLE) — Definition
 
 **Goal:** elect a leader among nnn processes, tolerating up to f<n/3f<n/3f<n/3 Byzantine.
 
@@ -1720,7 +1720,7 @@ Rules:
 
 ---
 
-# 🔹 3. Approaches
+## 🔹 3. Approaches
 
 ### (a) Deterministic Leader Rotation
 
@@ -1744,7 +1744,7 @@ Rules:
 
 ---
 
-# 🔹 4. Example in Blockchain Protocols
+## 🔹 4. Example in Blockchain Protocols
 
 - In PBFT-like protocols: leader (called primary) proposes a block. If faulty, next view-change elects new leader.
     
@@ -1753,7 +1753,7 @@ Rules:
 
 ---
 
-# 🔹 5. Exam-style Summary
+## 🔹 5. Exam-style Summary
 
 **Byzantine Leader Election:**
 
@@ -1768,7 +1768,7 @@ Rules:
 - This primitive is used inside Byzantine Agreement and blockchain protocols to ensure progress despite Byzantine faults.
 
 
-# Blockchain protocol
+# L11: Blockchain protocol
 ## 6.2 Defining a Blockchain Protocol
 
 ### What is a blockchain protocol?
@@ -1943,6 +1943,6 @@ If the BB protocol tolerates up to fff Byzantine nodes, then the blockchain buil
     
 - **Liveness:** within at most n+1n+1n+1 epochs, any honest node gets to be sender, so its transactions are included.
     
-- Confirmation time = O(Rn)O(Rn)O(Rn).
+- Confirmation time = O(Rn).
 
 
