@@ -1541,7 +1541,154 @@ We run in **rounds 0 to f** (at most f+1f+1f+1 rounds).
 - Message complexity: O(n2f)O(n^2 f)O(n2f) (because in each round processes forward signed messages).
 
 
------------------ Leader Election----------------------
+# L7: Vote + Coin
+
+## 🔹 1. Context
+
+- Deterministic BA requires f+1f+1f+1 rounds or worse.
+    
+- Randomized BA with a **global coin** achieves **expected constant rounds (Las Vegas)**.
+    
+- The **Vote + Coin protocol** is the standard example of such an algorithm.
+    
+
+We assume:
+
+- nnn processes, up to f<n/3f < n/3f<n/3 Byzantine.
+    
+- Synchronous model.
+    
+- Global random coin (all honest see same coin value each round, adversary can’t predict).
+    
+
+---
+
+## 🔹 2. Protocol Intuition
+
+Each round has **two parts**:
+
+1. **Vote step:** processes try to see if there’s a clear majority.
+    
+2. **Coin step:** if no clear majority, everyone flips to the global coin.
+    
+
+👉 Over time, the coin ensures convergence; once a majority forms, it locks in forever.
+
+---
+
+## 🔹 3. Protocol Steps
+
+At each process ppp, maintain `vote_p` (initial = input bit).
+
+Repeat rounds until decision:
+
+### (a) **Vote Step**
+
+- Every process broadcasts its current `vote_p`.
+    
+- Collect all votes into multiset VVV.
+    
+- Let `maj` = majority value in VVV.
+    
+- Let `tally` = number of votes for `maj`.
+    
+
+Rules:
+
+- If `tally ≥ 2f+1` → adopt `maj`. (strong majority → reliable).
+    
+- Else → go to coin step.
+    
+
+### (b) **Coin Step**
+
+- Global random coin flip C∈{0,1}C \in \{0,1\}C∈{0,1}.
+    
+- All processes set `vote_p = C`.
+    
+
+---
+
+### (c) **Decision Rule**
+
+- If in any round `tally ≥ 2f+1`, then decide on `maj`.
+    
+- Otherwise continue to next round.
+    
+
+---
+
+## 🔹 4. Why it Works
+
+1. **Safety (Agreement):**
+    
+    - If a value reaches 2f+12f+12f+1 support, then at least f+1f+1f+1 honest nodes voted for it.
+        
+    - Those honest nodes keep broadcasting it forever.
+        
+    - So no other value can later reach 2f+12f+12f+1.
+        
+    - Thus, once decided, never diverges.
+        
+2. **Termination (Expected constant rounds):**
+    
+    - In any round with no clear majority, the coin toss aligns all honest nodes to the same value with prob 1/2.
+        
+    - Geometric distribution → expected 2 rounds until alignment.
+        
+    - Hence **expected O(1) rounds** to terminate.
+        
+3. **Validity:**
+    
+    - If all start with the same value, it already has supermajority in the first round → immediate decision.
+        
+
+---
+
+## 🔹 5. Small Example (n=4, f=1)
+
+- Initial votes: P1=0, P2=1, P3=1, P4 (Byzantine).
+    
+- Round 1 vote step:
+    
+    - Suppose P4 sends 0 to some, 1 to others.
+        
+    - P1 sees {0,1,1,0} → 0:2, 1:2 → no 3 votes → coin step.
+        
+    - P2 sees {0,1,1,1} → majority 1 with 3 votes → decide 1.
+        
+    - So at least one honest decides.
+        
+- With probability 1/2, others also align via coin to 1 → full agreement.
+    
+- If not, continue another round, but expected within 2–3 rounds all converge.
+    
+
+---
+
+## 🔹 6. Exam-style Summary
+
+**Vote + Coin protocol:**
+
+- Randomized BA protocol with expected constant rounds.
+    
+- Each round:
+    
+    - **Vote step:** adopt majority if ≥ 2f+1.
+        
+    - **Coin step:** else adopt global coin.
+        
+- Guarantees:
+    
+    - **Validity:** unanimous inputs → immediate decision.
+        
+    - **Agreement:** once 2f+1 achieved, stable forever.
+        
+    - **Termination:** expected constant rounds (coin ensures convergence).
+
+
+
+# L Leader Election----------------------
 
 # 🔹 1. Motivation
 
