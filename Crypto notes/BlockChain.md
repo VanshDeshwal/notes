@@ -1574,8 +1574,8 @@ Rules:
 
 
 
-
-# 🔹 1. Reliable Broadcast (RB) — Definition
+# L6:
+## 🔹 1. Reliable Broadcast (RB) — Definition
 
 RB is a communication primitive in a system with Byzantine faults. It involves one **sender process** and many **receiver processes**.
 
@@ -1592,7 +1592,7 @@ RB is a communication primitive in a system with Byzantine faults. It involves o
 
 ---
 
-# 🔹 2. Equivalence between RB and Byzantine Agreement (BA)
+## 🔹 2. Equivalence between RB and Byzantine Agreement (BA)
 
 This is a key theory fact.
 
@@ -1620,7 +1620,7 @@ This is why blockchain protocols often bounce between these abstractions.
 
 ---
 
-# 🔹 3. Dolev–Strong’s Reliable Broadcast Protocol
+## 🔹 3. Dolev–Strong’s Reliable Broadcast Protocol
 
 This is the classic **authenticated RB protocol** (uses digital signatures).
 
