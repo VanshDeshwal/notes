@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Coding Notes/SQL.md",
+                "file": "Crypto notes/BlockChain.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SQL"
+              "title": "BlockChain"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 297.5,
-    "collapsed": true
+    "width": 297.5
   },
   "right": {
     "id": "b1fd7f94eb3b5b59",
@@ -184,8 +183,10 @@
   },
   "active": "4a34ccef804858fd",
   "lastOpenFiles": [
-    "Interview Prep/Prep.md",
     "Coding Notes/SQL.md",
+    "Crypto notes/BlockChain.md",
+    "Crypto notes/Untitled",
+    "Interview Prep/Prep.md",
     "Crypto notes/Speaker Notes.md",
     "Interview Prep",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Recurrent Neural Networks.md",
@@ -214,12 +215,10 @@
     "Data Science Notes/DL Specialization/Deep Learning Cert.pdf",
     "Data Science Notes/DL Specialization/Untitled",
     "Crypto notes/Papers.md",
-    "Crypto notes/NetML.md",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Images",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 4",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 3",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 2",
-    "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 1",
     "Data Science Notes/DL Specialization/1. Neural Networks/Images/Pasted image 20250521102647.jpg",
     "download.jpeg",
     "Data Science Notes/100 days of ML/Images/sample_graph.jpeg",
