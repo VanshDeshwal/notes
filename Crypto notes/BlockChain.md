@@ -1120,8 +1120,8 @@ All correct processes now agree on `1`. Since P2 was a correct king in phase 2, 
     
 - **King algorithm**: operates in phases; kings break ties when a strong majority is absent. With ≤fff faulty processes and f+1f+1f+1 phases, at least one phase has a correct king and that phase forces all honest processes to the same value.
 
-
-# 1️⃣ Fundamental Setup
+# L5:
+## 1️⃣ Fundamental Setup
 
 - We have nnn processes, up to fff are Byzantine.
     
@@ -1139,7 +1139,7 @@ Both Rabin’s and Arora’s versions assume a **global random coin**:
 
 ---
 
-# 2️⃣ Rabin’s Randomized BA Protocol (Las Vegas, O(1) rounds)
+## 2️⃣ Rabin’s Randomized BA Protocol (Las Vegas, O(1) rounds)
 
 ### Algorithm (each process i)
 
@@ -1183,7 +1183,7 @@ Both Rabin’s and Arora’s versions assume a **global random coin**:
 
 ---
 
-# 3️⃣ Extended Protocol (Sanjeev Arora’s Notes)
+## 3️⃣ Extended Protocol (Sanjeev Arora’s Notes)
 
 Arora expands Rabin’s idea to more general Byzantine settings.
 
@@ -1219,7 +1219,7 @@ Arora expands Rabin’s idea to more general Byzantine settings.
 
 ---
 
-# 4️⃣ Intuition with Example (small case)
+## 4️⃣ Intuition with Example (small case)
 
 Say n=7n=7n=7, f=2f=2f=2.
 
@@ -1238,7 +1238,7 @@ Say n=7n=7n=7, f=2f=2f=2.
 
 ---
 
-# 5️⃣ Comparison
+## 5️⃣ Comparison
 
 |Algorithm|Assumption|Byzantine bound|Rounds|Type|
 |---|---|---|---|---|
@@ -1247,7 +1247,7 @@ Say n=7n=7n=7, f=2f=2f=2.
 
 
 
-# 🔹 Notations
+## 🔹 Notations
 
 - nnn = total number of processes (nodes).
     
@@ -1268,7 +1268,7 @@ So:
 
 ---
 
-# 🔹 Rabin’s Randomized BA Protocol (Las Vegas, O(1)O(1)O(1) expected rounds)
+## 🔹 Rabin’s Randomized BA Protocol (Las Vegas, O(1) expected rounds)
 
 ## Algorithm recap
 
@@ -1347,7 +1347,7 @@ Rabin’s protocol ensures:
 
 ---
 
-# 🔹 Arora’s Extended Version (with thresholds)
+## 🔹 Arora’s Extended Version (with thresholds)
 
 ## Algorithm recap
 
