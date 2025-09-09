@@ -1411,7 +1411,7 @@ A round is **un-foiled** if all correct processes see the same majority.
 
 ---
 
-# 🔹 Intuition with Example
+## 🔹 Intuition with Example
 
 Suppose n=9n=9n=9, f=2f=2f=2.
 
@@ -1429,7 +1429,7 @@ Suppose n=9n=9n=9, f=2f=2f=2.
 
 ------------vote + coin-----------------
 
-# 🔹 1. Context
+## 🔹 1. Context
 
 - Deterministic BA requires f+1f+1f+1 rounds or worse.
     
@@ -1449,7 +1449,7 @@ We assume:
 
 ---
 
-# 🔹 2. Protocol Intuition
+## 🔹 2. Protocol Intuition
 
 Each round has **two parts**:
 
@@ -1462,7 +1462,7 @@ Each round has **two parts**:
 
 ---
 
-# 🔹 3. Protocol Steps
+## 🔹 3. Protocol Steps
 
 At each process ppp, maintain `vote_p` (initial = input bit).
 
@@ -1504,7 +1504,7 @@ Rules:
 
 ---
 
-# 🔹 4. Why it Works
+## 🔹 4. Why it Works
 
 1. **Safety (Agreement):**
     
@@ -1531,7 +1531,7 @@ Rules:
 
 ---
 
-# 🔹 5. Small Example (n=4, f=1)
+## 🔹 5. Small Example (n=4, f=1)
 
 - Initial votes: P1=0, P2=1, P3=1, P4 (Byzantine).
     
@@ -1552,7 +1552,7 @@ Rules:
 
 ---
 
-# 🔹 6. Exam-style Summary
+## 🔹 6. Exam-style Summary
 
 **Vote + Coin protocol:**
 
