@@ -21,12 +21,9 @@ Consensus = all processes agree on **one common value**, even if some fail.
 Three properties must hold:
 
 1. **Agreement:** All non-faulty processes decide the same value.
-    
 2. **Validity:** The value chosen must come from one of the processes (no random garbage).
-    
 3. **Termination:** All non-faulty processes eventually decide.
     
-
 👉 Analogy: deciding where to go for lunch in a group chat — everyone must end up at the same place, and it must be a restaurant someone suggested.
 
 ---
@@ -36,9 +33,7 @@ Three properties must hold:
 Different algorithms work depending on the failure type:
 
 - **Crash failures:** A process just stops and never resumes (like a server crashing).
-    
 - **Byzantine failures:** A process behaves arbitrarily — lying, sending conflicting info, or acting maliciously.
-    
 
 👉 Crash = silent failure. Byzantine = malicious hacker node.
 
@@ -47,25 +42,19 @@ Different algorithms work depending on the failure type:
 ## 🔑 4. Communication Complexity
 
 - We measure algorithms by **round complexity** (how many synchronous rounds until decision) and **message complexity** (how many messages total).
-    
 - Trade-off: fewer rounds often means more messages, and vice versa.
-    
 
 👉 In coding terms, this is like comparing **time complexity** and **space complexity**, but for distributed messaging.
 
 
 # L3:
-## 1. Randomized Byzantine Agreement (O(nlog⁡n)O(n \log n)O(nlogn) messages)
+## 1. Randomized Byzantine Agreement (O(nlog⁡n) messages)
 
 ### The problem
 
 - **System:** Synchronous
-    
 - **Failures:** Byzantine (nodes can lie, send different values to different processes)
-    
 - **Naive solution:** Deterministic protocols need a lot of messages (Ω(n2)\Omega(n^2)Ω(n2)) to handle all possible lies.
-    
-
 ### The randomized trick
 
 Instead of deterministically forcing agreement, processes use **random coin flips** to break deadlocks.
@@ -73,22 +62,14 @@ Instead of deterministically forcing agreement, processes use **random coin flip
 **High-level flow (simplified):**
 
 1. Each process broadcasts its current value.
-    
 2. Everyone collects values → might see inconsistencies if Byzantine nodes lie.
-    
 3. If there’s a clear majority, follow it.
-    
 4. If tie or confusion, flip a random coin to choose a value.
-    
 5. Repeat for O(log⁡n)O(\log n)O(logn) rounds.
-    
 
 - Each round costs **O(n)O(n)O(n)** messages (everyone broadcasts).
-    
 - After log⁡n\log nlogn rounds, the probability of disagreement is extremely low.
-    
 - Total = O(nlog⁡n)O(n \log n)O(nlogn) messages.
-    
 
 👉 Analogy: Imagine 20 people voting, but a few are trolls sending mixed signals. If votes are confusing, everyone flips a coin. After a few rounds, the group almost surely converges.
 
@@ -118,15 +99,10 @@ Each process p does:
 Setup (keep this in mind):
 
 - 4 processes: **P1, P2, P3, P4**.
-    
 - At most **f = 1** Byzantine (we’ll make **P4** malicious).
-    
 - Initial values: P1 = **0**, P2 = **0**, P3 = **1**.
-    
 - We run **2 rounds** (≈ log⁡24\log_2 4log2​4).
-    
 - When a process sees a strict majority it adopts it; if there’s a tie it does a **coin flip**.
-    
 
 ---
 
@@ -135,41 +111,30 @@ Setup (keep this in mind):
 - **What everyone _sends_** this round:
     
     - P1 sends `0` to all.
-        
     - P2 sends `0` to all.
-        
     - P3 sends `1` to all.
-        
     - P4 (Byzantine) sends **1 to P1 and P2**, but **0 to P3** (tries to confuse).
-        
+    
 - **What each correct process _receives_** (including its own value):
     
     - **P1** receives: {P1:0, P2:0, P3:1, P4:1} → counts: `0:2`, `1:2` → **tie** → coin flip → suppose **P1 flips 0**.
-        
     - **P2** receives: same as P1 → tie → suppose **P2 flips 1**.
-        
     - **P3** receives: {P1:0, P2:0, P3:1, P4:0} → counts: `0:3`, `1:1` → **majority is 0** → **P3 sets v = 0**.
-        
 
 After Round 1:
 
 - P1 → 0, P2 → 1, P3 → 0 (P4 arbitrary).
-    
 
 ---
 
 ### Round 2 — broadcasts & receipts
 
 - **Broadcasts now**: P1:0, P2:1, P3:0, P4 (Byz) can still send arbitrary (say it tries 1 to everyone).
-    
 - **Receipts**:
     
     - **P1** sees {P1:0, P2:1, P3:0, P4:1} → `0:2`, `1:2` → tie → coin flip → suppose **0**.
-        
     - **P2** sees {P1:0, P2:1, P3:0, P4:1} → tie → coin flip → suppose **0**.
-        
     - **P3** sees same distribution → tie → suppose **0**.
-        
 
 After Round 2:
 
@@ -181,42 +146,29 @@ After Round 2:
 ### The problem
 
 - **System:** Synchronous
-    
-- **Failures:** Crash-only (up to fff processes may stop mid-way)
-    
-
+- **Failures:** Crash-only (up to f processes may stop mid-way)
 ### Why rounds matter
 
 - If a process crashes right after sending to a few nodes, its value may not have spread yet.
-    
 - Each round, values “flood” further across the network.
-    
-- After **f+1f+1f+1 rounds**, even the last-crashing process’s value has had enough hops to reach everyone.
-    
+- After **f+1 rounds**, even the last-crashing process’s value has had enough hops to reach everyone.
 
 **High-level flow:**
 
 1. Round 1: All processes broadcast their initial values.
-    
-2. Round 2 to f+1f+1f+1: Each process rebroadcasts all values it has seen so far.
-    
-3. After f+1f+1f+1 rounds, all correct processes have the same set of values.
-    
+2. Round 2 to f+1: Each process rebroadcasts all values it has seen so far.
+3. After f+1 rounds, all correct processes have the same set of values.
 4. Decision rule: pick one deterministically (e.g., smallest ID’s value).
-    
 
-👉 Analogy: passing notes around the classroom. If some people leave early (crash), after f+1f+1f+1 rounds of passing, everyone still in the class has seen every note.
+👉 Analogy: passing notes around the classroom. If some people leave early (crash), after f+1 rounds of passing, everyone still in the class has seen every note.
 
 ## Crash-fault Tolerant Agreement ((f+1)(f+1)(f+1) rounds)
 
 ### Setup
 
 - **Model:** Synchronous rounds.
-    
-- **Failures:** Crash-only, up to fff processes.
-    
+- **Failures:** Crash-only, up to f processes.
 - **Goal:** Reach agreement on a value despite some processes stopping.
-    
 
 ---
 
@@ -244,57 +196,41 @@ Each process p does:
 ### Why f+1f+1f+1 rounds?
 
 - Each crash can “delay” the spread of one process’s value.
-    
-- Worst case: fff processes crash one after another, each just after sending to a few peers.
-    
-- Their values may take fff rounds to propagate fully.
-    
-- After **f+1f+1f+1 rounds**, every correct process has received the same set of values.
-    
+- Worst case: f processes crash one after another, each just after sending to a few peers.
+- Their values may take f rounds to propagate fully.
+- After **f+1 rounds**, every correct process has received the same set of values.
 - Then they can apply the same deterministic rule (e.g., choose the smallest ID’s value) → agreement.
-    
 
 ---
 
 ### Tiny Example
 
 - **Processes:** P1 = 0, P2 = 1, P3 = 1.
-    
-- **Failures:** At most f=1f=1f=1.
-    
-- **Rounds needed:** f+1=2f+1 = 2f+1=2.
-    
+- **Failures:** At most f=1.
+- **Rounds needed:** f+1=2
 
 **Round 1:**
 
 - Everyone broadcasts their value.
-    
 - Suppose P2 crashes right after sending only to P1.
-    
 - P1’s knowledge = {0, 1}, P3’s knowledge = {0, 1? maybe missing P2}.
-    
 
 **Round 2:**
 
 - P1 forwards all values {0,1} to everyone.
-    
 - Now P3 also learns {0,1}.
-    
 
 After 2 rounds, both P1 and P3 know {0,1} → they apply the same deterministic rule (say, pick the minimum = 0). Agreement reached.
 
-## 📘 Randomized Byzantine Agreement (O(nlog⁡n)O(n \log n)O(nlogn) messages)
+## 📘 Randomized Byzantine Agreement (O(nlog⁡n) messages)
 
 ---
 
 ### 1. Setup
 
 - **Model:** synchronous, message passing.
-    
 - **Failures:** up to f<n/3f < n/3f<n/3 Byzantine.
-    
 - **Goal:** consensus (agreement, validity, termination).
-    
 
 Each process maintains a local value vvv. In each round, processes exchange values and update according to rules (majority or coin flip).
 
@@ -305,23 +241,14 @@ Each process maintains a local value vvv. In each round, processes exchange valu
 At each process ppp:
 
 1. Start with input vpv_pvp​.
-    
 2. For round r=1,2,…,clog⁡nr = 1, 2, \ldots, c \log nr=1,2,…,clogn:
-    
     - Broadcast current value vpv_pvp​.
-        
     - Collect values from all processes.
-        
     - If at least (n−f)(n - f)(n−f) messages agree on some value bbb:
-        
         - Set vp:=bv_p := bvp​:=b.
-            
     - Else if no strong majority:
-        
         - Set vp:=v_p :=vp​:= coin_flip(0,1).
-            
 3. After clog⁡nc \log nclogn rounds, **decide vpv_pvp​**.
-    
 
 ---
 
@@ -329,16 +256,13 @@ At each process ppp:
 
 ### **Lemma 1 (Validity).**
 
-If all correct processes start with the same value bbb, then they always decide bbb.
+If all correct processes start with the same value b, then they always decide b.
 
 **Proof idea:**
 
 - If everyone starts with bbb, then all broadcasts carry bbb.
-    
 - Even if Byzantine processes send arbitrary messages, at least n−fn-fn−f identical messages exist for bbb.
-    
-- Since n>3fn > 3fn>3f, we know n−f>2fn - f > 2fn−f>2f. So the correct value bbb dominates.
-    
+- Since n>3f, we know n−f>2fn - f > 2fn−f>2f. So the correct value bbb dominates.
 - Therefore, no coin flips occur and bbb is kept forever.
     
 
@@ -1822,7 +1746,7 @@ We can **build blockchain** by repeatedly running a **Byzantine Broadcast protoc
         
     - Output = block mkm_kmk​.
         
-- Blockchain log at round rrr is the **concatenation**:
+- Blockchain log at round r is the **concatenation**:
     
     m0 ∥ m1 ∥ ⋯ ∥ mkm_0 \,\|\, m_1 \,\|\, \cdots \,\|\, m_km0​∥m1​∥⋯∥mk​
 
@@ -1927,22 +1851,16 @@ If the BB protocol tolerates up to fff Byzantine nodes, then the blockchain buil
 **Construction:**
 
 - Divide time into epochs of RRR rounds.
-    
-- In epoch kkk, node Lk=(k  n)L_k = (k \bmod n)Lk​=(kmodn) is the designated sender.
-    
-- Run BB instance BBkBB_kBBk​: all honest nodes agree on block mkm_kmk​.
-    
-- Append mkm_kmk​ to the log.
-    
-- Output log = m0∥m1∥⋯∥mkm_0 \| m_1 \| \cdots \| m_km0​∥m1​∥⋯∥mk​.
+- In epoch k, node $L_k$ ​= ( k mod n) is the designated sender.
+- Run BB instance $BB_k$​: all honest nodes agree on block $m_k$​.
+- Append $m_k$​ to the log.
+- Output $log = m_0 ∥ m_1 ∥ \dots ∥ m_k$ 
     
 
 **Guarantees:**
 
 - **Consistency:** from BB consistency, all honest logs are prefixes.
-    
-- **Liveness:** within at most n+1n+1n+1 epochs, any honest node gets to be sender, so its transactions are included.
-    
-- Confirmation time = O(Rn).
+- **Liveness:** within at most n+1 epochs, any honest node gets to be sender, so its transactions are included.
+- Confirmation time = $O(R_n)$.
 
 

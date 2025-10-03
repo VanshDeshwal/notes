@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Crypto notes/BlockChain.md",
+                "file": "Crypto notes/Blockchain.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "BlockChain"
+              "title": "Blockchain"
             }
           }
         ]
@@ -184,7 +184,7 @@
   "active": "4a34ccef804858fd",
   "lastOpenFiles": [
     "Coding Notes/SQL.md",
-    "Crypto notes/BlockChain.md",
+    "Crypto notes/Blockchain.md",
     "Crypto notes/Untitled",
     "Interview Prep/Prep.md",
     "Crypto notes/Speaker Notes.md",
