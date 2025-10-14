@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "Blockchain"
             }
+          },
+          {
+            "id": "fa2ff8d4519b9499",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.14"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.14"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -181,8 +194,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4a34ccef804858fd",
+  "active": "fa2ff8d4519b9499",
   "lastOpenFiles": [
+    "Data Science Notes/GenAI/RAG",
+    "Data Science Notes/GenAI/LangGraph",
+    "Data Science Notes/GenAI/LangChain",
+    "Data Science Notes/GenAI",
     "Coding Notes/SQL.md",
     "Crypto notes/Blockchain.md",
     "Crypto notes/Untitled",
@@ -214,11 +231,7 @@
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 4/Transformer Network.md",
     "Data Science Notes/DL Specialization/Deep Learning Cert.pdf",
     "Data Science Notes/DL Specialization/Untitled",
-    "Crypto notes/Papers.md",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Images",
-    "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 4",
-    "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 3",
-    "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 2",
     "Data Science Notes/DL Specialization/1. Neural Networks/Images/Pasted image 20250521102647.jpg",
     "download.jpeg",
     "Data Science Notes/100 days of ML/Images/sample_graph.jpeg",
