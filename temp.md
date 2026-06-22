@@ -1,450 +1,271 @@
-# Thesis Edit List — exact OLD → NEW (15 June 2026)
+# Tie-break fix — cross-layer headline (mean pooling): 8.44 % → 7.82 %
 
-Companion to `THESIS_REVIEW_2026-06-15.md`. Every actionable suggestion below is given as the
-**exact current text** and a **drop-in replacement**, organized by file in line order. Line
-numbers are current as of this review; they will shift as you apply edits, so work **bottom-to-top
-within each file** (apply the highest line number first) to keep the rest valid.
-
-Notation: `DELETE` = remove the OLD text entirely. `INSERT` = no OLD text; add NEW at the anchor.
-Two edits need data I cannot generate (the dataset tables) — they are marked **[needs your numbers]**.
+**Date:** 2026-06-22
+**Files changed:** `Chapters/7-results_NEW.tex`, `Chapters/8-discussion_NEW.tex`,
+`Chapters/9-conclusion_NEW.tex`, `thesis.tex` (includes rewired to the `_NEW` files).
+Old chapter files left untouched as backup.
 
 ---
 
-## `Chapters/1-intro.tex`
+## 1. The rule and why the number changes
 
-### Edit 1.1 — Shortcut 4 imbalance framing contradicts your malicious-majority dataset (line 24)
+Selection metric is **validation EER at the operating threshold** (`val_eer_at_thr`).
+Rule applied: **when two configurations tie on val EER to two decimal places (as a
+percentage), break the tie by the lower test HTER.**
 
-**OLD:**
-```
-\textbf{Shortcut 4: Accuracy on imbalanced data.} Malicious flows are rare --- in any realistic capture, the overwhelming majority of traffic is benign. On imbalanced data, accuracy is one of the least informative metrics available. A model that flags nothing achieves 99\% accuracy if 1\% of the traffic is malicious. Do Xuan et al.~\cite{APT_attack_detection_2020} report 99.02\% accuracy on an advanced persistent threat (APT) dataset and headline that number, even though their precision is only 27.73\% and F1 only 40.24\% --- meaning most of their alarms are false. The reader has to read carefully to notice.
-```
+The cross-layer **L2+L3+L4 MLP** has **four mean-pooling runs tied at val EER
+2.8263 % (→ 2.83 %)** on the common 323/538 set. Their test HTERs:
 
-**NEW:**
-```
-\textbf{Shortcut 4: Accuracy on imbalanced data.} Within a single capture, malicious flows are typically rare: even a compromised host emits mostly benign background traffic. On data this skewed, accuracy is one of the least informative metrics available, because it is dominated by whichever class is in the majority --- benign or malicious. A detector that simply predicts the majority class everywhere can post a headline accuracy in the high nineties while detecting nothing of value. Do Xuan et al.~\cite{APT_attack_detection_2020} report 99.02\% accuracy on an advanced persistent threat (APT) dataset and headline that number, even though their precision is only 27.73\% and F1 only 40.24\% --- meaning most of their alarms are false. The reader has to read carefully to notice. (The direction of the imbalance matters less than its presence: the dataset assembled in this thesis is, at the capture level, the opposite case --- malicious captures outnumber benign --- and accuracy is just as misleading there, which is why it is never this thesis's headline number.)
-```
+| Run (config) | val EER | test HTER | filter |
+|---|---|---|---|
+| `…meanagg…FE0_CRS98_L2.FE1_L3.FE1_L4.FE1` | 2.8263 % | **7.82 %** ← select | CRS98 |
+| `…meanagg…FE1_CRS98` | 2.8263 % | 8.32 % | CRS98 |
+| `…meanagg…FE1_VT001` (previously reported) | 2.8263 % | 8.44 % | none |
+| `…meanagg…FE1` | 2.8263 % | 9.69 % | none |
 
-*Rationale: your dataset is malicious-majority at the bag level (`6-framework.tex:657`, `w⁺=N⁻/N⁺`), so the "flags nothing → 99%" example points the wrong way for your own results. The new wording keeps the critique but makes it direction-agnostic and states your dataset's actual direction.*
+The thesis reported the **8.44 %** run. The rule selects the **7.82 %** run.
+Attention pooling (3.24 % / 6.70 %) is already the per-pooling best, so it is **unchanged**.
 
-> No edit needed at line 92 ("including the timestamp-correction step…") — it becomes correct once you add the Chapter 4 subsection (Edit 4.1).
+**New headline mean operating point** (from the 7.82 % run, common 538 test set):
 
----
+| | test HTER | test FPR | test FNR | test AUC | TP / TN / FP / FN | val FPR | val FNR |
+|---|---|---|---|---|---|---|---|
+| old | 8.44 % | 3.62 % | 13.25 % | 0.932 | 347 / 133 / 5 / 53 | 4.82 % | 0.83 % |
+| **new** | **7.82 %** | **2.90 %** | **12.75 %** | **0.943** | **349 / 134 / 4 / 51** | 4.82 % | 0.83 % |
 
-## `Chapters/2-literature-review.tex`
+Check: (2.90 + 12.75)/2 = 7.825 %; benign = 4+134 = 138; malicious = 349+51 = 400; total = 538. ✓
+Validation side is identical between the two runs (same val EER, same val confusion), so the
+drift table's val columns do **not** move.
 
-### Edit 2.1 — leftover `\todo` margin note (line 89)
+**What did *not* change** (verified by re-deriving every cell with the tie-break):
+every single-layer and two-layer row of the ablation already reported its tie-broken best;
+the model-family table (MLP L2+L3 0.83 %/12.11 %; XGBoost 4.91 %/16.41 %; autoencoder
+19.01 %/29.13 %) is unaffected. Only the L2+L3+L4 mean cell propagates.
 
-**OLD:**
-```
-\subsection{Units of aggregation: packets, flows, sessions, and channels}
-\label{subsec:lit-granularity}
- \todo{packets, flows, sessions, and channels difference clear?}
-Beyond \emph{which} fields are used, the literature differs sharply on the
-```
-
-**NEW:**
-```
-\subsection{Units of aggregation: packets, flows, sessions, and channels}
-\label{subsec:lit-granularity}
-These four units form a nested hierarchy of increasing scope: a \emph{packet} is a single framed datagram; a \emph{flow} groups packets sharing a key (classically the five-tuple); a \emph{session} groups the flows of one logical exchange; and a \emph{channel} groups all traffic between a host pair regardless of port or protocol. Beyond \emph{which} fields are used, the literature differs sharply on the
-```
-
-*Rationale: removes the margin note (which prints, since `todonotes` is loaded) and answers the question it asked with the one-sentence clarification it requested.*
-
-### Edit 2.2 — leftover `\todo{DPI}` (line 159)
-
-**OLD:**
-```
-packet inspection \todo{DPI} (DPI). The surveys are unanimous that the widespread adoption
-```
-
-**NEW:**
-```
-packet inspection (DPI). The surveys are unanimous that the widespread adoption
-```
-
-*Rationale: removes the margin marker; DPI is already expanded in the intro and again here.*
+Data source: `Code/outputs_new/models/MLP/…/performance_metrics/summary_metrics.json`
+(225 unfiltered MLP runs on the common 323/538 set; both `nmd_` and `nmd2_` naming).
 
 ---
 
-## `Chapters/3-background.tex`
+## 2. Every edit, by file
 
-### Edit 3.1 — "flow transformer" caveat is now false after the rename (line 186)
+### `7-results_NEW.tex`
+- **Table 7.2 (res-main), Mean row:** `8.44 % → 7.82 %`, AUC `0.932 → 0.943`.
+- **§7.3 prose:** mean HTER `8.44 → 7.82`, FPR `3.62 → 2.90`, FNR `13.25 → 12.75`,
+  confusion `347/133/5/53 → 349/134/4/51`.
+- **Table 7.3 (res-layers), L2+L3+L4 row:** `8.44 % → 7.82 %`, FPR `3.62 → 2.90`, FNR `13.25 → 12.75`.
+- **§7.4 prose:** "deploys at 8.44 % (mean)…" → 7.82 %; "cuts the FNR to 13.25 %… HTER from
+  12.11 % to 8.44 %" → 12.75 % / 7.82 %.
+- **Table 7.4 (res-drift), Mean row:** test FPR `3.62 → 2.90`, test FNR `13.25 → 12.75`.
+- **§7.5 prose:** "0.83 % to 13.25 %" → 12.75 %; FNR range "between 13 % and 24 %" →
+  "between 12.75 % and 24 %"; FPR bound "at most 7 %" → "at most 7.25 %" (corrects a
+  pre-existing rounding slip — L2 FPR is 7.25 %).
+- **§7.6:** "6.70 % to 8.44 %" → 6.70 % to 7.82 %; Table 7.5 (res-shortcuts) Mean row
+  `8.44/0.932 → 7.82/0.943`.
+- **§7.7 (experts):** see flag B below.
+- **§7.8 (novelty):** "supervised model's 6.70 % to 8.44 %" → 6.70 % to 7.82 %.
+- **§7.1 (setup), universe-comparison sentence:** see flag C below.
+- **§7.4, correlation-filtering paragraph:** see flag A below.
 
-**OLD:**
-```
-\paragraph{The instance encoder.}
-The per-flow encoder is a \emph{multilayer perceptron}: a stack of fully
-connected layers with ReLU activations and dropout, of configurable depth, that
-maps a flow's feature vector to a fixed-length embedding. (A note for readers of
-the accompanying code: this module is named the \emph{flow transformer} there, in
-the sense of a feature transformer; it is an MLP and not a self-attention
-Transformer.) The same encoder is reused as the front-end of every MIL model, so
-that the families below differ only in what sits \emph{after} the pooling step.
-```
+### `8-discussion_NEW.tex`
+- Six "6.70 % to 8.44 %" / "against 8.44 %" range mentions → 7.82 %.
+- Drift paragraph: test FNR `13.25 → 12.75`, "about sixteen times higher" → "fifteen"
+  (12.75 / 0.83 ≈ 15.4), FPR "4.82 % to 3.62 %" → "4.82 % to 2.90 %".
+- Composite + ops sentences: flags B and D below.
 
-**NEW:**
-```
-\paragraph{The instance encoder.}
-The per-flow encoder is a \emph{multilayer perceptron}: a stack of fully
-connected layers with ReLU activations and dropout, of configurable depth, that
-maps a flow's feature vector to a fixed-length embedding. The same encoder is
-reused as the front-end of every MIL model, so that the families below differ
-only in what sits \emph{after} the pooling step.
-```
+### `9-conclusion_NEW.tex`
+- "8.44 % under mean pooling" → 7.82 %; two "6.70 %–8.44 %" ranges → 6.70 %–7.82 %.
+- Composite ensemble sentence: flag B below.
 
-*Rationale: the code now names this `build_instance_mlp`/`build_pcap_mlp`/`ModelMLP` (branch `BugFix`); the parenthetical excuses a name that no longer exists.*
-
----
-
-## `Chapters/5-feature_engineering.tex`
-
-### Edit 5.1 — remove the resolved `\verify` note; the TCP-state group is now computed (line 195)
-
-**OLD:**
-```
-\verify{The L3 manifest (\texttt{l3\_fe\_columns.txt}) additionally lists a
-TCP-state anomaly group --- pure-ACK, SYN-ACK, SYN-without-ACK, FIN, RST,
-bad-checksum, SYN-RST, multi-flag, retransmission, zero-window, and
-flipped-connection counts --- that \texttt{feature\allowbreak\_engineering\_l3} does not
-currently compute (it merges only temporal, payload, protocol-distribution,
-violation, and malformed groups). Confirm whether this group is planned,
-computed elsewhere, or a stale manifest entry, and either wire it in or remove
-it before the manifest is reproduced in the appendix.}
-```
-
-**NEW:** `DELETE` (the new subsection in Edit 5.2 replaces it).
-
-*Rationale: `feature_engineering_l3` now calls `compute_l3_tcp_flag_features` and `compute_l3_tcp_connection_features` and merges both (`src/dataset_creator/feature_engineering.py`); the manifest carries the group. The `\verify` macro prints as blue text in the PDF.*
-
-### Edit 5.2 — add a subsection describing the TCP-state anomaly group (INSERT after line 293)
-
-`INSERT` immediately after the "Duplicate Packets (L2)" subsection (after line 293, before
-`\section{External-Reference Features}`):
-
-**NEW:**
-```
-\subsection{TCP-State Anomalies (L3)}
-\label{sec:fe-tcpstate}
-
-The transport layer carries a dedicated group of connection-state features that
-count, per flow, packets exhibiting specific TCP control-flag and connection
-patterns. Each pattern produces a per-flow boolean flag and a per-flow count:
-pure-ACK segments (an ACK with no data and no other control flags), SYN-ACK and
-bare-SYN-without-ACK segments (the two halves of a half-open connection), FIN and
-RST segments, the illegal SYN+RST combination, multi-flag segments (more control
-bits set than any legal state warrants), retransmissions, zero-window
-advertisements, and flipped connections (a response observed before its
-initiating request). Unlike the malformed and violation groups of
-Section~\ref{sec:fe-mal-viol}, which judge a packet in isolation, these features
-characterise the \emph{shape of a conversation}: an excess of half-open SYNs is a
-scan signature, a high RST or retransmission rate marks unstable or rejected
-connectivity, and zero-window or flipped patterns expose stalled or asymmetric
-exchanges. The group is computed entirely from the extractor's own per-packet TCP
-fields and so requires no external data.
-```
-
-*Rationale: gives the new 20-column group the prose it currently lacks. Note the code spells one column `retransmissio` (Edit C.1) — fix the code, not the thesis.*
-
-### Edit 5.3 — correct the L3 manifest table (21 → 43 columns) (lines 428-448)
-
-**OLD:**
-```
-    \textbf{Group} & \textbf{Cols} & \textbf{Columns} \\
-    \midrule
-    Temporal context     & 3  & weekday / weekend / working-hours flags \\
-    Payload signatures   & 10 & per-protocol (TCP/UDP/other) file-type and blacklist hit flags and counts \\
-    Protocol distribution& 4  & distinct-protocol count + TCP/UDP/other shares \\
-    Protocol violations  & 2  & \texttt{has\_l3\_protocol\_violation}, \texttt{l3\_protocol\_violation\_count} \\
-    Malformed packets    & 2  & \texttt{has\_malformed\_packet}, \texttt{malformed\_packet\_count} \\
-    \bottomrule
-  \end{tabularx}
-  \caption{Transport-layer (L3) engineered features (21 columns). Payload
-  signatures are external-reference features (blacklist and file-type tables);
-  the remainder are internal-evidence. See the \texttt{\textbackslash verify}
-  note in Section~\ref{sec:fe-pipeline} regarding the additional TCP-state group
-  listed in the manifest.}
-```
-
-**NEW:**
-```
-    \textbf{Group} & \textbf{Cols} & \textbf{Columns} \\
-    \midrule
-    Temporal context     & 3  & weekday / weekend / working-hours flags \\
-    Payload signatures   & 12 & per-protocol (TCP/UDP/other) file-type and blacklist hit flags and counts \\
-    TCP-state anomalies  & 20 & pure-ACK, SYN-ACK, SYN-without-ACK, FIN, RST, SYN-RST, multi-flag, retransmission, zero-window, flipped-connection (flag + count each) \\
-    Protocol distribution& 4  & distinct-protocol count + TCP/UDP/other shares \\
-    Protocol violations  & 2  & \texttt{has\_l3\_protocol\_violation}, \texttt{l3\_protocol\_violation\_count} \\
-    Malformed packets    & 2  & \texttt{has\_malformed\_packet}, \texttt{malformed\_packet\_count} \\
-    \bottomrule
-  \end{tabularx}
-  \caption{Transport-layer (L3) engineered features (43 columns). Payload
-  signatures are external-reference features (blacklist and file-type tables);
-  the TCP-state, temporal, distribution, violation, and malformed groups are
-  internal-evidence (Section~\ref{sec:fe-tcpstate}).}
-```
-
-*Rationale: manifest `data/feature-engineering/l3_fe_columns.txt` has 43 columns (12+3+20+4+2+2). Payload was undercounted (10→12); the 20-column TCP-state group was missing; the `\verify` cross-reference is gone.*
+### `thesis.tex`
+- `\include` switched from `7-results / 8-discussion / 9-conclusion` to the `_NEW` variants.
 
 ---
 
-## `Chapters/6-framework.tex`
+## 3. Judgment calls — please review
 
-### Edit 6.1 — delete the commented-out dataset TODO block (lines 30-39)
+These are spots where a plain number swap would have made the text inconsistent, so the
+wording was changed. Each is reversible.
 
-**OLD:**
-```
-% TODO: commit to the dataset(s) and replace the placeholders below.  The
-% expected content of this section is:
-%   - dataset name(s) and citation(s);
-%   - total number of PCAP files, broken down by class (benign / malicious);
-%   - the time span covered by the captures;
-%   - the per-class flow and packet totals (Table~\ref{tab:fw-dataset}).
-% The numerical bookkeeping is performed automatically by
-% lib.libdatasplitting.libds\_helper.get\_raw\_dataset\_stats() before any
-% splitting takes place; the same helper produces a per-split breakdown which
-% appears in Section~\ref{sec:fw-split}.
-```
+**A. The headline mean model is now a correlation-filtered (CRS98) run.** The selected
+7.82 % run uses correlation filtering; the old 8.44 % run did not. The prose previously
+said correlation filtering "never improved on the unfiltered model" — now false at the
+deployment level, since the CR run deploys better at the *same* val EER. I rescoped the
+sentence to the selection metric: **"never lowered the validation EER, the metric used for
+selection."** That is still literally true (CR never gave a lower val EER; it only wins the
+test-HTER tie-break). **If you would rather the tie-break *not* cross feature-engineering
+configs** (keep the headline an unfiltered model), the alternative is to restrict ties to
+same-FE runs — in which case the mean headline stays **8.44 %**. Your call; I applied the
+unrestricted rule as you stated it.
 
-**NEW:** `DELETE` (it is a comment, so it does not print — but remove it once the section is written so it cannot mislead a future reader).
+**B. The composite ensemble (8.72 %) no longer "essentially matches" mean.** With mean at
+7.82 %, the 8.72 % ensemble is now behind *both* single-model poolings. Reworded in all three
+chapters from "essentially matches / matches the monolithic model under mean pooling (8.44 %)"
+to "comes close to but is behind the monolithic model under mean pooling (7.82 %)". The
+ensemble's own number (8.72 %) is unchanged — it is a different model and outside the
+monolithic tie-break. (If you want the same tie-break logic applied to the ensemble/expert
+selections too, say so and I'll re-derive those from `advanced_training`/`ensemble_eval`.)
 
-### Edit 6.2 — fill the dataset-composition table **[needs your numbers]** (lines 57-60)
+**C. Universe-comparison sentence (§7.1).** It illustrated how the smaller 530-capture
+universe flatters results: "the same mean-pooling configuration reports 0.42 % / 5.51 %…
+against 2.83 % and 8.44 % on the full set." The 0.42 %/5.51 % run is a specific pre-bugfix
+FE1 run (`MLP_Bugged/…meanagg…FE1`); its exact bug-fixed 538 twin is the 9.69 % run, not
+8.44 %. To keep the sentence consistent with the new headline I changed it to "the
+cross-layer mean-pooling **detector** … against 2.83 % and **7.82 %**" and dropped the
+"same configuration" claim (it was already loose). The pedagogical point is intact.
 
-**OLD:**
-```
-    Benign     & TODO  & TODO  & TODO    & TODO      \\
-    Malicious  & TODO  & TODO  & TODO    & TODO      \\
-    \midrule
-    Total      & TODO  & TODO  & TODO    & TODO      \\
-```
-
-**NEW:** replace each `TODO` with the figure from `get_raw_dataset_stats()` run on your merged
-GF parquet, e.g.:
-```
-    Benign     & $N_b$  & $F_b$  & $P_b$    & start--end  \\
-    Malicious  & $N_m$  & $F_m$  & $P_m$    & start--end  \\
-    \midrule
-    Total      & $N$    & $F$    & $P$      & full span   \\
-```
-*I cannot generate these — the dataset parquets are not in the repo. Run `lib.libdatasplitting.libds_helper.get_raw_dataset_stats()` and paste. This table cannot ship blank.* The same applies to `tab:fw-split-report` (lines 241-243): either fill from `generate_split_report` or replace the literal `TODO` cells with clearly-marked example values, since the caption already says "illustrative".
-
-### Edit 6.3 — "two" → "three" methodological contributions (line 75)
-
-**OLD:**
-```
-The splitting strategy is the first of the framework's two methodological
-contributions.  Two properties are required of every train/validation/test
-```
-
-**NEW:**
-```
-The splitting strategy is the first of the framework's three methodological
-contributions.  Two properties are required of every train/validation/test
-```
-
-*Rationale: §6.7 calls the metric choice "the framework's third methodological contribution" (line 782). The three are: splitting, weak-label/MIL, and metrics. (Optionally, add "the second of the framework's three methodological contributions" to the opening of §6.3 so the count is explicit.)*
-
-### Edit 6.4 — figure caption claims an exclusion the code does not perform (line 159)
-
-**OLD:**
-```
-           across splits, and overlapping PCAPs that would straddle a
-           boundary are excluded from training so that the boundary
-           remains clean.}
-```
-
-**NEW:**
-```
-           across splits. Where two PCAPs overlap in time, no natural gap
-           exists between them, so the boundary is simply placed at the
-           nearest genuine gap instead.}
-```
-
-*Rationale: `apply_natural_gap_split` (`lib/libdatasplitting/libds.py:9-80`) excludes nothing; it only slices at gaps. The new text describes what the code actually does.*
-
-### Edit 6.5 — stale encoder function name (line 302)
-
-**OLD:**
-```
-The first ingredient -- the \emph{instance encoder} -- is a multilayer
-perceptron defined by
-\texttt{lib.libai.libtraining\_utils.build\_pcap\_transformer()} and reproduced
-```
-
-**NEW:**
-```
-The first ingredient -- the \emph{instance encoder} -- is a multilayer
-perceptron defined by
-\texttt{lib.libai.libtraining\_utils.build\_pcap\_mlp()} and reproduced
-```
-
-### Edit 6.6 — delete the obsolete naming caveat + broken citation (line 334)
-
-**OLD:**
-```
-A naming caveat must be flagged for readers of the accompanying source code.
-The module is called the \emph{flow transformer} (or
-\texttt{build\_pcap\_transformer}) in the codebase, in the sense of a feature
-transformer that maps a raw vector to an embedding.  It is an MLP, not a
-self-attention Transformer in the sense of Vaswani et al.~\cite{TODO};
-the naming is historical and refers to the role of the module in the pipeline,
-not to its internal architecture.
-```
-
-**NEW:** `DELETE`.
-
-*Rationale: removes (a) the stale "flow transformer / build_pcap_transformer" name, (b) `\cite{TODO}`, which is a broken citation — there is no Vaswani entry in `references.bib`. If you prefer to keep one clarifying sentence, use: "The encoder is a feed-forward MLP, not a self-attention Transformer." and add the Vaswani 2017 reference to `references.bib` if you cite it.*
-
-### Edit 6.7 — (optional) acknowledge your dataset's imbalance direction in §6.7.1 (line 798)
-
-**OLD:**
-```
-metric; it appears only in supporting tables.
-```
-
-**NEW:**
-```
-metric; it appears only in supporting tables.  The same caution applies in the
-opposite direction to the dataset used here, whose captures are
-malicious-majority at the bag level: a trivial detector that flagged every
-capture would likewise post a high accuracy while being useless.
-```
-
-*Rationale: §6.7.1 currently argues only the benign-majority case ("predict benign → high accuracy"). Your evaluation set is malicious-majority, so the trivial baseline is the opposite. One sentence closes the gap.*
+**D. "Misses more and alarms less" (§Discussion-ops).** The new mean run has FPR 2.90 % —
+**equal** to attention's 2.90 % (both FP = 4/138). So mean no longer "alarms less"; it alarms
+the same. Changed to **"misses more, at the same false-alarm rate."** (As a bonus this fixes a
+pre-existing slip: the *old* mean FPR was 3.62 %, i.e. *higher* than attention, so "alarms
+less" was already wrong.)
 
 ---
 
-## `Chapters/4-feature_extraction.tex`
+## 4. Verification done
 
-### Edit 4.1 — add the promised timestamp-correction subsection (INSERT after line 239)
+- `grep`: no stray `8.44 / 13.25 / 3.62 % / 0.932 / 347 / "alarms less" / "sixteen times" /
+  "never improved on the unfiltered" / "essentially"` remain in any `.tex`.
+- No headline numbers are cited in chapters 1–6 or the abstract, so nothing else to sync.
+- `pdflatex` full build (2 passes, draftmode): **0 fatal errors, 0 undefined cross-references**
+  (the 173 undefined *citations* are only because bibtex was not run in the test).
+- Arithmetic re-checked (HTER, confusion totals, drift multiplier).
 
-The intro (line 92) and background (line 78) both say Chapter 4 describes the
-timestamp-correction mechanics, but no such section exists. `INSERT` a subsection inside
-§4.3 (after the "TCP stream reassembly (L3)" paragraph, line 239):
+# Figure & diagram placement plan
 
-**NEW:**
-```
-\paragraph{Timestamp correction.}
-The chronological split of Chapter~\ref{cha:framework} is only meaningful if every
-capture carries a real wall-clock time. Some publicly distributed PCAPs instead
-carry \emph{relative} or near-epoch timestamps that begin near zero. The pipeline
-therefore detects any capture whose earliest packet time falls before a sanity
-threshold (roughly the year 2001, i.e.\ a Unix time below $10^{9}$) and
-reconstructs a real date for it: first from a date embedded in the filename
-(\texttt{YYYY-MM-DD}), and failing that from a small table of known per-dataset
-release dates (\texttt{DATASET\_ANCHORS}). The affected timestamps are then shifted
-by the offset between the detected anchor and the relative origin. This correction
-runs at extraction time, before the global features are sorted by
-\texttt{first\_pkt\_timestamp} (\texttt{lib.libutils.libtimestamp.fix\_relative\_timestamps}),
-and is re-applied idempotently before any split is computed, so that captures already
-corrected are left unchanged. Every shift is logged. The point carried into
-Chapter~\ref{cha:framework} is that ``time'' there always means corrected,
-real-world time.
-```
-
-*Rationale: documents the contribution you just integrated (`src/pcap_extractor.py:385,723,1121`; re-applied at `src/train_model.py:76,213`). Adjust the prose if your `DATASET_ANCHORS`/threshold details differ.*
-
-> After adding this, the §4.1 overview that says "three passes, the first two of which this
-> chapter covers" still reads correctly; no further change needed there.
+**Date:** 2026-06-22 · Scope: *placement map only* (you insert the figures).
+Goal: break up the text — especially **Chapter 7 (Results), which currently has zero
+figures** — with relevant, already-available plots, and decide what goes in the appendix.
 
 ---
 
-## `thesis.tex` (front matter housekeeping — prints in the PDF)
+## 0. Your question: appendix or supplementary material?
 
-### Edit T.1 — remove filler text from the abstract (line 80)
+**Recommendation — use the appendix for curated extras; reserve external "supplementary
+material" only for bulk artifacts.** Reasons:
 
-**OLD:**
-```
-\begin{abstract}
-This \texttt{abstract} environment provides a summary of the work, which may or may not be extensive.
-The intention is that this should be limited to 1 page.
+- A master's thesis is one bound, self-citable document. An examiner expects to find a
+  referenced figure/table in **Appendix X**, not in a separate file. You already have
+  `appendix-1` and `appendix-2`, so the home is established.
+- "Supplementary material" is a journal/online convention. It makes sense only for things
+  that genuinely cannot sit in a PDF: the **full 225-run results CSV**, the **13,874 raw
+  per-PCAP SHAP files**, the **code repository**, and the `.svg` sources. Point to these as
+  an external package / repository link.
 
-\lipsum[1]
-\end{abstract}
-```
-
-**NEW:** replace with your real one-page abstract, e.g.:
-```
-\begin{abstract}
-<your abstract text — the four-shortcuts framing, the layered MIL pipeline, and the
-headline result, in ~250 words>
-\end{abstract}
-```
-*Rationale: `\lipsum[1]` inserts random Latin filler into the document body. Remove the call (and your real abstract is required regardless).*
-
-### Edit T.2 — replace placeholder acknowledgements (preface block, ~line 71)
-
-**OLD:**
-```
-\begin{preface}
-This is my acknowledgment to thank everyone who has kept me busy.
-I would like to thank my supervisor, my advisor, and the entire jury.
-```
-
-**NEW:** your real acknowledgements (name the supervisor/advisor properly; remove the
-placeholder phrasing).
-
-### Edit T.3 — remove the stray advisor comment (line 57)
-
-**OLD:**
-```
-%Irfan
-```
-
-**NEW:** `DELETE`.
-
-### Edit T.4 — (optional) remove now-unused draft macros (lines 52-54)
-
-**OLD:**
-```
-\newcommand{\rewrite}[1]{\textcolor{orange}{[REWRITE: #1]}}
-\newcommand{\citationneeded}{\textcolor{purple}{[CITATION NEEDED]}}
-\newcommand{\verified}[1]{\textcolor{dark_green}{#1}}
-```
-
-**NEW:** `DELETE` (none of `\rewrite`, `\citationneeded`, `\verified` is used in Chapters 1-6;
-verify they are unused in 7-9 before deleting). You may also delete `\verify` (line 51) and the
-`todonotes` package (line 58) once Edits 5.1, 2.1, 2.2 are applied. The `lipsum` `\IfFileExists`
-guard (lines 64-66) is harmless to leave once the `\lipsum[1]` call is gone.
+So: **curated figures and tables → appendix** (referenced from the chapters); **raw bulk →
+external supplementary**, mentioned once in the appendix preamble.
 
 ---
 
-## Code fixes (not thesis text, but they propagate into the appendix manifest)
+## 1. Highest-value additions (do these first)
 
-### Edit C.1 — misspelled feature-name `retransmissio` (branch `BugFix`)
+Chapter 7 is the wall of text. These five figures carry the most narrative weight:
 
-In `lib/libfeature_engineering/libfe.py` and `data/feature-engineering/l3_fe_columns.txt`,
-the columns are spelled:
-```
-has_retransmissio_packet
-retransmissio_packet_count
-```
-**Fix to** `has_retransmission_packet` / `retransmission_packet_count` (add the final *n*) in the
-computation **and** the manifest, before the manifest is frozen and reproduced in
-Appendix `app:features`. Feature names are a permanent contract.
+| # | Section | Figure | Why it matters |
+|---|---|---|---|
+| F1 | §7.4 Ablation | **Layer-set bar chart** — val EER vs test HTER across L2, L3, L4, L2+L3, L2+L4, L3+L4, L2+L3+L4 | This is the central result. The "L4 raises val EER but lowers HTER" story is far clearer as bars than prose. |
+| F2 | §7.5 Drift | **Val-vs-test FPR/FNR bars** (mean & attention) | Shows FNR exploding while FPR stays flat — the drift-on-the-malicious-side claim, visualized. |
+| F3 | §7.3 Detection | **ROC + DET overlay**, mean vs attention | The "how good is it" visual; DET is the natural view for EER/HTER. |
+| F4 | §7.9 Explainability | **3-panel per-layer SHAP group importance** (L2/L3/L4) | The chapter text already has a `% [FIGURE …]` TODO for exactly this. |
+| F5 | §7.2 Model family | **Family comparison bars** (MLP vs XGBoost vs autoencoder) | Makes the end-to-end-wins gap immediate. |
 
-### Edit C.2 — branch hygiene
-
-Merge `BugFix` → `main` (or pin the thesis to commit `71390d9`). The thesis describes `BugFix`
-code; `main`/`origin/main` is stuck at `e717fbe` and predates all three changes.
+F1, F2, F5 are **grouped bar charts that do not yet exist as single files** — they need a
+~30-line matplotlib script over the numbers already in `results_analysis/*.csv` (or your
+dashboard can export them). F3 and F4 already exist as files (paths below).
 
 ---
 
-## Structural changes (no single-line OLD/NEW — location + recommended action)
+## 2. Full section-by-section map
 
-These were in the main review; they are larger than a line edit, so the "new text" is an
-approach rather than a string:
+Run-folder aliases (under `Code/outputs_new/models/MLP/`):
 
-- **Swap Chapters 2 and 3** (`thesis.tex:105-106`): change include order to `3-background`
-  then `2-literature-review`, and update the cross-reference at `2-literature-review.tex:15`
-  ("defined in §\ref{sec:bg-tcpip}") which currently points forward to a later chapter.
-- **De-duplicate MIL** (`6-framework.tex:277-292`): replace the re-derivation of the
-  bag/instance definition with one sentence — e.g. "Recall from §\ref{sec:bg-mil} the
-  bag/instance mapping; here we give its formal realisation." — and keep only the math.
-- **De-duplicate metrics** (`6-framework.tex:800-841` vs `3-background.tex:236-249`): same
-  pattern — let §3.5 own the concept, §6.7 own the formal definitions.
-- **Add XGBoost and autoencoder model subsections** to §6.5 (after line 588), or add one
-  sentence at line 452 stating their construction is deferred to Chapter 7.
-- **Describe `Random` and `RandomPcap` splits** in §6.2.2 (after line 172) and add them to the
-  grid list (`6-framework.tex:752`); `RandomPcap` (`lib/libdatasplitting/libds.py:299`) is the
-  control that isolates Shortcut 1 from Shortcut 2 and is worth a sentence of its own.
+- **MEAN_RUN** = `nmd_L2-3-4_MLP_all_PCAP_Seperate_split-by-pcap_HL3_LR0.001_BS128_OPTRMSprop_AGGmeanagg_ETL0__FE0_CRS98_L2.FE1_L3.FE1_L4.FE1_HD128/performance_metrics`
+- **ATTN_RUN** = `nmd_L2-3-4_MLP_all_PCAP_Seperate_split-by-pcap_HL3_LR0.001_BS128_OPTRMSprop_AGGatnagg_ETL0__FE0_L2.FE1_L3.FE1_L4.FE1_HD128/performance_metrics`
+
+(These are the two **new headline** runs — mean 7.82 %, attention 6.70 %. Every per-run
+plot below exists as both `.png` and `.svg`; use `.svg` or `.pdf` for print quality.)
+
+| Section | Figure | Source | Suggested caption | Priority |
+|---|---|---|---|---|
+| §3 Background (metrics) | DET-curve schematic to illustrate EER/HTER | `ATTN_RUN/det_curve.svg` (as illustration) or a hand-drawn schematic | "DET curve and the equal-error operating point." | optional |
+| §4 Feature extraction | *(fix broken ref — see §3 below)* | `Images/Feature_Extraction_Pipeline.pdf` | — | cleanup |
+| §5 Feature engineering | TCP-state-machine / engineered-feature diagram | **generate** (or dashboard) | "Connection-state features derived from the TCP flag sequence." | medium |
+| §6 Framework | Autoencoder architecture | `Images/Autoencoder_Architecture.pdf` *(exists, currently unused)* | "Autoencoder baseline architecture." | easy win |
+| §6 Framework | XGBoost-head architecture | `Images/XGBoost_Architecture.pdf` *(exists, currently unused)* | "XGBoost classification head on the flow encoder." | easy win |
+| **§7.2 Family** | **F5** family comparison bars | **generate** from `results_analysis/baselines.csv` | "Best validation-selected configuration per model family (common 323/538 set)." | high |
+| **§7.3 Detection** | **F3** ROC + DET, mean vs attention | `MEAN_RUN/roc_curve.svg` + `ATTN_RUN/roc_curve.svg`; `…/det_curve.svg` | "Cross-layer detector under mean and attention pooling." | high |
+| §7.3 Detection | Score distribution (benign vs malicious) | `ATTN_RUN/score_distribution.svg` | "Test-set score separation, attention pooling." | medium |
+| **§7.4 Ablation** | **F1** layer-set val-EER/HTER bars | **generate** from `results_analysis/advanced_eval.csv` | "Validation EER and deployed HTER across feature-layer sets." | **highest** |
+| **§7.5 Drift** | **F2** val-vs-test FPR/FNR bars | **generate** (numbers in Table 7.4) | "Validation vs test error: the malicious-side rate (FNR) rises; the benign-side rate (FPR) does not." | **highest** |
+| §7.5 Drift | Temporal drift panel | `MEAN_RUN/` → `temporal_fpr_fnr.svg`, `temporal_metrics_heatmap.svg` | "Per-period error on the test timeline." | medium (or dashboard) |
+| §7.6 Protocol | Chronological vs random HTER bars | **generate** once random split is run (Table 7.5 placeholder) | "The same model under two evaluation protocols." | blocked on re-run |
+| §7.7 Experts | Committee → combiner → ensemble HTER bars | **generate** from `results_analysis/advanced_training.csv` | "Deployed error as the committee is trained toward end-to-end." | medium |
+| §7.8 Novelty | Autoencoder score distribution / ROC | autoencoder headline run `…/score_distribution.svg` | "Benign-trained autoencoder: the supervision ceiling." | medium |
+| **§7.9 Explainability** | **F4** 3-panel per-layer SHAP | `MEAN_RUN/shap/<pcap>/{L2,L3,L4}/shap_group_importance.svg`, aggregated across PCAPs | "Feature-group importance by layer (mean \|SHAP\|)." | high (TODO already in text) |
+| §7.9 Explainability | Attention-weights example | `MEAN_RUN/attention_weights.svg` | "Per-flow attention within one flagged capture." | medium |
+| §7.10 Deployment | Scoring/update path schematic | **generate** (or dashboard) | "Scoring a new capture and warm-start updating from a saved bundle." | optional |
+
+**Discussion (Ch 8):** keep it prose-driven; reference the Results figures rather than
+duplicating. At most one conceptual drift-mechanism schematic if you want a visual anchor.
+**Conclusion (Ch 9):** no figures (convention).
+
+---
+
+## 3. Existing-asset cleanup (independent of the above)
+
+Three `\includegraphics` point at files that **do not exist** — they will error or show
+"file not found" boxes on a clean build:
+
+- `Chapters/4-feature_extraction.tex:81` → `figures/feature_pipeline` (probably a duplicate
+  of `Images/Feature_Extraction_Pipeline.pdf` — repoint or supply the file).
+- `Chapters/5-feature_engineering.tex:144` → `figures/fe_pipeline` (missing — supply or remove).
+- `appendix-2.tex:265` → `figures/dashboard_overview` (missing — this is a **dashboard
+  slot**, see below).
+
+Two architecture PDFs already exist but are **never used**: `Autoencoder_Architecture.pdf`,
+`XGBoost_Architecture.pdf` → place them in §6 as noted (easy wins).
+
+There is no `figures/` directory in the thesis folder; the broken refs expect one. Either
+create `figures/` or repoint these to `Images/`.
+
+---
+
+## 4. Dashboard figures (you will provide)
+
+I could not find dashboard exports in the workspace. When you drop them in, here is where
+each belongs. Export at ≥150 dpi (PNG) or SVG, crop the browser chrome:
+
+| Dashboard view | Placement | Replaces / fills |
+|---|---|---|
+| Overview / landing page | Appendix | the broken `figures/dashboard_overview` ref in `appendix-2.tex:265` |
+| Temporal drift heatmap / timeline | §7.5 (alternative to generated F2/temporal panel) | — |
+| Per-PCAP attention explorer (one flagged capture) | §7.9 or appendix | complements F4 |
+| Score-distribution / threshold explorer | §7.3 or appendix | complements F3 |
+| Layer-ablation comparison view | §7.4 (alternative to generated F1) | — |
+
+Tell me the filenames once they're in `Images/` (or a new `figures/`) and I can give exact
+`\begin{figure}` blocks with captions, labels, and sizing.
+
+---
+
+## 5. Appendix structure (curated extras)
+
+Suggested appendix sections, all sourced from files that already exist:
+
+1. **Full evaluation curves** — ROC/DET/PR + confusion matrix for all seven layer sets.
+2. **Training diagnostics** — `loss.svg`, `eer.svg`, `learning_rate.svg`, `gradient_norm.svg`
+   for the two headline runs.
+3. **Extended explainability** — per-layer SHAP for several PCACPs, `shap_importance_by_outcome`,
+   more attention-weight examples.
+4. **Hyperparameter grid** — table of the search space (pooling, LR, FE, correlation filter,
+   hidden dim, optimizer) and selected values.
+5. **Expert-combination architecture + full results table** (the committee diagram + the
+   numbers behind §7.7).
+6. **Threshold/calibration sweep** — `fpr_fnr_threshold.svg` for the headline model.
+
+**External supplementary (linked, not bound):** full `all_results.csv` (939 rows), the raw
+per-PCAP SHAP dumps, and the code repository.
+
+> Note: the Linux build sandbox briefly held a truncated copy of `thesis.tex` (last line
+> `\e` instead of `\end{document}`). Your actual file is intact — this was a sandbox-sync
+> artifact only, confirmed against the authoritative file view.
