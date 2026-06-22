@@ -1,271 +1,231 @@
-# Tie-break fix — cross-layer headline (mean pooling): 8.44 % → 7.82 %
+# Tie-break fix — cross-layer headline (mean pooling): 8.44 % → 7.82 % (0.084 → 0.078)
 
-**Date:** 2026-06-22
-**Files changed:** `Chapters/7-results_NEW.tex`, `Chapters/8-discussion_NEW.tex`,
-`Chapters/9-conclusion_NEW.tex`, `thesis.tex` (includes rewired to the `_NEW` files).
-Old chapter files left untouched as backup.
+**Date:** 2026-06-22 · Applied **in place** to the latest canonical files:
+`Chapters/7-results.tex`, `Chapters/8-discussion.tex`, `Chapters/9-conclusion.tex`.
+
+> **Correction to my earlier change-map:** I had mislabelled the tables (off by one).
+> The correct numbering is **7.1** res-split · **7.2** res-family · **7.3** res-main
+> (pooling) · **7.4** res-layers (ablation) · **7.5** res-drift · **7.6** res-shortcuts ·
+> **7.7** res-shap. So "the mean cell" lives in **Table 7.3**, not 7.2. **Table 7.2 (model
+> family) correctly needs no edit** — which is exactly what you spotted. The cell edits
+> themselves were correct; only my table numbers were wrong.
 
 ---
 
-## 1. The rule and why the number changes
+## The change
 
-Selection metric is **validation EER at the operating threshold** (`val_eer_at_thr`).
-Rule applied: **when two configurations tie on val EER to two decimal places (as a
-percentage), break the tie by the lower test HTER.**
+The cross-layer L2+L3+L4 MLP has four **mean-pooling** runs tied at val EER **2.83 %**;
+the tie-break (lowest test HTER) selects the **7.82 %** run, not the **8.44 %** one. New
+mean operating point: HTER **7.82 %** (0.078), FPR **2.90 %**, FNR **12.75 %**, AUC **0.943**,
+confusion **349 / 134 / 4 / 51**. Attention (6.70 %) is unchanged. Only the L2+L3+L4 mean
+cell propagates; all other ablation rows and the family/XGBoost/AE numbers are unaffected.
 
-The cross-layer **L2+L3+L4 MLP** has **four mean-pooling runs tied at val EER
-2.8263 % (→ 2.83 %)** on the common 323/538 set. Their test HTERs:
+Note the **notation differs by chapter**: `7-results.tex` uses 2-dp percentages
+(7.82 %, 12.75 %, 2.90 %); `8-discussion.tex` and `9-conclusion.tex` use decimal HTER
+(0.078) and 1-dp percentages (12.8 %, 2.9 %). Edits below respect each file's style.
 
-| Run (config) | val EER | test HTER | filter |
+---
+
+## `7-results.tex` — 11 edits (Table 7.3 / res-main was already 7.82, left as is)
+
+| Where | Old → New |
+|---|---|
+| §7.3 prose (detection) | HTER 8.44→**7.82 %**, FPR 3.62→**2.90 %**, FNR 13.25→**12.75 %**, conf 347/133/5/53 → **349/134/4/51** |
+| **Table 7.4** res-layers, L2+L3+L4 row | 8.44 %/3.62 %/13.25 % → **7.82 %/2.90 %/12.75 %** |
+| §7.4 prose "deploys at 8.44 % (mean)" | → **7.82 %** |
+| §7.4 prose "cuts FNR to 13.25 %… HTER 12.11 % to 8.44 %" | → **12.75 %… 7.82 %** |
+| **Table 7.5** res-drift, Mean row | test FPR 3.62→**2.90 %**, test FNR 13.25→**12.75 %** |
+| §7.5 prose "0.83 % to 13.25 %" | → **12.75 %** |
+| §7.5 prose FNR range "13 %–24 %, FPR at most 7 %" | → **12.75 %–24 %, FPR at most 7.25 %** (the 7 % was already a slip — L2 is 7.25 %) |
+| §7.6 prose "6.70 % to 8.44 %" | → **6.70 % to 7.82 %** |
+| **Table 7.6** res-shortcuts, Mean row | 8.44 %/0.932 → **7.82 %/0.943** |
+| §7.7 prose, composite vs mean | "essentially the same as mean (8.44 %), still behind attention" → "**close to but still behind mean (7.82 %), and further behind attention (6.70 %)**" |
+| §7.8 prose "6.70 % to 8.44 %" | → **6.70 % to 7.82 %** |
+
+## `8-discussion.tex` — 8 edits (decimal notation)
+
+| Where | Old → New |
+|---|---|
+| §disc-endtoend | "deploys at 0.067 to 0.084" → **0.067 to 0.078** |
+| §disc-layers | "FNR to 13.3 %… HTER 0.121 to 0.084" → **12.8 %… 0.078** |
+| §disc-drift | "test FNR 13.3 %… FPR 4.8 % to 3.6 %" → **12.8 %… 4.8 % to 2.9 %** ("sixteen times" still holds: 12.8/0.8 = 16) |
+| §disc-drift | "test HTER 0.067 to 0.084" → **0.067 to 0.078** |
+| §disc-drift | "(HTER 0.067 against 0.084)" → **against 0.078** |
+| §disc-protocol | "deploys at HTER 0.067 to 0.084" → **0.067 to 0.078** |
+| §disc-composition | "matches mean (0.084), beaten only by attention" → "**comes close to mean (0.078) but is beaten by both poolings (0.078 mean, 0.067 attention)**" |
+| §disc-ops | "misses more **and alarms less**" → "misses more, **at the same false-alarm rate**" (new mean FPR 2.9 % = attention 2.9 %) |
+
+## `9-conclusion.tex` — 4 edits (decimal notation)
+
+| Where | Old → New |
+|---|---|
+| §summary | "and 0.084 under mean pooling" → **0.078** |
+| §summary | "HTER 0.067–0.084 against 0.126–0.149" → **0.067–0.078** |
+| §summary | "(0.121 against 0.067–0.084)" → **0.067–0.078** |
+| §summary | "ensemble 0.087, essentially matching mean (0.084) but not attention" → "**close to but short of mean (0.078) and short of attention (0.067)**" |
+
+---
+
+## One open decision — correlation filtering
+
+The selected 7.82 % run uses **correlation filtering (CRS98)**; the 8.44 % run did not.
+So two sentences are now in tension and I **left them untouched** for you to decide:
+
+- `7-results.tex` §7.4: *"correlation filtering … never improved on the unfiltered model."*
+- `8-discussion.tex` §disc-features: *"dropping one of each strongly correlated feature pair never helped …"*
+
+Both were true when the mean headline was the unfiltered 8.44 % run. Options:
+
+1. **Keep 7.82 %, rescope those two sentences** to *"never lowered the validation EER (the
+   selection metric)"* — still true, and the deployed best happens to be CR-filtered only via
+   the test-HTER tie-break. (The overall best deployer, attention 6.70 %, is unfiltered, so the
+   main story is unaffected.)
+2. **Restrict the tie-break to same-feature-engineering runs** — then the mean headline stays
+   the unfiltered **8.44 %** and nothing about correlation filtering changes.
+
+Tell me 1 or 2 and I'll finish it. Everything else is done and consistent.
+
+---
+
+## Verified
+`grep`: no `8.44 / 0.084 / 13.25 / 13.3 % / 3.62 / 0.932 / "matches the monolithic" / "alarms
+less"` remain. New values present in each file's own notation. res-main (Table 7.3) confirmed
+already at 7.82 %/0.943 and left untouched. Arithmetic: (2.90+12.75)/2 = 7.825 %; 4+134 = 138
+benign, 349+51 = 400 malicious, 538 total.
+
+# Figure placement plan — precise (what · how to obtain · where)
+
+**Date:** 2026-06-22. Line numbers are for the **current** files as delivered. Inserting a
+figure shifts every later line down, so **work from the bottom of each file upward** (highest
+line number first) and the rest stay valid.
+
+Two source conventions:
+- **Existing file** → a real `.svg`/`.png` already on disk; copy the `.pdf`/`.svg` into
+  `Images/` (or a new `figures/`) and `\includegraphics` it. Paths are under
+  `Code/outputs_new/models/MLP/`.
+- **Generate** → a small bar chart that does not exist as a file; ~15 lines of matplotlib over
+  numbers already in the chapter's own table (recipe in §4), or export the matching view from
+  your dashboard.
+
+**Run aliases** (the two new headline runs):
+```
+MEAN = Code/outputs_new/models/MLP/nmd_L2-3-4_MLP_all_PCAP_Seperate_split-by-pcap_HL3_LR0.001_BS128_OPTRMSprop_AGGmeanagg_ETL0__FE0_CRS98_L2.FE1_L3.FE1_L4.FE1_HD128/performance_metrics
+ATTN = Code/outputs_new/models/MLP/nmd_L2-3-4_MLP_all_PCAP_Seperate_split-by-pcap_HL3_LR0.001_BS128_OPTRMSprop_AGGatnagg_ETL0__FE0_L2.FE1_L3.FE1_L4.FE1_HD128/performance_metrics
+```
+Each has `.svg` **and** `.png` of: `roc_curve`, `det_curve`, `confusion_matrix`,
+`score_distribution`, `fpr_fnr_threshold`, plus a `shap/` folder (9 PCAPs × `L2/L3/L4/shap_group_importance.svg`).
+
+---
+
+## 1. Results chapter — `Chapters/7-results.tex` (the priority; currently 0 figures)
+
+| ID | What the figure is | How to obtain it | Insert AFTER line |
 |---|---|---|---|
-| `…meanagg…FE0_CRS98_L2.FE1_L3.FE1_L4.FE1` | 2.8263 % | **7.82 %** ← select | CRS98 |
-| `…meanagg…FE1_CRS98` | 2.8263 % | 8.32 % | CRS98 |
-| `…meanagg…FE1_VT001` (previously reported) | 2.8263 % | 8.44 % | none |
-| `…meanagg…FE1` | 2.8263 % | 9.69 % | none |
+| F5 | **Model-family bars** — grouped bars of val EER and test HTER for MLP / XGBoost / autoencoder. Shows the end-to-end gap at a glance. | Generate from Table 7.2 (3 rows). | **125** (after `\end{table}` of res-family) |
+| F3a | **ROC curves, mean vs attention** — two ROC curves of the cross-layer detector side by side. | Existing: `MEAN/roc_curve.svg` + `ATTN/roc_curve.svg` (subfigure). | **179** (end of §7.3 prose) |
+| F3b | **DET curve** — detection-error-tradeoff of the headline detector; the natural view for EER/HTER. | Existing: `ATTN/det_curve.svg` (best deployer). | **179** |
+| F1 | **Layer-ablation bars** ⭐ — grouped bars, val EER vs test HTER across L2, L3, L4, L2+L3, L2+L4, L3+L4, L2+L3+L4. The chapter's central result; shows "+L4 raises val EER, lowers HTER." | Generate from Table 7.4 (7 rows). | **210** (after `\end{table}` of res-layers) |
+| F2 | **Drift bars** ⭐ — grouped bars of val vs test FPR and FNR (mean + attention). Shows FNR jumping while FPR stays flat. | Generate from Table 7.5 (res-drift). Note: the headline runs have **no** temporal plot, so build this from the table. | **285** (after `\end{table}` of res-drift) |
+| F6 | **Protocol bars** — chronological vs random HTER, same model. | Generate once the random split is run (Table 7.6 placeholder). | **339** (after `\end{table}` of res-shortcuts) |
+| F7 | **Committee-progression bars** — HTER of frozen committee (0.116) → score combiner (0.110) → fine-tuned (0.091) → ensemble (0.087), with monolithic mean 0.078 / attention 0.067 as reference lines. | Generate from §7.7 prose numbers. | **388** (end of §7.7 prose) |
+| F8 | **Autoencoder score distribution** — benign vs malicious score histograms for the novelty baseline; shows the supervision ceiling. | Existing: `Code/outputs_new/models/AUTOENCODER/<L4 run>/performance_metrics/score_distribution.svg`. | **411** (end of §7.8) |
+| F4 | **3-panel per-layer SHAP** ⭐ — three bar panels (L2, L3, L4) of feature-group importance for the headline model. The text already has a TODO for exactly this. | Existing: `MEAN/shap/<pcap>/{L2,L3,L4}/shap_group_importance.svg` — pick one representative malicious capture (e.g. the Qakbot or Emotet capture) or average the 9. | **replace lines 458–459** (the `\verb` TODO) |
+| F9 | **Attention-weights example** — per-flow attention inside one flagged capture ("which flow"). | Existing (not in headline run; use the sibling attention run): `…/nmd2_L2-3-4_MLP_…_AGGatnagg_…FE1_VT001_HD128/performance_metrics/shap/<pcap>/attention_weights.svg`. | **459** (just after F4) |
 
-The thesis reported the **8.44 %** run. The rule selects the **7.82 %** run.
-Attention pooling (3.24 % / 6.70 %) is already the per-pooling best, so it is **unchanged**.
+⭐ = highest value for breaking up the text.
 
-**New headline mean operating point** (from the 7.82 % run, common 538 test set):
+### Paste-ready blocks (high-priority)
 
-| | test HTER | test FPR | test FNR | test AUC | TP / TN / FP / FN | val FPR | val FNR |
-|---|---|---|---|---|---|---|---|
-| old | 8.44 % | 3.62 % | 13.25 % | 0.932 | 347 / 133 / 5 / 53 | 4.82 % | 0.83 % |
-| **new** | **7.82 %** | **2.90 %** | **12.75 %** | **0.943** | **349 / 134 / 4 / 51** | 4.82 % | 0.83 % |
+**F1 — after line 210:**
+```latex
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.9\textwidth]{Images/ablation_layers.pdf}
+  \caption{Validation EER and deployed test HTER across feature-layer sets
+           (common 323/538 split). Adding the Application layer (L4) raises the
+           validation EER but lowers the deployed HTER.}
+  \label{fig:res-ablation}
+\end{figure}
+```
 
-Check: (2.90 + 12.75)/2 = 7.825 %; benign = 4+134 = 138; malicious = 349+51 = 400; total = 538. ✓
-Validation side is identical between the two runs (same val EER, same val confusion), so the
-drift table's val columns do **not** move.
+**F4 — replace lines 458–459:**
+```latex
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}{0.32\textwidth}\includegraphics[width=\textwidth]{Images/shap_L2.pdf}\caption{Internet (L2)}\end{subfigure}\hfill
+  \begin{subfigure}{0.32\textwidth}\includegraphics[width=\textwidth]{Images/shap_L3.pdf}\caption{Transport (L3)}\end{subfigure}\hfill
+  \begin{subfigure}{0.32\textwidth}\includegraphics[width=\textwidth]{Images/shap_L4.pdf}\caption{Application (L4)}\end{subfigure}
+  \caption{Feature-group importance (mean $|\text{SHAP}|$) per layer for the headline
+           cross-layer model.}
+  \label{fig:res-shap}
+\end{figure}
+```
+(needs `\usepackage{subcaption}` in `thesis.tex`.)
 
-**What did *not* change** (verified by re-deriving every cell with the tie-break):
-every single-layer and two-layer row of the ablation already reported its tie-broken best;
-the model-family table (MLP L2+L3 0.83 %/12.11 %; XGBoost 4.91 %/16.41 %; autoencoder
-19.01 %/29.13 %) is unaffected. Only the L2+L3+L4 mean cell propagates.
-
-Data source: `Code/outputs_new/models/MLP/…/performance_metrics/summary_metrics.json`
-(225 unfiltered MLP runs on the common 323/538 set; both `nmd_` and `nmd2_` naming).
-
----
-
-## 2. Every edit, by file
-
-### `7-results_NEW.tex`
-- **Table 7.2 (res-main), Mean row:** `8.44 % → 7.82 %`, AUC `0.932 → 0.943`.
-- **§7.3 prose:** mean HTER `8.44 → 7.82`, FPR `3.62 → 2.90`, FNR `13.25 → 12.75`,
-  confusion `347/133/5/53 → 349/134/4/51`.
-- **Table 7.3 (res-layers), L2+L3+L4 row:** `8.44 % → 7.82 %`, FPR `3.62 → 2.90`, FNR `13.25 → 12.75`.
-- **§7.4 prose:** "deploys at 8.44 % (mean)…" → 7.82 %; "cuts the FNR to 13.25 %… HTER from
-  12.11 % to 8.44 %" → 12.75 % / 7.82 %.
-- **Table 7.4 (res-drift), Mean row:** test FPR `3.62 → 2.90`, test FNR `13.25 → 12.75`.
-- **§7.5 prose:** "0.83 % to 13.25 %" → 12.75 %; FNR range "between 13 % and 24 %" →
-  "between 12.75 % and 24 %"; FPR bound "at most 7 %" → "at most 7.25 %" (corrects a
-  pre-existing rounding slip — L2 FPR is 7.25 %).
-- **§7.6:** "6.70 % to 8.44 %" → 6.70 % to 7.82 %; Table 7.5 (res-shortcuts) Mean row
-  `8.44/0.932 → 7.82/0.943`.
-- **§7.7 (experts):** see flag B below.
-- **§7.8 (novelty):** "supervised model's 6.70 % to 8.44 %" → 6.70 % to 7.82 %.
-- **§7.1 (setup), universe-comparison sentence:** see flag C below.
-- **§7.4, correlation-filtering paragraph:** see flag A below.
-
-### `8-discussion_NEW.tex`
-- Six "6.70 % to 8.44 %" / "against 8.44 %" range mentions → 7.82 %.
-- Drift paragraph: test FNR `13.25 → 12.75`, "about sixteen times higher" → "fifteen"
-  (12.75 / 0.83 ≈ 15.4), FPR "4.82 % to 3.62 %" → "4.82 % to 2.90 %".
-- Composite + ops sentences: flags B and D below.
-
-### `9-conclusion_NEW.tex`
-- "8.44 % under mean pooling" → 7.82 %; two "6.70 %–8.44 %" ranges → 6.70 %–7.82 %.
-- Composite ensemble sentence: flag B below.
-
-### `thesis.tex`
-- `\include` switched from `7-results / 8-discussion / 9-conclusion` to the `_NEW` variants.
+**F3 — after line 179:**
+```latex
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}{0.48\textwidth}\includegraphics[width=\textwidth]{Images/roc_mean.pdf}\caption{Mean pooling}\end{subfigure}\hfill
+  \begin{subfigure}{0.48\textwidth}\includegraphics[width=\textwidth]{Images/roc_attn.pdf}\caption{Attention pooling}\end{subfigure}
+  \caption{ROC of the cross-layer MIL detector on the 538-capture test set.}
+  \label{fig:res-roc}
+\end{figure}
+```
 
 ---
 
-## 3. Judgment calls — please review
+## 2. Cleanup — placeholder figures already in the text (just supply the image)
 
-These are spots where a plain number swap would have made the text inconsistent, so the
-wording was changed. Each is reversible.
+These are **commented-out** `\includegraphics` inside existing figure environments (they don't
+error; they're empty placeholders the author left). Supply the image and uncomment:
 
-**A. The headline mean model is now a correlation-filtered (CRS98) run.** The selected
-7.82 % run uses correlation filtering; the old 8.44 % run did not. The prose previously
-said correlation filtering "never improved on the unfiltered model" — now false at the
-deployment level, since the CR run deploys better at the *same* val EER. I rescoped the
-sentence to the selection metric: **"never lowered the validation EER, the metric used for
-selection."** That is still literally true (CR never gave a lower val EER; it only wins the
-test-HTER tie-break). **If you would rather the tie-break *not* cross feature-engineering
-configs** (keep the headline an unfiltered model), the alternative is to restrict ties to
-same-FE runs — in which case the mean headline stays **8.44 %**. Your call; I applied the
-unrestricted rule as you stated it.
-
-**B. The composite ensemble (8.72 %) no longer "essentially matches" mean.** With mean at
-7.82 %, the 8.72 % ensemble is now behind *both* single-model poolings. Reworded in all three
-chapters from "essentially matches / matches the monolithic model under mean pooling (8.44 %)"
-to "comes close to but is behind the monolithic model under mean pooling (7.82 %)". The
-ensemble's own number (8.72 %) is unchanged — it is a different model and outside the
-monolithic tie-break. (If you want the same tie-break logic applied to the ensemble/expert
-selections too, say so and I'll re-derive those from `advanced_training`/`ensemble_eval`.)
-
-**C. Universe-comparison sentence (§7.1).** It illustrated how the smaller 530-capture
-universe flatters results: "the same mean-pooling configuration reports 0.42 % / 5.51 %…
-against 2.83 % and 8.44 % on the full set." The 0.42 %/5.51 % run is a specific pre-bugfix
-FE1 run (`MLP_Bugged/…meanagg…FE1`); its exact bug-fixed 538 twin is the 9.69 % run, not
-8.44 %. To keep the sentence consistent with the new headline I changed it to "the
-cross-layer mean-pooling **detector** … against 2.83 % and **7.82 %**" and dropped the
-"same configuration" claim (it was already loose). The pedagogical point is intact.
-
-**D. "Misses more and alarms less" (§Discussion-ops).** The new mean run has FPR 2.90 % —
-**equal** to attention's 2.90 % (both FP = 4/138). So mean no longer "alarms less"; it alarms
-the same. Changed to **"misses more, at the same false-alarm rate."** (As a bonus this fixes a
-pre-existing slip: the *old* mean FPR was 3.62 %, i.e. *higher* than attention, so "alarms
-less" was already wrong.)
-
----
-
-## 4. Verification done
-
-- `grep`: no stray `8.44 / 13.25 / 3.62 % / 0.932 / 347 / "alarms less" / "sixteen times" /
-  "never improved on the unfiltered" / "essentially"` remain in any `.tex`.
-- No headline numbers are cited in chapters 1–6 or the abstract, so nothing else to sync.
-- `pdflatex` full build (2 passes, draftmode): **0 fatal errors, 0 undefined cross-references**
-  (the 173 undefined *citations* are only because bibtex was not run in the test).
-- Arithmetic re-checked (HTER, confusion totals, drift multiplier).
-
-# Figure & diagram placement plan
-
-**Date:** 2026-06-22 · Scope: *placement map only* (you insert the figures).
-Goal: break up the text — especially **Chapter 7 (Results), which currently has zero
-figures** — with relevant, already-available plots, and decide what goes in the appendix.
-
----
-
-## 0. Your question: appendix or supplementary material?
-
-**Recommendation — use the appendix for curated extras; reserve external "supplementary
-material" only for bulk artifacts.** Reasons:
-
-- A master's thesis is one bound, self-citable document. An examiner expects to find a
-  referenced figure/table in **Appendix X**, not in a separate file. You already have
-  `appendix-1` and `appendix-2`, so the home is established.
-- "Supplementary material" is a journal/online convention. It makes sense only for things
-  that genuinely cannot sit in a PDF: the **full 225-run results CSV**, the **13,874 raw
-  per-PCAP SHAP files**, the **code repository**, and the `.svg` sources. Point to these as
-  an external package / repository link.
-
-So: **curated figures and tables → appendix** (referenced from the chapters); **raw bulk →
-external supplementary**, mentioned once in the appendix preamble.
-
----
-
-## 1. Highest-value additions (do these first)
-
-Chapter 7 is the wall of text. These five figures carry the most narrative weight:
-
-| # | Section | Figure | Why it matters |
-|---|---|---|---|
-| F1 | §7.4 Ablation | **Layer-set bar chart** — val EER vs test HTER across L2, L3, L4, L2+L3, L2+L4, L3+L4, L2+L3+L4 | This is the central result. The "L4 raises val EER but lowers HTER" story is far clearer as bars than prose. |
-| F2 | §7.5 Drift | **Val-vs-test FPR/FNR bars** (mean & attention) | Shows FNR exploding while FPR stays flat — the drift-on-the-malicious-side claim, visualized. |
-| F3 | §7.3 Detection | **ROC + DET overlay**, mean vs attention | The "how good is it" visual; DET is the natural view for EER/HTER. |
-| F4 | §7.9 Explainability | **3-panel per-layer SHAP group importance** (L2/L3/L4) | The chapter text already has a `% [FIGURE …]` TODO for exactly this. |
-| F5 | §7.2 Model family | **Family comparison bars** (MLP vs XGBoost vs autoencoder) | Makes the end-to-end-wins gap immediate. |
-
-F1, F2, F5 are **grouped bar charts that do not yet exist as single files** — they need a
-~30-line matplotlib script over the numbers already in `results_analysis/*.csv` (or your
-dashboard can export them). F3 and F4 already exist as files (paths below).
-
----
-
-## 2. Full section-by-section map
-
-Run-folder aliases (under `Code/outputs_new/models/MLP/`):
-
-- **MEAN_RUN** = `nmd_L2-3-4_MLP_all_PCAP_Seperate_split-by-pcap_HL3_LR0.001_BS128_OPTRMSprop_AGGmeanagg_ETL0__FE0_CRS98_L2.FE1_L3.FE1_L4.FE1_HD128/performance_metrics`
-- **ATTN_RUN** = `nmd_L2-3-4_MLP_all_PCAP_Seperate_split-by-pcap_HL3_LR0.001_BS128_OPTRMSprop_AGGatnagg_ETL0__FE0_L2.FE1_L3.FE1_L4.FE1_HD128/performance_metrics`
-
-(These are the two **new headline** runs — mean 7.82 %, attention 6.70 %. Every per-run
-plot below exists as both `.png` and `.svg`; use `.svg` or `.pdf` for print quality.)
-
-| Section | Figure | Source | Suggested caption | Priority |
-|---|---|---|---|---|
-| §3 Background (metrics) | DET-curve schematic to illustrate EER/HTER | `ATTN_RUN/det_curve.svg` (as illustration) or a hand-drawn schematic | "DET curve and the equal-error operating point." | optional |
-| §4 Feature extraction | *(fix broken ref — see §3 below)* | `Images/Feature_Extraction_Pipeline.pdf` | — | cleanup |
-| §5 Feature engineering | TCP-state-machine / engineered-feature diagram | **generate** (or dashboard) | "Connection-state features derived from the TCP flag sequence." | medium |
-| §6 Framework | Autoencoder architecture | `Images/Autoencoder_Architecture.pdf` *(exists, currently unused)* | "Autoencoder baseline architecture." | easy win |
-| §6 Framework | XGBoost-head architecture | `Images/XGBoost_Architecture.pdf` *(exists, currently unused)* | "XGBoost classification head on the flow encoder." | easy win |
-| **§7.2 Family** | **F5** family comparison bars | **generate** from `results_analysis/baselines.csv` | "Best validation-selected configuration per model family (common 323/538 set)." | high |
-| **§7.3 Detection** | **F3** ROC + DET, mean vs attention | `MEAN_RUN/roc_curve.svg` + `ATTN_RUN/roc_curve.svg`; `…/det_curve.svg` | "Cross-layer detector under mean and attention pooling." | high |
-| §7.3 Detection | Score distribution (benign vs malicious) | `ATTN_RUN/score_distribution.svg` | "Test-set score separation, attention pooling." | medium |
-| **§7.4 Ablation** | **F1** layer-set val-EER/HTER bars | **generate** from `results_analysis/advanced_eval.csv` | "Validation EER and deployed HTER across feature-layer sets." | **highest** |
-| **§7.5 Drift** | **F2** val-vs-test FPR/FNR bars | **generate** (numbers in Table 7.4) | "Validation vs test error: the malicious-side rate (FNR) rises; the benign-side rate (FPR) does not." | **highest** |
-| §7.5 Drift | Temporal drift panel | `MEAN_RUN/` → `temporal_fpr_fnr.svg`, `temporal_metrics_heatmap.svg` | "Per-period error on the test timeline." | medium (or dashboard) |
-| §7.6 Protocol | Chronological vs random HTER bars | **generate** once random split is run (Table 7.5 placeholder) | "The same model under two evaluation protocols." | blocked on re-run |
-| §7.7 Experts | Committee → combiner → ensemble HTER bars | **generate** from `results_analysis/advanced_training.csv` | "Deployed error as the committee is trained toward end-to-end." | medium |
-| §7.8 Novelty | Autoencoder score distribution / ROC | autoencoder headline run `…/score_distribution.svg` | "Benign-trained autoencoder: the supervision ceiling." | medium |
-| **§7.9 Explainability** | **F4** 3-panel per-layer SHAP | `MEAN_RUN/shap/<pcap>/{L2,L3,L4}/shap_group_importance.svg`, aggregated across PCAPs | "Feature-group importance by layer (mean \|SHAP\|)." | high (TODO already in text) |
-| §7.9 Explainability | Attention-weights example | `MEAN_RUN/attention_weights.svg` | "Per-flow attention within one flagged capture." | medium |
-| §7.10 Deployment | Scoring/update path schematic | **generate** (or dashboard) | "Scoring a new capture and warm-start updating from a saved bundle." | optional |
-
-**Discussion (Ch 8):** keep it prose-driven; reference the Results figures rather than
-duplicating. At most one conceptual drift-mechanism schematic if you want a visual anchor.
-**Conclusion (Ch 9):** no figures (convention).
-
----
-
-## 3. Existing-asset cleanup (independent of the above)
-
-Three `\includegraphics` point at files that **do not exist** — they will error or show
-"file not found" boxes on a clean build:
-
-- `Chapters/4-feature_extraction.tex:81` → `figures/feature_pipeline` (probably a duplicate
-  of `Images/Feature_Extraction_Pipeline.pdf` — repoint or supply the file).
-- `Chapters/5-feature_engineering.tex:144` → `figures/fe_pipeline` (missing — supply or remove).
-- `appendix-2.tex:265` → `figures/dashboard_overview` (missing — this is a **dashboard
-  slot**, see below).
-
-Two architecture PDFs already exist but are **never used**: `Autoencoder_Architecture.pdf`,
-`XGBoost_Architecture.pdf` → place them in §6 as noted (easy wins).
-
-There is no `figures/` directory in the thesis folder; the broken refs expect one. Either
-create `figures/` or repoint these to `Images/`.
-
----
-
-## 4. Dashboard figures (you will provide)
-
-I could not find dashboard exports in the workspace. When you drop them in, here is where
-each belongs. Export at ≥150 dpi (PNG) or SVG, crop the browser chrome:
-
-| Dashboard view | Placement | Replaces / fills |
+| File · line | Placeholder | What to put there |
 |---|---|---|
-| Overview / landing page | Appendix | the broken `figures/dashboard_overview` ref in `appendix-2.tex:265` |
-| Temporal drift heatmap / timeline | §7.5 (alternative to generated F2/temporal panel) | — |
-| Per-PCAP attention explorer (one flagged capture) | §7.9 or appendix | complements F4 |
-| Score-distribution / threshold explorer | §7.3 or appendix | complements F3 |
-| Layer-ablation comparison view | §7.4 (alternative to generated F1) | — |
+| `4-feature_extraction.tex` : **81** | `% …{figures/feature_pipeline}` | the feature-extraction pipeline diagram (or repoint to the existing `Images/Feature_Extraction_Pipeline.pdf` already used at line 171) |
+| `5-feature_engineering.tex` : **144** | `% …{figures/fe_pipeline}` | the feature-engineering pipeline diagram |
+| `appendix-2.tex` : **265** | `% …{figures/dashboard_overview}` | a dashboard screenshot (see §3) |
 
-Tell me the filenames once they're in `Images/` (or a new `figures/`) and I can give exact
-`\begin{figure}` blocks with captions, labels, and sizing.
+**Two architecture PDFs already exist but are unused** — add them where each baseline is
+introduced (the MLP architectures sit at `6-framework.tex` lines 520 and 556):
+- `Images/Autoencoder_Architecture.pdf` → a `\begin{figure}` after `6-framework.tex` line **565**.
+- `Images/XGBoost_Architecture.pdf` → same area.
 
 ---
 
-## 5. Appendix structure (curated extras)
+## 3. Appendix & dashboard (the appendix sections already exist)
 
-Suggested appendix sections, all sourced from files that already exist:
+`appendix-2.tex` already has: **Hyperparameter Grids** (line 189), **Extended Results**
+(line 193), **Dashboard Screenshots** (line 197), Output Artefacts (199).
 
-1. **Full evaluation curves** — ROC/DET/PR + confusion matrix for all seven layer sets.
-2. **Training diagnostics** — `loss.svg`, `eer.svg`, `learning_rate.svg`, `gradient_norm.svg`
-   for the two headline runs.
-3. **Extended explainability** — per-layer SHAP for several PCACPs, `shap_importance_by_outcome`,
-   more attention-weight examples.
-4. **Hyperparameter grid** — table of the search space (pooling, LR, FE, correlation filter,
-   hidden dim, optimizer) and selected values.
-5. **Expert-combination architecture + full results table** (the committee diagram + the
-   numbers behind §7.7).
-6. **Threshold/calibration sweep** — `fpr_fnr_threshold.svg` for the headline model.
+| Goes in | Content | Source |
+|---|---|---|
+| Extended Results (L193) | ROC/DET/PR/confusion for all 7 layer sets; training curves (`loss`, `eer`); calibration sweep `fpr_fnr_threshold.svg` | per-run `.svg` under `…/models/MLP/<run>/performance_metrics/` |
+| Hyperparameter Grids (L189) | table of the search space (pooling, LR, FE, correlation filter, hidden dim, optimiser) | `results_analysis/all_results.csv` |
+| Dashboard Screenshots (L197 → uncomment L265) | your dashboard views | **you provide** — drop into `Images/`, then point line 265 at it |
 
-**External supplementary (linked, not bound):** full `all_results.csv` (939 rows), the raw
-per-PCAP SHAP dumps, and the code repository.
+**Dashboard views → where** (export ≥150 dpi, crop the browser frame):
+overview → appendix line 265; drift/temporal heatmap → §7.5 (alt to F2); per-PCAP attention
+explorer → §7.9 or appendix; score/threshold explorer → §7.3 or appendix.
 
-> Note: the Linux build sandbox briefly held a truncated copy of `thesis.tex` (last line
-> `\e` instead of `\end{document}`). Your actual file is intact — this was a sandbox-sync
-> artifact only, confirmed against the authoritative file view.
+**External supplementary (not bound):** full `all_results.csv` (939 rows), the 13.8k raw
+per-PCAP SHAP files, the code repo. Reference once in the appendix preamble.
+
+---
+
+## 4. Generation recipes (for the "generate" bars)
+
+All four are grouped bar charts over numbers already in the chapter; ~15 lines of matplotlib,
+or export the equivalent from your dashboard. Save as `Images/<name>.pdf`.
+
+- **F1 ablation** — x = 7 layer sets; two bars each = val EER, test HTER (Table 7.4).
+- **F2 drift** — x = {mean, attention}; bars = val FNR, test FNR, val FPR, test FPR (Table 7.5); the FNR pair towers over the FPR pair.
+- **F5 family** — x = {MLP, XGBoost, AE}; two bars each = val EER, test HTER (Table 7.2).
+- **F7 committee** — x = {frozen, combiner, fine-tuned, ensemble}; one HTER bar each (0.116, 0.110, 0.091, 0.087) + dashed reference lines at 0.078 (mean) and 0.067 (attention).
+
+---
+
+## Appendix vs supplementary (your earlier question)
+
+Curated figures/tables → **appendix** (you already have the sections above); raw bulk
+(`all_results.csv`, per-PCAP SHAP dumps, code) → **external supplementary**, referenced once.
