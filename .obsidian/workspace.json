@@ -11,14 +11,12 @@
             "id": "ae7d5474df99f6db",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Data Science Notes/100 days of ML/Machine Learning Notes.md",
-                "mode": "source",
-                "source": false
+                "file": "Data Science Notes/DL Specialization/Deep Learning Cert.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Machine Learning Notes"
+              "icon": "lucide-file-text",
+              "title": "Deep Learning Cert"
             }
           }
         ]
@@ -183,17 +181,31 @@
   },
   "active": "ae7d5474df99f6db",
   "lastOpenFiles": [
+    "Data Science Notes/DL Specialization/1. Neural Networks/Images/Pasted image 20250519174535.png",
+    "Data Science Notes/DL Specialization/1. Neural Networks/Images/Pasted image 20250519173850.png",
+    "Crypto notes/Speaker Notes.md",
+    "Crypto notes/Papers.md",
+    "Crypto notes/NetML.md",
+    "Crypto notes/Blockchain.md",
+    "Data Science Notes/MLOps/Week 1/2. Deployment.md",
+    "Data Science Notes/MLOps/Week 1/1. ML Project lifecycle.md",
+    "Data Science Notes/MLOps/Images/Pasted image 20250617193416.png",
     "Data Science Notes/ML_interview.pdf",
+    "README.md",
+    "Rough work.md",
+    "Interview Prep/Prep.md",
+    "Data Science Notes/DL Specialization/1. Neural Networks/Week4/Deep Neural Network.md",
+    "Data Science Notes/DL Specialization/1. Neural Networks/Week3/Shallow Neural Network.md",
+    "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Python and Vectorization.md",
+    "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Neural Network Basics.md",
+    "Data Science Notes/DL Specialization/1. Neural Networks/Week1/Introduction To Deep Learning.md",
     "Data Science Notes/100 days of ML/Machine Learning Notes.md",
     "Data Science Notes/GenAI/RAG",
     "Data Science Notes/GenAI/LangGraph",
     "Data Science Notes/GenAI/LangChain",
     "Data Science Notes/GenAI",
     "Coding Notes/SQL.md",
-    "Crypto notes/Blockchain.md",
     "Crypto notes/Untitled",
-    "Interview Prep/Prep.md",
-    "Crypto notes/Speaker Notes.md",
     "Interview Prep",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 1/Recurrent Neural Networks.md",
     "Data Science Notes/DL Specialization/4. Convolutional Networks/Week 4/Special applications.md",
@@ -204,21 +216,9 @@
     "Data Science Notes/DL Specialization/3. Structuring Machine Learning Projects/Week 1/ML Strategy 1.md",
     "Data Science Notes/DL Specialization/5. Sequence Models/Week 2/Natural Language Processing & Word Embeddings.md",
     "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Multi-class Classification.md",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Intro to programing frameworks.md",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Hyperparameter Tuning.md",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 3/Batch Normalization.md",
-    "Data Science Notes/DL Specialization/2. Hyper Parameter Tuning, Regularization & Optimisation/Week 2/Optimizing Algorithms.md",
     "Data Science Notes/DL Specialization/3. Structuring Machine Learning Projects/Week 2",
     "Data Science Notes/DL Specialization/3. Structuring Machine Learning Projects/Week 1",
-    "Data Science Notes/DL Specialization/1. Neural Networks/Week4/Deep Neural Network.md",
-    "Data Science Notes/DL Specialization/1. Neural Networks/Week2/Neural Network Basics.md",
-    "Data Science Notes/DL Specialization/1. Neural Networks/Week1/Introduction To Deep Learning.md",
-    "Coding Notes/Python Basics.md",
-    "Coding Notes/Cheat Sheet Python.md",
-    "Data Science Notes/DL Specialization/5. Sequence Models/Week 3/Sequence models & Attention mechanism.md",
-    "Data Science Notes/DL Specialization/5. Sequence Models/Week 4/Transformer Network.md",
     "Data Science Notes/DL Specialization/Deep Learning Cert.pdf",
-    "Data Science Notes/DL Specialization/Untitled",
     "Data Science Notes/DL Specialization/1. Neural Networks/Images/Pasted image 20250521102647.jpg",
     "download.jpeg",
     "Data Science Notes/100 days of ML/Images/sample_graph.jpeg",
@@ -226,8 +226,6 @@
     "Data Science Notes/100 days of ML/Images/sample_graph_2.jpeg",
     "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622223542.png",
     "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622223517.png",
-    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622223459.png",
-    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622223438.png",
-    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622223421.png"
+    "Data Science Notes/100 days of ML/Libraries/Seaborn Graphs/Pasted image 20250622223459.png"
   ]
 }
